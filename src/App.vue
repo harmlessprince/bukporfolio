@@ -4,7 +4,18 @@ import { RouterView } from "vue-router";
 
 <template>
   <div>
-    <router-view></router-view>
+    <h1>Hello There!</h1>
+    <p>
+      <strong>Current route path:</strong> {{ $route.fullPath }}
+    </p>
+    <nav>
+      <RouterLink :to="{ name: 'home'}" class="mr-3.5 text-green-500">Go to Home</RouterLink>
+
+      <RouterLink :to="{ name: 'about'}" class="mr-3.5 text-blue-500">Go to About</RouterLink>
+    </nav>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
