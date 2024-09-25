@@ -1,4 +1,4 @@
-import {createMemoryHistory, createRouter} from 'vue-router'
+import {createMemoryHistory, createRouter, createWebHistory} from 'vue-router'
 
 import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
@@ -15,8 +15,10 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createMemoryHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
     linkActiveClass: "active-link",
     linkExactActiveClass: "exact-active-link",
     routes,
 })
+
+export default router;
