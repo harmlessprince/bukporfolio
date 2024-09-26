@@ -1,5 +1,6 @@
 <script setup>
 import Navigation from '../components/navigation.vue'; 
+import Footer from '../components/footer.vue'; 
 import Heading from '../components/heading.vue';
 import ProductCard from '../components/productcard.vue';
 import Subheading from '../components/subheading.vue';
@@ -7,7 +8,8 @@ import HomeBanner from '@/assets/home_banner_background.png';
 import HomeBright1 from '@/assets/home_banner_bright.png';
 import Brand1 from '@/assets/brand1.svg';
 import Brand2 from '@/assets/brand2.svg';
-import WhoIam from '@/assets/who_i_am.svg';
+import WhoIam from '@/assets/who_i_am.png';
+import MeetFrame from '@/assets/meetframe.svg';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
 import UkLogo from '@/assets/ukLogo.svg';
@@ -20,7 +22,7 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
   <main class="text-primary">
     <Navigation />
     <!-- hero/banner starts here -->
-   <section class="bg-secondary pt-[7rem] w-full relative text-basic pl-[13rem]">
+   <section class="bg-secondary pt-[7rem] w-full relative text-basic pl-sides">
     <img :src="HomeBanner" class="w-full h-[90vh] absolute top-[7rem] left-0" alt="homebanner" />
     <div class="relative z-[500] w-full h-[90vh] flex flex-row items-center"> 
       <div class="">
@@ -43,19 +45,18 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
     </section>
 
     <!-- meet bright uk -->
-     <section class="px-[13rem] flex flex-row items-center py-[5rem]">
-      <div class="w-[670px] h-[650px] mr-[2rem] relative">
+     <section class="px-sides flex flex-row items-center py-[5rem]">
+      <!-- imgContainer is used in the style at the end of the code for the dots background -->
+      <div class="w-[670px] h-[650px] mr-[2rem] relative imgContainer">
         <img :src="WhoIam" class="w-[100%] h-[650px] relative" alt="brand" />
         <div class="w-full absolute left-0 bottom-5">
           <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand" />
         </div>
-       
-
       </div>
-      <div class="w-[31%]">
+      <div class="w-[35%]">
         <Subheading title="Who I am" />
         <Heading title="Meet Bright UK" />
-        <p class="font-sm text-regular text-basic mb-[2rem]">Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, 
+        <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, 
           Author, Digital Entrepreneur, Psychologist, 
           and Coach. He is renowned for his ability to ignite mental transformations using his
            groundbreaking #SixthSense framework.
@@ -70,7 +71,7 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
       </div>
      </section>
 
-     <div class="bg-bg1 px-[13rem] py-[5rem] flex flex-row flex-wrap justify-between">
+     <div class="bg-bg1 px-sides py-[5rem] flex flex-row flex-wrap justify-between">
       <div class="w-[222px] rounded-[10px]">
         <img :src="Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright" />
         <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Trainer</div>
@@ -95,7 +96,7 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
      <!-- end of meet bright -->
 
      <!-- personal development section -->
-      <section class="text-center px-[13rem] pt-[3rem]">
+      <section class="text-center px-sides pt-[3rem]">
         <Subheading title="Books" />
         <Heading title="Personal Development Products" />
         <div class="grid grid-cols-3 grid-flow-row gap-1 mt-[2rem]">
@@ -126,7 +127,7 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
       <section class="text-center pt-[3rem]">
         <Subheading title="Gallery" />
         <Heading title="Bright UK Activities" />
-        <div class="bg-secondary w-full flex flex-row px-[13rem] mt-[2rem]">
+        <div class="bg-secondary w-full flex flex-row px-sides mt-[2rem]">
           <div class="mr-[3rem] w-[32rem]">
             <img :src="Bright1" class="w-full h-[332px]" alt="bright" />
             <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright" />
@@ -144,11 +145,12 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
       <!-- end of gallery -->
 
       <!-- start of testimonies -->
-      <section class="pt-top px-sides flex flex-row items-center">
+      <section class="py-top px-sides flex flex-row items-center">
         <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px] mr-[3rem]" alt="bright" />
         <div class="w-full">
           <Subheading title="Testimony" />
           <Heading title="What People are Saying" />
+          <!-- this part will be dynamic, we will work on it -->
           <div class="bg-[#F9F7EA] rounded-[10px] px-[1rem] py-[2rem] mt-[1rem]">
             <i class="font-sm text-secondary text-xlg">
               Bright UK has been one of the critical keys to Salesforce.com's leadership in cloud 
@@ -162,19 +164,55 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
                 <span class="font-sm text-[#838080] text-xsm">CEO of FifthGear Plus.</span>
                 </span>
               </div>
-
               <img :src="CommentIcon1" class="w-[24px] h-[18px] mr-[1rem]" alt="comment" />
             </div>
           </div>
+          <div class="mt-[2rem] flex flex-row justify-between items-center">
+            <div>
+              <!-- using google material icon, cdn link is in the index page -->
+              <span class="material-icons w-[26px] h-[27px] text-[#B5B5B5] mr-[2rem] ">arrow_back</span>
+              <span class="material-icons w-[26px] h-[27px] text-[#151515]">arrow_forward</span>
+            </div>
 
-
+            <div class="flex flex-row">
+              <img :src="Niyi" class="w-[42px] h-[45px]" alt="bright" />
+              <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright" />
+              <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright" />
+              <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright" />
+            </div>
+          </div>
+          <!-- dynamic part of testimony ends here -->
         </div>
-
       </section>
+      <!-- end of testimony -->
+
+      <!-- start of featured on -->
+       <section class="px-sides flex items-center py-top">
+        <div class="font-header text-xlg text-[#0F0F13] mr-[2rem] no-wrap w-[9rem]">Featured on:</div>
+        <div class="flex flex-row justify-between items-center w-full">
+          <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand" />
+          <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand" />
+          <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand" />
+          <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand" />
+          <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand" />
+        </div>
+       </section>
+       <!-- end of featured -->
+        <Footer />
    
   </main>
 </template>
 
 <style scoped>
+.imgContainer::before{
+  position: absolute;
+  top: -1.3rem;
+  right: -1.3rem;
+  content: "";
+  background-image: url('../assets/meetframe.svg');
+  background-size: cover; 
+  width: 98px;
+  height: 98px;
+}
 
 </style>

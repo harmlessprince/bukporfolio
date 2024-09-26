@@ -19,8 +19,13 @@ export default {
           header: "2.25rem" //36px
       },
       padding: {
-        sides: '13rem', 
+        sides: '15rem', 
         top: "3rem"
+      },
+      margin: {
+        // sides: '15rem', 
+        top: "3rem",
+        sm: "2rem"
       },
 
       fontWeight: {

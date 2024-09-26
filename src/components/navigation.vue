@@ -3,7 +3,7 @@ import Logo from '@/assets/logo.svg';
 </script>
 
 <template>
-  <nav class="z-[1000] fixed w-full px-[13rem] py-[2rem] flex justify-between items-center bg-secondary font-primary border border-x-0 border-t-0 border-b-1 border-navLink">
+  <nav class="z-[1000] fixed w-full px-sides py-[2rem] flex justify-between items-center bg-secondary font-primary border border-x-0 border-t-0 border-b-1 border-navLink">
     <img :src="Logo" class="w-[3.31rem] h-[3.31rem]" alt="My Logo" />
 
     <div class="text-navLink font-xsm text-sm">
