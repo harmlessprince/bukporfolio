@@ -24,7 +24,7 @@ import Container from "@/components/Container.vue";
 
   <main class="">
     <Navigation/>
-    <Container class="text-basic flex h-[100vh]"   :style="{ 'background-image': 'url(' + HomeBanner + ')' }">
+    <Container class="text-basic flex h-[100vh]" :style="{ 'background-image': 'url(' + HomeBanner + ')' }">
       <div class="w-full flex flex-row items-center justify-between  h-full">
         <div class="min-w-[66.8rem]">
           <h1 class="text-basic text-hero font-hero">CHANGE YOUR THINKING</h1>
