@@ -1,5 +1,6 @@
 <script setup>
-import Navigation from '../components/navigation.vue'; 
+import Navigation from '../components/navigation.vue';
+import Sidebar from '../components/sidebar.vue'; 
 import Footer from '../components/footer.vue'; 
 import Heading from '../components/heading.vue';
 import ProductCard from '../components/productcard.vue';
@@ -9,7 +10,6 @@ import HomeBright1 from '@/assets/home_banner_bright.png';
 import Brand1 from '@/assets/brand1.svg';
 import Brand2 from '@/assets/brand2.svg';
 import WhoIam from '@/assets/who_i_am.png';
-import MeetFrame from '@/assets/meetframe.svg';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
 import UkLogo from '@/assets/ukLogo.svg';
@@ -21,6 +21,7 @@ import CommentIcon1 from '@/assets/commentIcon1.svg';
 <template>
   <main class="text-primary">
     <Navigation />
+    <Sidebar />
     <!-- hero/banner starts here -->
    <section class="bg-secondary pt-[7rem] w-full relative text-basic pl-sides">
     <img :src="HomeBanner" class="w-full h-[90vh] absolute top-[7rem] left-0" alt="homebanner" />
