@@ -54,7 +54,7 @@ import Container from "@/components/Container.vue";
     </section>
 
     <!-- meet bright uk -->
-    <section class="px-sides flex flex-row items-center py-[5rem]">
+    <section class="px-sides flex flex-row items-center py-[5rem] bg-white">
       <!-- imgContainer is used in the style at the end of the code for the dots background -->
       <div class="w-[670px] h-[650px] mr-[2rem] relative imgContainer">
         <img :src="WhoIam" class="w-[100%] h-[650px] relative" alt="brand"/>
