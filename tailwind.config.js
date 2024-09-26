@@ -18,6 +18,10 @@ export default {
           hero: "3.25rem", //52px
           header: "2.25rem" //36px
       },
+      padding: {
+        sides: '13rem', 
+        top: "3rem"
+      },
 
       fontWeight: {
         xsm: "400",

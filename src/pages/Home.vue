@@ -1,15 +1,19 @@
 <script setup>
 import Navigation from '../components/navigation.vue'; 
 import Heading from '../components/heading.vue';
+import ProductCard from '../components/productcard.vue';
 import Subheading from '../components/subheading.vue';
 import HomeBanner from '@/assets/home_banner_background.png';
 import HomeBright1 from '@/assets/home_banner_bright.png';
 import Brand1 from '@/assets/brand1.svg';
 import Brand2 from '@/assets/brand2.svg';
 import WhoIam from '@/assets/who_i_am.svg';
+import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
 import UkLogo from '@/assets/ukLogo.svg';
 import Bright1 from '@/assets/bright1.png';
+import Niyi from '@/assets/niyi.png';
+import CommentIcon1 from '@/assets/commentIcon1.svg';
 </script>
 
 <template>
@@ -65,33 +69,108 @@ import Bright1 from '@/assets/bright1.png';
         </button>
       </div>
      </section>
+
      <div class="bg-bg1 px-[13rem] py-[5rem] flex flex-row flex-wrap justify-between">
-      <div class="w-[222px] h-[] rounded-[8px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative" alt="bright" />
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem]">Trainer</div>
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright" />
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Trainer</div>
       </div>
 
-      <div class="w-[222px] rounded-[8px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative" alt="bright" />
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem]">Trainer</div>
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright" />
+        <div class="bg-primary text-xsm font-lg text-center text-basic rounded-b-[10px] py-[1rem]">Author</div>
       </div>
 
-      <div class="w-[222px] rounded-[8px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative" alt="bright" />
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem]">Entrepreneur</div>
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright" />
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Entrepreneur</div>
       </div>
 
-      <div class="w-[222px] rounded-[8px] bg-secondary">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative" alt="bright" />
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem]">Speaker</div>
+      <div class="w-[222px] rounded-[10px] bg-secondary">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright" />
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Speaker</div>
       </div>
 
      </div>
      <!-- end of meet bright -->
 
      <!-- personal development section -->
+      <section class="text-center px-[13rem] pt-[3rem]">
+        <Subheading title="Books" />
+        <Heading title="Personal Development Products" />
+        <div class="grid grid-cols-3 grid-flow-row gap-1 mt-[2rem]">
+          <ProductCard 
+          title="A long way down"
+          description="A book that let you know how long you need to go"
+          price="10,000"
+          url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
+          />
+
+          <ProductCard 
+          title="A long way down"
+          description="A book that let you know how long you need to go"
+          price="10,000"
+          url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
+          />
+
+          <ProductCard 
+          title="A long way down"
+          description="A book that let you know how long you need to go"
+          price="10,000"
+          url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
+          />
+        </div>
+      </section>
+
+      <!-- gallery -->
+      <section class="text-center pt-[3rem]">
+        <Subheading title="Gallery" />
+        <Heading title="Bright UK Activities" />
+        <div class="bg-secondary w-full flex flex-row px-[13rem] mt-[2rem]">
+          <div class="mr-[3rem] w-[32rem]">
+            <img :src="Bright1" class="w-full h-[332px]" alt="bright" />
+            <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright" />
+          </div>
+          <!-- video -->
+          <div class="pt-[1rem] text-center w-full">
+          <Subheading title="Videos" />
+          <headear class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</headear>
+          <div class="mt-[0.5rem] w-full h-[32rem]">
+            <img :src="Bright1" class="w-full h-[32rem]" alt="bright" />
+          </div>
+          </div>
+        </div>
+      </section>
+      <!-- end of gallery -->
+
+      <!-- start of testimonies -->
+      <section class="pt-top px-sides flex flex-row items-center">
+        <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px] mr-[3rem]" alt="bright" />
+        <div class="w-full">
+          <Subheading title="Testimony" />
+          <Heading title="What People are Saying" />
+          <div class="bg-[#F9F7EA] rounded-[10px] px-[1rem] py-[2rem] mt-[1rem]">
+            <i class="font-sm text-secondary text-xlg">
+              Bright UK has been one of the critical keys to Salesforce.com's leadership in cloud 
+              computing and its growth into an over $6 billion dollar company.
+            </i>
+
+            <div class="flex flex-row justify-between items-end mt-[2rem]">
+              <div class="flex flex-row">
+                <img :src="Niyi" class="w-[55px] h-[59px] mr-[1rem]" alt="bright" />
+                <span class="font-header text-xlg text-secondary">Niyi Adesanya <br/>
+                <span class="font-sm text-[#838080] text-xsm">CEO of FifthGear Plus.</span>
+                </span>
+              </div>
+
+              <img :src="CommentIcon1" class="w-[24px] h-[18px] mr-[1rem]" alt="comment" />
+            </div>
+          </div>
 
 
+        </div>
+
+      </section>
    
   </main>
 </template>
