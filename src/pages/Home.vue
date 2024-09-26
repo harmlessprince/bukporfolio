@@ -197,7 +197,7 @@ import Container from "@/components/Container.vue";
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <section class="px-sides flex items-center py-top">
+    <section class="px-sides flex items-center py-top bg-white">
       <div class="font-header text-xlg text-[#0F0F13] mr-[2rem] no-wrap w-[9rem]">Featured on:</div>
       <div class="flex flex-row justify-between items-center w-full">
         <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
