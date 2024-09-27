@@ -8,7 +8,7 @@ import Container from "@/components/Container.vue";
 <template>
   <section class="bg-secondary">
     <Container :style="{ 'background-image': 'url(' + HomeBanner + ')' }">
-      <section class="bg-secondary w-full text-basic pl-sides" >
+      <section class="bg-secondary w-full text-basic" >
         <div class="w-full h-[80vh] flex flex-row items-center">
           <div class="">
             <h1 class="text-basic text-hero font-hero">CHANGE YOUR THINKING</h1>
