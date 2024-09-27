@@ -133,7 +133,7 @@ const qoutes = [
      <!-- inspiration words from bright -->
      <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[6rem]">
       <Container>
-        <div class="w-full text-center">
+        <div class="w-full text-center mt-[2rem]">
       <Subheading title="Qoutes"/>
       <Heading title="Inspirational words from Bright UK"/>
       </div>

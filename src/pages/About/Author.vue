@@ -5,9 +5,7 @@ import AboutBanner from '@/assets/authorbanner.png';
 import Container from "@/components/Container.vue";
 import WhoIam from '@/assets/authorprofile.png';
 import Books from "@/components/Books.vue";
-import Heading from '@/components/heading.vue';
-import Subheading from '@/components/subheading.vue';
-import InspirationCard from '@/components/InspirationCard.vue';
+
 </script>
 
 <template>
