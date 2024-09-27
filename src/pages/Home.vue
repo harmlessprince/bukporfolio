@@ -34,31 +34,34 @@ import Videos from "@/components/Videos.vue";
     <Brands/>
 
     <!-- meet bright uk -->
-    <section class="px-sides flex flex-row items-center py-[5rem] bg-white">
-      <!-- imgContainer is used in the style at the end of the code for the dots background -->
-      <div class="w-[670px] h-[650px] mr-[2rem] relative imgContainer">
-        <img :src="WhoIam" class="w-[100%] h-[650px] relative" alt="brand"/>
-        <div class="w-full absolute left-0 bottom-5">
-          <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand"/>
+    <section class="">
+      <Container class="mt-[2.6rem] mb-[2.6rem]">
+        <div class="flex items-center bg-white">
+          <div class="w-[56.1rem] h-[54.5rem] relative imgContainer mr-[2.3rem]">
+            <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
+            <div class="w-full absolute left-0 bottom-5">
+              <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand"/>
+            </div>
+          </div>
+          <div class="w-[39.2rem]">
+            <Subheading title="Who I am"/>
+            <Heading title="Meet Bright UK"/>
+            <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing
+              multiple hats as a Speaker,
+              Author, Digital Entrepreneur, Psychologist,
+              and Coach. He is renowned for his ability to ignite mental transformations using his
+              groundbreaking #SixthSense framework.
+              Having earned a bachelor's degree in Electrical & Electronics
+              Engineering from one of Africa's top Universities of Technology, Bright realized that
+              his true passion lies in engineering minds rather than machines.
+            </p>
+            <button class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center">
+              <span class="font-sm text-xsm text-btnText mr-[1rem]">see more</span>
+              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="w-[35%]">
-        <Subheading title="Who I am"/>
-        <Heading title="Meet Bright UK"/>
-        <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing
-          multiple hats as a Speaker,
-          Author, Digital Entrepreneur, Psychologist,
-          and Coach. He is renowned for his ability to ignite mental transformations using his
-          groundbreaking #SixthSense framework.
-          Having earned a bachelor's degree in Electrical & Electronics
-          Engineering from one of Africa's top Universities of Technology, Bright realized that
-          his true passion lies in engineering minds rather than machines.
-        </p>
-        <button class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center">
-          <span class="font-sm text-xsm text-btnText mr-[1rem]">see more</span>
-          <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
-        </button>
-      </div>
+      </Container>
     </section>
     <Roles/>
     <!-- personal development section -->
