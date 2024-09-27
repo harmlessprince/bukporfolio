@@ -17,6 +17,16 @@ import Bright1 from '@/assets/bright1.png';
 import Niyi from '@/assets/niyi.png';
 import CommentIcon1 from '@/assets/commentIcon1.svg';
 import Container from "@/components/Container.vue";
+import {useBrandStore} from "@/store/brand.store.js";
+import {useRoleStore} from "@/store/roles.store.js";
+import { onMounted} from "vue";
+const brandStore = useBrandStore();
+const roleStore = useRoleStore();
+
+onMounted(() => {
+  brandStore.getBrands()
+  roleStore.getRoles()
+});
 </script>
 
 <template>
@@ -48,8 +58,7 @@ import Container from "@/components/Container.vue";
     <section class="bg-[#dadada] w-full text-center pt-[1rem] pb-[2rem]">
       <header class="text-[#727272] text-[1.5rem] font-lg">Some Brands Touched</header>
       <div class="mt-[1rem] flex flex-row items-center justify-center">
-        <img :src="Brand1" class="w-[10.7rem] h-[4.1rem] mr-[2rem]" alt="brand"/>
-        <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
+        <img :src="brand.url" class="w-[10.7rem] h-[4.1rem] mr-[2rem]" :alt="brand.name" v-for="(brand, index) in brandStore.brands" :key="index">
       </div>
     </section>
 
@@ -82,24 +91,9 @@ import Container from "@/components/Container.vue";
     </section>
 
     <div class="bg-bg1 px-sides py-[5rem] flex flex-row flex-wrap justify-between">
-      <div class="w-[222px] rounded-[10px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright"/>
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Trainer</div>
-      </div>
-
-      <div class="w-[222px] rounded-[10px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
-        <div class="bg-primary text-xsm font-lg text-center text-basic rounded-b-[10px] py-[1rem]">Author</div>
-      </div>
-
-      <div class="w-[222px] rounded-[10px]">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Entrepreneur</div>
-      </div>
-
-      <div class="w-[222px] rounded-[10px] bg-secondary">
-        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Speaker</div>
+      <div class="w-[222px] rounded-[10px]"  v-for="(role, index) in roleStore.roles" :key="index">
+        <img :src="role.image ?? Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright"/>
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">{{ role.name }}</div>
       </div>
 
     </div>
@@ -145,7 +139,7 @@ import Container from "@/components/Container.vue";
         <!-- video -->
         <div class="pt-[1rem] text-center w-full">
           <Subheading title="Videos"/>
-          <headear class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</headear>
+          <header class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</header>
           <div class="mt-[0.5rem] w-full h-[32rem]">
             <img :src="Bright1" class="w-full h-[32rem]" alt="bright"/>
           </div>
