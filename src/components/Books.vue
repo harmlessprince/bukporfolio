@@ -15,7 +15,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <section class="bg-red-500">
+  <section class="bg-white">
     <Container>
       <div class="text-center px-sides pt-[3rem] bg-white">
         <Subheading title="Books"/>
