@@ -18,6 +18,8 @@ import Container from "@/components/Container.vue";
 import HomeHeroSection from "@/components/HomeHeroSection.vue";
 import Brands from "@/components/Brands.vue";
 import Roles from "@/components/Roles.vue";
+import Books from "@/components/Books.vue";
+import Features from "@/components/features.vue";
 </script>
 
 <template>
@@ -56,38 +58,9 @@ import Roles from "@/components/Roles.vue";
         </button>
       </div>
     </section>
-
     <Roles/>
-    <!-- end of meet bright -->
-
     <!-- personal development section -->
-    <section class="text-center px-sides pt-[3rem] bg-white">
-      <Subheading title="Books"/>
-      <Heading title="Personal Development Products"/>
-      <div class="grid grid-cols-3 grid-flow-row gap-1 mt-[2rem]">
-        <ProductCard
-            title="A long way down"
-            description="A book that let you know how long you need to go"
-            price="10,000"
-            url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
-        />
-
-        <ProductCard
-            title="A long way down"
-            description="A book that let you know how long you need to go"
-            price="10,000"
-            url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
-        />
-
-        <ProductCard
-            title="A long way down"
-            description="A book that let you know how long you need to go"
-            price="10,000"
-            url="https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png"
-        />
-      </div>
-    </section>
-
+    <Books/>
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
       <Subheading title="Gallery"/>
@@ -205,16 +178,7 @@ import Roles from "@/components/Roles.vue";
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <section class="px-sides flex items-center py-top bg-white">
-      <div class="font-header text-xlg text-[#0F0F13] mr-[2rem] no-wrap w-[9rem]">Featured on:</div>
-      <div class="flex flex-row justify-between items-center w-full">
-        <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
-        <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
-        <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
-        <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
-        <img :src="Brand1" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
-      </div>
-    </section>
+    <Features/>
     <!-- end of featured -->
     <Footer/>
 

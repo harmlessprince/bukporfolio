@@ -1,15 +1,15 @@
 import {defineStore} from "pinia";
 import {collection, getDocs} from 'firebase/firestore'
-import { database} from "@/services/firebase.js";
+import {database} from "@/services/firebase.js";
 import {ref} from "vue";
 
-export const useBrandStore = defineStore("brandStore", () => {
-    // const db = useFirestore()
-    const brands = ref([]);
+export const useFeaturesStore = defineStore("featuresStore", () => {
 
-    async function getBrands() {
-        const brandsRef = collection(database, "brands");
-        const querySnapshot = await getDocs(brandsRef);
+    const features = ref([]);
+
+    async function getFeatures() {
+        const featuresRef = collection(database, "features");
+        const querySnapshot = await getDocs(featuresRef);
         const items = [];
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
@@ -20,10 +20,11 @@ export const useBrandStore = defineStore("brandStore", () => {
                 name: data.name,
             });
         });
-        brands.value = items;
+        features.value = items;
     }
+
     return {
-        getBrands: getBrands,
-        brands
+        getFeatures,
+        features
     }
 });

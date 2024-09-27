@@ -2,8 +2,6 @@
 import Bright1 from '@/assets/bright1.png';
 
 const props = defineProps(['title', "url", "price", "description"])
-
-console.log(props.title)
 </script>
 
 <template>
@@ -11,7 +9,7 @@ console.log(props.title)
     <img :src="url" class="w-[100%] h-[247px] relative" alt="book" />
     <header class="text-secondary font-header text-basic mt-[0.5rem]">{{props.title}}</header>
     <p class="text-regular font-xsm text-xsm">{{props.description}}</p>
-    <div class="text-xlg text-[#21211E] font-header">#{{props.price}}</div>
+    <div class="text-xlg text-[#21211E] font-header">#{{new Intl.NumberFormat().format(props.price)}}</div>
     <div class="flex flex-row justify-between mt-[0.5rem]">
         <button class="w-[49%] py-[0.5rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]">Add to Cart</button>
         <button class="w-[49%] py-[0.5rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px]">View more</button>
@@ -21,5 +19,4 @@ console.log(props.title)
 </template>
 
 <style scoped>
-
 </style>
