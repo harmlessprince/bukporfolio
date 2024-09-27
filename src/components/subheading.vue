@@ -1,7 +1,5 @@
 <script setup>
 const props = defineProps(['title'])
-
-console.log(props.title)
 </script>
 
 <template>

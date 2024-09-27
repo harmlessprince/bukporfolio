@@ -3,7 +3,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="bg-secondary">
+  <div class="">
     <main>
       <router-view></router-view>
     </main>

@@ -17,6 +17,7 @@ import Bright1 from '@/assets/bright1.png';
 import Niyi from '@/assets/niyi.png';
 import CommentIcon1 from '@/assets/commentIcon1.svg';
 import Container from "@/components/Container.vue";
+import { FwbCarousel } from 'flowbite-vue'
 </script>
 
 <template>
@@ -116,30 +117,81 @@ import Container from "@/components/Container.vue";
     </section>
 
     <!-- gallery -->
-    <section class="text-center pt-[3rem]">
+    <section class="bg-basic text-center pt-[3rem]">
       <Subheading title="Gallery"/>
       <Heading title="Bright UK Activities"/>
-      <div class="bg-secondary w-full flex flex-row px-sides mt-[2rem]">
-        <div class="mr-[3rem] w-[32rem]">
+      <div class="max-w-full bg-secondary">
+      <!-- <div class="max-w-[61rem] my-0 mx-auto"> -->
+        <Container>
+      <div class="w-full flex flex-row justify-between mt-[2rem]">
+        <div class="w-[24.5rem]">
           <img :src="Bright1" class="w-full h-[332px]" alt="bright"/>
           <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright"/>
         </div>
         <!-- video -->
-        <div class="pt-[1rem] text-center w-full">
+         <div class="pt-[1rem] text-center w-[35rem]">
           <Subheading title="Videos"/>
           <headear class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</headear>
-          <div class="mt-[0.5rem] w-full h-[32rem]">
-            <img :src="Bright1" class="w-full h-[32rem]" alt="bright"/>
-          </div>
+          <div class="w-full h-[34rem]">
+            <video controls width="100%" class="h-[34rem]">
+              <source src="@/assets/video1.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            
+            <!-- <vueper-slides class="video-slider" bullets>
+              <vueper-slide>
+                <video controls width="100%">
+                  <source src="@/assets/video1.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </vueper-slide>
+      
+              <vueper-slide>
+                <video controls width="100%">
+                  <source src="@/assets/video1.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </vueper-slide>
+            </vueper-slides> -->
+          <!-- <vueper-slides  class="h-[34rem] bg-basic">
+            <vueper-slide 
+            class="h-[34rem] bg-basic"
+             v-for="(slide, i) in slides"
+            :key="i" 
+            :video= slide.video
+            /> -->
+            <!-- <vueper-slide>
+              hello -->
+              <!-- <template>
+              <video controls width="100%" height="100%">
+                <source src="@/assets/video1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </template> -->
+            <!-- </vueper-slide>
+            <vueper-slide> -->
+              <!-- <video controls  width="100%" height="100%">
+                <source src="@/assets/video1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video> -->
+              <!-- hello world
+            </vueper-slide> -->
+          <!-- </vueper-slides> -->
+        </div>
         </div>
       </div>
+    </Container>
+    <!-- </div> -->
+  </div>
     </section>
     <!-- end of gallery -->
 
     <!-- start of testimonies -->
-    <section class="py-top px-sides flex flex-row items-center bg-white">
-      <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px] mr-[3rem]" alt="bright"/>
-      <div class="w-full">
+    <section class="py-top w-full bg-basic">
+      <Container>
+        <div class="w-full flex flex-row justify-between items-center">
+      <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px]" alt="bright"/>
+      <div class="w-[35rem]">
         <Subheading title="Testimony"/>
         <Heading title="What People are Saying"/>
         <!-- this part will be dynamic, we will work on it -->
@@ -175,6 +227,8 @@ import Container from "@/components/Container.vue";
         </div>
         <!-- dynamic part of testimony ends here -->
       </div>
+    </div>
+    </Container>
     </section>
     <!-- end of testimony -->
 
