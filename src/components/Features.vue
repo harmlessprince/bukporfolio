@@ -1,7 +1,7 @@
 <script setup>
 
 import {useFeaturesStore} from "@/store/features.store.js";
-import {onBeforeMount, onMounted} from "vue";
+import {onBeforeMount, onMounted, ref} from "vue";
 import Brand1 from "@/assets/brand1.svg";
 import Brand2 from "@/assets/brand2.svg";
 
@@ -9,6 +9,7 @@ const store = useFeaturesStore()
 onBeforeMount(() => {
   store.getFeatures();
 });
+
 </script>
 
 <template>
