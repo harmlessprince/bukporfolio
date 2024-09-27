@@ -21,43 +21,47 @@ import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
+import Videos from "@/components/Videos.vue";
 </script>
 
 <template>
   <main class="text-primary">
     <Navigation/>
-    <Sidebar/>
+<!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
     <HomeHeroSection/>
     <!-- brands touched starts here -->
     <Brands/>
 
     <!-- meet bright uk -->
-    <section class="px-sides flex flex-row items-center py-[5rem] bg-white">
-      <!-- imgContainer is used in the style at the end of the code for the dots background -->
-      <div class="w-[670px] h-[650px] mr-[2rem] relative imgContainer">
-        <img :src="WhoIam" class="w-[100%] h-[650px] relative" alt="brand"/>
-        <div class="w-full absolute left-0 bottom-5">
-          <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand"/>
+    <section class="">
+      <Container class="mt-[2.6rem] mb-[2.6rem]">
+        <div class="flex items-center bg-white">
+          <div class="w-[56.1rem] h-[54.5rem] relative imgContainer mr-[2.3rem]">
+            <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
+            <div class="w-full absolute left-0 bottom-5">
+              <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand"/>
+            </div>
+          </div>
+          <div class="w-[39.2rem]">
+            <Subheading title="Who I am"/>
+            <Heading title="Meet Bright UK"/>
+            <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing
+              multiple hats as a Speaker,
+              Author, Digital Entrepreneur, Psychologist,
+              and Coach. He is renowned for his ability to ignite mental transformations using his
+              groundbreaking #SixthSense framework.
+              Having earned a bachelor's degree in Electrical & Electronics
+              Engineering from one of Africa's top Universities of Technology, Bright realized that
+              his true passion lies in engineering minds rather than machines.
+            </p>
+            <button class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center">
+              <span class="font-sm text-xsm text-btnText mr-[1rem]">see more</span>
+              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="w-[35%]">
-        <Subheading title="Who I am"/>
-        <Heading title="Meet Bright UK"/>
-        <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing
-          multiple hats as a Speaker,
-          Author, Digital Entrepreneur, Psychologist,
-          and Coach. He is renowned for his ability to ignite mental transformations using his
-          groundbreaking #SixthSense framework.
-          Having earned a bachelor's degree in Electrical & Electronics
-          Engineering from one of Africa's top Universities of Technology, Bright realized that
-          his true passion lies in engineering minds rather than machines.
-        </p>
-        <button class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center">
-          <span class="font-sm text-xsm text-btnText mr-[1rem]">see more</span>
-          <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
-        </button>
-      </div>
+      </Container>
     </section>
     <Roles/>
     <!-- personal development section -->
@@ -67,67 +71,9 @@ import Testimonies from "@/components/Testimonies.vue";
       <Subheading title="Gallery"/>
       <Heading title="Bright UK Activities"/>
       <div class="max-w-full bg-secondary">
-        <!-- <div class="max-w-[61rem] my-0 mx-auto"> -->
         <Container>
-          <div class="w-full flex flex-row justify-between mt-[2rem]">
-            <div class="w-[24.5rem]">
-              <img :src="Bright1" class="w-full h-[332px]" alt="bright"/>
-              <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright"/>
-            </div>
-            <!-- video -->
-            <div class="pt-[1rem] text-center w-[35rem]">
-              <Subheading title="Videos"/>
-              <header class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</header>
-              <div class="w-full h-[34rem]">
-                <video controls width="100%" class="h-[34rem]">
-                  <source src="@/assets/video1.webm" type="video/webm"/>
-                  Your browser does not support the video tag.
-                </video>
-
-                <!-- <vueper-slides class="video-slider" bullets>
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-                </vueper-slides> -->
-                <!-- <vueper-slides  class="h-[34rem] bg-basic">
-                  <vueper-slide
-                  class="h-[34rem] bg-basic"
-                   v-for="(slide, i) in slides"
-                  :key="i"
-                  :video= slide.video
-                  /> -->
-                <!-- <vueper-slide>
-                  hello -->
-                <!-- <template>
-                <video controls width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
-              </template> -->
-                <!-- </vueper-slide>
-                <vueper-slide> -->
-                <!-- <video controls  width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video> -->
-                <!-- hello world
-              </vueper-slide> -->
-                <!-- </vueper-slides> -->
-              </div>
-            </div>
-          </div>
+          <Videos/>
         </Container>
-        <!-- </div> -->
       </div>
     </section>
     <!-- end of gallery -->

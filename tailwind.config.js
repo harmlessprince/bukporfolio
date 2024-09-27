@@ -11,13 +11,13 @@ export default {
     extend: {
 
       fontSize:{
-          xsm: "0.875rem", //14px
-          sm: "0.93751rem", //15px
-          lg: "1.125rem", //18px
-          xlg: "1.25rem", //20px
-          basic: "1rem", //16px
-          hero: "3.25rem", //52px
-          header: "2.25rem" //36px
+          xsm: "1.4rem", //14px
+          sm: "1.5rem", //15px
+          lg: "1.8rem", //18px
+          xlg: "2rem", //20px
+          basic: "1.6rem", //16px
+          hero: "5.2rem", //52px
+          header: "3.6rem" //36px
       },
       padding: {
         msides: '3rem', //for mobile
@@ -60,6 +60,5 @@ export default {
       },
     },
   },
-  plugins: [],
 }
 
