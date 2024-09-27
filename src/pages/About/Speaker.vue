@@ -103,7 +103,7 @@ const qoutes = [
     <!-- about hero section -->
      <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
-        <h1 class="text-forty font-xlg text-basic">Speaker</h1>
+        <h1 class="text-forty font-xlg text-basicColor">Speaker</h1>
         <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and impact</p>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>

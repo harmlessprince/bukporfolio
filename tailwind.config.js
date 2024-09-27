@@ -44,7 +44,7 @@ export default {
       colors:{
         primary: "#C7AE2E",
         secondary: "#000000", //black
-        basic: "#FFFFFF", //white
+        basicColor: "#FFFFFF", //white
         navLinkColor: "#F3F3F3",
         bannerNavColor: "#C3C3C3",
         btnText: "#242424",

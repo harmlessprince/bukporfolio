@@ -13,7 +13,7 @@ import Instagram from '@/assets/instagram.svg';
 
     <div class="text-basic font-xsm text-xsm flex flex-row w-full justify-center mt-sm">
       <RouterLink :to="{ name: 'home'}" class="mr-[3rem] hover:text-primary">Home</RouterLink>
-      <RouterLink :to="{ name: 'about'}" class="mr-[3rem] hover:text-primary">About</RouterLink>
+      <RouterLink :to="{ name: 'speaker'}" class="mr-[3rem] hover:text-primary">About</RouterLink>
       <span class="mr-[3rem] hover:text-primary">Services</span>
       <span class="mr-[3rem] hover:text-primary">Get in touch</span>
       <span class="hover:text-primary">FAQS</span>

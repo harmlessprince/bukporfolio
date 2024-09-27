@@ -7,7 +7,7 @@ const props = defineProps(['menuState'])
 
     <div class="text-navLink font-xsm text-sm w-full text-center">
       <RouterLink :to="{ name: 'home'}" class="">Home</RouterLink>
-      <RouterLink :to="{ name: 'about'}" class="">About</RouterLink>
+      <RouterLink :to="{ name: 'speaker'}" class="">About</RouterLink>
       <span class="">Services</span>
       <span class="">Shop</span>
       <span class="">Blog</span>

@@ -25,7 +25,7 @@ const toggleMenu = () => {
                 </RouterLink>
               </li>
               <li>
-                <RouterLink :to="{ name: 'about'}" class="block py-2 px-3  hover:text-primary">About
+                <RouterLink :to="{ name: 'speaker'}" class="block py-2 px-3  hover:text-primary">About
                 </RouterLink>
               </li>
               <li>
