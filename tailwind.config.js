@@ -20,6 +20,8 @@ export default {
           header: "2.25rem" //36px
       },
       padding: {
+        msides: '3rem', //for mobile
+        tsides: '8rem', //tablet
         sides: '15rem', 
         top: "3rem"
       },

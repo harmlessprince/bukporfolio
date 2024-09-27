@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section class="max-w-[128rem] my-0 mx-auto w-full">
+  <section class="max-w-[61rem] my-0 mx-auto">
     <slot></slot>
   </section>
 </template>

@@ -15,7 +15,11 @@
     "pinia": "^2.2.2",
     "vue": "^3.4.37",
     "vue-router": "4",
+<<<<<<< HEAD
     "vuefire": "^3.2.0"
+=======
+    "vueperslides": "^3.5.1"
+>>>>>>> 5af222edded287e3a0fff8eaf957a9f74953d8c5
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",

@@ -1,6 +1,7 @@
 <script setup>
 import Navigation from '../components/navigation.vue';
-import Footer from '../components/footer.vue';
+import Sidebar from '../components/sidebar.vue'; 
+import Footer from '../components/footer.vue'; 
 import Heading from '../components/heading.vue';
 import ProductCard from '../components/productcard.vue';
 import Subheading from '../components/subheading.vue';
@@ -9,7 +10,6 @@ import HomeBright1 from '@/assets/home_banner_bright.png';
 import Brand1 from '@/assets/brand1.svg';
 import Brand2 from '@/assets/brand2.svg';
 import WhoIam from '@/assets/who_i_am.png';
-import MeetFrame from '@/assets/meetframe.svg';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
 import UkLogo from '@/assets/ukLogo.svg';
@@ -17,40 +17,13 @@ import Bright1 from '@/assets/bright1.png';
 import Niyi from '@/assets/niyi.png';
 import CommentIcon1 from '@/assets/commentIcon1.svg';
 import Container from "@/components/Container.vue";
-import {useBrandStore} from "@/store/brand.store.js";
-import {useRoleStore} from "@/store/roles.store.js";
-import { onMounted} from "vue";
-const brandStore = useBrandStore();
-const roleStore = useRoleStore();
-
-onMounted(() => {
-  brandStore.getBrands()
-  roleStore.getRoles()
-});
+import { FwbCarousel } from 'flowbite-vue'
 </script>
 
 <template>
-
-
-  <main class="">
-    <Navigation/>
-    <Container class="text-basic flex h-[100vh]" :style="{ 'background-image': 'url(' + HomeBanner + ')' }">
-      <div class="w-full flex flex-row items-center justify-between  h-full">
-        <div class="min-w-[66.8rem]">
-          <h1 class="text-basic text-hero font-hero">CHANGE YOUR THINKING</h1>
-          <h2 class="text-primary text-[2.75rem] font-header">TO CHANGE YOUR LIFE</h2>
-          <h3 class="text-[#949494] text-[24px] font-sm mb-[3rem] mt-[1rem]">You are not disadvantaged as you think, you
-            are only disadvantaged <br/> by your thinking</h3>
-          <button
-              class="bg-primary rounded-[8px] border border-primary text-btnText text-xsm py-[1.3rem] px-[4rem] font-sm">
-            Book Bright UK
-          </button>
-        </div>
-        <div class="max-w-[49.4rem] h-full">
-          <img :src="HomeBright1" class="w-full" alt="homebanner"/>
-        </div>
-      </div>
-    </Container>
+  <main class="text-primary">
+    <Navigation />
+    <Sidebar />
     <!-- hero/banner starts here -->
 
 
@@ -58,7 +31,8 @@ onMounted(() => {
     <section class="bg-[#dadada] w-full text-center pt-[1rem] pb-[2rem]">
       <header class="text-[#727272] text-[1.5rem] font-lg">Some Brands Touched</header>
       <div class="mt-[1rem] flex flex-row items-center justify-center">
-        <img :src="brand.url" class="w-[10.7rem] h-[4.1rem] mr-[2rem]" :alt="brand.name" v-for="(brand, index) in brandStore.brands" :key="index">
+        <img :src="Brand1" class="w-[10.7rem] h-[4.1rem] mr-[2rem]" alt="brand"/>
+        <img :src="Brand2" class="w-[10.7rem] h-[4.1rem]" alt="brand"/>
       </div>
     </section>
 
@@ -91,9 +65,24 @@ onMounted(() => {
     </section>
 
     <div class="bg-bg1 px-sides py-[5rem] flex flex-row flex-wrap justify-between">
-      <div class="w-[222px] rounded-[10px]"  v-for="(role, index) in roleStore.roles" :key="index">
-        <img :src="role.image ?? Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright"/>
-        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">{{ role.name }}</div>
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" alt="bright"/>
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Trainer</div>
+      </div>
+
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
+        <div class="bg-primary text-xsm font-lg text-center text-basic rounded-b-[10px] py-[1rem]">Author</div>
+      </div>
+
+      <div class="w-[222px] rounded-[10px]">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Entrepreneur</div>
+      </div>
+
+      <div class="w-[222px] rounded-[10px] bg-secondary">
+        <img :src="Bright1" class="w-[100%] h-[241px] relative rounded-t-[10px]" alt="bright"/>
+        <div class="bg-primary text-xsm font-lg text-center text-basic py-[1rem] rounded-b-[10px]">Speaker</div>
       </div>
 
     </div>
@@ -128,30 +117,81 @@ onMounted(() => {
     </section>
 
     <!-- gallery -->
-    <section class="text-center pt-[3rem]">
+    <section class="bg-basic text-center pt-[3rem]">
       <Subheading title="Gallery"/>
       <Heading title="Bright UK Activities"/>
-      <div class="bg-secondary w-full flex flex-row px-sides mt-[2rem]">
-        <div class="mr-[3rem] w-[32rem]">
+      <div class="max-w-full bg-secondary">
+      <!-- <div class="max-w-[61rem] my-0 mx-auto"> -->
+        <Container>
+      <div class="w-full flex flex-row justify-between mt-[2rem]">
+        <div class="w-[24.5rem]">
           <img :src="Bright1" class="w-full h-[332px]" alt="bright"/>
           <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright"/>
         </div>
         <!-- video -->
-        <div class="pt-[1rem] text-center w-full">
+         <div class="pt-[1rem] text-center w-[35rem]">
           <Subheading title="Videos"/>
-          <header class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</header>
-          <div class="mt-[0.5rem] w-full h-[32rem]">
-            <img :src="Bright1" class="w-full h-[32rem]" alt="bright"/>
-          </div>
+          <headear class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</headear>
+          <div class="w-full h-[34rem]">
+            <video controls width="100%" class="h-[34rem]">
+              <source src="@/assets/video1.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            
+            <!-- <vueper-slides class="video-slider" bullets>
+              <vueper-slide>
+                <video controls width="100%">
+                  <source src="@/assets/video1.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </vueper-slide>
+      
+              <vueper-slide>
+                <video controls width="100%">
+                  <source src="@/assets/video1.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </vueper-slide>
+            </vueper-slides> -->
+          <!-- <vueper-slides  class="h-[34rem] bg-basic">
+            <vueper-slide 
+            class="h-[34rem] bg-basic"
+             v-for="(slide, i) in slides"
+            :key="i" 
+            :video= slide.video
+            /> -->
+            <!-- <vueper-slide>
+              hello -->
+              <!-- <template>
+              <video controls width="100%" height="100%">
+                <source src="@/assets/video1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </template> -->
+            <!-- </vueper-slide>
+            <vueper-slide> -->
+              <!-- <video controls  width="100%" height="100%">
+                <source src="@/assets/video1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video> -->
+              <!-- hello world
+            </vueper-slide> -->
+          <!-- </vueper-slides> -->
+        </div>
         </div>
       </div>
+    </Container>
+    <!-- </div> -->
+  </div>
     </section>
     <!-- end of gallery -->
 
     <!-- start of testimonies -->
-    <section class="py-top px-sides flex flex-row items-center bg-white">
-      <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px] mr-[3rem]" alt="bright"/>
-      <div class="w-full">
+    <section class="py-top w-full bg-basic">
+      <Container>
+        <div class="w-full flex flex-row justify-between items-center">
+      <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px]" alt="bright"/>
+      <div class="w-[35rem]">
         <Subheading title="Testimony"/>
         <Heading title="What People are Saying"/>
         <!-- this part will be dynamic, we will work on it -->
@@ -187,6 +227,8 @@ onMounted(() => {
         </div>
         <!-- dynamic part of testimony ends here -->
       </div>
+    </div>
+    </Container>
     </section>
     <!-- end of testimony -->
 
