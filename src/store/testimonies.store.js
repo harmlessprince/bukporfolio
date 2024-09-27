@@ -16,12 +16,11 @@ export const useTestimoniesStore = defineStore("testimoniesStore", () => {
             const data = doc.data();
             items.push({
                 id: doc.id,
-                title: data.name,
-                summary: data.summary,
-                description: data.description,
-                forms: data.forms,
-                default: data?.forms?.find(item => item.default === true),
-                image: data.main_image,
+                name: data.name,
+                quote: data.quote,
+                position: data.position,
+                company: data.company,
+                image: data.image,
             });
         });
         testimonies.value = items;

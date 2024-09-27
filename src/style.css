@@ -15,7 +15,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background: #000000;
+    background: white;
 }
 
 @tailwind base;

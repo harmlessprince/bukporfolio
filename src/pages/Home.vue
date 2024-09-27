@@ -19,7 +19,9 @@ import HomeHeroSection from "@/components/HomeHeroSection.vue";
 import Brands from "@/components/Brands.vue";
 import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
-import Features from "@/components/features.vue";
+import Features from "@/components/Features.vue";
+import Testimonies from "@/components/Testimonies.vue";
+import Videos from "@/components/Videos.vue";
 </script>
 
 <template>
@@ -66,67 +68,9 @@ import Features from "@/components/features.vue";
       <Subheading title="Gallery"/>
       <Heading title="Bright UK Activities"/>
       <div class="max-w-full bg-secondary">
-        <!-- <div class="max-w-[61rem] my-0 mx-auto"> -->
         <Container>
-          <div class="w-full flex flex-row justify-between mt-[2rem]">
-            <div class="w-[24.5rem]">
-              <img :src="Bright1" class="w-full h-[332px]" alt="bright"/>
-              <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright"/>
-            </div>
-            <!-- video -->
-            <div class="pt-[1rem] text-center w-[35rem]">
-              <Subheading title="Videos"/>
-              <headear class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</headear>
-              <div class="w-full h-[34rem]">
-                <video controls width="100%" class="h-[34rem]">
-                  <source src="@/assets/video1.webm" type="video/webm"/>
-                  Your browser does not support the video tag.
-                </video>
-
-                <!-- <vueper-slides class="video-slider" bullets>
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-                </vueper-slides> -->
-                <!-- <vueper-slides  class="h-[34rem] bg-basic">
-                  <vueper-slide
-                  class="h-[34rem] bg-basic"
-                   v-for="(slide, i) in slides"
-                  :key="i"
-                  :video= slide.video
-                  /> -->
-                <!-- <vueper-slide>
-                  hello -->
-                <!-- <template>
-                <video controls width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
-              </template> -->
-                <!-- </vueper-slide>
-                <vueper-slide> -->
-                <!-- <video controls  width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video> -->
-                <!-- hello world
-              </vueper-slide> -->
-                <!-- </vueper-slides> -->
-              </div>
-            </div>
-          </div>
+          <Videos/>
         </Container>
-        <!-- </div> -->
       </div>
     </section>
     <!-- end of gallery -->
@@ -136,42 +80,7 @@ import Features from "@/components/features.vue";
       <Container>
         <div class="w-full flex flex-row justify-between items-center">
           <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px]" alt="bright"/>
-          <div class="w-[35rem]">
-            <Subheading title="Testimony"/>
-            <Heading title="What People are Saying"/>
-            <!-- this part will be dynamic, we will work on it -->
-            <div class="bg-[#F9F7EA] rounded-[10px] px-[1rem] py-[2rem] mt-[1rem]">
-              <i class="font-sm text-secondary text-xlg">
-                Bright UK has been one of the critical keys to Salesforce.com's leadership in cloud
-                computing and its growth into an over $6 billion dollar company.
-              </i>
-
-              <div class="flex flex-row justify-between items-end mt-[2rem]">
-                <div class="flex flex-row">
-                  <img :src="Niyi" class="w-[55px] h-[59px] mr-[1rem]" alt="bright"/>
-                  <span class="font-header text-xlg text-secondary">Niyi Adesanya <br/>
-                <span class="font-sm text-[#838080] text-xsm">CEO of FifthGear Plus.</span>
-                </span>
-                </div>
-                <img :src="CommentIcon1" class="w-[24px] h-[18px] mr-[1rem]" alt="comment"/>
-              </div>
-            </div>
-            <div class="mt-[2rem] flex flex-row justify-between items-center">
-              <div>
-                <!-- using google material icon, cdn link is in the index page -->
-                <span class="material-icons w-[26px] h-[27px] text-[#B5B5B5] mr-[2rem] ">arrow_back</span>
-                <span class="material-icons w-[26px] h-[27px] text-[#151515]">arrow_forward</span>
-              </div>
-
-              <div class="flex flex-row">
-                <img :src="Niyi" class="w-[42px] h-[45px]" alt="bright"/>
-                <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright"/>
-                <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright"/>
-                <img :src="Niyi" class="w-[42px] h-[45px] opacity-50" alt="bright"/>
-              </div>
-            </div>
-            <!-- dynamic part of testimony ends here -->
-          </div>
+          <Testimonies/>
         </div>
       </Container>
     </section>
