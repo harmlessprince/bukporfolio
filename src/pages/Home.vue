@@ -21,6 +21,7 @@ import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
+import Videos from "@/components/Videos.vue";
 </script>
 
 <template>
@@ -67,67 +68,9 @@ import Testimonies from "@/components/Testimonies.vue";
       <Subheading title="Gallery"/>
       <Heading title="Bright UK Activities"/>
       <div class="max-w-full bg-secondary">
-        <!-- <div class="max-w-[61rem] my-0 mx-auto"> -->
         <Container>
-          <div class="w-full flex flex-row justify-between mt-[2rem]">
-            <div class="w-[24.5rem]">
-              <img :src="Bright1" class="w-full h-[332px]" alt="bright"/>
-              <img :src="Bright1" class="w-full h-[332px] mt-[1rem]" alt="bright"/>
-            </div>
-            <!-- video -->
-            <div class="pt-[1rem] text-center w-[35rem]">
-              <Subheading title="Videos"/>
-              <header class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</header>
-              <div class="w-full h-[34rem]">
-                <video controls width="100%" class="h-[34rem]">
-                  <source src="@/assets/video1.webm" type="video/webm"/>
-                  Your browser does not support the video tag.
-                </video>
-
-                <!-- <vueper-slides class="video-slider" bullets>
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-
-                  <vueper-slide>
-                    <video controls width="100%">
-                      <source src="@/assets/video1.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </vueper-slide>
-                </vueper-slides> -->
-                <!-- <vueper-slides  class="h-[34rem] bg-basic">
-                  <vueper-slide
-                  class="h-[34rem] bg-basic"
-                   v-for="(slide, i) in slides"
-                  :key="i"
-                  :video= slide.video
-                  /> -->
-                <!-- <vueper-slide>
-                  hello -->
-                <!-- <template>
-                <video controls width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
-              </template> -->
-                <!-- </vueper-slide>
-                <vueper-slide> -->
-                <!-- <video controls  width="100%" height="100%">
-                  <source src="@/assets/video1.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video> -->
-                <!-- hello world
-              </vueper-slide> -->
-                <!-- </vueper-slides> -->
-              </div>
-            </div>
-          </div>
+          <Videos/>
         </Container>
-        <!-- </div> -->
       </div>
     </section>
     <!-- end of gallery -->
