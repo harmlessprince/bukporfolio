@@ -27,7 +27,7 @@ import Videos from "@/components/Videos.vue";
 <template>
   <main class="text-primary">
     <Navigation/>
-    <Sidebar/>
+<!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
     <HomeHeroSection/>
     <!-- brands touched starts here -->
