@@ -6,10 +6,8 @@ import Container from "@/components/Container.vue";
 import WhoIam from '@/assets/trainerprofile.png';
 import Brands from "@/components/Brands.vue";
 import Heading from '@/components/heading.vue';
-import Subheading from '@/components/subheading.vue';
 import UkLogo from '@/assets/ukLogo.svg';
 import Coach from '@/assets/trainerImage2.png';
-import InspirationCard from '@/components/InspirationCard.vue';
 
 </script>
 
@@ -49,7 +47,7 @@ import InspirationCard from '@/components/InspirationCard.vue';
      <Brands />
 
      <Container>
-        <div class="flex flex-row flex-wrap justify-between items-end my-[5rem]">
+        <div class="flex flex-row justify-between items-end my-[5rem]">
         <div class="w-[47.9rem]">
             <Heading title="Coach" />
             <p class="font-xsm text-basic text-[#2B2B2B] mb-[0.5rem]">
