@@ -57,7 +57,7 @@ import Coach from '@/assets/trainerImage2.png';
             </p>
 
             <div>
-            <button class="block h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm"> Book a Personal Coaching Session</button>
+            <button class="block h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary"> Book a Personal Coaching Session</button>
             <br/>
             <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your team for a Group Coaching Session</button>
             </div>
