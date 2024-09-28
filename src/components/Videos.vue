@@ -27,7 +27,6 @@ const playVideo = (video) => {
 };
 
 const isYouTube = (url) => {
-  console.log(url);
   return url.includes('youtube.com') || url.includes('youtu.be');
 };
 const getYouTubeEmbedUrl = (url) => {
