@@ -17,10 +17,10 @@ onBeforeMount(() => {
 <template>
   <section class=''>
     <Container>
-      <div class="text-center pt-[3rem]">
+      <div class="text-center pt-[3rem] ">
         <Subheading title="Books"/>
         <Heading title="Personal Development Products"/>
-        <div class="grid grid-flow-row gap-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-sm w-full">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem]">
           <ProductCard
               :title="book.title"
               :description="book.summary"
