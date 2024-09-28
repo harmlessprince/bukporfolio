@@ -13,11 +13,13 @@ const props = defineProps(['title', "url", "price", "description"])
        {{props.description}}
      </p>
    </div>
-    <div class="text-xlg text-[#21211E] font-header">#{{new Intl.NumberFormat().format(props.price)}}</div>
-    <div class="flex flex-row justify-between mt-[0.5rem]">
-        <button class="w-[13.7rem]  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]">Add to Cart</button>
-        <button class="w-[13.7rem]  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px]">View more</button>
-    </div>
+   <div class="flex flex-col justify-between">
+     <div class="text-xlg text-[#21211E] font-header">#{{new Intl.NumberFormat().format(props.price)}}</div>
+     <div class="flex flex-row justify-between mt-[0.5rem]">
+       <button class="w-[13.7rem]  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]">Add to Cart</button>
+       <button class="w-[13.7rem]  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px]">View more</button>
+     </div>
+   </div>
  </div>
 </template>
 
