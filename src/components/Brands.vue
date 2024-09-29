@@ -13,18 +13,31 @@ onBeforeMount(() => {
 
 <template>
   <section class="bg-[#dadada]">
-  <Container>
-    <section class=" w-full text-center pt-[1rem] pb-[2rem] overflow-x-auto">
-      <header class="text-[#727272] text-[1.5rem] font-lg">Some Brands Touched</header>
-      <div class="mt-[1rem] flex flex-row items-center justify-center overflow-x-auto overflow-hidden">
-        <img :src="brand.image ?? Brand1" class="w-[17.1rem] h-[6.5rem] mr-[2rem] grayscale" :alt="brand.name"
-             v-for="(brand, index) in brandStore.brands" :key="index">
+    <Container>
+      <div
+        class="w-full text-center pt-[1.4rem] pb-[5rem] overflow-x-scroll no-scrollbar"
+      >
+        <h3 class="text-[#727272] text-[2.4rem] font-lg mb-[2.5rem]">
+          Some Brands Touched
+        </h3>
+        <div
+          class="flex flex-row items-center gap-[4.6rem] justify-start overflow-x-scroll no-scrollbar"
+        >
+          <div
+            class="w-[17.1rem] h-[6.5rem]"
+            v-for="(brand, index) in brandStore.brands"
+            :key="index"
+          >
+            <img
+              :src="brand.image ?? Brand1"
+              class="w-full h-full grayscale object-cover object-center"
+              :alt="brand.name"
+            />
+          </div>
+        </div>
       </div>
-    </section>
-  </Container>
+    </Container>
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

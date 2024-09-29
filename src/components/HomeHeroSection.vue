@@ -6,24 +6,41 @@ import Container from "@/components/Container.vue";
 </script>
 
 <template>
-  <section class="bg-secondary">
-    <Container :style="{ 'background-image': 'url(' + HomeBanner + ')' }">
-      <section class="bg-secondary w-full text-basic" >
-        <div class="w-full h-[80vh] flex flex-row items-center">
-          <div class="">
-            <h1 class="text-basic text-hero font-hero">CHANGE YOUR THINKING</h1>
-            <h2  class="text-primary text-[2.75rem] font-header">TO CHANGE YOUR LIFE</h2>
-            <h3 class="text-[#949494] text-[24px] font-sm mb-[3rem] mt-[1rem]">You are not disadvantaged as you think, you are only disadvantaged <br/> by your thinking</h3>
-            <button class="bg-primary rounded-[8px] border border-primary text-btnText text-xsm py-[1.3rem] px-[4rem] font-sm">Book Bright UK</button>
-          </div>
-                  <img :src="HomeBright1" class="w-[32rem] h-[83vh]" alt="homebanner" />
+  <section class="bg-secondary mt-[9.3rem] h-[52.2rem] relative">
+    <Container
+      class="w-[98rem] h-full overflow-hidden text-basic flex justify-center items-center flex-nowrap gap-4"
+      :style="{ 'background-image': 'url(' + HomeBanner + ')' }"
+    >
+      <div class="grow-[2] flex-shrink-0 basis-0">
+        <div>
+          <h1 class="text-white font-bold font-title text-[4.8rem] mb-[2.1rem]">
+            CHANGE YOUR THINKING
+          </h1>
+          <h2
+            class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem]"
+          >
+            TO CHANGE YOUR LIFE
+          </h2>
+          <h3 class="text-[#949494] text-[2rem] mb-[4.4rem] font-normal">
+            You are not disadvantaged as you think, you are only disadvantaged
+            by your thinking
+          </h3>
+          <button
+            class="bg-primary rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] px-[6rem] font-sm"
+          >
+            Book Bright UK
+          </button>
         </div>
-      </section>
+      </div>
+      <div class="h-full w-full flex-grow flex-shrink-0 basis-0">
+        <img
+          :src="HomeBright1"
+          class="w-full h-full object-cover object-center"
+          alt="homebanner"
+        />
+      </div>
     </Container>
   </section>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
