@@ -6,6 +6,8 @@ import Author from "@/pages/About/Author.vue";
 import Trainer from "@/pages/About/Trainer.vue";
 import Entrepreneur from "@/pages/About/Entrepreneur.vue";
 import Products from "@/pages/Shop/Products.vue";
+import Cart from "@/pages/Shop/Cart.vue";
+import Item from "@/pages/Shop/Item.vue";
 import NotFound from "@/pages/NotFound.vue";
 
 const routes = [
@@ -15,6 +17,9 @@ const routes = [
     {path: '/about/trainer', component: Trainer, name: 'trainer'},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
     {path: '/shop/products', component: Products, name: 'products'},
+    {path: '/shop/item', component: Item, name: 'item'},
+    {path: '/shop/cart', component: Cart, name: 'cart'},
+    
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
