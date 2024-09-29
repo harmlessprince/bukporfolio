@@ -14,7 +14,7 @@ export const useVideoStore = defineStore("videoStore", () => {
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
-            console.log("thumbnail" +data.thumbnail)
+
             items.push({
                 id: doc.id,
                 title: data.title,

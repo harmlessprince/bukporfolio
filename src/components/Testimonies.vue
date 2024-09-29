@@ -90,7 +90,7 @@ function previousQuote() {
         <div class="flex flex-row">
           <img :src="item.image" :alt="item.name" v-for="(item, index) in store.testimonies" :key="index"
                class="w-[4.2rem] h-[4.5rem] rounded-full space-x-1"
-               :class="currentQuote.id === item.id ? 'opacity-40': ''"
+               :class="currentQuote?.id === item.id ? 'opacity-40': ''"
                @click="onQuoteChange(index)"/>
         </div>
       </div>

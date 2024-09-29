@@ -11,11 +11,11 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <section class="bg-secondary">
+  <section class="bg-secondary border border-x-0 border-b-white border-b-1">
     <Container>
       <nav class="h-[9.3rem] w-full justify-around items-center bg-secondary">
         <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="Logo" class="w-[5.3rem] h-[5.3rem]" alt="My Logo"/>
           </a>
           <div class="font-xsm text-lg leading-5 p-12 flex justify-between">
@@ -25,7 +25,7 @@ const toggleMenu = () => {
                 </RouterLink>
               </li>
               <li>
-                <RouterLink :to="{ name: 'about'}" class="block py-2 px-3  hover:text-primary">About
+                <RouterLink :to="{ name: 'speaker'}" class="block py-2 px-3  hover:text-primary">About
                 </RouterLink>
               </li>
               <li>

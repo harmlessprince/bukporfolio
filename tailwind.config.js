@@ -16,6 +16,7 @@ export default {
           lg: "1.8rem", //18px
           xlg: "2rem", //20px
           basic: "1.6rem", //16px
+          forty: "4.0rem", //40px
           hero: "5.2rem", //52px
           header: "3.6rem" //36px
       },
@@ -26,15 +27,17 @@ export default {
         top: "3rem"
       },
       margin: {
-        // sides: '15rem', 
         top: "3rem",
-        sm: "2rem"
+        sm: "2rem",
+        regular: "5rem",
+        xsm: "1rem"
       },
 
       fontWeight: {
         xsm: "400",
         sm: "500",
         lg: "600",
+        xlg: "900",
         header: "700",
         hero: "800"
     },
@@ -42,8 +45,9 @@ export default {
       colors:{
         primary: "#C7AE2E",
         secondary: "#000000", //black
-        basic: "#FFFFFF", //white
+        basicColor: "#FFFFFF", //white
         navLinkColor: "#F3F3F3",
+        bannerNavColor: "#C3C3C3",
         btnText: "#242424",
         regular: "#757575",
         bg1: "#DADADA"
