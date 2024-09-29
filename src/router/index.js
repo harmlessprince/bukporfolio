@@ -5,6 +5,7 @@ import Speaker from "@/pages/About/Speaker.vue";
 import Author from "@/pages/About/Author.vue";
 import Trainer from "@/pages/About/Trainer.vue";
 import Entrepreneur from "@/pages/About/Entrepreneur.vue";
+import Products from "@/pages/Shop/Products.vue";
 import NotFound from "@/pages/NotFound.vue";
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
     {path: '/about/author', component: Author, name: 'author'},
     {path: '/about/trainer', component: Trainer, name: 'trainer'},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
+    {path: '/shop/products', component: Products, name: 'products'},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
