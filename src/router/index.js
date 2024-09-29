@@ -20,7 +20,6 @@ const routes = [
     {path: '/shop/products', component: Products, name: 'products'},
     {path: '/shop/item', component: Item, name: 'item'},
     {path: '/shop/cart', component: Cart, name: 'cart'},
-    
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",

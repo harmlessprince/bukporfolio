@@ -2,7 +2,9 @@
 import Logo from '@/assets/logo.svg';
 import Container from "@/components/Container.vue";
 import {ref} from 'vue'
+import {useCartStore} from "@/store/cart.store.js";
 
+const cartStore = useCartStore();
 const menuState = ref(false)
 
 const toggleMenu = () => {
@@ -40,6 +42,9 @@ const toggleMenu = () => {
           </li>
           <li class="mainnav__links">
             <RouterLink class="mainnavlink" to="#">Blog</RouterLink>
+          </li>
+          <li class="mainnav__links">
+            <RouterLink class="mainnavlink" to="#">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
           </li>
         </ul>
         <div>
