@@ -31,7 +31,7 @@ const props = defineProps(['title', "url", "price", "description", "id"])
     <div class="flex gap-[1rem]">
       <button
         class="min-w-[13.7rem] grow  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]"
-        @click="cartStore.addToCart({id: props.id, price: props.price, title: props.title})"
+        @click="cartStore.addToCart({id: props.id, price: props.price, title: props.title, variation : 'hardcover'})"
       >
         Add to Cart
       </button>
