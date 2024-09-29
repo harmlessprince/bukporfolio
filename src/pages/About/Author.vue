@@ -12,7 +12,7 @@ import Books from "@/components/Books.vue";
   <main class="text-primary">
     <Navigation/>
     <!-- about hero section -->
-     <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
         <h1 class="text-forty font-xlg text-basicColor">Author</h1>
         <div class="font-lg text-basic">  

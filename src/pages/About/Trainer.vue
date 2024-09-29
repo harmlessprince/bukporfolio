@@ -15,8 +15,8 @@ import Coach from '@/assets/trainerImage2.png';
   <main class="text-primary">
     <Navigation/>
     <!-- about hero section -->
-     <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
+     <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+      <div class="w-[47.7rem] text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">TRAINER</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
@@ -46,7 +46,7 @@ import Coach from '@/assets/trainerImage2.png';
 
      <Brands />
 
-     <Container>
+     <Container id="#coach">
         <div class="flex flex-row justify-between items-end my-[5rem]">
         <div class="w-[47.9rem]">
             <Heading title="Coach" />

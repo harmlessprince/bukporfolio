@@ -16,6 +16,7 @@ const routes = [
     {path: '/about/speaker', component: Speaker, name: 'speaker'},
     {path: '/about/author', component: Author, name: 'author'},
     {path: '/about/trainer', component: Trainer, name: 'trainer'},
+    {path: '/about/coach#coach', component: Trainer, name: 'coach'},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
     {path: '/shop/products', component: Products, name: 'products'},
     {path: '/shop/item', component: Item, name: 'item'},
