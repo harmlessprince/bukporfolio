@@ -12,7 +12,8 @@ const routes = [
     {path: '/', component: Home, name: 'home'},
     {path: '/about/speaker', component: Speaker, name: 'speaker'},
     {path: '/about/author', component: Author, name: 'author'},
-    {path: '/about/trainer-coach', component: Trainer, name: 'trainer'},
+    {path: '/about/trainer', component: Trainer, name: 'trainer'},
+    {path: '/about/coach#coach', component: Trainer, name: 'coach'},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
     {path: '/shop/products', component: Products, name: 'products'},
     {
