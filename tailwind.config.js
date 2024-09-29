@@ -28,8 +28,10 @@ export default {
       },
       margin: {
         // sides: '15rem', 
+
         top: "3rem",
-        sm: "2rem"
+        sm: "2rem",
+        regular: "5rem"
       },
 
       fontWeight: {
