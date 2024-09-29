@@ -41,4 +41,6 @@ const props = defineProps(['title', "url", "price", "description"])
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

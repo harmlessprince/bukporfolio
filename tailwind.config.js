@@ -21,9 +21,10 @@ export default {
         top: "3rem",
       },
       margin: {
-        // sides: '15rem',
         top: "3rem",
         sm: "2rem",
+        regular: "5rem",
+        xsm: "1rem"
       },
 
       fontWeight: {
