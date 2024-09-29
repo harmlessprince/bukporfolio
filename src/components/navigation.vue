@@ -11,49 +11,49 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <section class="bg-secondary border border-x-0 border-b-white border-b-1">
+  <div
+    class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-10"
+  >
     <Container>
-      <nav class="h-[9.3rem] w-full justify-around items-center bg-secondary">
-        <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img :src="Logo" class="w-[5.3rem] h-[5.3rem]" alt="My Logo"/>
+      <nav class="px-12 py-5 flex items-center justify-between">
+        <div class="logo w-[5.3rem] h-[5.3rem]">
+          <a href="/">
+            <img :src="Logo" alt="My Logo" />
           </a>
-          <div class="font-xsm text-lg leading-5 p-12 flex justify-between">
-            <ul class="flex font-medium text-white">
-              <li>
-                <RouterLink :to="{ name: 'home'}" class="block py-2 px-3 hover:text-primary">Home
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink :to="{ name: 'speaker'}" class="block py-2 px-3  hover:text-primary">About
-                </RouterLink>
-              </li>
-              <li>
-                <RouterLink to="#" class="block py-2 px-3 hover:text-primary">Services</RouterLink>
-              </li>
-              <li>
-                <RouterLink to="#" class="block py-2 px-3 hover:text-primary">Shop</RouterLink>
-              </li>
-              <li>
-                <RouterLink class="block py-2 px-3 hover:text-primary" to="#">Blog</RouterLink>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <RouterLink :to="{ name: 'home'}" class="">
-              <button class="font-sm text-sm text-primary border-primary w-[9.8rem] h-[4rem] border  rounded-md">
-                Contact me
-              </button>
-            </RouterLink>
-          </div>
         </div>
-
+        <ul class="text-white font-xsm text-sm flex items-center">
+          <li class="mainnav__links">
+            <RouterLink :to="{ name: 'home'}" class="mainnavlink"
+              >Home
+            </RouterLink>
+          </li>
+          <li class="mainnav__links">
+            <RouterLink :to="{ name: 'speaker'}" class="mainnavlink"
+              >About
+            </RouterLink>
+          </li>
+          <li class="mainnav__links">
+            <RouterLink to="#" class="mainnavlink">Services</RouterLink>
+          </li>
+          <li class="mainnav__links">
+            <RouterLink to="#" class="mainnavlink">Shop</RouterLink>
+          </li>
+          <li class="mainnav__links">
+            <RouterLink class="mainnavlink" to="#">Blog</RouterLink>
+          </li>
+        </ul>
+        <div>
+          <RouterLink :to="{ name: 'home'}" class="">
+            <button
+              class="font-sm text-xsm border text-primary border-primary p-4  rounded-md outline-0"
+            >
+              Contact me
+            </button>
+          </RouterLink>
+        </div>
       </nav>
     </Container>
-
-  </section>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -15,18 +15,23 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <section class=''>
+  <section class="">
     <Container>
       <div class="text-center pt-[3rem] ">
-        <Subheading title="Books"/>
-        <Heading title="Personal Development Products"/>
-        <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem]">
+        <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem]">Books</h3>
+        <h2 class="font-header text-header text-secondary mb-[3rem]">
+          Personal Development Products
+        </h2>
+        <div
+          class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem]"
+        >
           <ProductCard
-              :title="book.title"
-              :description="book.summary"
-              :price="book.default.price"
-              :url="book.image ?? 'https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png'"
-              v-for="(book, index) in store.books" :key="index"
+            :title="book.title"
+            :description="book.summary"
+            :price="book.default.price"
+            :url="book.image ?? 'https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png'"
+            v-for="(book, index) in store.books"
+            :key="index"
           />
         </div>
       </div>
@@ -34,6 +39,4 @@ onBeforeMount(() => {
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

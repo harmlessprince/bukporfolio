@@ -1,13 +1,9 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <section class="max-w-[128rem] my-0 mx-auto w-full">
+  <div class="max-w-[111rem] my-0 mx-auto w-full">
     <slot></slot>
-  </section>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
