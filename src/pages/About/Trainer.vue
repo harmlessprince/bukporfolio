@@ -46,7 +46,7 @@ import Coach from '@/assets/trainerImage2.png';
 
      <Brands />
 
-     <Container>
+     <Container id="#coach">
         <div class="flex flex-row justify-between items-end my-[5rem]">
         <div class="w-[47.9rem]">
             <Heading title="Coach" />
