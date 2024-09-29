@@ -7,11 +7,13 @@ import WhoIam from '@/assets/who_i_am.png';
 import Heading from '@/components/heading.vue';
 import Subheading from '@/components/subheading.vue';
 import InspirationCard from '@/components/InspirationCard.vue';
+import {useQuoteStore} from "@/store/quotes.store.js";
+import {onBeforeMount} from "vue";
 
 const qoutes = [
-    {
-      title: "On Leadership",
-      qoute: "Leadership is becoming the best version of yourself in order to inspire and influence others to become the best versions of themselves. Growth is the factor of inspiration. It is the external evidence of internal transformation. Where growth stops, leadership stops. But when the leader grows, everyone profits. Until you know where a person is and understand why they are there, you can’t lead them to where they ought to be."
+  {
+    title: "On Leadership",
+    qoute: "Leadership is becoming the best version of yourself in order to inspire and influence others to become the best versions of themselves. Growth is the factor of inspiration. It is the external evidence of internal transformation. Where growth stops, leadership stops. But when the leader grows, everyone profits. Until you know where a person is and understand why they are there, you can’t lead them to where they ought to be."
   },
   {
     title: "On Empathy",
@@ -95,73 +97,91 @@ const qoutes = [
   },
 ]
 
+const store = useQuoteStore()
+onBeforeMount(() => {
+  store.getQuotes();
+});
+
+
 </script>
 
 <template>
   <main class="text-primary">
     <Navigation/>
-    <!-- about hero section -->
-     <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
+    <div class="relative h-[55rem]">
+      <!-- Background image with opacity -->
+      <div class="absolute inset-0 bg-black"></div>
+      <div class="absolute inset-0  bg-cover bg-center"
+           :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
+      <!-- Text on top of the image -->
+      <div class="w-[47.7rem] relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">Speaker</h1>
-        <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and impact</p>
-        <div class="font-lg text-basic">  
+        <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and
+          impact</p>
+        <div class="font-lg text-basic">
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
         </div>
       </div>
-     </section>
-
-     <Container>
-      <div class="w-full flex justify-between items-center mt-[5rem]">
-      <div class="w-[47.6rem] h-[47.9rem] rounded-[10px]">
-        <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
-      </div>
-      <div class="w-[47.7rem]">
-        <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">
-          Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay keen attention. 
-          As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on behaviour in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement, and National Development. 
-          His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and contemporary stories, and distill them in simple language endears him to both old and young, established veterans and upwardly mobile professionals alike. 
-          He has been featured on notable media platforms and has spoken to diverse audiences including entrepreneurs and business leaders, faith-based organizations, academicians, etc. 
-          He is in demand at conferences, seminars, and workshops across the nation. 
-        </p>
-
-        <button class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px]">Book bright UK</button>
-      </div>
     </div>
-     </Container>
 
-     <!-- inspiration words from bright -->
-     <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[6rem]">
-      <Container>
-        <div class="w-full text-center mt-[2rem]">
-      <Subheading title="Qoutes"/>
-      <Heading title="Inspirational words from Bright UK"/>
-      </div>
-      <div class="w-full flex flex-row flex-wrap justify-between mt-top">
-        <InspirationCard 
-          v-for="qoutation in qoutes "
-          :title="qoutation.title"
-          :qoute="qoutation.qoute"
-        />
-        
+    <Container>
+      <div class="w-full flex justify-between items-center mt-[5rem]">
+        <div class="w-[47.6rem] h-[47.9rem] rounded-[10px]">
+          <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
+        </div>
+        <div class="w-[47.7rem]">
+          <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">
+            Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
+            keen attention. 
+            As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on behaviour
+            in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and
+            democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement, and
+            National Development. 
+            His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and contemporary
+            stories, and distill them in simple language endears him to both old and young, established veterans and
+            upwardly mobile professionals alike. 
+            He has been featured on notable media platforms and has spoken to diverse audiences including entrepreneurs
+            and business leaders, faith-based organizations, academicians, etc. 
+            He is in demand at conferences, seminars, and workshops across the nation. 
+          </p>
+
+          <button class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px]">Book bright
+            UK
+          </button>
+        </div>
       </div>
     </Container>
+
+    <!-- inspiration words from bright -->
+    <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[6rem]">
+      <Container>
+        <div class="w-full text-center mt-[2rem]">
+          <Subheading title="Qoutes"/>
+          <Heading title="Inspirational words from Bright UK"/>
+        </div>
+        <div class="w-full flex flex-row flex-wrap justify-between mt-top">
+          <InspirationCard
+              v-for="(item, index) in store.quotes"
+              :title="item.title"
+              :qoute="item.quote"
+              :key="index"
+          />
+
+        </div>
+      </Container>
     </section>
-    <Footer />  
-    </main>
+    <Footer/>
+  </main>
 </template>
 
 <style scoped>
-.aboutBanner::after{
+.speakerBanner::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70vh;
   background-color: #000;
-  opacity: 0.7;
-
 }
 
 </style>
