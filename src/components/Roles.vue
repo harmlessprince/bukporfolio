@@ -2,7 +2,7 @@
 
 import Bright1 from "@/assets/bright1.png";
 import {useRoleStore} from "@/store/roles.store.js";
-import {onBeforeMount, onMounted} from "vue";
+import {onBeforeMount, onMounted, watch} from "vue";
 import Container from "@/components/Container.vue";
 import {useRouter} from 'vue-router'
 

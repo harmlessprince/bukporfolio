@@ -24,4 +24,5 @@ const props = defineProps(['title', "url", "price", "description"])
 </template>
 
 <style scoped>
+
 </style>
