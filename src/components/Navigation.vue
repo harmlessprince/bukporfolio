@@ -41,7 +41,7 @@ const toggleMenu = () => {
             <RouterLink :to="{name: 'products'}" class="mainnavlink">Shop</RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink class="mainnavlink" to="#">Blog</RouterLink>
+            <RouterLink class="mainnavlink" :to="{name: 'blog'}">Blog</RouterLink>
           </li>
           <li class="mainnav__links">
             <RouterLink class="mainnavlink" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
