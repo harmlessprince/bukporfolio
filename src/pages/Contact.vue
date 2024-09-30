@@ -29,8 +29,8 @@ import Subheading from '@/components/subheading.vue';
         </div>
 
         <!-- form section -->
-        <section>
-            <form class="font-[500] text-[2rem] leading-[4.2rem] text-secondaryColor mt-[2rem]">
+        <section class="mt-[2rem] mb-[5rem]">
+            <form class="font-[500] text-[2rem] leading-[4.2rem] text-secondaryColor">
                 <div class="flex flex-row justify-between gap-y-[2.7rem] flex-wrap">
                 <div class="w-[47.7rem]">
                     <label class="">Full Name</label>
@@ -69,23 +69,23 @@ import Subheading from '@/components/subheading.vue';
             <button class="w-[22.5rem] h-[5.5rem] bg-primaryColor rounded-[8px]">send message</button>   
             </form>
 
-            <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] ">
+            <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] mt-[4.8rem]">
                 <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
-                    <span class="text-[20px] leading-[2.8rem]">Example@email.com</span>
-                    <span class="text-[20px] leading-[2.8rem]">Example@email.com</span>
+                    <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
+                    <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
                 </div>
 
                 <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
-                    <span class="text-[20px] leading-[2.8rem]">+909748748984</span>
-                    <span class="text-[20px] leading-[2.8rem]">+078576738292</span>
+                    <div class="text-[2rem] leading-[2.8rem]">+909748748984</div>
+                    <div class="text-[2rem] leading-[2.8rem]">+078576738292</div>
                 </div>
 
                 <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
-                    <span class="text-[20px] leading-[2.8rem]">Eghdjkfkdjf,jkfk</span>
-                    <span class="text-[20px] leading-[2.8rem]">gdkjgkkjhgkkjdkhgh</span>
+                    <div class="text-[2rem] leading-[2.8rem]">Eghdjkfkdjf,jkfk</div>
+                    <div class="text-[2rem] leading-[2.8rem]">gdkjgkkjhgkkjdkhgh</div>
                 </div>
 
             </div>
