@@ -1,5 +1,4 @@
 <script setup>
-import Bright1 from '@/assets/bright1.png';
 
 const props = defineProps(['title', "url", "price", "description"])
 </script>

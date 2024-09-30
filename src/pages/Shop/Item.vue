@@ -46,12 +46,12 @@ const bookDetails = () => {
                 </div>
                 <div class="font-header text-forty text-secondary">#4000</div>
                 <div>
-                    <p class="ont-sm text-xlg text-[#555454]">Available variation</p>
-                    <div class="flex flex-row justify-between bg-[#dddddd] rounded-[6px]">
-                        <button class="font-sm text-xsm text-basicColor bg-[#121212] rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Hardcover</button>
-                        <button class="font-sm text-xsm text-basicColor rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Paperback</button>
-                        <button class="font-sm text-xsm text-basicColor rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">eBook</button>
-                        <button class="font-sm text-xsm text-basicColor rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Audiobook</button>
+                    <p class="font-sm text-xlg text-[#555454]">Available variation</p>
+                    <div class="font-sm text-xsm text-basicColor flex flex-row justify-between bg-[#dddddd] rounded-[6px]">
+                        <button class="bg-[#121212] rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Hardcover</button>
+                        <button class="rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Paperback</button>
+                        <button class=" rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">eBook</button>
+                        <button class="rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Audiobook</button>
                     </div>
                 </div>
                 <div>
