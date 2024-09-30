@@ -38,7 +38,7 @@ const toggleMenu = () => {
             <RouterLink to="#" class="mainnavlink">Services</RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink to="#" class="mainnavlink">Shop</RouterLink>
+            <RouterLink :to="{name: 'products'}" class="mainnavlink">Shop</RouterLink>
           </li>
           <li class="mainnav__links">
             <RouterLink class="mainnavlink" to="#">Blog</RouterLink>
