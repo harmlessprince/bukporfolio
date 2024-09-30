@@ -64,33 +64,39 @@ function previousVideo() {
 </script>
 
 <template>
-  <div class="w-full flex flex-row justify-between mt-[2rem]">
-    <div class="w-[24.5rem]">
+  <div class="w-full flex justify-center gap-[3rem] mt-[2rem] py-[5rem]">
+    <div class="max-w-[37.5rem] grow flex flex-col gap-[0.8rem]">
       <div
-          v-for="(video, index) in store.videos"
-          :key="index"
-          class="thumbnail"
-          @click="playVideo(video)"
+        class="thumbnail w-full h-[36.4rem]"
+        v-for="(video, index) in store.videos"
+        :key="index"
+        @click="playVideo(video)"
       >
-        <img :src="video.thumbnail" :alt="video.name" class="w-full h-[332px]"/>
+        <img
+          :src="video.thumbnail"
+          :alt="video.name"
+          class="w-full h-full object-cover object-center"
+        />
       </div>
     </div>
     <!-- video -->
-    <div class="pt-[1rem] text-center w-[35rem]">
-      <Subheading title="Videos"/>
-      <header class="text-xlg font-header text-[#f9f7ea]">Hear directly from Bright UK</header>
-      <div class="w-full h-[34rem]">
+    <div class="text-center w-[35rem] grow">
+      <Subheading title="Videos" />
+      <header class="text-xlg font-header text-[#f9f7ea] mb-10">
+        Hear directly from Bright UK
+      </header>
+      <div class="w-full h-[56.7rem]">
         <div v-if="currentVideo">
           <template v-if="isYouTube(currentVideo.url)">
             <iframe
-                width="560"
-                height="544"
-                :src="getYouTubeEmbedUrl(currentVideo.url)"
-                allowfullscreen
+              class="w-full"
+              height="544"
+              :src="getYouTubeEmbedUrl(currentVideo.url)"
+              allowfullscreen
             ></iframe>
           </template>
           <template v-else>
-            <source :src="currentVideo" type="video/mp4"/>
+            <source :src="currentVideo" type="video/mp4" />
             Your browser does not support the video tag.
           </template>
         </div>
@@ -99,6 +105,4 @@ function previousVideo() {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

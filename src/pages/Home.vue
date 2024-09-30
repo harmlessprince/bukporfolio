@@ -37,9 +37,7 @@ import Videos from "@/components/Videos.vue";
     <section class="">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex items-center bg-white gap-[2.3rem]">
-          <div
-            class="w-[56.1rem] h-[54.5rem] relative imgContainer"
-          >
+          <div class="w-[56.1rem] h-[54.5rem] relative imgContainer">
             <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
             <div class="w-full absolute left-0 bottom-5">
               <img
@@ -50,8 +48,14 @@ import Videos from "@/components/Videos.vue";
             </div>
           </div>
           <div class="w-[39.2rem] px-6">
-            <h3 class="font-lg text-basic text-primary font-primary mb-[0.7rem]">Who I am</h3>
-            <h2 class="font-header text-header text-secondary mb-[0.7rem]">Meet Bright UK</h2>
+            <h3
+              class="font-lg text-basic text-primary font-primary mb-[0.7rem]"
+            >
+              Who I am
+            </h3>
+            <h2 class="font-header text-header text-secondary mb-[0.7rem]">
+              Meet Bright UK
+            </h2>
             <p class="font-sm text-regular text-basic my-[1rem]">
               Bright 'UK' Ukwenga is a dynamic professional wearing multiple
               hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
@@ -79,8 +83,10 @@ import Videos from "@/components/Videos.vue";
     <Books />
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
-      <Subheading title="Gallery" />
-      <Heading title="Bright UK Activities" />
+      <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
+      <h2 class="font-header text-header text-secondary">
+        Bright UK Activities
+      </h2>
       <div class="max-w-full bg-secondary">
         <Container>
           <Videos />
