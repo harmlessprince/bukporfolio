@@ -84,7 +84,7 @@ const rawHtml = ref(`
               <span>{{ blogStore.singlePost.author.displayName }}</span>
             </div>
           </div>
-          <div class="flex flex-row items-center space-x-[1rem] mt-2">
+          <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
             <span class="font-bold text-2xl" v-for="(category, index) in blogStore.singlePost.labels ?? []"
                   :key="index">
             {{ category }}
@@ -126,8 +126,8 @@ const rawHtml = ref(`
               class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
             <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
 
-            <div class="flex flex-row items-center space-x-[1rem] mt-2">
-            <span class="font-bold text-2xl" v-for="(category, index) in blogStore.categories ?? []"
+            <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
+            <span class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
                   :key="index">
             {{ category }}
             </span>
