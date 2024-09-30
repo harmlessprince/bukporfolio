@@ -37,12 +37,12 @@ onBeforeMount(() => {
       <div v-for="(item, index) in store.entrepreneurs" :key="index">
         <div v-if="index%2 === 0">
           <div class="grid grid-cols-2 gap-4 my-[5rem]">
-            <div>
+            <div class="animate-slideInLeft delay-200">
               <div class="w-[47.7rem]">
-                <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
+                <img :src="item.logo" class="w-full rounded-[10px]" :class="store.entrepreneurs.length < 1 ? 'animate-pulse': '' " alt="bright"/>
               </div>
             </div>
-            <div class="">
+            <div class="animate-slideInRight delay-200">
               <div class="w-[47.8rem] p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
@@ -55,7 +55,7 @@ onBeforeMount(() => {
         </div>
         <div v-else>
           <div class="grid grid-cols-2 gap-4">
-            <div class="">
+            <div class="animate-slideInLeft delay-400">
               <div class="w-[47.8rem] p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
@@ -64,7 +64,7 @@ onBeforeMount(() => {
                 <a class="w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website">Visit our website</a>
               </div>
             </div>
-            <div>
+            <div class="animate-slideInRight delay-400">
               <div class="w-[47.7rem]">
                 <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
               </div>

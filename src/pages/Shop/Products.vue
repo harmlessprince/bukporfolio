@@ -14,8 +14,8 @@ import Subheading from '@/components/subheading.vue';
   <main class="text-primary">
     <Navigation/>
     <!-- about hero section -->
-     <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
+     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+      <div class="w-[47.7rem] text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">Shop</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > shop</span>

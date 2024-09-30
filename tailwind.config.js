@@ -4,15 +4,29 @@ export default {
   plugins: [require("flowbite/plugin")],
   theme: {
     extend: {
-      fontSize: {
-        xsm: "1.4rem", //14px
-        sm: "1.5rem", //15px
-        lg: "1.8rem", //18px
-        xlg: "2rem", //20px
-        basic: "1.6rem", //16px
-        forty: "4.0rem", //40px
-        hero: "5.2rem", //52px
-        header: "3.6rem", //36px
+      keyframes: {
+        slideInFromLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInFromRight: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        slideInLeft: 'slideInFromLeft 0.5s ease-out forwards',
+        slideInRight: 'slideInFromRight 0.5s ease-out forwards',
+      },
+      fontSize:{
+          xsm: "1.4rem", //14px
+          sm: "1.5rem", //15px
+          lg: "1.8rem", //18px
+          xlg: "2rem", //20px
+          basic: "1.6rem", //16px
+          forty: "4.0rem", //40px
+          hero: "5.2rem", //52px
+          header: "3.6rem" //36px
       },
       padding: {
         msides: "3rem", //for mobile

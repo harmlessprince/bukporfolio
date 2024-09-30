@@ -26,7 +26,6 @@ const routes = [
     {path: '/blog', component: Blog, name: 'blog'},
     {path: '/blog/post', component: Post, name: 'post'},
     {path: '/contact', component: Contact, name: 'contact'},
-    
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",

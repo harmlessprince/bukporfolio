@@ -30,6 +30,7 @@ onBeforeMount(() => {
             :description="book.summary"
             :price="book.default.price"
             :url="book.image ?? 'https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png'"
+            :id="book.id"
             v-for="(book, index) in store.books"
             :key="index"
           />
