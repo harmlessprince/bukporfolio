@@ -11,6 +11,8 @@ import Item from "@/pages/Shop/Item.vue";
 import Blog from "@/pages/Blog/Index.vue";
 import Post from "@/pages/Blog/Post.vue";
 import Contact from "@/pages/Contact.vue";
+import Videos from "@/pages/Gallery/Videos.vue";
+import Pictures from "@/pages/Gallery/Pictures.vue";
 import NotFound from "@/pages/NotFound.vue";
 
 const routes = [
@@ -26,6 +28,8 @@ const routes = [
     {path: '/blog', component: Blog, name: 'blog'},
     {path: '/blog/post', component: Post, name: 'post'},
     {path: '/contact', component: Contact, name: 'contact'},
+    {path: '/gallery/videos', component: Videos, name: 'videos'},
+    {path: '/gallery/pictures', component: Pictures, name: 'pictures'},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
