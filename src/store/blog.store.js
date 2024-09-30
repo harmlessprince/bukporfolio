@@ -12,8 +12,7 @@ export const useBlogStore = defineStore("blogsStore", () => {
     const posts = ref([])
     const recentPosts = ref([])
     const singlePost = ref(null)
-    const loading = ref(true);
-    const categories = ref(["news", "lifestyle", "travel", "business", "food"])
+    const categories = ref(["news", "lifestyle", "travel", "business", "food", "cicd", "devops"])
 
     async function fetchAllPostsFromAPI() {
         loaderStore.start()
@@ -22,10 +21,24 @@ export const useBlogStore = defineStore("blogsStore", () => {
         if (response.status === 200) {
             const data = await response.json();
             posts.value = data?.items ?? []
-            loading.value = false
         }
         loaderStore.done()
     }
+    async function fetchAllPostsByTagFromAPI(category) {
+        if (category === 'all'){
+            await fetchAllPostsFromAPI()
+            return
+        }
+        loaderStore.start()
+        const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${bloggerAPIKey}&labels=${category}`
+        const response = await fetch(url)
+        if (response.status === 200) {
+            const data = await response.json();
+            posts.value = data?.items ?? []
+        }
+        loaderStore.done()
+    }
+
 
 
     async function fetchRecentPostsFromAPI() {
@@ -55,6 +68,6 @@ export const useBlogStore = defineStore("blogsStore", () => {
 
     return {
         fetchAllPostsFromAPI, fetchSinglePosts, categories, posts, loading, singlePost,
-        fetchRecentPostsFromAPI,recentPosts
+        fetchRecentPostsFromAPI,recentPosts,fetchAllPostsByTagFromAPI
     }
 });

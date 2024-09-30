@@ -30,6 +30,7 @@ watch(
 
 function onCategoryChange(category) {
   currentCategory.value = category;
+  blogStore.fetchAllPostsByTagFromAPI(category)
 }
 
 
