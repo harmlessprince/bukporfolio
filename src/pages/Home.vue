@@ -25,54 +25,65 @@ import Videos from "@/components/Videos.vue";
 </script>
 
 <template>
-  <main class="text-primary">
-    <Navigation/>
-<!--    <Sidebar/>-->
+  <div class="text-primary relative isolate">
+    <Navigation />
+    <!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
-    <HomeHeroSection/>
+    <HomeHeroSection />
     <!-- brands touched starts here -->
-    <Brands/>
+    <Brands />
 
     <!-- meet bright uk -->
     <section class="">
-      <Container class="mt-[2.6rem] mb-[2.6rem]">
-        <div class="flex items-center bg-white">
-          <div class="w-[56.1rem] h-[54.5rem] relative imgContainer mr-[2.3rem]">
-            <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
+      <Container class="mt-[3.2rem] mb-[2.6rem]">
+        <div class="flex items-center bg-white gap-[2.3rem]">
+          <div
+            class="w-[56.1rem] h-[54.5rem] relative imgContainer"
+          >
+            <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
             <div class="w-full absolute left-0 bottom-5">
-              <img :src="UkLogo" class="w-[113px] h-[113px] relative mx-auto" alt="brand"/>
+              <img
+                :src="UkLogo"
+                class="w-[113px] h-[113px] relative mx-auto"
+                alt="brand"
+              />
             </div>
           </div>
-          <div class="w-[39.2rem]">
-            <Subheading title="Who I am"/>
-            <Heading title="Meet Bright UK"/>
-            <p class="font-sm text-regular text-basic my-[1rem]">Bright 'UK' Ukwenga is a dynamic professional wearing
-              multiple hats as a Speaker,
-              Author, Digital Entrepreneur, Psychologist,
-              and Coach. He is renowned for his ability to ignite mental transformations using his
-              groundbreaking #SixthSense framework.
+          <div class="w-[39.2rem] px-6">
+            <h3 class="font-lg text-basic text-primary font-primary mb-[0.7rem]">Who I am</h3>
+            <h2 class="font-header text-header text-secondary mb-[0.7rem]">Meet Bright UK</h2>
+            <p class="font-sm text-regular text-basic my-[1rem]">
+              Bright 'UK' Ukwenga is a dynamic professional wearing multiple
+              hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
+              Coach. He is renowned for his ability to ignite mental
+              transformations using his groundbreaking #SixthSense framework.
               Having earned a bachelor's degree in Electrical & Electronics
-              Engineering from one of Africa's top Universities of Technology, Bright realized that
-              his true passion lies in engineering minds rather than machines.
+              Engineering from one of Africa's top Universities of Technology,
+              Bright realized that his true passion lies in engineering minds
+              rather than machines.
             </p>
-            <button class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center">
-              <span class="font-sm text-xsm text-btnText mr-[1rem]">see more</span>
-              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
+            <button
+              class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
+            >
+              <span class="font-sm text-xsm text-btnText mr-[1rem]"
+                >see more</span
+              >
+              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow" />
             </button>
           </div>
         </div>
       </Container>
     </section>
-    <Roles/>
+    <Roles />
     <!-- personal development section -->
-    <Books/>
+    <Books />
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
-      <Subheading title="Gallery"/>
-      <Heading title="Bright UK Activities"/>
+      <Subheading title="Gallery" />
+      <Heading title="Bright UK Activities" />
       <div class="max-w-full bg-secondary">
         <Container>
-          <Videos/>
+          <Videos />
         </Container>
       </div>
     </section>
@@ -82,31 +93,33 @@ import Videos from "@/components/Videos.vue";
     <section class="py-top w-full bg-basic">
       <Container>
         <div class="w-full flex flex-row justify-between items-center">
-          <img :src="BrightTestimony" class="w-[25rem] h-[27rem] rounded-[10px]" alt="bright"/>
-          <Testimonies/>
+          <img
+            :src="BrightTestimony"
+            class="w-[25rem] h-[27rem] rounded-[10px]"
+            alt="bright"
+          />
+          <Testimonies />
         </div>
       </Container>
     </section>
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <Features/>
+    <Features />
     <!-- end of featured -->
-    <Footer/>
-
-  </main>
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
 .imgContainer::before {
   position: absolute;
   top: -1.3rem;
-  right: -1.3rem;
+  right: -2rem;
   content: "";
   background-image: url('../assets/meetframe.svg');
   background-size: cover;
   width: 98px;
   height: 98px;
 }
-
 </style>
