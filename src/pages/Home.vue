@@ -98,12 +98,17 @@ import Videos from "@/components/Videos.vue";
     <!-- start of testimonies -->
     <section class="py-top w-full bg-basic">
       <Container>
-        <div class="w-full flex flex-row justify-between items-center">
-          <img
-            :src="BrightTestimony"
-            class="w-[25rem] h-[27rem] rounded-[10px]"
-            alt="bright"
-          />
+        <div
+          class="w-full h-[42.1rem] gap-[2.4rem] flex justify-center items-center"
+        >
+          <div class="grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden">
+            <img
+              :src="BrightTestimony"
+              class="w-full h-full object-center object-cover"
+              alt="bright"
+            />
+          </div>
+
           <Testimonies />
         </div>
       </Container>
