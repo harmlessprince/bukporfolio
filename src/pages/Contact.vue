@@ -66,9 +66,29 @@ import Subheading from '@/components/subheading.vue';
                 </div>
             </div>
 
-            <button class="w-[22.5rem] h-[5.5rem] bg-primaryColor rounded-[8px]">send message</button>
-               
+            <button class="w-[22.5rem] h-[5.5rem] bg-primaryColor rounded-[8px]">send message</button>   
             </form>
+
+            <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] ">
+                <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
+                    <span class="text-[20px] leading-[2.8rem]">Example@email.com</span>
+                    <span class="text-[20px] leading-[2.8rem]">Example@email.com</span>
+                </div>
+
+                <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
+                    <span class="text-[20px] leading-[2.8rem]">+909748748984</span>
+                    <span class="text-[20px] leading-[2.8rem]">+078576738292</span>
+                </div>
+
+                <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
+                    <span class="text-[20px] leading-[2.8rem]">Eghdjkfkdjf,jkfk</span>
+                    <span class="text-[20px] leading-[2.8rem]">gdkjgkkjhgkkjdkhgh</span>
+                </div>
+
+            </div>
 
         </section>
      </Container>
