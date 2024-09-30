@@ -23,7 +23,7 @@ watch(
     () => blogStore.posts,
     (newPosts) => {
       if (newPosts.length > 0) {
-        console.log(newPosts);
+        blogStore.posts = newPosts;
       }
     }
 );

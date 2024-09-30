@@ -67,7 +67,7 @@ export const useBlogStore = defineStore("blogsStore", () => {
     }
 
     return {
-        fetchAllPostsFromAPI, fetchSinglePosts, categories, posts, loading, singlePost,
+        fetchAllPostsFromAPI, fetchSinglePosts, categories, posts, singlePost,
         fetchRecentPostsFromAPI,recentPosts,fetchAllPostsByTagFromAPI
     }
 });
