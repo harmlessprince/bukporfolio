@@ -44,13 +44,18 @@ export default {
 
       colors:{
         primary: "#C7AE2E",
+        primaryColor: "#C7AE2E",
         secondary: "#000000", //black
+        secondaryColor: "#000000",
         basicColor: "#FFFFFF", //white
         navLinkColor: "#F3F3F3",
         bannerNavColor: "#C3C3C3",
         btnText: "#242424",
+        btnTextColor: "#242424",
         regular: "#757575",
-        bg1: "#DADADA"
+        regularColor: "#757575",
+        bg1: "#DADADA",
+        bg1Color: "#DADADA"
       },
 
       screens: {
