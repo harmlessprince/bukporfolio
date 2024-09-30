@@ -10,6 +10,7 @@ import Cart from "@/pages/Shop/Cart.vue";
 import Item from "@/pages/Shop/Item.vue";
 import Blog from "@/pages/Blog/index.vue";
 import Post from "@/pages/Blog/Post.vue";
+import Contact from "@/pages/Contact.vue";
 import NotFound from "@/pages/NotFound.vue";
 
 const routes = [
@@ -24,6 +25,7 @@ const routes = [
     {path: '/shop/cart', component: Cart, name: 'cart'},
     {path: '/blog', component: Blog, name: 'blog'},
     {path: '/blog/post', component: Post, name: 'post'},
+    {path: '/contact', component: Contact, name: 'contact'},
     
     {
         path: "/:pathMatch(.*)*",
