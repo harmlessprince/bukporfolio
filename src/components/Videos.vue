@@ -1,7 +1,7 @@
 <script setup>
 
 import Bright1 from "@/assets/bright1.png";
-import Subheading from "@/components/subheading.vue";
+import Subheading from "@/components/SubHeading.vue";
 import {useVideoStore} from "@/store/videos.store.js";
 import {onBeforeMount, onMounted, ref, watch} from "vue";
 

@@ -1,11 +1,11 @@
 <script setup>
-import Navigation from '@/components/navigation.vue';
+import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/aboutbanner.png';
 import Container from "@/components/Container.vue";
 import WhoIam from '@/assets/who_i_am.png';
-import Heading from '@/components/heading.vue';
-import Subheading from '@/components/subheading.vue';
+import Heading from '@/components/Heading.vue';
+import Subheading from '@/components/SubHeading.vue';
 import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";

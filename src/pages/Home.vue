@@ -1,10 +1,10 @@
 <script setup>
-import Navigation from '@/components/navigation.vue';
-import Sidebar from '@/components/sidebar.vue';
+import Navigation from '@/components/Navigation.vue';
+import Sidebar from '@/components/Sidebar.vue';
 import Footer from '@/components/footer.vue';
-import Heading from '@/components/heading.vue';
-import ProductCard from '@/components/productcard.vue';
-import Subheading from '@/components/subheading.vue';
+import Heading from '@/components/Heading.vue';
+import ProductCard from '@/components/ProductCard.vue';
+import Subheading from '@/components/SubHeading.vue';
 import Brand1 from '@/assets/brand1.svg';
 import Brand2 from '@/assets/brand2.svg';
 import WhoIam from '@/assets/who_i_am.png';

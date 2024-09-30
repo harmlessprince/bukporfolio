@@ -11,7 +11,7 @@ import Instagram from '@/assets/instagram.svg';
   <footer class="text-center w-full bg-[#0f0f13] py-[1rem]">
     <img :src="UkLogo" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
-    <div class="text-basic font-xsm text-xsm flex flex-row w-full justify-center mt-sm">
+    <div class="text-basic font-xsm flex flex-row w-full justify-center mt-sm">
       <RouterLink :to="{ name: 'home'}" class="mr-[3rem] hover:text-primary">Home</RouterLink>
       <RouterLink :to="{ name: 'speaker'}" class="mr-[3rem] hover:text-primary">About</RouterLink>
       <span class="mr-[3rem] hover:text-primary">Services</span>

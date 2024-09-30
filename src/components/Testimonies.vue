@@ -2,8 +2,8 @@
 
 import Niyi from "@/assets/niyi.png";
 import CommentIcon1 from "@/assets/commentIcon1.svg";
-import Subheading from "@/components/subheading.vue";
-import Heading from "@/components/heading.vue";
+import Subheading from "@/components/SubHeading.vue";
+import Heading from "@/components/Heading.vue";
 
 import {useTestimoniesStore} from "@/store/testimonies.store.js";
 import {onBeforeMount, watch, ref} from "vue";

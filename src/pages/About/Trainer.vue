@@ -1,11 +1,11 @@
 <script setup>
-import Navigation from '@/components/navigation.vue';
+import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import WhoIam from '@/assets/trainerprofile.png';
 import Brands from "@/components/Brands.vue";
-import Heading from '@/components/heading.vue';
+import Heading from '@/components/Heading.vue';
 import UkLogo from '@/assets/ukLogo.svg';
 import Coach from '@/assets/trainerImage2.png';
 
