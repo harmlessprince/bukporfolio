@@ -1,65 +1,64 @@
 <script setup>
-
+const props = defineProps(['imageArray']);
 </script>
 
 <template>
 
-
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+      <div class="">
+        <img class="h-auto max-w-full rounded-lg" :src="props.imageArray[0]"
              alt="">
       </div>
-      <div>
+      <div class="">
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+        :src="props.imageArray[1]" alt="">
       </div>
-      <div>
+      <div class="">
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+        :src="props.imageArray[2]" alt="">
       </div>
     </div>
     <div class="grid gap-4">
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+        :src="props.imageArray[3]" alt="">
       </div>
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+        :src="props.imageArray[4]" alt="">
       </div>
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+        :src="props.imageArray[5]" alt="">
       </div>
     </div>
     <div class="grid gap-4">
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+        :src="props.imageArray[6]" alt="">
       </div>
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+        :src="props.imageArray[7]" alt="">
       </div>
       <div>
         <img class="h-auto max-w-full rounded-lg"
-             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+        :src="props.imageArray[8]" alt="">
+      </div>
+    </div>
+    <div class="grid gap-4">
+      <div>
+        <img class="h-auto max-w-full rounded-lg"
+        :src="props.imageArray[9]" alt="">
+      </div>
+      <div>
+        <img class="h-auto max-w-full rounded-lg"
+            :src="props.imageArray[10]" alt="">
+      </div>
+      <div>
+        <img class="h-auto max-w-full rounded-lg"
+        :src="props.imageArray[11]" alt="">
       </div>
     </div>
   </div>

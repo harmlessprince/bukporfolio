@@ -20,7 +20,6 @@ const whatYouWillLearn = () => {
 
 const bookDetails = () => {
     toggledetails.value = 'details';
-    console.log(toggledetails.value)
 }
 </script>
 
@@ -29,7 +28,7 @@ const bookDetails = () => {
     <Navigation/>
 
     <Container>
-        <div class="w-full my-[5rem] flex flex-row items-top justify-between">
+        <div class="w-full my-[14rem] flex flex-row items-top space-x-[3rem]">
             <div class="w-[48.1rem] max-h-[60.4rem]">
                 <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
             </div>
