@@ -24,7 +24,7 @@ const routes = [
     {path: '/shop/item', component: Item, name: 'item'},
     {path: '/shop/cart', component: Cart, name: 'cart'},
     {path: '/blog', component: Blog, name: 'blog'},
-    {path: '/blog/post', component: Post, name: 'post'},
+    {path: '/blog/post/:id', component: Post, name: 'post'},
     {path: '/contact', component: Contact, name: 'contact'},
     {
         path: "/:pathMatch(.*)*",

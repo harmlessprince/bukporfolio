@@ -7,7 +7,6 @@ import OrderSummary from "@/components/OrderSummary.vue";
 import CartItem from "@/components/CartItem.vue";
 import {useCartStore} from "@/store/cart.store.js";
 import Subheading from "@/components/SubHeading.vue";
-import Heading from "@/components/Heading.vue";
 import Alert from "@/components/Alert.vue";
 import {useAlertStore} from "@/store/alert.store.js";
 
