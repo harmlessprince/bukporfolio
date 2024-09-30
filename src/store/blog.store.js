@@ -47,7 +47,6 @@ export const useBlogStore = defineStore("blogsStore", () => {
         if (response.status === 200) {
             const data = await response.json();
             singlePost.value = data ?? null
-            loading.value = false
         } else {
             router.push({name: "home"})
         }

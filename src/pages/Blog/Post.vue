@@ -8,12 +8,10 @@ import {useLoaderStore} from "@/store/loader.store.js";
 import {onBeforeMount, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import Loader from "@/components/Loader.vue";
+import {onBeforeRouteUpdate} from 'vue-router'
 import {
   generateThumbnailFromText,
   getBlogDate,
-  getDayFromDate,
-  getFullYearFromDate,
-  getMonthFromDate
 } from "@/services/util.js";
 import he from 'he';
 import DOMPurify from 'dompurify';
@@ -21,16 +19,16 @@ import DOMPurify from 'dompurify';
 const blogStore = useBlogStore();
 const loaderStore = useLoaderStore();
 const route = useRoute();
-const monthNames = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
-];
 onBeforeMount(() => {
   blogStore.fetchSinglePosts(route.params.id);
 });
 onBeforeMount(() => {
   blogStore.fetchRecentPostsFromAPI();
 });
+
+onBeforeRouteUpdate(async (to, from) => {
+  blogStore.fetchSinglePosts(to.params.id);
+})
 
 function sanitizedHtml(rawHtmlContent) {
   const decoded = he.decode(rawHtmlContent);
@@ -77,7 +75,7 @@ const rawHtml = ref(`
             <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
               <span class="material-icons">calendar_month</span>
               <span>
-                {{getBlogDate(blogStore.singlePost.published)}}
+                {{ getBlogDate(blogStore.singlePost.published) }}
                </span>
             </div>
 
@@ -102,21 +100,25 @@ const rawHtml = ref(`
         <!-- second part of the flex -->
         <div class="w-[31.1rem]">
           <div v-if="blogStore.recentPosts.length > 0">
+
             <div class="text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
               <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Recent Post</h3>
-              <div class="flex flex-row py-[0.5rem] border border-[#dddddd] border-x-0 border-t-0 mb-[1.2rem]"
-                   v-for="(post, index ) in blogStore.recentPosts" :key="index">
-                <img :src="generateThumbnailFromText(post.title)" class="w-[6.1rem] h-[5.9rem] mr-[1.1rem]" :alt="post.title" />
-                <div class="text-[1.4rem] leading-[1.69rem]">
-                  <h3 class="font-[700] ">{{post.title}}</h3>
-                  <div class="font-[400] text-[#7a7a7a] flex items-center">
-                    <span class="material-icons">calendar_month</span>
-                    <span>
-                     {{getBlogDate(post.published)}}
+              <RouterLink :to="{name: 'post', params: {id: post.id}}" v-for="(post, index ) in blogStore.recentPosts"
+                          :key="index">
+                <div class="flex flex-row py-[0.5rem] border border-[#dddddd] border-x-0 border-t-0 mb-[1.2rem]">
+                  <img :src="generateThumbnailFromText(post.title)" class="w-[6.1rem] h-[5.9rem] mr-[1.1rem]"
+                       :alt="post.title"/>
+                  <div class="text-[1.4rem] leading-[1.69rem]">
+                    <h3 class="font-[700] ">{{ post.title }}</h3>
+                    <div class="font-[400] text-[#7a7a7a] flex items-center">
+                      <span class="material-icons">calendar_month</span>
+                      <span>
+                     {{ getBlogDate(post.published) }}
                     </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
           </div>
 

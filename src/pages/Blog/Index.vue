@@ -51,7 +51,6 @@ function onCategoryChange(category) {
     </section>
 
     <Container>
-      <loader v-show="loaderStore.loading"></loader>
       <div class="mt-[3.4rem] text-center">
         <Subheading title="Glean insights to transform your mind and get more out of life" class="mb-[0.5rem]"/>
         <Heading title="The Musings of Bright UK"/>
