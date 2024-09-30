@@ -1,9 +1,5 @@
 <script setup>
-
-import Subheading from "@/components/subheading.vue";
-import Heading from "@/components/heading.vue";
-import ProductCard from "@/components/productcard.vue";
-
+import ProductCard from "@/components/ProductCard.vue";
 import {useBookstore} from "@/store/books.store.js";
 import {onBeforeMount} from "vue";
 import Container from "@/components/Container.vue";

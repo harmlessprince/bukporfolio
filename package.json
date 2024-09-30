@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@paystack/inline-js": "^2.20.3",
     "firebase": "^10.13.2",
     "flowbite": "^2.5.1",
     "flowbite-vue": "^0.1.6",

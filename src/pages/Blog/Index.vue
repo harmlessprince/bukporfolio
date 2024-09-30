@@ -1,11 +1,11 @@
 <script setup>
-import Navigation from '@/components/navigation.vue';
+import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
-import Heading from '@/components/heading.vue';
-import Subheading from '@/components/subheading.vue';
-import Blogcard from '../../components/Blogcard.vue';
+import Heading from '@/components/Heading.vue';
+import Subheading from '@/components/SubHeading.vue';
+import Blogcard from '../../components/BlogCard.vue';
 
 </script>
 
