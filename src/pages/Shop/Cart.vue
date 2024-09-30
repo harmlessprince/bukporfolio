@@ -6,8 +6,13 @@ import Container from "@/components/Container.vue";
 import OrderSummary from "@/components/OrderSummary.vue";
 import CartItem from "@/components/CartItem.vue";
 import {useCartStore} from "@/store/cart.store.js";
+import Subheading from "@/components/SubHeading.vue";
+import Heading from "@/components/Heading.vue";
+import Alert from "@/components/Alert.vue";
+import {useAlertStore} from "@/store/alert.store.js";
 
 const cartStore = useCartStore();
+const alertStore = useAlertStore();
 </script>
 
 <template>
@@ -25,7 +30,11 @@ const cartStore = useCartStore();
     </section>
 
     <Container>
-      <div class="font-sans max-md:max-w-xl mx-auto bg-white py-4">
+      <div class="mt-[3.4rem] text-center">
+        <Subheading title="Shopping Cart Items"/>
+      </div>
+      <Alert v-if="alertStore.show"/>
+      <div class="font-sans max-md:max-w-xl mx-auto bg-white py-4" v-if="cartStore.cartItemCount > 0">
         <div class="grid md:grid-cols-3 gap-8 mt-16">
           <div class="md:col-span-2 space-y-4">
             <div v-for="(item, index) in cartStore.items" :key="index">
@@ -42,8 +51,31 @@ const cartStore = useCartStore();
 
           </div>
           <OrderSummary
-          :totalAmount="cartStore.totalAmount"
+              :totalAmount="cartStore.totalAmount"
           />
+        </div>
+      </div>
+      <div v-else>
+        <!-- Show empty cart info when the cart is empty -->
+        <div class="flex flex-col items-center justify-center h-[50rem] text-center">
+          <div class="text-gray-400 mb-4">
+            <!-- Cart icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                 stroke="currentColor" class="w-24 h-24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l3.6-7H5.4L7 13zm0 0L5.4 9H19.6L17 13H7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 13L5.4 9m0 0L3 3h2m2.4 6h14.2m-2.2 10h.1m0 0h-4a2 2 0 11-4 0h4a2 2 0 014 0z"/>
+            </svg>
+          </div>
+
+          <h2 class="text-xl font-semibold text-gray-700">Your Cart is Empty!</h2>
+          <p class="text-gray-500 mt-2">It seems like you haven't added any items yet.</p>
+
+          <!-- Button to redirect to the shop page -->
+          <RouterLink :to="{name: 'products'}" class="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300">
+            Shop Now
+          </RouterLink>
         </div>
       </div>
     </Container>

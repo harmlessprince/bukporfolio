@@ -1,39 +1,98 @@
 <script setup>
-import {ref} from "vue";
+import {onBeforeMount, ref, watch} from "vue";
+import {ErrorMessage, Form} from 'vee-validate';
+import {toTypedSchema} from '@vee-validate/zod';
+import * as zod from 'zod';
+import CheckoutInput from "@/components/CheckoutInput.vue";
+import {useLocationStore} from "@/store/location.store.js";
+import Multiselect from 'vue-multiselect'
+import Paystack from '@paystack/inline-js';
+import {useCartStore} from "@/store/cart.store.js";
+import {useAlertStore} from "@/store/alert.store.js";
 
 const props = defineProps(['totalAmount'])
-import Paystack from '@paystack/inline-js';
+const locationStore = useLocationStore();
+const cartStore = useCartStore();
+const alertStore = useAlertStore();
+const validationSchema = toTypedSchema(
+    zod.object({
+      email: zod.string().min(1, {message: 'This is required'}).email({message: 'Must be a valid email'}),
+      firstName: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      lastName: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      phoneNumber: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      address: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      state: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      country: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+      city: zod.string().min(1, {message: 'This is required'}).min(2, {message: 'Too short'}),
+    })
+);
 
-const firstName = ref("")
-const lastName = ref("")
-const email = ref("")
-const phoneNumber = ref("")
-const address = ref("")
-const state = ref("")
-const lga = ref("")
-const city = ref("")
+const selectedCountry = ref(null)
+const selectedState = ref(null)
+const formatedCountriesList = ref([])
+const formatedStatesList = ref([])
 
-function checkoutHandler() {
+onBeforeMount(() => {
+  locationStore.loadCountries();
+});
+
+
+watch(selectedCountry, (newX) => {
+  console.log(newX.value);
+  selectedState.value = [];
+  locationStore.getStatesByCountry(newX.value);
+  formatedStatesList.value = locationStore.states;
+})
+
+watch(
+    () => locationStore.countries,
+    (newCountries) => {
+      if (newCountries.length > 0) {
+        formatedCountriesList.value = formatCountries(newCountries);
+      }
+    }
+);
+
+
+function checkoutHandler(values) {
   const popup = new Paystack()
   const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY
   popup.newTransaction({
     key: publicKey,
-    email: 'sample@email.com',
-    amount: 23400,
+    email: values.email,
+    firstName: values.firstName,
+    lastName: values.lastName,
+    phone: values.phoneNumber,
+    amount: cartStore.totalAmount * 100,
+    metadata: values,
     onSuccess: (transaction) => {
       console.log(transaction);
+      alertStore.showAlert("success", "Payment successful! We will reach out to you shortly.");
+      cartStore.clearCart();
     },
     onLoad: (response) => {
       console.log("onLoad: ", response);
     },
     onCancel: () => {
       console.log("onCancel");
+      alertStore.showAlert("info", "Payment canceled! Please try again.");
     },
     onError: (error) => {
       console.log("Error: ", error.message);
+      alertStore.showAlert("error", "Payment canceled! Please try again.");
     }
   })
 
+}
+
+function formatCountries(countries) {
+  return countries
+      ?.map((item) => {
+        return {
+          value: item.name,
+          label: item.name,
+        };
+      });
 }
 </script>
 
@@ -42,80 +101,109 @@ function checkoutHandler() {
     <h3 class="text-lg max-sm:text-base font-bold text-gray-800 border-b border-gray-300 pb-2">Order
       Summary</h3>
 
-    <form class="mt-6">
+    <Form class="mt-6" @submit="checkoutHandler" :validation-schema="validationSchema">
       <div>
         <h3 class="text-base text-gray-800  font-semibold mb-4">Enter Details</h3>
         <div class="space-y-3">
-          <div class="relative flex items-center">
-            <input type="text" placeholder="Full Name"
-                   class="px-4 py-2.5 bg-white text-gray-800 rounded-md w-full text-sm border-b focus:border-gray-800 outline-none"/>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4"
-                 viewBox="0 0 24 24">
-              <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
-              <path
-                  d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
-                  data-original="#000000"></path>
-            </svg>
+          <div>
+            <CheckoutInput name="firstName" label="First Name" placeholder="First Name"/>
+            <ErrorMessage name="firstName" class="text-red-500"/>
           </div>
 
-          <div class="relative flex items-center">
-            <input type="email" placeholder="Email"
-                   class="px-4 py-2.5 bg-white text-gray-800 rounded-md w-full text-sm border-b focus:border-gray-800 outline-none"/>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4"
-                 viewBox="0 0 682.667 682.667">
-              <defs>
-                <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                  <path d="M0 512h512V0H0Z" data-original="#000000"></path>
-                </clipPath>
-              </defs>
-              <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
-                <path fill="none" stroke-miterlimit="10" stroke-width="40"
-                      d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
-                      data-original="#000000"></path>
-                <path
-                    d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
-                    data-original="#000000"></path>
-              </g>
-            </svg>
+          <div>
+            <CheckoutInput name="lastName" label="First Name" placeholder="Last Name"/>
+            <ErrorMessage name="lastName" class="text-red-500"/>
+          </div>
+          <div>
+            <CheckoutInput name="email" label="Email" placeholder="Email" type="email"/>
+            <ErrorMessage name="email" class="text-red-500"/>
+          </div>
+          <div>
+            <CheckoutInput name="phoneNumber" label="Phone Number" placeholder="Phone Number"/>
+            <ErrorMessage name="phoneNumber" class="text-red-500"/>
+          </div>
+          <div>
+            {{ selectedCountry?.value ?? 'No country selected' }}
+            <CheckoutInput name="country" class="hidden" :model-value="selectedCountry.value"
+                           :value="selectedCountry.value"
+                           v-model="selectedCountry.value" v-if="selectedCountry"/>
+            <multiselect
+                :options="formatedCountriesList"
+                placeholder="Select country"
+                label="label"
+                track-by="value"
+                name="country"
+                model-value="value"
+                v-model="selectedCountry"
+            />
+
+            <ErrorMessage name="country" class="text-red-500"/>
           </div>
 
-          <div class="relative flex items-center">
-            <input type="number" placeholder="Phone No."
-                   class="px-4 py-2.5 bg-white text-gray-800 rounded-md w-full text-sm border-b focus:border-gray-800 outline-none"/>
-            <svg fill="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 64 64">
-              <path
-                  d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
-                  data-original="#000000"></path>
-            </svg>
+          <div>
+            {{ selectedState?.name ?? 'No state selected' }}
+            <CheckoutInput name="state" class="hidden" :model-value="selectedState.value" :value="selectedState.name"
+                           v-model="selectedState.name" v-if="selectedState"/>
+            <multiselect
+                :options="formatedStatesList"
+                placeholder="Select state"
+                label="name"
+                track-by="name"
+                name="state"
+                model-value="name"
+                v-model="selectedState"
+            />
+
+            <ErrorMessage name="state" class="text-red-500"/>
+          </div>
+          <div>
+            <CheckoutInput name="city" label="City" placeholder="City"/>
+            <ErrorMessage name="city" class="text-red-500"/>
+          </div>
+          <div>
+            <CheckoutInput name="address" label="Address" placeholder="Delivery Address"/>
+            <ErrorMessage name="address" class="text-red-500"/>
           </div>
         </div>
       </div>
-    </form>
 
-    <ul class="text-gray-800 mt-6 space-y-3">
-      <!--      <li class="flex flex-wrap gap-4 text-sm">Subtotal <span class="ml-auto font-bold">#200.00</span></li>-->
-      <!--      <li class="flex flex-wrap gap-4 text-sm">Shipping <span class="ml-auto font-bold">0.00</span></li>-->
-      <!--      <li class="flex flex-wrap gap-4 text-sm">Tax <span class="ml-auto font-bold">0.00</span></li>-->
-      <hr class="border-gray-300"/>
-      <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span class="ml-auto">#{{ props.totalAmount }}</span>
-      </li>
-    </ul>
 
-    <div class="mt-6 space-y-3">
-      <button type="button"
-              class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-gray-800 hover:bg-gray-900 text-white rounded-md"
-              @click="checkoutHandler">
-        Checkout
-      </button>
-      <RouterLink type="button"
-                  :to="{name: 'products'}"
-                  class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-transparent text-gray-800 border border-gray-300 rounded-md flex items-center justify-center">
-        Continue Shopping
-      </RouterLink>
-    </div>
+      <ul class="text-gray-800 mt-6 space-y-3">
+        <!--      <li class="flex flex-wrap gap-4 text-sm">Subtotal <span class="ml-auto font-bold">#200.00</span></li>-->
+        <!--      <li class="flex flex-wrap gap-4 text-sm">Shipping <span class="ml-auto font-bold">0.00</span></li>-->
+        <!--      <li class="flex flex-wrap gap-4 text-sm">Tax <span class="ml-auto font-bold">0.00</span></li>-->
+        <hr class="border-gray-300"/>
+        <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span class="ml-auto">#{{ props.totalAmount }}</span>
+        </li>
+      </ul>
+
+      <div class="mt-6 space-y-3">
+        <button type="submit"
+                class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-gray-800 hover:bg-gray-900 text-white rounded-md"
+        >
+          Checkout
+        </button>
+        <RouterLink type="button"
+                    :to="{name: 'products'}"
+                    class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-transparent text-gray-800 border border-gray-300 rounded-md flex items-center justify-center">
+          Continue Shopping
+        </RouterLink>
+      </div>
+    </Form>
   </div>
 </template>
 
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css">
+.multiselect__option--highlight multiselect__option--selected multiselect__option {
+  background: gold !important;
+  color: green !important;
+}
+
+.multiselect__option {
+  background: red !important;
+}
+</style>
 <style scoped>
 
 </style>

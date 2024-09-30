@@ -63,11 +63,9 @@ export const useCartStore = defineStore("cartStores", () => {
 
     function loadCart() {
         const storedCart = localStorage.getItem(CART_STORAGE_KEY);
-
         if (storedCart) {
             items.value = JSON.parse(storedCart);
         }
-        console.log(items.value);
     }
 
     return {
