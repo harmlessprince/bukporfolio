@@ -51,7 +51,6 @@ function toggleTab(name) {
       </transition>
     </div>
   </Container>
-  <Footer/>
 </template>
 
 <style scoped>

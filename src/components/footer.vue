@@ -8,7 +8,7 @@ import Instagram from '@/assets/instagram.svg';
 </script>
 
 <template>
-  <footer class="text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff] fixed inset-x-0 bottom-0">
+  <footer class="text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff] footer">
     <img :src="UkLogo" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
     <div class="text-basic font-xsm flex flex-row w-full justify-center mt-sm">
@@ -34,5 +34,10 @@ import Instagram from '@/assets/instagram.svg';
 </template>
 
 <style scoped>
-
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
 </style>

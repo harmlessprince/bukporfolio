@@ -14,9 +14,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="">
+  <div class="page-container">
     <Navigation/>
-    <main class="text-primary mb-[25rem]">
+    <main class="text-primary mb-[5rem]">
       <loader v-show="loaderStore.loading"></loader>
       <router-view></router-view>
     </main>
@@ -25,4 +25,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
 </style>

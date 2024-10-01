@@ -1,6 +1,4 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/cartbanner.png';
 import Container from "@/components/Container.vue";
 import OrderSummary from "@/components/OrderSummary.vue";
@@ -16,7 +14,6 @@ const alertStore = useAlertStore();
 
 <template>
   <main class="font-primary">
-    <Navigation/>
     <!-- cart hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -80,8 +77,6 @@ const alertStore = useAlertStore();
         </div>
       </div>
     </Container>
-
-    <Footer/>
   </main>
 </template>
 
