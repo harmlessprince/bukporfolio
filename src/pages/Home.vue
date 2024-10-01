@@ -107,7 +107,7 @@ import Videos from "@/components/Videos.vue";
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <Features class="mb-[25rem]"/>
+    <Features/>
     <!-- end of featured -->
   </div>
 </template>
