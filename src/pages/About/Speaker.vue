@@ -106,8 +106,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <main class="text-primary">
-    <Navigation/>
+
     <div class="relative h-[55rem]">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
@@ -170,8 +169,6 @@ onBeforeMount(() => {
         </div>
       </Container>
     </section>
-    <Footer/>
-  </main>
 </template>
 
 <style scoped>
