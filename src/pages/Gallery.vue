@@ -12,6 +12,7 @@ const currentTab = ref("videos")
 
 function toggleTab(name) {
   currentTab.value = name;
+  console.log(currentTab.value);
 }
 </script>
 
@@ -48,7 +49,7 @@ function toggleTab(name) {
         <GalleryVideo v-if="currentTab === 'videos'" key="videos"/>
       </transition>
       <transition name="fade" mode="out-in">
-        <PictureGallery v-if="currentTab === 'pictures'" key="pictures"/>
+        <PictureGallery v-if="currentTab === 'pictures'" key="pictures" />
       </transition>
     </div>
 
