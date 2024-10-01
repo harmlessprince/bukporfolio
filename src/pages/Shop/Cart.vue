@@ -37,7 +37,6 @@ const alertStore = useAlertStore();
         <div class="grid md:grid-cols-3 gap-8 mt-16">
           <div class="md:col-span-2 space-y-4">
             <div v-for="(item, index) in cartStore.items" :key="index">
-              <RouterLink  :to="{name: 'item', params: {id: item.id}}">
                 <CartItem
                     :id="item.id"
                     :key="index"
@@ -48,7 +47,6 @@ const alertStore = useAlertStore();
                     :quantity="item.quantity"
 
                 />
-              </RouterLink>
             </div>
 
           </div>
@@ -72,11 +70,12 @@ const alertStore = useAlertStore();
           </div>
 
           <h2 class="text-xl font-semibold text-gray-700">Your Cart is Empty!</h2>
-          <p class="text-gray-500 mt-2">It seems like you haven't added any items yet.</p>
+
+          <p class="text-gray-500 mt-2 text-[1.5rem] mb-1">It seems like you haven't added any items yet.</p>
 
           <!-- Button to redirect to the shop page -->
-          <RouterLink :to="{name: 'products'}" class="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300">
-            Shop Now
+          <RouterLink  :to="{name: 'products'}" class="flex items-center justify-center text-secondary bg-primary w-[22.5rem] h-[5.5rem] rounded-[8px] place-self-center text-[1.4rem] font-medium">
+            Go Shopping
           </RouterLink>
         </div>
       </div>
