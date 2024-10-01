@@ -16,7 +16,7 @@ import Coach from '@/assets/trainerImage2.png';
     <Navigation/>
     <!-- about hero section -->
      <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center">
+      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">TRAINER</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
@@ -25,13 +25,13 @@ import Coach from '@/assets/trainerImage2.png';
      </section>
 
      <Container>
-      <div class="w-full flex justify-between items-center my-[5rem]">
-      <div class="w-[47.6rem] min-h-[62.8rem] rounded-[10px] relative">
+      <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] justify-between items-center my-[5rem] max-sm:my-[2.7rem]">
+      <div class="w-[47.6rem] max-sm:w-full min-h-[62.8rem] max-sm:min-h-[34.7rem] rounded-[10px] relative">
         <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
         <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]" alt="footer logo" />
       </div>
-      <div class="w-[47.7rem]">
-        <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">
+      <div class="w-[47.7rem] max-sm:w-full">
+        <p class="font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
             Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company helping individuals and organizations to lead the future by catalysing their reinvention and exponential growth through strategy, training, and consulting. 
             He is certified by the International Council of Management Consulting Institutes (ICMCI). He is also a Fellow of the Institute of Management Consultants of Nigeria and a member of the Chartered Institute of Directors. An alumnus of the National Institute of Policy and Strategic Studies, Kuru, he holds a certificate in Policy, Strategy, and Leadership from the nation’s foremost policy think tank. 
             As a Professional Coach and Trainer, Bright works with C-suite executives and ambitious professionals to bridge the gap between their potential and performance towards achieving high productivity as well as establishing thought leadership in their space. 
@@ -47,8 +47,11 @@ import Coach from '@/assets/trainerImage2.png';
      <Brands />
 
      <Container id="#coach">
-        <div class="flex flex-row justify-between items-end my-[5rem]">
-        <div class="w-[47.9rem]">
+        <div class="grid grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-sm:my-[2.7rem]">
+          <div class="w-[48.0rem] max-sm:w-full min-h-[43.3rem] max-sm:min-h-[27.8rem] sm:hidden">
+            <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+        </div>
+        <div class="w-[47.9rem] max-sm:w-full">
             <Heading title="Coach" />
             <p class="font-xsm text-basic text-[#2B2B2B] mb-[0.5rem]">
                 In today's broken world, many individuals struggle with psychological issues that hinder their progress in leadership, wealth-building, and relationships, and impact their overall well-being as they find themselves trapped in patterns of negative thinking, self-sabotage, and limiting beliefs. 
@@ -63,7 +66,7 @@ import Coach from '@/assets/trainerImage2.png';
             </div>
 
         </div>
-        <div class="w-[48.0rem] min-h-[43.3rem]">
+        <div class="w-[48.0rem] min-h-[43.3rem] max-sm:hidden">
             <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
     </div>

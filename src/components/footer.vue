@@ -11,19 +11,19 @@ import Instagram from '@/assets/instagram.svg';
   <footer class="mt-[5rem] text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff]">
     <img :src="UkLogo" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
-    <div class="text-basic font-xsm flex flex-row w-full justify-center mt-sm">
-      <RouterLink :to="{ name: 'home'}" class="mr-[3rem] hover:text-primary">Home</RouterLink>
-      <RouterLink :to="{ name: 'speaker'}" class="mr-[3rem] hover:text-primary">About</RouterLink>
-      <span class="mr-[3rem] hover:text-primary">Services</span>
-      <span class="mr-[3rem] hover:text-primary">Get in touch</span>
-      <span class="hover:text-primary">FAQS</span>
+    <div class="text-basicText space-x-[3rem] max-sm:space-y-[3rem] font-xsm flex flex-row max-sm:flex-col w-full justify-center mt-sm max-sm:text-center">
+      <RouterLink :to="{ name: 'home'}" class="hover:text-primaryColor">Home</RouterLink>
+      <RouterLink :to="{ name: 'speaker'}" class=" hover:text-primaryColor">About</RouterLink>
+      <span class=" hover:text-primaryColor">Services</span>
+      <span class="hover:text-primaryColor">Get in touch</span>
+      <span class="hover:text-primaryColor">FAQS</span>
     </div>
 
-    <div class=" flex flex-row w-full justify-center items-center my-sm">
-        <img :src="Twitter" class="w-[20px] h-[20px] mr-[1rem]" alt="icons" />
-         <img :src="Youtube" class="w-[20px] h-[20px] mr-[1rem]" alt="icons" />
-        <img :src="LinkedIn" class="w-[20px] h-[20px] mr-[1rem]" alt="icons" />
-        <img :src="Facebook" class="w-[20px] h-[20px] mr-[1rem]" alt="icons" />
+    <div class=" flex flex-row w-full justify-center items-center my-sm space-x-[1rem]">
+        <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons" />
+         <img :src="Youtube" class="w-[20px] h-[20px]" alt="icons" />
+        <img :src="LinkedIn" class="w-[20px] h-[20px]" alt="icons" />
+        <img :src="Facebook" class="w-[20px] h-[20px]" alt="icons" />
         <img :src="Instagram" class="w-[20px] h-[20px]" alt="icons" />
     </div>
 

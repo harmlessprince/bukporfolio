@@ -24,6 +24,7 @@ export default {
           lg: "1.8rem", //18px
           xlg: "2rem", //20px
           basic: "1.6rem", //16px
+          basicText: "1.6rem",
           forty: "4.0rem", //40px
           hero: "5.2rem", //52px
           header: "3.6rem" //36px
@@ -43,6 +44,7 @@ export default {
 
       fontWeight: {
         xsm: "400",
+        xsmall: "400",
         sm: "500",
         lg: "600",
         xlg: "900",

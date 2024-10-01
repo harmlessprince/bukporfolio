@@ -13,7 +13,7 @@ import Books from "@/components/Books.vue";
     <Navigation/>
     <!-- about hero section -->
      <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
+      <div class="w-[47.7rem] max-sm:w-full text-basicText mx-auto text-center z-[200]">
         <h1 class="text-forty font-xlg text-basicColor">Author</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
@@ -22,11 +22,11 @@ import Books from "@/components/Books.vue";
      </section>
 
      <Container>
-      <div class="w-full flex justify-between items-center my-[5rem]">
-      <div class="w-[47.6rem] h-[29.1rem] rounded-[10px]">
+      <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
+      <div class="w-[47.6rem] max-sm:w-full h-[39rem] rounded-[10px]">
         <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
       </div>
-      <div class="w-[47.7rem]">
+      <div class="w-[47.7rem] max-sm:w-full">
         <p class="font-xsm text-[2.4rem] text-[#2B2B2B]">
           As a prolific writer, Bright UK is the author of three books and many resourceful publications. 
           He is a former contributor to Business Day Newspaper which is widely read across Nigeria and Ghana.

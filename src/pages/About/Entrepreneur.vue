@@ -23,7 +23,7 @@ onBeforeMount(() => {
       <div class="absolute inset-0  bg-cover bg-center"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
       <!-- Text on top of the image -->
-      <div class="w-[47.7rem] relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
+      <div class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">ENTREPRENEUR</h1>
         <div class="font-lg text-basic">
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
@@ -36,14 +36,14 @@ onBeforeMount(() => {
       <!-- scribe div flex -->
       <div v-for="(item, index) in store.entrepreneurs" :key="index">
         <div v-if="index%2 === 0">
-          <div class="grid grid-cols-2 gap-4 my-[5rem]">
+          <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-4 my-[5rem] max-sm:my-[3.7rem]">
             <div class="animate-slideInLeft delay-200">
-              <div class="w-[47.7rem]">
+              <div class="w-[47.7rem] max-sm:w-full">
                 <img :src="item.logo" class="w-full rounded-[10px]" :class="store.entrepreneurs.length < 1 ? 'animate-pulse': '' " alt="bright"/>
               </div>
             </div>
             <div class="animate-slideInRight delay-200">
-              <div class="w-[47.8rem] p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
+              <div class="w-[47.8rem] max-sm:w-full p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
                   {{item.body}}
@@ -54,9 +54,9 @@ onBeforeMount(() => {
           </div>
         </div>
         <div v-else>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-4">
             <div class="animate-slideInLeft delay-400">
-              <div class="w-[47.8rem] p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
+              <div class="w-[47.8rem] max-sm:w-full p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
                   {{item.body}}
@@ -65,7 +65,7 @@ onBeforeMount(() => {
               </div>
             </div>
             <div class="animate-slideInRight delay-400">
-              <div class="w-[47.7rem]">
+              <div class="w-[47.7rem] max-sm:w-full">
                 <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
               </div>
             </div>
