@@ -24,8 +24,6 @@ const bookDetails = () => {
 </script>
 
 <template>
-  <main class="font-primary">
-    <Navigation/>
 
     <Container>
         <div class="w-full my-[14rem] flex flex-row items-top space-x-[3rem]">
@@ -107,9 +105,6 @@ const bookDetails = () => {
 
         </div>
     </Container>
-      
-    <Footer />  
-    </main>
 </template>
 
 <style scoped>

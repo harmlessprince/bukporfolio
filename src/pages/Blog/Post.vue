@@ -46,14 +46,9 @@ function decodeUnicode(str) {
   return text;
 }
 
-const rawHtml = ref(`
-<h1>Preface</h1>
-`)
 </script>
 
 <template>
-  <main class="text-secondary">
-    <Navigation/>
     <!-- hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -137,8 +132,6 @@ const rawHtml = ref(`
         </div>
       </div>
     </Container>
-    <Footer/>
-  </main>
 </template>
 
 <style scoped>

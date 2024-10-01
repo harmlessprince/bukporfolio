@@ -48,7 +48,6 @@ export const useBlogStore = defineStore("blogsStore", () => {
         if (response.status === 200) {
             const data = await response.json();
             recentPosts.value = data?.items ?? []
-            loading.value = false
         }
         loaderStore.done()
     }

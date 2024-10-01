@@ -12,7 +12,6 @@
     "@paystack/inline-js": "^2.20.3",
     "@vee-validate/zod": "^4.13.2",
     "@videojs-player/vue": "^1.0.0",
-    "@yeger/vue-masonry-wall": "^5.0.15",
     "dompurify": "^3.1.7",
     "firebase": "^10.13.2",
     "flowbite": "^2.5.1",

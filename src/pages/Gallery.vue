@@ -17,8 +17,6 @@ function toggleTab(name) {
 </script>
 
 <template>
-
-  <Navigation/>
   <!-- about hero section -->
   <section class="flex items-center justify-center relative h-[60rem] w-full bg-cover bg-no-repeat"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -31,7 +29,7 @@ function toggleTab(name) {
     </div>
   </section>
 
-  <Container>
+  <Container class="mb-[25rem]">
     <div class="mt-[3.4rem] mb-[1.7rem] text-center">
       <div
           class="w-[48.1rem] mb-[1.7rem] h-[45px] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex p-1">
@@ -52,7 +50,6 @@ function toggleTab(name) {
         <PictureGallery v-if="currentTab === 'pictures'" key="pictures" />
       </transition>
     </div>
-
   </Container>
   <Footer/>
 </template>
