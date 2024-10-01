@@ -25,7 +25,7 @@ function toggleTab(name) {
       <h1 class="text-forty font-xlg text-basicColor">Gallery</h1>
       <div class="font-lg text-basic">
         <span class="text-bannerNavColor">Home</span> <span class="text-primaryColor"> > Gallery</span><span
-          class="text-primaryColor"> > Pictures</span>
+          class="text-primaryColor uppercase"> > {{currentTab}}</span>
       </div>
     </div>
   </section>
@@ -35,7 +35,7 @@ function toggleTab(name) {
       <div
           class="w-[48.1rem] mb-[1.7rem] h-[45px] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex p-1">
         <button class="gallery_tab transition-all duration-300 ease-in-out transform" @click="toggleTab('videos')"
-                :class="currentTab === 'videos' ? 'selected' : 'unselected'">Video
+                :class="currentTab === 'videos' ? 'selected' : 'unselected'">Videos
         </button>
         <button class="gallery_tab transition-all duration-300 ease-in-out transform" @click="toggleTab('pictures')"
                 :class="currentTab === 'pictures' ? 'selected' : 'unselected'">Pictures

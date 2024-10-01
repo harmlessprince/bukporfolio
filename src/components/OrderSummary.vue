@@ -195,14 +195,7 @@ function formatCountries(countries) {
 
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css">
-.multiselect__option--highlight multiselect__option--selected multiselect__option {
-  background: gold !important;
-  color: green !important;
-}
 
-.multiselect__option {
-  background: red !important;
-}
 </style>
 <style scoped>
 
