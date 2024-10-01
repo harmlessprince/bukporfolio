@@ -152,7 +152,7 @@ q {
 }
 
 .blog_category_tab {
-    @apply rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem] flex justify-center items-center text-center capitalize;
+    @apply rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem] flex flex-wrap justify-center items-center text-center capitalize;
 }
 
 
