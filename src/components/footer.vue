@@ -8,7 +8,11 @@ import Instagram from '@/assets/instagram.svg';
 </script>
 
 <template>
+<<<<<<< HEAD
   <footer class=" w-full mt-[5rem] text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff]">
+=======
+  <footer class="text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff] fixed inset-x-0 bottom-0">
+>>>>>>> origin/main
     <img :src="UkLogo" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
     <div class="text-basicText space-x-[3rem] max-sm:space-y-[3rem] font-xsm flex flex-row max-sm:flex-col w-full justify-center mt-sm max-sm:text-center">

@@ -21,14 +21,15 @@ import Coach from '@/assets/trainerImage2.png';
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
         </div>
-      </div>
-     </section>
+    </div>
+  </section>
 
      <Container>
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] justify-between items-center my-[5rem] max-sm:my-[2.7rem]">
       <div class="w-[47.6rem] max-sm:w-full min-h-[62.8rem] max-sm:min-h-[34.7rem] rounded-[10px] relative">
         <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
-        <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]" alt="footer logo" />
+        <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
+             alt="footer logo"/>
       </div>
       <div class="w-[47.7rem] max-sm:w-full">
         <p class="font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
@@ -39,12 +40,13 @@ import Coach from '@/assets/trainerImage2.png';
             FrieslandCampina WAMPCO Nigeria Plc, Nigerian National Petroleum Corporation (NNPC), Guaranty Trust Bank (GTB), First Bank Insurance Brokers, Nigerian Institute of Town Planners (NITP), etc. to boost the effectiveness and productivity of their workforce. 
         </p>
 
-        <button class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px]">Book bright UK</button>
+        <button class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px]">Book bright UK
+        </button>
       </div>
     </div>
-     </Container>
+  </Container>
 
-     <Brands />
+  <Brands/>
 
      <Container id="#coach">
         <div class="grid grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-sm:my-[2.7rem]">
@@ -65,20 +67,26 @@ import Coach from '@/assets/trainerImage2.png';
             <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your team for a Group Coaching Session</button>
             </div>
 
-        </div>
-        <div class="w-[48.0rem] min-h-[43.3rem] max-sm:hidden">
-            <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
-        </div>
+        <div>
+          <button class="block h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary"> Book a
+            Personal Coaching Session
+          </button>
+          <br/>
+          <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your
+            team for a Group Coaching Session
+          </button>
+        </div>     
     </div>
-     </Container>
-
-     
-    <Footer />  
-    </main>
+    <div class="w-[48.0rem] min-h-[43.3rem] max-sm:hidden">
+      <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+  </div>
+  </div>
+  </Container>
+</main>
 </template>
 
 <style scoped>
-.aboutBanner::after{
+.aboutBanner::after {
   content: "";
   position: absolute;
   top: 0;

@@ -14,9 +14,8 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <main class="text-primary">
-    <Navigation/>
     <!-- about hero section -->
+  <section class="">
     <div class="relative h-[55rem]">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
@@ -30,6 +29,8 @@ onBeforeMount(() => {
         </div>
       </div>
     </div>
+  </section>
+
 
     <Container>
 
@@ -73,8 +74,6 @@ onBeforeMount(() => {
         </div>
       </div>
     </Container>
-    <Footer/>
-  </main>
 </template>
 
 <style scoped>

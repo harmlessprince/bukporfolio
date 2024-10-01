@@ -18,7 +18,6 @@ import Videos from "@/components/Videos.vue";
 
 <template>
   <div class="text-primary relative isolate">
-    <Navigation />
     <!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
     <HomeHeroSection />
@@ -108,9 +107,8 @@ import Videos from "@/components/Videos.vue";
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <Features />
+    <Features/>
     <!-- end of featured -->
-    <Footer />
   </div>
 </template>
 

@@ -106,6 +106,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
+
   <main class="text-primary">
     <Navigation/>
     <div class="relative h-[55rem] max-sm:w-full">
@@ -172,8 +173,7 @@ onBeforeMount(() => {
         </div>
       </Container>
     </section>
-    <Footer/>
-  </main>
+    </main>
 </template>
 
 <style scoped>

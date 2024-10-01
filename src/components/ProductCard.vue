@@ -1,8 +1,9 @@
 <script setup>
 import {useCartStore} from "@/store/cart.store.js";
+import {formatMoney} from "../services/util.js";
 
 const cartStore = useCartStore();
-const props = defineProps(['title', "url", "price", "description", "id"])
+const props = defineProps(['title', "image", "price", "description", "id"])
 </script>
 
 <template>
@@ -11,34 +12,35 @@ const props = defineProps(['title', "url", "price", "description", "id"])
   >
     <div class="w-[100%] h-[247px] relative">
       <img
-        :src="url"
+        :src="image"
         class="w-full h-full object-cover object-center"
         alt="book"
       />
     </div>
     <h4 class="text-secondary font-header text-basic mt-[0.5rem]">
-      {{props.title}}
+      {{title}}
     </h4>
     <div class="text-regular font-xsm text-xsm">
       <p>
-        {{props.description}}
+        {{description}}
       </p>
     </div>
     <div class="text-xlg text-[#21211E] font-header mt-auto">
-      #{{new Intl.NumberFormat().format(props.price)}}
+      #{{formatMoney(price)}}
     </div>
     <div class="flex gap-[1rem]">
       <button
         class="min-w-[13.7rem] grow  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]"
-        @click="cartStore.addToCart({id: props.id, price: props.price, title: props.title, variation : 'hardcover', url: props.url})"
+        @click="cartStore.addToCart({id, price: price, title, variation : 'hardcover', image})"
       >
         Add to Cart
       </button>
-      <button
-        class="min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px]"
+      <RouterLink
+          :to="{name: 'item', params: {id}}"
+        class="min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px] flex items-center justify-center"
       >
         View more
-      </button>
+      </RouterLink>
     </div>
   </div>
 </template>

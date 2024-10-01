@@ -1,17 +1,9 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/shopbanner.png';
 import Books from "@/components/Books.vue";
-import Container from "@/components/Container.vue";
-import Subheading from '@/components/SubHeading.vue';
-
-
 </script>
 
 <template>
-  <main class="text-primary">
-    <Navigation/>
     <!-- about hero section -->
      <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] text-basic mx-auto text-center">
@@ -21,32 +13,9 @@ import Subheading from '@/components/SubHeading.vue';
         </div>
       </div>
      </section>
-
-    <Books />
-
-    <section class="w-full my-regular bg-secondary text-center pt-top pb-[5rem] mb-[8rem]">
-      <Container>
-        <Subheading title="Awesome Stats" />
-        <header class="font-header text-header text-basicColor">Milestones Achieved</header>
-        <div class="mt-regular flex items-center justiy-between">
-        <div class="w-[45.9rem] flex items-center justify-center">
-          <div class="text-center w-full text-basicColor">
-          <div class="font-header text-header">+5363k</div>
-           <div class="font-lg text-basic">Total pages publish</div>
-          </div>
-        </div>
-        <div class="w-[45.9rem] flex items-center justify-center">
-          <div class="text-center w-full text-basicColor">
-            <div class="font-header text-header">+5363k</div>
-           <div class="font-lg text-basic">Sales</div>
-          </div>
-        </div>
-       </div>
-
-      </Container>
-    </section>    
-    <Footer />  
-    </main>
+    <section class="mb-[25rem]">
+      <Books />
+    </section>
 </template>
 
 <style scoped>

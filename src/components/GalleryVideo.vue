@@ -19,8 +19,8 @@ import 'video.js/dist/video-js.css'
             controls
             :loop="true"
             :volume="0.6"
-            height=468
-            width=488
+            :height=468
+            :width=488
             :fluid="true"
         />
 

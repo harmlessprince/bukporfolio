@@ -1,13 +1,9 @@
-<script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
+<script setup>;
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import {useBlogStore} from "@/store/blog.store.js";
-import {useLoaderStore} from "@/store/loader.store.js";
 import {onBeforeMount, ref, watch} from "vue";
 import {useRoute} from "vue-router";
-import Loader from "@/components/Loader.vue";
 import {onBeforeRouteUpdate} from 'vue-router'
 import {
   generateThumbnailFromText,
@@ -17,7 +13,6 @@ import he from 'he';
 import DOMPurify from 'dompurify';
 
 const blogStore = useBlogStore();
-const loaderStore = useLoaderStore();
 const route = useRoute();
 onBeforeMount(() => {
   blogStore.fetchSinglePosts(route.params.id);
@@ -46,14 +41,9 @@ function decodeUnicode(str) {
   return text;
 }
 
-const rawHtml = ref(`
-<h1>Preface</h1>
-`)
 </script>
 
 <template>
-  <main class="text-secondary">
-    <Navigation/>
     <!-- hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -96,6 +86,9 @@ const rawHtml = ref(`
             </h1>
           </div>
           <div v-html="sanitizedHtml(blogStore.singlePost.content)" class="post_detail"></div>
+          <div>
+
+          </div>
         </div>
         <!-- second part of the flex -->
         <div class="w-[31.1rem] max-sm:w-full">
@@ -137,8 +130,6 @@ const rawHtml = ref(`
         </div>
       </div>
     </Container>
-    <Footer/>
-  </main>
 </template>
 
 <style scoped>

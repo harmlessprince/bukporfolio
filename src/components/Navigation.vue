@@ -48,7 +48,7 @@ const toggleMenu = () => {
           </li>
         </ul>
         <div>
-          <RouterLink :to="{ name: 'home'}" class="">
+          <RouterLink :to="{ name: 'contact'}" class="border-0" activeClass="border-0">
             <button
               class="font-sm text-xsm border text-primary border-primary p-4  rounded-md outline-0"
             >

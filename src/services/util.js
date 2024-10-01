@@ -33,3 +33,8 @@ export function getBlogDate(dateString) {
     const date = new Date(dateString);
     return `${date.getDate()}-${getMonthFromDate(dateString)}-${date.getFullYear()}`;
 }
+
+export function formatMoney(money) {
+    return new Intl.NumberFormat().format(money);
+}
+

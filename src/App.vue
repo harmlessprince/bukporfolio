@@ -4,6 +4,8 @@ import {useCartStore} from "@/store/cart.store.js";
 import { onMounted } from 'vue';
 import Loader from "@/components/Loader.vue";
 import {useLoaderStore} from "@/store/loader.store.js";
+import Footer from "@/components/footer.vue";
+import Navigation from "@/components/Navigation.vue";
 const loaderStore = useLoaderStore()
 const cartStore = useCartStore();
 onMounted(() => {
@@ -13,10 +15,12 @@ onMounted(() => {
 
 <template>
   <div class="">
-    <main>
+    <Navigation/>
+    <main class="text-primary mb-[25rem]">
       <loader v-show="loaderStore.loading"></loader>
       <router-view></router-view>
     </main>
+    <Footer />
   </div>
 </template>
 

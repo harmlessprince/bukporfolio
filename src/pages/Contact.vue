@@ -10,7 +10,7 @@ import Subheading from '@/components/SubHeading.vue';
 
 <template>
   <main class="text-secondary">
-    <!-- <Navigation/> -->
+    <Navigation/>
     <!-- hero section -->
      <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[200]">
@@ -18,8 +18,9 @@ import Subheading from '@/components/SubHeading.vue';
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Contact Bright UK</span>
         </div>
+
       </div>
-     </section>
+  </section>
 
      <Container>
         <div class="mt-[3.4rem] text-center max-sm:w-full">
@@ -69,39 +70,35 @@ import Subheading from '@/components/SubHeading.vue';
                 <label class="">Message</label>
                 <textarea class="w-full h-[19.6rem] rounded-[10px] border border-[#a6a6a6]"></textarea>
             </div>
-
-            <button class="w-[22.5rem] h-[5.5rem] bg-primaryColor rounded-[8px]">send message</button>   
             </form>
 
             <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] text-[#ffffff] font-[500] mt-[4.8rem]">
                 <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
-                    <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
-                    <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
+                    <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
                 </div>
 
                 <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
-                    <div class="text-[2rem] leading-[2.8rem]">+909748748984</div>
-                    <div class="text-[2rem] leading-[2.8rem]">+078576738292</div>
+                    <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
+                    
                 </div>
 
                 <div class="min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
-                    <div class="text-[2rem] leading-[2.8rem]">Eghdjkfkdjf,jkfk</div>
-                    <div class="text-[2rem] leading-[2.8rem]">gdkjgkkjhgkkjdkhgh</div>
+                    <div class="text-[2rem] leading-[2.8rem]">The Ridge Terrace, off kusenla Road lekki lagos</div>
+
+                </div>
                 </div>
 
-            </div>
+    </section>
+  </Container>
+  </main>
 
-        </section>
-     </Container>
-    <Footer />  
-    </main>
 </template>
 
 <style scoped>
-.aboutBanner::after{
+.aboutBanner::after {
   content: "";
   position: absolute;
   top: 0;
