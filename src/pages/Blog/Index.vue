@@ -56,7 +56,7 @@ function onCategoryChange(category) {
         <Subheading title="Glean insights to transform your mind and get more out of life" class="mb-[0.5rem]"/>
         <Heading title="The Musings of Bright UK"/>
         <div
-            class="mt-[1.4rem] mx-auto h-[4.5rem] font-sm text-xsm  flex flex-row bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem] space-x-[2.5rem] ">
+            class="mt-[1.4rem] mx-auto h-[4.5rem] max-sm:h-auto font-sm text-xsm  flex flex-row flex-wrap bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem] space-x-[2.5rem] ">
           <button class="blog_category_tab transition-all duration-300 ease-in-out transform"
                   :class="currentCategory === 'all' ? 'selected' : 'unselected'" @click="onCategoryChange('all')">All
           </button>

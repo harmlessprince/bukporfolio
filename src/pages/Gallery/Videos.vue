@@ -13,7 +13,7 @@ import Subheading from '@/components/SubHeading.vue';
     <Navigation/>
     <!-- hero section -->
      <section class="mt-[9rem] flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center z-[200]">
+      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[100]">
         <h1 class="text-forty font-xlg text-basicColor">Gallery</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primaryColor"> > Gallery</span><span class="text-primaryColor"> > Videos</span>
@@ -23,9 +23,9 @@ import Subheading from '@/components/SubHeading.vue';
 
      <Container>
       <div class="mt-[3.4rem] mb-[1.7rem] text-center">
-        <div class="w-[48.1rem] mb-[1.7rem] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex flex-row">
-          <button class="w-[24rem] h-[3.7rem] bg-[#121212] text-[#FFF] rounded-[6px]">Video</button>  
-          <button class="w-[24rem] h-[3.7rem] text-[#545454] rounded-[6px]">Pictures</button>
+        <div class="w-[48.1rem] max-sm:w-full  h-[3.7rem] mb-[1.7rem] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex flex-row">
+          <button class="w-[24rem] bg-[#121212] text-[#FFF] rounded-[6px]">Video</button>  
+          <button class="w-[24rem] text-[#545454] rounded-[6px]">Pictures</button>
         </div>
 
         <GalleryVideo  />

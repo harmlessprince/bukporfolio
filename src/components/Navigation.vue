@@ -14,10 +14,10 @@ const toggleMenu = () => {
 
 <template>
   <div
-    class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-10"
+    class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-[500]"
   >
     <Container>
-      <nav class="px-12 py-5 flex items-center justify-between">
+      <nav class="px-12 py-5 flex items-center justify-between ">
         <div class="logo w-[5.3rem] h-[5.3rem]">
           <a href="/">
             <img :src="Logo" alt="My Logo" />

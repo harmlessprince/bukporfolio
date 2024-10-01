@@ -28,11 +28,11 @@ const bookDetails = () => {
     <Navigation/>
 
     <Container>
-        <div class="w-full my-[14rem] flex flex-row items-top space-x-[3rem]">
-            <div class="w-[48.1rem] max-h-[60.4rem]">
+        <div class="w-full my-[14rem] flex flex-row max-sm:flex-col items-top max-sm:space-y-[2rem] space-x-[3rem] max-sm:space-x-0">
+            <div class="w-[48.1rem] max-sm:w-full max-h-[60.4rem]">
                 <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
             </div>
-            <div class="w-[48.1rem] space-y-[1.5rem]">
+            <div class="w-[48.1rem] max-sm:w-full space-y-[1.5rem]">
                 <div>
                     <Heading title="A long way down" />
                     <div class="w-[13.7rem] flex flex-row justify-between">
@@ -46,24 +46,24 @@ const bookDetails = () => {
                 <div class="font-header text-forty text-secondary">#4000</div>
                 <div>
                     <p class="font-sm text-xlg text-[#555454]">Available variation</p>
-                    <div class="font-sm text-xsm text-basicColor flex flex-row justify-between bg-[#dddddd] rounded-[6px]">
-                        <button class="bg-[#121212] rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Hardcover</button>
-                        <button class="rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Paperback</button>
-                        <button class=" rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">eBook</button>
-                        <button class="rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem]">Audiobook</button>
+                    <div class="max-sm:w-full font-sm text-xsm text-basicColor  h-[3.7rem]  flex flex-row justify-between bg-[#dddddd] rounded-[6px]">
+                        <button class="bg-[#121212] rounded-[6px] min-w-[9rem] max-sm:min-w-[8.3rem] p-[1rem]">Hardcover</button>
+                        <button class="rounded-[6px] min-w-[9rem] max-sm:min-w-[8.3rem] p-[1rem]">Paperback</button>
+                        <button class=" rounded-[6px] min-w-[9rem] max-sm:min-w-[8.3rem] p-[1rem]">eBook</button>
+                        <button class="rounded-[6px] min-w-[9rem] max-sm:min-w-[8.3rem] p-[1rem]">Audiobook</button>
                     </div>
                 </div>
                 <div>
-                <p class="ont-sm text-xlg text-[#555454]">Quantity</p>
-                <div class="w-full flex flex-row justify-between items-end">
-                    <div class="w-[9.9rem] rounded-[5px] flex flex-row justify-between items-center">
+                <p class="font-sm text-xlg text-[#555454]">Quantity</p>
+                <div class="text-right w-full flex flex-row max-sm:flex-col max-sm:space-y-[1.4rem] justify-between items-end">
+                    <div class="w-[9.9rem]  bg-primary rounded-[5px] flex flex-row justify-between items-center">
                         <button class="w-[3.2rem] h-[2.9rem] text-secondary bg-[#dddddd] font-sm text-xlg rounded-tl-[5px] rounded-bl-[5px]">+</button>
                         <span class="text-secondary font-sm text-xlg">1</span>
                         <button class="w-[3.2rem] h-[2.9rem] text-secondary bg-[#dddddd] font-sm text-xlg rounded-tr-[5px] rounded-br-[5px]">-</button>
                     </div>
 
-                    <button class="w-[13.7rem] h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
-                    <button class="w-[13.7rem] h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
+                    <button class="w-[13.7rem] max-sm:w-full h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
+                    <button class="w-[13.7rem] max-sm:w-full h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
                 </div>
                 </div>
 

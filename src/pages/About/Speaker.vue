@@ -159,7 +159,9 @@ onBeforeMount(() => {
           <Subheading title="Qoutes"/>
           <Heading title="Inspirational words from Bright UK"/>
         </div>
-        <div class="w-full flex flex-row flex-wrap justify-between mt-top">
+        <div
+          class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] mt-[2rem]"
+        >
           <InspirationCard
               v-for="(item, index) in store.quotes"
               :title="item.title"
