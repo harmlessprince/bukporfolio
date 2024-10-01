@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact.vue";
 import Videos from "@/pages/Gallery/Videos.vue";
 import Pictures from "@/pages/Gallery/Pictures.vue";
 import NotFound from "@/pages/NotFound.vue";
+import Gallery from "@/pages/Gallery.vue";
 
 const routes = [
     {path: '/', component: Home, name: 'home'},
@@ -28,8 +29,7 @@ const routes = [
     {path: '/blog', component: Blog, name: 'blog'},
     {path: '/blog/post/:id', component: Post, name: 'post'},
     {path: '/contact', component: Contact, name: 'contact'},
-    {path: '/gallery/videos', component: Videos, name: 'videos'},
-    {path: '/gallery/pictures', component: Pictures, name: 'pictures'},
+    {path: '/gallery', component: Gallery, name: 'gallery'},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
