@@ -69,22 +69,19 @@ import Subheading from '@/components/SubHeading.vue';
       </form>
 
       <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] mt-[4.8rem]">
-        <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
           <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
-          <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
-          <div class="text-[2rem] leading-[2.8rem]">Example@email.com</div>
+          <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
         </div>
 
-        <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
           <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
-          <div class="text-[2rem] leading-[2.8rem]">+909748748984</div>
-          <div class="text-[2rem] leading-[2.8rem]">+078576738292</div>
+          <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
         </div>
 
-        <div class="w-[30.5rem] min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
           <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
-          <div class="text-[2rem] leading-[2.8rem]">Eghdjkfkdjf,jkfk</div>
-          <div class="text-[2rem] leading-[2.8rem]">gdkjgkkjhgkkjdkhgh</div>
+          <div class="text-[2rem] leading-[2.8rem]">The Ridge Terrace, Off  Kusenla Road, Lekki, Lagos</div>
         </div>
 
       </div>
