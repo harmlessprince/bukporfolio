@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@paystack/inline-js": "^2.20.3",
+    "@types/video.js": "7.x",
     "@vee-validate/zod": "^4.13.2",
     "@videojs-player/vue": "^1.0.0",
     "dompurify": "^3.1.7",
@@ -19,7 +20,7 @@
     "he": "^1.2.0",
     "pinia": "^2.2.2",
     "vee-validate": "^4.13.2",
-    "video.js": "^8.17.4",
+    "video.js": "7.x",
     "vue": "^3.4.37",
     "vue-multiselect": "^3.1.0",
     "vue-router": "4",

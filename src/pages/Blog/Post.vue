@@ -86,6 +86,9 @@ function decodeUnicode(str) {
             </h1>
           </div>
           <div v-html="sanitizedHtml(blogStore.singlePost.content)" class="post_detail"></div>
+          <div>
+
+          </div>
         </div>
         <!-- second part of the flex -->
         <div class="w-[31.1rem]">
