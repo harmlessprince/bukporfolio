@@ -60,7 +60,16 @@ export const useBlogStore = defineStore("blogsStore", () => {
             const data = await response.json();
             singlePost.value = data ?? null
         } else {
-            router.push({name: "home"})
+            router.push({
+                name: 'NotFound',
+                query: {
+                    message: 'The post you are looking for does not exist',
+                    reason: 'You may have visited an old link or the post has been removed',
+                    route: 'blog',
+                    buttonText: 'Go To Posts',
+                }
+            });
+            loaderStore.done()
         }
         loaderStore.done()
     }

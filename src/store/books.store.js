@@ -3,12 +3,14 @@ import {collection, doc, getDoc, getDocs} from 'firebase/firestore'
 import {database} from "@/services/firebase.js";
 import {ref} from "vue";
 import {useLoaderStore} from "@/store/loader.store.js";
+import {useRouter} from "vue-router";
 
 export const useBookstore = defineStore("booksStore", () => {
 
     const books = ref([]);
     const selectedBook = ref(null);
     const loaderStore = useLoaderStore()
+    const router = useRouter()
 
     async function getBooks() {
         loaderStore.start()
@@ -47,7 +49,16 @@ export const useBookstore = defineStore("booksStore", () => {
         const docSnapshot = await getDoc(bookRef);
         // const router = useRouter();
         if (!docSnapshot.exists()) {
-            return;
+            router.push({
+                name: 'NotFound',
+                query: {
+                    message: 'The book you are looking for does not exist',
+                    reason: 'You may have visited and old link or the book has been removed',
+                    route: 'products',
+                    buttonText: 'Go To Shop',
+                }
+            });
+            loaderStore.done()
         }
         const data = docSnapshot.data();
         let defaultBook = null;

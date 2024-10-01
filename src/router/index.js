@@ -34,6 +34,7 @@ const routes = [
         path: "/:pathMatch(.*)*",
         name: "NotFound",
         component: NotFound,
+        props: (route) => ({ message: route.query?.message, reason: route.query?.reason, route: route.query?.route, buttonText: route.query?.buttonText }),
     },
 ]
 
