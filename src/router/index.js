@@ -24,7 +24,7 @@ const routes = [
     {path: '/about/coach#coach', component: Trainer, name: 'coach'},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
     {path: '/shop/products', component: Products, name: 'products'},
-    {path: '/shop/item', component: Item, name: 'item'},
+    {path: '/shop/item/:id', component: Item, name: 'item'},
     {path: '/shop/cart', component: Cart, name: 'cart'},
     {path: '/blog', component: Blog, name: 'blog'},
     {path: '/blog/post/:id', component: Post, name: 'post'},
