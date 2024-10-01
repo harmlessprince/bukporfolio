@@ -37,15 +37,17 @@ const alertStore = useAlertStore();
         <div class="grid md:grid-cols-3 gap-8 mt-16">
           <div class="md:col-span-2 space-y-4">
             <div v-for="(item, index) in cartStore.items" :key="index">
-              <CartItem
-                  :id="item.id"
-                  :key="index"
-                  :price="item.price"
-                  :title="item.title"
-                  :url="item.url"
-                  :variation="item.variation"
-                  :quantity="item.quantity"
-              />
+              <RouterLink  :to="{name: 'item', params: {id: item.id}}" class="hover:text-primary">
+                <CartItem
+                    :id="item.id"
+                    :key="index"
+                    :price="item.price"
+                    :title="item.title"
+                    :image="item.image"
+                    :variation="item.variation"
+                    :quantity="item.quantity"
+                />
+              </RouterLink>
             </div>
 
           </div>

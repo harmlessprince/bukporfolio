@@ -1,13 +1,9 @@
-<script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
+<script setup>;
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import {useBlogStore} from "@/store/blog.store.js";
-import {useLoaderStore} from "@/store/loader.store.js";
 import {onBeforeMount, ref, watch} from "vue";
 import {useRoute} from "vue-router";
-import Loader from "@/components/Loader.vue";
 import {onBeforeRouteUpdate} from 'vue-router'
 import {
   generateThumbnailFromText,
@@ -17,7 +13,6 @@ import he from 'he';
 import DOMPurify from 'dompurify';
 
 const blogStore = useBlogStore();
-const loaderStore = useLoaderStore();
 const route = useRoute();
 onBeforeMount(() => {
   blogStore.fetchSinglePosts(route.params.id);

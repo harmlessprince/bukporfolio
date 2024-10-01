@@ -1,12 +1,6 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/shopbanner.png';
 import Books from "@/components/Books.vue";
-import Container from "@/components/Container.vue";
-import Subheading from '@/components/SubHeading.vue';
-
-
 </script>
 
 <template>

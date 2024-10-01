@@ -1,19 +1,18 @@
 import {defineStore} from "pinia";
 import {ref, computed} from "vue";
-import item from "@/pages/Shop/Item.vue";
+import {useBookstore} from "@/store/books.store.js";
 
 const CART_STORAGE_KEY = 'cart_items';
 export const useCartStore = defineStore("cartStores", () => {
     const items = ref([]) // state
+    // const bookStore = useBookstore();
 
     // const doubleCount = computed(() => count.value * 2)  // getters
     const cartItemCount = computed(() => items.value.reduce((count, item) => count + item.quantity, 0.00))
     const totalAmount = computed(() => items.value.reduce((total, item) => total + item.price * item.quantity, 0.00))
 
     function findCartItem(productId, variation) {
-        return items.value.find(
-            (item) => item.id === productId && item.variation === variation
-        );
+        return items.value.find((item) => item.id === productId && item.variation === variation);
     }
 
     function addToCart(product) {
@@ -23,6 +22,7 @@ export const useCartStore = defineStore("cartStores", () => {
         } else {
             items.value.push({...product, quantity: 1});
         }
+        console.log(itemInCart);
         saveCart()
     }
 
@@ -41,11 +41,13 @@ export const useCartStore = defineStore("cartStores", () => {
     }
 
     function decrementItemQuantity(productId, productVariation) {
+        console.log(productId, productVariation);
         const item = findCartItem(productId, productVariation);
+        console.log(item);
         if (item) {
-            if (item.qunatity > 1){
-                item.qunatity--;
-            }else {
+            if (item.quantity > 1) {
+                item.quantity--;
+            } else {
                 removeFromCart(productId, productVariation);
             }
         }
@@ -78,5 +80,6 @@ export const useCartStore = defineStore("cartStores", () => {
         loadCart,
         decrementItemQuantity,
         incrementItemQuantity,
+        findCartItem,
     }
 });
