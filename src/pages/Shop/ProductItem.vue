@@ -108,7 +108,7 @@ function toggleVariationTab(name) {
       </div>
       <div class="w-[48.1rem] space-y-[1.5rem]">
         <div>
-          <h2 class="font-header text-[2rem] text-secondary"> {{ bookstore.selectedBook.name }} </h2>
+          <h2 class="font-header text-[2rem] text-secondary"> {{ bookstore.selectedBook.title }} </h2>
         </div>
         <h4 class="font-header text-forty text-secondary">
           #{{ formatMoney(currentVariationPrice) }}
