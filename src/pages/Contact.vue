@@ -45,7 +45,7 @@ const validationSchema = toTypedSchema(
     })
 );
 
-async function sendEmail(values) {
+async function sendEmail(values, { resetForm }) {
   alertStore.showAlert("info", "Sending email, please wait");
   sendingMessage.value = true;
   const htmlTemplate = createEmailTemplate({
@@ -71,6 +71,7 @@ async function sendEmail(values) {
     alertStore.showAlert("error", result.message);
   }
   sendingMessage.value = false;
+  resetForm();
 }
 </script>
 
