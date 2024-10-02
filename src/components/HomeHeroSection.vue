@@ -6,9 +6,9 @@ import Container from "@/components/Container.vue";
 </script>
 
 <template>
-  <section class="bg-secondary mt-[9.3rem] h-[52.2rem] relative">
+  <section class="bg-secondary mt-[9.3rem] max-sm:py-[3rem] h-[52.2rem] max-sm:h-full relative">
     <Container
-      class="w-[98rem] h-full overflow-hidden text-basic flex justify-center items-center flex-nowrap gap-4"
+      class="w-[98rem] h-full overflow-hidden text-basic flex max-sm:flex-col justify-center items-center flex-nowrap gap-4"
       :style="{ 'background-image': 'url(' + HomeBanner + ')' }"
     >
       <div class="grow-[2] flex-shrink-0 basis-0">
@@ -32,7 +32,7 @@ import Container from "@/components/Container.vue";
           </button>
         </div>
       </div>
-      <div class="h-full w-full flex-grow flex-shrink-0 basis-0">
+      <div class="h-full w-full flex-grow flex-shrink-0 basis-0 max-sm:hidden">
         <img
           :src="HomeBright1"
           class="w-full h-full object-cover object-center"
