@@ -3,13 +3,14 @@ import Logo from '@/assets/logo.svg';
 import Container from "@/components/Container.vue";
 import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
+import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
 
 const cartStore = useCartStore();
+const sideBarStore = useToggleSidebar()
+
+console.log(sideBarStore.sideBar)
 const menuState = ref(false)
 
-const toggleMenu = () => {
-  menuState.value = !menuState.value
-}
 </script>
 
 <template>
@@ -23,7 +24,7 @@ const toggleMenu = () => {
             <img :src="Logo" alt="My Logo" />
           </a>
         </div>
-        <ul class="text-white font-xsm text-sm flex items-center">
+        <ul class="text-white font-xsm text-sm flex items-center max-sm:hidden">
           <li class="mainnav__links">
             <RouterLink :to="{ name: 'home'}" class="mainnavlink"
               >Home
@@ -48,7 +49,7 @@ const toggleMenu = () => {
           </li>
         </ul>
         <div>
-          <RouterLink :to="{ name: 'contact'}" class="border-0" activeClass="border-0">
+          <RouterLink :to="{ name: 'contact'}" class="border-0 max-sm:hidden" activeClass="border-0">
             <button
               class="font-sm text-xsm border text-primary border-primary p-4  rounded-md outline-0"
             >
@@ -56,6 +57,7 @@ const toggleMenu = () => {
             </button>
           </RouterLink>
         </div>
+        <span class="material-icons text-[#fff] text-[27px] sm:hidden">menu</span>
       </nav>
     </Container>
   </div>

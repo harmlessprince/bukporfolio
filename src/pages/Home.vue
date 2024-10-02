@@ -1,7 +1,4 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Sidebar from '@/components/Sidebar.vue';
-import Footer from '@/components/footer.vue';
 import WhoIam from '@/assets/who_i_am.png';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
@@ -18,7 +15,6 @@ import Videos from "@/components/Videos.vue";
 
 <template>
   <div class="text-primary relative isolate">
-    <!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
     <HomeHeroSection />
     <!-- brands touched starts here -->
