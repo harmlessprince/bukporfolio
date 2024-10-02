@@ -9,6 +9,7 @@ import Multiselect from 'vue-multiselect'
 import Paystack from '@paystack/inline-js';
 import {useCartStore} from "@/store/cart.store.js";
 import {useAlertStore} from "@/store/alert.store.js";
+import {createOrderEmailTemplate} from "@/services/util.js";
 
 const props = defineProps(['totalAmount'])
 const locationStore = useLocationStore();
@@ -31,7 +32,7 @@ const selectedCountry = ref(null)
 const selectedState = ref(null)
 const formatedCountriesList = ref([])
 const formatedStatesList = ref([])
-
+const sendingMessage = ref(false);
 onBeforeMount(() => {
   locationStore.loadCountries();
 });
@@ -53,8 +54,45 @@ watch(
     }
 );
 
+async function sendEmail(orderData) {
+  sendingMessage.value = true;
+  const htmlTemplate = createOrderEmailTemplate({
+    ...orderData
+  })
+  const subject = "Hey! You have new order from : " + orderData.firstName
+  const response = await fetch('/.netlify/functions/send-mail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: orderData.email,
+      subject: subject,
+      // text: 'This is a test email sent from Netlify serverless function.',
+      html: htmlTemplate,
+    }),
+  });
+  const result = await response.json();
+  if (response.status === 200) {
+    // alertStore.showAlert("success", result.message);
+  } else {
+    alertStore.showAlert("error", result.message);
+  }
+  sendingMessage.value = false;
+}
 
-function checkoutHandler(values) {
+
+function checkoutHandler(values, {resetForm}) {
+  const orderData = {
+    ...values,
+    totalAmount: cartStore.totalAmount,
+    numberOfItems: cartStore.cartItemCount,
+  }
+  orderData.items = cartStore.items.map(function (item){
+    return {
+      ...item,
+    };
+  });
   const popup = new Paystack()
   const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY
   popup.newTransaction({
@@ -66,9 +104,13 @@ function checkoutHandler(values) {
     amount: cartStore.totalAmount * 100,
     metadata: values,
     onSuccess: (transaction) => {
-      console.log(transaction);
+      // console.log(transaction);
+      orderData.order_id = transaction.transaction;
+      orderData.reference = transaction.reference;
       alertStore.showAlert("success", "Payment successful! We will reach out to you shortly.");
       cartStore.clearCart();
+      resetForm();
+      sendEmail(orderData);
     },
     onLoad: (response) => {
       console.log("onLoad: ", response);
@@ -79,9 +121,10 @@ function checkoutHandler(values) {
     },
     onError: (error) => {
       console.log("Error: ", error.message);
-      alertStore.showAlert("error", "Payment canceled! Please try again.");
+      alertStore.showAlert("error", "Payment canceled! Please try again later.");
     }
   })
+
 
 }
 
