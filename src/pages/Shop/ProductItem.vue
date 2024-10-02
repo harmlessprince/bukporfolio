@@ -3,7 +3,7 @@ import Container from "@/components/Container.vue";
 import {computed, onBeforeMount, ref, watch} from 'vue';
 import {onBeforeRouteUpdate, useRoute} from "vue-router";
 import {useBookstore} from "@/store/books.store.js";
-import { formatMoney} from "@/services/util.js";
+import {formatMoney} from "@/services/util.js";
 import {useCartStore} from "@/store/cart.store.js";
 
 const bookstore = useBookstore()
@@ -65,23 +65,26 @@ function setItemInCart() {
 function setProductItemPrice(newSelectedBook, selectedVariation) {
   const variations = newSelectedBook?.forms;
   if (!variations) {
-    currentVariationPrice.value = newSelectedBook.price
+    currentVariationPrice.value = newSelectedBook?.default?.price ?? 0.00
     setItemInCart()
     return;
   } else {
     if (selectedVariation) {
-      const tabVariation = variations.find(item => item.name.toLowerCase() === selectedVariation.toLowerCase());
+      console.log(selectedVariation);
+      const tabVariation = variations.find(item => item?.name.toLowerCase() === selectedVariation?.toLowerCase());
       if (tabVariation) {
         currentVariationPrice.value = tabVariation.price;
         setItemInCart()
         return;
       }
     }
-    const defaultVariation = variations.find(item => item.default === true)
-    if (defaultVariation) {
-      currentVariationPrice.value = defaultVariation.price
-      setItemInCart()
-      return
+    if (variations) {
+      const defaultVariation = variations.find(item => item?.default === true)
+      if (defaultVariation) {
+        currentVariationPrice.value = defaultVariation.price
+        setItemInCart()
+        return
+      }
     }
   }
   currentVariationPrice.value = 0.00
@@ -137,7 +140,7 @@ function toggleVariationTab(name) {
               >
                 +
               </button>
-              <span class="text-secondary font-sm text-xlg">{{itemInCart?.quantity ?? 0}}</span>
+              <span class="text-secondary font-sm text-xlg">{{ itemInCart?.quantity ?? 0 }}</span>
               <button
                   class="w-[3.2rem] h-[2.9rem] text-secondary bg-[#dddddd] font-sm text-xlg rounded-tr-[5px] rounded-br-[5px]"
                   @click="cartStore.decrementItemQuantity(bookstore.selectedBook.id, currentVariationTab)"
@@ -199,11 +202,11 @@ function toggleVariationTab(name) {
 
 <style scoped>
 
-.primary_button{
+.primary_button {
   @apply w-[13.7rem] h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm text-secondary;
 }
 
-.secondary_button{
+.secondary_button {
   @apply w-[13.7rem] h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm text-secondary;
 }
 
