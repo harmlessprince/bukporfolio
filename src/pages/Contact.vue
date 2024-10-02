@@ -10,20 +10,9 @@ import {toTypedSchema} from "@vee-validate/zod";
 import * as zod from "zod";
 import {useAlertStore} from "@/store/alert.store.js";
 import Alert from "@/components/Alert.vue";
+import {createContactEmailTemplate} from "@/services/util.js";
 const alertStore = useAlertStore();
-const createEmailTemplate = ({fullName, phoneNumber, email, companyName, country, service, message}) => {
-  return `
-    <h1>Contact Form Submission</h1>
-    <p><strong>Full Name:</strong> ${fullName}</p>
-    <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Company Name:</strong> ${companyName}</p>
-    <p><strong>Country:</strong> ${country}</p>
-    <p><strong>Service:</strong> ${service}</p>
-    <p><strong>Message:</strong></p>
-    <div>${message}</div>
-    `;
-};
+
 const sendingMessage = ref(false);
 
 const services = ref([
@@ -48,7 +37,7 @@ const validationSchema = toTypedSchema(
 async function sendEmail(values, { resetForm }) {
   alertStore.showAlert("info", "Sending email, please wait");
   sendingMessage.value = true;
-  const htmlTemplate = createEmailTemplate({
+  const htmlTemplate = createContactEmailTemplate({
    ...values
   })
   const subject = "Hey! You have a new message from: " + values.fullName
