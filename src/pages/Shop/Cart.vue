@@ -16,7 +16,6 @@ const alertStore = useAlertStore();
 
 <template>
   <main class="font-primary">
-    <Navigation/>
     <!-- cart hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">

@@ -10,7 +10,6 @@ import Subheading from '@/components/SubHeading.vue';
 
 <template>
   <main class="text-secondary">
-    <Navigation/>
     <!-- hero section -->
      <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[200]">
@@ -70,9 +69,10 @@ import Subheading from '@/components/SubHeading.vue';
                 <label class="">Message</label>
                 <textarea class="w-full h-[19.6rem] rounded-[10px] border border-[#a6a6a6]"></textarea>
             </div>
+            <button class="bg-primaryColor w-[22.5rem] h-[5.5rem] rounded-[8px] font-[500] text-[1.4rem] text-[#000] outline-none">Send message</button>
             </form>
 
-            <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] text-[#ffffff] font-[500] mt-[4.8rem]">
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#ffffff] font-[500] mt-[4.8rem]">
                 <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
                     <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
                     <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>

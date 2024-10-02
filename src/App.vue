@@ -16,7 +16,7 @@ onMounted(() => {
 <template>
   <div class="">
     <Navigation/>
-    <main class="text-primary mb-[25rem]">
+    <main class="text-primary mb-[25rem] max-sm:mb-[50rem]">
       <loader v-show="loaderStore.loading"></loader>
       <router-view></router-view>
     </main>

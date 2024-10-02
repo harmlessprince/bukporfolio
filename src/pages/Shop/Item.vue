@@ -25,8 +25,6 @@ const bookDetails = () => {
 
 <template>
   <main class="font-primary">
-    <Navigation/>
-
     <Container>
         <div class="w-full my-[14rem] flex flex-row max-sm:flex-col items-top max-sm:space-y-[2rem] space-x-[3rem] max-sm:space-x-0">
             <div class="w-[48.1rem] max-sm:w-full max-h-[60.4rem]">
@@ -63,7 +61,7 @@ const bookDetails = () => {
                     </div>
 
                     <button class="w-[13.7rem] max-sm:w-full h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
-                    <button class="w-[13.7rem] max-sm:w-full h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">Add to cart</button>
+                    <button class="w-[13.7rem] max-sm:w-full h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">Buy Now</button>
                 </div>
                 </div>
 

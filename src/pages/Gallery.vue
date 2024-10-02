@@ -1,12 +1,10 @@
 <script setup>
 
 import AboutBanner from "@/assets/trainerbanner.png";
-import Navigation from "@/components/Navigation.vue";
 import Container from "@/components/Container.vue";
 import {ref} from "vue";
 import GalleryVideo from "@/components/GalleryVideo.vue";
 import PictureGallery from "@/components/PictureGallery.vue";
-import Footer from "@/components/footer.vue";
 
 const currentTab = ref("videos")
 
@@ -51,7 +49,6 @@ function toggleTab(name) {
       </transition>
     </div>
   </Container>
-  <Footer/>
 </template>
 
 <style scoped>

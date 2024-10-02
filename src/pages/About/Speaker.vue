@@ -108,7 +108,6 @@ onBeforeMount(() => {
 <template>
 
   <main class="text-primary">
-    <Navigation/>
     <div class="relative h-[55rem] max-sm:w-full">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>

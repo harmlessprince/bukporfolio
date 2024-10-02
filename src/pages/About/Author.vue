@@ -11,7 +11,7 @@ import Books from "@/components/Books.vue";
 <template>
 
   <main class="text-primary">
-    <Navigation/>
+   
     <!-- about hero section -->
      <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" 
      :style="{ 'background-image': 'url(' + AboutBanner + ')' }">

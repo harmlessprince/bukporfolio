@@ -13,7 +13,7 @@ import Coach from '@/assets/trainerImage2.png';
 
 <template>
   <main class="text-primary">
-    <Navigation/>
+   
     <!-- about hero section -->
      <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
