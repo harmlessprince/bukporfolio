@@ -6,9 +6,11 @@ import Subheading from '@/components/SubHeading.vue';
 import {ref} from "vue";
 import ContactFormInput from "@/components/ContactFormInput.vue";
 import {ErrorMessage, Field, Form} from "vee-validate";
-import CheckoutInput from "@/components/CheckoutInput.vue";
 import {toTypedSchema} from "@vee-validate/zod";
 import * as zod from "zod";
+import {useAlertStore} from "@/store/alert.store.js";
+import Alert from "@/components/Alert.vue";
+const alertStore = useAlertStore();
 const createEmailTemplate = ({fullName, phoneNumber, email, companyName, country, service, message}) => {
   return `
     <h1>Contact Form Submission</h1>
@@ -43,14 +45,8 @@ const validationSchema = toTypedSchema(
     })
 );
 
-async function submitForm() {
-  let resp = await fetch('/.netlify/functions/hello-world?name=ray');
-  const msg = (await resp.json());
-  console.log(msg);
-}
-
 async function sendEmail(values) {
-  console.log(values);
+  alertStore.showAlert("info", "Sending email, please wait");
   sendingMessage.value = true;
   const htmlTemplate = createEmailTemplate({
    ...values
@@ -68,9 +64,12 @@ async function sendEmail(values) {
       html: htmlTemplate,
     }),
   });
-
   const result = await response.json();
-  console.log('Email result:', result);
+  if (response.status === 200) {
+    alertStore.showAlert("success", result.message);
+  }else {
+    alertStore.showAlert("error", result.message);
+  }
   sendingMessage.value = false;
 }
 </script>
@@ -91,7 +90,6 @@ async function sendEmail(values) {
     <div class="mt-[3.4rem] text-center">
       <Subheading title="Contact"/>
       <Heading title="Get in Touch with Bright UK"/>
-
     </div>
 
     <!-- form section -->
@@ -149,6 +147,7 @@ async function sendEmail(values) {
              Send Message
           </span>
         </button>
+        <Alert v-if="alertStore.show"/>
       </Form>
 
       <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] mt-[4.8rem]">

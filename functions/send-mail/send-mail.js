@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
         return {
             statusCode: 200,
             body: JSON.stringify({
-                message: 'Email sent successfully',
+                message: 'Email sent successfully, we will get back to you shortly.',
                 info: info,
             }),
         };
@@ -38,7 +38,7 @@ exports.handler = async function (event, context) {
         return {
             statusCode: 500,
             body: JSON.stringify({
-                message: 'Failed to send email',
+                message: 'Failed to send email, please try again later',
                 error: error.message,
             }),
         };
