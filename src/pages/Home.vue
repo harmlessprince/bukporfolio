@@ -1,7 +1,4 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Sidebar from '@/components/Sidebar.vue';
-import Footer from '@/components/footer.vue';
 import WhoIam from '@/assets/who_i_am.png';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
@@ -18,7 +15,6 @@ import Videos from "@/components/Videos.vue";
 
 <template>
   <div class="text-primary relative isolate">
-    <!--    <Sidebar/>-->
     <!-- hero/banner starts here -->
     <HomeHeroSection />
     <!-- brands touched starts here -->
@@ -27,8 +23,8 @@ import Videos from "@/components/Videos.vue";
     <!-- meet bright uk -->
     <section class="">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
-        <div class="flex items-center bg-white gap-[2.3rem]">
-          <div class="w-[56.1rem] h-[54.5rem] relative imgContainer">
+        <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
+          <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer">
             <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
             <div class="w-full absolute left-0 bottom-5">
               <img
@@ -87,12 +83,12 @@ import Videos from "@/components/Videos.vue";
     <!-- end of gallery -->
 
     <!-- start of testimonies -->
-    <section class="py-top w-full bg-basic">
+    <section class="py-[5rem] w-full bg-basic">
       <Container>
         <div
-          class="w-full h-[42.1rem] gap-[2.4rem] flex justify-center items-center"
+          class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"
         >
-          <div class="grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden">
+          <div class="grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
             <img
               :src="BrightTestimony"
               class="w-full h-full object-center object-cover"

@@ -3,33 +3,58 @@ const props = defineProps(['menuState'])
 </script>
 
 <template>
-  <nav :class='props.menuState ? "sidebarContainer" : "sidebarContainerClose"'>
-
-    <div class="text-navLink font-xsm text-sm w-full text-center">
-      <RouterLink :to="{ name: 'home'}" class="">Home</RouterLink>
-      <RouterLink :to="{ name: 'speaker'}" class="">About</RouterLink>
-      <span class="">Services</span>
-      <span class="">Shop</span>
-      <span class="">Blog</span>
+  <!-- <nav :class='props.menuState ? "sidebarContainer" : "sidebarContainerClose"'> -->
+<nav class="sidebarContainer">
+    <div class="text-[#000] font-xsm text-sm w-full text-center">
+      <ul class=" font-xsm text-sm flex-col items-center w-full space-y-[3rem]">
+        <li class="">
+          <RouterLink :to="{ name: 'home'}" class=""
+            >Home
+          </RouterLink>
+        </li>
+        <li class="">
+          <RouterLink :to="{ name: 'speaker'}" class=""
+            >About
+          </RouterLink>
+        </li>
+        <li class="">
+          <RouterLink :to="{name: 'gallery'}" class="">Gallery</RouterLink>
+        </li>
+        <li class="">
+          <RouterLink :to="{name: 'products'}" class="">Shop</RouterLink>
+        </li>
+        <li class="">
+          <RouterLink class="" :to="{name: 'blog'}">Blog</RouterLink>
+        </li>
+        <!-- <li class="">
+          <RouterLink class="" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
+        </li> -->
+      </ul>
     </div>
 
-    <RouterLink :to="{ name: 'home'}" class="">
-    <button class="px-[1.5rem] py-[1rem] font-sm text-sm text-primary border border-primary rounded-[10px]">Contact me</button>
-    </RouterLink>   
     
+    <div class="w-[20rem] mx-auto mt-[3rem]">
+    <RouterLink :to="{ name: 'contact'}" class="border-0 mx-auto" activeClass="border-0">
+      <button
+        class="font-sm w-full text-xsm border text-primary border-primary p-4  rounded-md outline-0"
+      >
+        Contact me
+      </button>
+    </RouterLink>
+  </div>
   </nav>
 </template>
 
 <style scoped>
 .sidebarContainer{
     background-color: white;
-    padding: 15% 0 0 0;
+    padding: 5rem 0 0 0;
     width: 100%;
     height: 100vh;
-    z-index: 400;
+    z-index: 500;
     opacity: 1;
     position: fixed;
-    top: 7rem;
+    top: 9rem;
     left: 0;
     transition: left 1s;
 }

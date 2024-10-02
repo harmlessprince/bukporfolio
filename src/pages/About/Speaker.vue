@@ -107,13 +107,14 @@ onBeforeMount(() => {
 
 <template>
 
-    <div class="relative h-[55rem]">
+  <main class="text-primary">
+    <div class="relative h-[55rem] max-sm:w-full">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
       <!-- Text on top of the image -->
-      <div class="w-[47.7rem] relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
+      <div class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">Speaker</h1>
         <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and
           impact</p>
@@ -124,11 +125,11 @@ onBeforeMount(() => {
     </div>
 
     <Container>
-      <div class="w-full flex justify-between items-center mt-[5rem]">
-        <div class="w-[47.6rem] h-[47.9rem] rounded-[10px]">
+      <div class="w-full flex  max-sm:flex-col justify-between items-center mt-[5rem]">
+        <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px]">
           <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-[47.7rem]">
+        <div class="w-[47.7rem]  max-sm:w-full">
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">
             Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
             keen attention. 
@@ -158,7 +159,9 @@ onBeforeMount(() => {
           <Subheading title="Qoutes"/>
           <Heading title="Inspirational words from Bright UK"/>
         </div>
-        <div class="w-full flex flex-row flex-wrap justify-between mt-top">
+        <div
+          class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] mt-[2rem]"
+        >
           <InspirationCard
               v-for="(item, index) in store.quotes"
               :title="item.title"
@@ -169,6 +172,7 @@ onBeforeMount(() => {
         </div>
       </Container>
     </section>
+    </main>
 </template>
 
 <style scoped>

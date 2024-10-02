@@ -102,11 +102,11 @@ function toggleVariationTab(name) {
 
 <template>
   <Container>
-    <div class="w-full mt-[14rem] flex flex-row items-top space-x-[3rem]" v-if="bookstore.selectedBook">
-      <div class="w-[48.1rem] max-h-[60.4rem]">
+    <div class="w-full mt-[14rem] flex flex-row max-sm:flex-col items-top space-x-[3rem] max-sm:space-x-0 max-sm:space-y-[2rem]" v-if="bookstore.selectedBook">
+      <div class="w-[48.1rem] max-sm:w-full max-h-[60.4rem]">
         <img :src="bookstore.selectedBook.image" class="w-full h-full relative" alt="brand"/>
       </div>
-      <div class="w-[48.1rem] space-y-[1.5rem]">
+      <div class="w-[48.1rem] max-sm:w-full space-y-[1.5rem]">
         <div>
           <h2 class="font-header text-[2rem] text-secondary"> {{ bookstore.selectedBook.title }} </h2>
         </div>
@@ -117,17 +117,18 @@ function toggleVariationTab(name) {
           <h4 class="font-sm text-xlg text-[#555454]">Available variation</h4>
           <div
               class="font-sm text-xsm text-basicColor flex flex-row justify-between items-center bg-[#dddddd] rounded-[6px] h-[4.7rem]">
-            <button class="variation_tab transition-all duration-300 ease-in-out transform"
+              <!-- <div class="max-sm:w-full font-sm text-xsm text-basicColor h-[4.7rem] flex flex-row items-center justify-between bg-[#dddddd] rounded-[6px]"> -->
+                <button class="variation_tab transition-all duration-300 ease-in-out transform"
                     :class="currentVariationTab === item ? 'variation_tab_selected' : 'variation_tab_unselected'"
                     v-for="(item, index) in variations" :key="index" @click="toggleVariationTab(item)">
               {{ item }}
             </button>
           </div>
         </div>
-        <div>
-          <p class="ont-sm text-xlg text-[#555454]">Quantity</p>
-          <div class="w-full flex flex-row justify-between items-end">
-            <div class="w-[9.9rem] rounded-[5px] flex flex-row justify-between items-center">
+        <div class="">
+          <p class="font-sm text-xlg text-[#555454]">Quantity</p>
+          <div class="w-full flex flex-row max-sm:flex-col max-sm:space-y-[1.4rem] justify-between items-end">
+            <div class="max-sm:mr-auto w-[9.9rem] rounded-[5px] flex flex-row justify-between items-center">
               <button
                   class="w-[3.2rem] h-[2.9rem] text-secondary bg-[#dddddd] font-sm text-xlg rounded-tl-[5px] rounded-bl-[5px]"
                   @click="cartStore.addToCart({
@@ -148,15 +149,21 @@ function toggleVariationTab(name) {
                 -
               </button>
             </div>
-
+            <!-- removed the primary_button and secondary_button class tag, because it wasn't making the buttons responsive -->
             <button
-                class="primary_button flex justify-center items-center"
+                class="w-[13.7rem] text-[#000] max-sm:w-full h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm"
             >
               Add to cart
             </button>
-            <RouterLink class="secondary_button flex justify-center items-center" :to="{name: 'cart'}"
+            <!-- <RouterLink class="secondary_button max-sm:w-full flex justify-center items-center" :to="{name: 'cart'}"
             >
               Buy Now
+            </RouterLink> -->
+            <RouterLink class="w-[13.7rem] max-sm:w-full" :to="{name: 'cart'}"
+            >
+            <button class="w-[13.7rem] text-[#000] max-sm:w-full h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">
+              Buy Now
+            </button>
             </RouterLink>
           </div>
         </div>

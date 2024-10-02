@@ -11,8 +11,6 @@ import Item from "@/pages/Shop/ProductItem.vue";
 import Blog from "@/pages/Blog/Index.vue";
 import Post from "@/pages/Blog/Post.vue";
 import Contact from "@/pages/Contact.vue";
-import Videos from "@/pages/Gallery/Videos.vue";
-import Pictures from "@/pages/Gallery/Pictures.vue";
 import NotFound from "@/pages/NotFound.vue";
 import Gallery from "@/pages/Gallery.vue";
 

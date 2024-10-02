@@ -47,7 +47,7 @@ function decodeUnicode(str) {
     <!-- hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center">
+      <div class="w-[47.7rem] max-sm:w-full text-basicText mx-auto text-center">
         <h1 class="text-forty font-xlg text-basicColor">Blog</h1>
         <div class="font-lg text-basic">
           <span class="text-bannerNavColor">Home</span> <span class="text-bannerNavColor"> > Blog</span> > <span
@@ -57,8 +57,8 @@ function decodeUnicode(str) {
     </section>
 
     <Container>
-      <div class="mt-[2.4rem] mb-[5rem] text-center flex flex-row justify-between items-top">
-        <div class="w-[70rem] text-left" v-if="blogStore.singlePost">
+      <div class="mt-[2.4rem] mb-[5rem] text-center flex flex-row max-sm:flex-col justify-between items-top space-y-[2rem]">
+        <div class="w-[70rem] max-sm:w-full text-left" v-if="blogStore.singlePost">
           <img :src="generateThumbnailFromText(blogStore.singlePost.title)" class="w-[100%] h-[41.7rem] relative"
                alt="blogpics"/>
           <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
@@ -91,7 +91,7 @@ function decodeUnicode(str) {
           </div>
         </div>
         <!-- second part of the flex -->
-        <div class="w-[31.1rem]">
+        <div class="w-[31.1rem] max-sm:w-full">
           <div v-if="blogStore.recentPosts.length > 0">
 
             <div class="text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">

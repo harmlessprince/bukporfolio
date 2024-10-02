@@ -65,15 +65,16 @@ async function sendEmail(values, { resetForm }) {
 </script>
 
 <template>
-  <!-- hero section -->
-  <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
-           :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-    <div class="w-[47.7rem] text-basic mx-auto text-center">
-      <h1 class="text-forty font-xlg text-basicColor">Contact me</h1>
-      <div class="font-lg text-basic">
-        <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Contact Bright UK</span>
+  <main class="text-secondary">
+    <!-- hero section -->
+     <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[200]">
+        <h1 class="text-forty font-xlg text-basicColor">Contact me</h1>
+        <div class="font-lg text-basic">  
+          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Contact Bright UK</span>
+        </div>
+
       </div>
-    </div>
   </section>
 
   <Container>
@@ -140,26 +141,28 @@ async function sendEmail(values, { resetForm }) {
         <Alert v-if="alertStore.show"/>
       </Form>
 
-      <div class="flex flex-row justify-between flex-wrap text-[#ffffff] font-[500] mt-[4.8rem]">
-        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
-          <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
-          <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
-        </div>
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#ffffff] font-[500] mt-[4.8rem]">
+                <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
+                    <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
+                </div>
 
-        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
-          <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
-          <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
-        </div>
+                <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
+                    <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
+                    
+                </div>
 
-        <div class="w-[30.5rem] min-h-[10.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
-          <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
-          <div class="text-[2rem] leading-[2.8rem]">The Ridge Terrace, Off Kusenla Road, Lekki, Lagos</div>
-        </div>
+                <div class="min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
+                    <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
+                    <div class="text-[2rem] leading-[2.8rem]">The Ridge Terrace, off kusenla Road lekki lagos</div>
 
-      </div>
+                </div>
+                </div>
 
     </section>
   </Container>
+  </main>
 
 </template>
 

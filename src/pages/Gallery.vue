@@ -1,12 +1,10 @@
 <script setup>
 
 import AboutBanner from "@/assets/trainerbanner.png";
-import Navigation from "@/components/Navigation.vue";
 import Container from "@/components/Container.vue";
 import {ref} from "vue";
 import GalleryVideo from "@/components/GalleryVideo.vue";
 import PictureGallery from "@/components/PictureGallery.vue";
-import Footer from "@/components/footer.vue";
 
 const currentTab = ref("videos")
 
@@ -20,7 +18,7 @@ function toggleTab(name) {
   <!-- about hero section -->
   <section class="flex items-center justify-center relative h-[60rem] w-full bg-cover bg-no-repeat"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-    <div class="w-[47.7rem] text-basic mx-auto text-center">
+    <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
       <h1 class="text-forty font-xlg text-basicColor">Gallery</h1>
       <div class="font-lg text-basic">
         <span class="text-bannerNavColor">Home</span> <span class="text-primaryColor"> > Gallery</span><span

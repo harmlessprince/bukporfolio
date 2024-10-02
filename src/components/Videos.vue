@@ -64,7 +64,7 @@ function previousVideo() {
 </script>
 
 <template>
-  <div class="w-full flex justify-center gap-[3rem] mt-[2rem] py-[5rem]">
+  <div class="w-full flex max-sm:flex-col justify-center gap-[3rem] mt-[2rem] py-[5rem]">
     <div class="max-w-[37.5rem] grow flex flex-col gap-[0.8rem]">
       <div
         class="thumbnail w-full h-[36.4rem]"
