@@ -44,8 +44,10 @@ const menuState = ref(false)
           <li class="mainnav__links">
             <RouterLink class="mainnavlink" :to="{name: 'blog'}">Blog</RouterLink>
           </li>
-          <li class="mainnav__links">
-            <RouterLink class="mainnavlink" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
+          <li class="mainnav__links relative mt-4">
+            <RouterLink class="mainnavlink" :to="{name: 'cart'}">
+              <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
+             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
           </li>
         </ul>
         <div>
@@ -57,7 +59,16 @@ const menuState = ref(false)
             </button>
           </RouterLink>
         </div>
-        <span class="material-icons text-[#fff] text-[27px] sm:hidden">menu</span>
+        <!-- this only appears on mobile  -->
+        <div class="sm:hidden flex items-center">
+          <li class="mt-3 mr-[2rem] relative">
+            <RouterLink class="mainnavlink" :to="{name: 'cart'}">
+              <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
+             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
+          </li>
+          <span class="material-icons text-[#fff] text-[27px] ">menu</span>
+        </div>
+       
       </nav>
     </Container>
   </div>
