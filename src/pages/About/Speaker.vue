@@ -114,7 +114,8 @@ onBeforeMount(() => {
       <div class="absolute inset-0  bg-cover bg-center"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
       <!-- Text on top of the image -->
-      <div class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
+      <div
+          class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Speaker</h1>
         <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and
           impact</p>
@@ -145,9 +146,11 @@ onBeforeMount(() => {
             He is in demand at conferences, seminars, and workshops across the nation. 
           </p>
 
-          <button class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px]">Book bright
-            UK
-          </button>
+          <RouterLink
+              class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+              :to="{name: 'contact', query: {service: 'speaker' }}">
+            Book bright UK
+          </RouterLink>
         </div>
       </div>
     </Container>
@@ -156,11 +159,11 @@ onBeforeMount(() => {
     <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[6rem]">
       <Container>
         <div class="w-full text-center mt-[2rem]">
-          <Subheading title="Qoutes"/>
+          <Subheading title="Quotes"/>
           <Heading title="Inspirational words from Bright UK"/>
         </div>
         <div
-          class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] mt-[2rem]"
+            class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] mt-[2rem]"
         >
           <InspirationCard
               v-for="(item, index) in store.quotes"
@@ -172,7 +175,7 @@ onBeforeMount(() => {
         </div>
       </Container>
     </section>
-    </main>
+  </main>
 </template>
 
 <style scoped>

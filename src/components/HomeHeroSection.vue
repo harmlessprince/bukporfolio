@@ -47,11 +47,12 @@ const quotes = ref([
               </li>
             </ul>
           </span>
-          <button
-              class="bg-primary rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] px-[6rem] font-sm"
+          <RouterLink
+              class="bg-primary w-[22.2rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] px-[6rem] font-sm flex items-center justify-center self-start"
+              :to="{name: 'contact'}"
           >
             Book Bright UK
-          </button>
+          </RouterLink>
         </div>
       </div>
       <div class="h-full w-full flex-grow flex-shrink-0 basis-0 max-sm:hidden">
