@@ -36,11 +36,11 @@ import Videos from "@/components/Videos.vue";
           </div>
           <div class="w-[39.2rem] px-6">
             <h3
-              class="font-lg text-basic text-primary font-primary mb-[0.7rem]"
+              class="font-lg text-basic text-primary font-primary mb-[0.7rem] max-sm:mb-0"
             >
               Who I am
             </h3>
-            <h2 class="font-header text-header text-secondary mb-[0.7rem]">
+            <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
             <p class="font-sm text-regular text-basic my-[1rem]">
@@ -71,7 +71,7 @@ import Videos from "@/components/Videos.vue";
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
       <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
-      <h2 class="font-header text-header text-secondary">
+      <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary">
         Bright UK Activities
       </h2>
       <div class="max-w-full bg-secondary">

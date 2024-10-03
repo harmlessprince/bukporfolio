@@ -31,7 +31,8 @@ const quotes = ref([
         class="w-[98rem] h-full overflow-hidden text-basic flex max-sm:flex-col justify-center items-center flex-nowrap gap-4"
         :style="{ 'background-image': 'url(' + HomeBanner + ')' }"
     >
-      <div class="grow-[2] flex-shrink-0 basis-0">
+       <div class="grow-[2] flex-shrink-0 basis-0">
+      
         <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
           CHANGE YOUR THINKING TO
           <span

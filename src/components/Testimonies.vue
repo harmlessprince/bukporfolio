@@ -55,12 +55,12 @@ function previousQuote() {
   <section class="grow-[2] shrink-0 basis-0">
     <Container>
       <h3
-        class="font-lg text-basic text-primary font-primary leading-[2rem] mb-[0.7rem]"
+        class="font-lg text-basic text-primary font-primary leading-[2rem] mb-[0.7rem] max-sm:mb-0"
       >
         Testimony
       </h3>
       <h2
-        class="font-header text-header text-secondary leading-[4.2rem] mb-[2.6rem]"
+        class="font-header text-header max-sm:text-[3.0rem] text-secondary leading-[4.2rem] mb-[2.6rem]"
       >
         What People are Saying
       </h2>

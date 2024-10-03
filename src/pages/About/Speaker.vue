@@ -115,7 +115,7 @@ onBeforeMount(() => {
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
       <!-- Text on top of the image -->
       <div class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
-        <h1 class="text-forty font-xlg text-basicColor">Speaker</h1>
+        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Speaker</h1>
         <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and
           impact</p>
         <div class="font-lg text-basic">

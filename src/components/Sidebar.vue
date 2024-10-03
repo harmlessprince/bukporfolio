@@ -1,40 +1,39 @@
 <script setup>
 const props = defineProps(['menuState'])
+import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
+const toggleSidebar = useToggleSidebar()
 </script>
 
 <template>
-  <!-- <nav :class='props.menuState ? "sidebarContainer" : "sidebarContainerClose"'> -->
-<nav class="sidebarContainer">
+  <nav :class='toggleSidebar.sideBar ? "sidebarContainer" : "sidebarContainerClose"'>
+<!-- <nav class="sidebarContainer"> -->
     <div class="text-[#000] font-xsm text-sm w-full text-center">
       <ul class=" font-xsm text-sm flex-col items-center w-full space-y-[3rem]">
         <li class="">
-          <RouterLink :to="{ name: 'home'}" class=""
+          <RouterLink :to="{ name: 'home'}" class="" @click="toggleSidebar.hideSideBar()"
             >Home
           </RouterLink>
         </li>
         <li class="">
-          <RouterLink :to="{ name: 'speaker'}" class=""
+          <RouterLink :to="{ name: 'speaker'}" class="" @click="toggleSidebar.hideSideBar()"
             >About
           </RouterLink>
         </li>
         <li class="">
-          <RouterLink :to="{name: 'gallery'}" class="">Gallery</RouterLink>
+          <RouterLink :to="{name: 'gallery'}" class="" @click="toggleSidebar.hideSideBar()">Gallery</RouterLink>
         </li>
         <li class="">
-          <RouterLink :to="{name: 'products'}" class="">Shop</RouterLink>
+          <RouterLink :to="{name: 'products'}" class="" @click="toggleSidebar.hideSideBar()">Shop</RouterLink>
         </li>
         <li class="">
-          <RouterLink class="" :to="{name: 'blog'}">Blog</RouterLink>
+          <RouterLink class="" :to="{name: 'blog'}" @click="toggleSidebar.hideSideBar()">Blog</RouterLink>
         </li>
-        <!-- <li class="">
-          <RouterLink class="" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
-        </li> -->
       </ul>
     </div>
 
     
     <div class="w-[20rem] mx-auto mt-[3rem]">
-    <RouterLink :to="{ name: 'contact'}" class="border-0 mx-auto" activeClass="border-0">
+    <RouterLink :to="{ name: 'contact'}" class="border-0 mx-auto" activeClass="border-0" @click="toggleSidebar.hideSideBar()">
       <button
         class="font-sm w-full text-xsm border text-primary border-primary p-4  rounded-md outline-0"
       >

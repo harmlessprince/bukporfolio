@@ -4,12 +4,10 @@ import Container from "@/components/Container.vue";
 import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
+import { FwbDropdown } from 'flowbite-vue'
 
 const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
-
-console.log(sideBarStore.sideBar)
-const menuState = ref(false)
 
 </script>
 
@@ -32,7 +30,23 @@ const menuState = ref(false)
           </li>
           <li class="mainnav__links">
             <RouterLink :to="{ name: 'speaker'}" class="mainnavlink"
-              >About
+              >
+              <fwb-dropdown placement="bottom" text="About">
+                <div class="w-52">
+                  <p class="p-2">
+                    Dropdown content line one
+                  </p>
+                  <p class="p-2">
+                    Dropdown content line two
+                  </p>
+                  <p class="p-2">
+                    Dropdown content line three
+                  </p>
+                  <p class="p-2">
+                    Dropdown content line four
+                  </p>
+                </div>
+              </fwb-dropdown>
             </RouterLink>
           </li>
           <li class="mainnav__links">
@@ -44,8 +58,10 @@ const menuState = ref(false)
           <li class="mainnav__links">
             <RouterLink class="mainnavlink" :to="{name: 'blog'}">Blog</RouterLink>
           </li>
-          <li class="mainnav__links">
-            <RouterLink class="mainnavlink" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
+          <li class="mainnav__links relative mt-4">
+            <RouterLink class="mainnavlink" :to="{name: 'cart'}">
+              <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
+             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
           </li>
         </ul>
         <div>
@@ -57,7 +73,17 @@ const menuState = ref(false)
             </button>
           </RouterLink>
         </div>
-        <span class="material-icons text-[#fff] text-[27px] sm:hidden">menu</span>
+        <!-- this only appears on mobile  -->
+        <div class="sm:hidden flex items-center">
+          <li class="mt-3 mr-[2rem] relative">
+            <RouterLink class="mainnavlink" :to="{name: 'cart'}">
+              <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
+             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
+          </li>
+          <span v-if="!sideBarStore.sideBar" class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.showSideBar()">menu</span>
+          <span v-else class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.hideSideBar()">close</span>
+        </div>
+       
       </nav>
     </Container>
   </div>

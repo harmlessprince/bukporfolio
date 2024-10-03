@@ -14,16 +14,16 @@ onBeforeMount(() => {
 
 <template>
   <Container>
-    <section class="flex items-center py-top bg-white overflow-hidden">
+    <section class="flex max-sm:flex-col items-center py-top max-sm:py-0 bg-white overflow-hidden">
       <div
-        class="font-header text-xlg text-[#0F0F13] mr-[2rem] whitespace-nowrap"
+        class="font-header text-xlg text-[#0F0F13] mr-[2rem] whitespace-nowrap max-sm:text-left max-sm:w-full max-sm:pl-[1rem]"
       >
         Featured on:
       </div>
-      <div class="flex flex-row justify-between items-center w-full">
+      <div class="flex flex-row max-sm:flex-wrap max-sm:space-y-5 justify-between items-center w-full">
         <img
           :src="item.image ?? Brand1"
-          class="w-[17.1rem] h-[6.5rem] mr-[2rem] grayscale"
+          class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0 grayscale"
           :alt="item.name"
           v-for="(item, index) in store.features"
           :key="index"

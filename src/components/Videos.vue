@@ -2,8 +2,20 @@
 
 import Bright1 from "@/assets/bright1.png";
 import Subheading from "@/components/SubHeading.vue";
+// import { VueperSlides, VueperSlide } from 'vueperslides'
+// import 'vueperslides/dist/vueperslides.css'
 import {useVideoStore} from "@/store/videos.store.js";
 import {onBeforeMount, onMounted, ref, watch} from "vue";
+
+// const slides = [{
+//     image: '@/assets/bright1.png'
+//   },
+//   {
+//     image: '@/assets/bright1.png'
+//   },
+//   {
+//     image: '@/assets/bright1.png'
+//   },]
 
 const currentVideo = ref(null);
 const currentIndex = ref(0);
@@ -66,7 +78,13 @@ function previousVideo() {
 <template>
   <div class="w-full flex max-sm:flex-col justify-center gap-[3rem] mt-[2rem] py-[5rem]">
     <div class="max-w-[37.5rem] grow flex flex-col gap-[0.8rem]">
-      <div
+      <!-- <VueperSlides>
+        <VueperSlides
+          v-for="(slide, i) in slides"
+          :key="i"
+          :image="slide.image" />
+      </VueperSlides> -->
+      <!-- <div
         class="thumbnail w-full h-[36.4rem]"
         v-for="(video, index) in store.videos"
         :key="index"
@@ -77,7 +95,7 @@ function previousVideo() {
           :alt="video.name"
           class="w-full h-full object-cover object-center"
         />
-      </div>
+      </div> -->
     </div>
     <!-- video -->
     <div class="text-center w-[35rem] grow">
