@@ -65,6 +65,7 @@ import Videos from "@/components/Videos.vue";
         </div>
       </Container>
     </section>
+    <!-- different roles of bright uk -->
     <Roles />
     <!-- personal development section -->
     <Books />
