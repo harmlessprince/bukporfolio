@@ -9,7 +9,6 @@ const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
 
 console.log(sideBarStore.sideBar)
-const menuState = ref(false)
 
 </script>
 
@@ -66,7 +65,8 @@ const menuState = ref(false)
               <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
              <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
           </li>
-          <span class="material-icons text-[#fff] text-[27px] ">menu</span>
+          <span v-if="!sideBarStore.sideBar" class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.showSideBar()">menu</span>
+          <span v-else class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.hideSideBar()">close</span>
         </div>
        
       </nav>

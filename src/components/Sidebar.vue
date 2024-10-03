@@ -1,10 +1,12 @@
 <script setup>
 const props = defineProps(['menuState'])
+import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
+const toggleSidebar = useToggleSidebar()
 </script>
 
 <template>
-  <!-- <nav :class='props.menuState ? "sidebarContainer" : "sidebarContainerClose"'> -->
-<nav class="sidebarContainer">
+  <nav :class='toggleSidebar.sideBar ? "sidebarContainer" : "sidebarContainerClose"'>
+<!-- <nav class="sidebarContainer"> -->
     <div class="text-[#000] font-xsm text-sm w-full text-center">
       <ul class=" font-xsm text-sm flex-col items-center w-full space-y-[3rem]">
         <li class="">
@@ -26,9 +28,6 @@ const props = defineProps(['menuState'])
         <li class="">
           <RouterLink class="" :to="{name: 'blog'}">Blog</RouterLink>
         </li>
-        <!-- <li class="">
-          <RouterLink class="" :to="{name: 'cart'}">Cart <span class="text-primary">({{cartStore.cartItemCount}})</span></RouterLink>
-        </li> -->
       </ul>
     </div>
 

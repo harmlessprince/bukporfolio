@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useToggleSidebar = defineStore("sideBar", () => {
-    const sideBar = ref(true);
+    const sideBar = ref(false);
    
     function showSideBar() {
       sideBar.value = true
