@@ -10,9 +10,6 @@ import { ref } from 'vue';
 //state
 let toggledetails = ref('details');
 
-console.log(toggledetails.value)
-console.log(toggledetails.value)
-
 const whatYouWillLearn = () => {
     toggledetails.value = 'learn';
     console.log(toggledetails.value)

@@ -13,15 +13,15 @@ import Container from "@/components/Container.vue";
     >
       <div class="grow-[2] flex-shrink-0 basis-0">
         <div>
-          <h1 class="text-white font-bold font-title text-[4.8rem] mb-[2.1rem]">
+          <h1 class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
             CHANGE YOUR THINKING
           </h1>
           <h2
-            class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem]"
+            class="text-primary font-bold font-title text-[3.5rem] max-sm:text-[2.4rem] mb-[2.1rem] max-sm:mb-[1rem]"
           >
             TO CHANGE YOUR LIFE
           </h2>
-          <h3 class="text-[#949494] text-[2rem] mb-[4.4rem] font-normal">
+          <h3 class="text-[#949494] text-[2rem] mb-[4.4rem] max-sm:mb-[2rem]  font-normal">
             You are not disadvantaged as you think, you are only disadvantaged
             by your thinking
           </h3>

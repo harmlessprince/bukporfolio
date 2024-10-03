@@ -19,7 +19,7 @@ function toggleTab(name) {
   <section class="flex items-center justify-center relative h-[60rem] w-full bg-cover bg-no-repeat"
            :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
     <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
-      <h1 class="text-forty font-xlg text-basicColor">Gallery</h1>
+      <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Gallery</h1>
       <div class="font-lg text-basic">
         <span class="text-bannerNavColor">Home</span> <span class="text-primaryColor"> > Gallery</span><span
           class="text-primaryColor uppercase"> > {{currentTab}}</span>

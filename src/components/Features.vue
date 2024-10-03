@@ -14,7 +14,7 @@ onBeforeMount(() => {
 
 <template>
   <Container>
-    <section class="flex max-sm:flex-col items-center py-top bg-white overflow-hidden">
+    <section class="flex max-sm:flex-col items-center py-top max-sm:py-0 bg-white overflow-hidden">
       <div
         class="font-header text-xlg text-[#0F0F13] mr-[2rem] whitespace-nowrap max-sm:text-left max-sm:w-full max-sm:pl-[1rem]"
       >

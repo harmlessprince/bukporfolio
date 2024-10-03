@@ -17,7 +17,7 @@ import Coach from '@/assets/trainerImage2.png';
     <!-- about hero section -->
      <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
-        <h1 class="text-forty font-xlg text-basicColor">TRAINER</h1>
+        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">TRAINER</h1>
         <div class="font-lg text-basic">  
           <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
         </div>
@@ -67,7 +67,7 @@ import Coach from '@/assets/trainerImage2.png';
             <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your team for a Group Coaching Session</button>
             </div>
 
-        <div>
+        <!-- <div>
           <button class="block h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary"> Book a
             Personal Coaching Session
           </button>
@@ -75,7 +75,7 @@ import Coach from '@/assets/trainerImage2.png';
           <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your
             team for a Group Coaching Session
           </button>
-        </div>     
+        </div>      -->
     </div>
     <div class="w-[48.0rem] min-h-[43.3rem] max-sm:hidden">
       <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
