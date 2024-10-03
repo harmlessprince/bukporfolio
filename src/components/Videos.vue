@@ -7,15 +7,15 @@ import Subheading from "@/components/SubHeading.vue";
 import {useVideoStore} from "@/store/videos.store.js";
 import {onBeforeMount, onMounted, ref, watch} from "vue";
 
-const slides = [{
-    image: require('@/assets/bright1.png')
-  },
-  {
-    image: require('@/assets/bright1.png')
-  },
-  {
-    image: require('@/assets/bright1.png')
-  },]
+// const slides = [{
+//     image: require('@/assets/bright1.png')
+//   },
+//   {
+//     image: require('@/assets/bright1.png')
+//   },
+//   {
+//     image: require('@/assets/bright1.png')
+//   },]
 
 const currentVideo = ref(null);
 const currentIndex = ref(0);
