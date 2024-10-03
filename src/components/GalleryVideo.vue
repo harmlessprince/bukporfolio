@@ -23,13 +23,7 @@ import 'video.js/dist/video-js.css'
             :width=488
             :fluid="true"
         />
-
       </div>
-
-      <!--      <video class="h-auto max-w-full rounded-lg" controls>-->
-      <!--        <source :src="vid" type="video/mp4">-->
-      <!--        Your browser does not support the video tag.-->
-      <!--      </video>-->
     </div>
   </div>
 
