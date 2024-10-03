@@ -32,7 +32,7 @@ const quotes = ref([
         :style="{ 'background-image': 'url(' + HomeBanner + ')' }"
     >
       <div class="grow-[2] flex-shrink-0 basis-0">
-        <div class="text-white font-bold font-title text-[4.8rem] mb-[2.1rem]">
+        <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
           CHANGE YOUR THINKING TO
           <span
               class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] overflow-hidden">
@@ -40,7 +40,7 @@ const quotes = ref([
 
               <li class="mb-[4.4rem]" v-for="(item, index) in quotes" :key="index" :aria-hidden="index === quotes.length - 1 ? 'true' : 'false'">
                  <span>{{item.title}}</span>
-                 <p class="text-[#949494] text-[2rem] font-normal mt-2">
+                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[2.4rem] mb-[2.1rem] max-sm:mb-[1rem]">
                    {{item.description}}
                   </p>
               </li>
