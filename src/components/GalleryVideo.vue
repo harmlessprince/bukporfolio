@@ -23,7 +23,6 @@ const totalPages = computed(() => Math.ceil(videoArray.length / perPage));
 const paginatedVideos = computed(() => {
   const start = (currentPage.value - 1) * perPage;
   const end = start + perPage;
-  console.log(end, start);
   return videoArray.slice(start, end);
 })
 
@@ -38,7 +37,7 @@ function previousPage() {
 }
 
 function nextPage() {
-  if (currentPage.value < totalPages) {
+  if (currentPage.value < totalPages.value) {
     currentPage.value++;
   }
 }
@@ -76,7 +75,7 @@ function nextPage() {
         {{ page }}
       </button>
 
-      <button @click="nextPage" :disabled="currentPage === totalPages" class="pagination_button">>></button>
+      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>
     </div>
   </div>
 </template>
