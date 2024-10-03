@@ -222,3 +222,13 @@ q {
 .home_video_carousel .carousel__pagination-button::after{
     background-color: #C7AE2E !important;
 }
+
+.gallery_picture .carousel__track{
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gallery_picture .carousel__viewport{
+    overflow: hidden;
+    height: 90rem;
+}
