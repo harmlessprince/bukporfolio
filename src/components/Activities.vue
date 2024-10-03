@@ -28,7 +28,7 @@ const playVideo = (video) => {
           :key="i"
           :image="slide.image" />
       </VueperSlides> -->
-      <!-- <div
+      <div
         class="thumbnail w-full h-[36.4rem]"
         v-for="(video, index) in store.videos"
         :key="index"
@@ -39,7 +39,7 @@ const playVideo = (video) => {
           :alt="video.name"
           class="w-full h-full object-cover object-center"
         />
-      </div> -->
+      </div>
     </div>
     <!-- video -->
     <div class="text-center w-[35rem] grow">

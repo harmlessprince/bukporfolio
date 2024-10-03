@@ -66,7 +66,7 @@ function previousQuote() {
       </h2>
       <!-- this part will be dynamic, we will work on it -->
       <div
-        class="bg-[#F9F7EA] rounded-[10px] px-[2.2rem] py-[3.7rem] h-[25.4rem] flex flex-col gap-[2rem] justify-between"
+        class="bg-[#F9F7EA] rounded-[10px] px-[2.2rem] py-[3.7rem] min-h-[25.4rem] flex flex-col gap-[2rem] justify-between"
         v-if="currentQuote"
       >
         <q
