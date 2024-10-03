@@ -48,7 +48,7 @@ export default {
             animation: {
                 slideInLeft: 'slideInFromLeft 0.5s ease-out forwards',
                 slideInRight: 'slideInFromRight 0.5s ease-out forwards',
-                'text-slide-3': 'text-slide-3 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                'text-slide-3': 'text-slide-3 15s cubic-bezier(0.83, 0, 0.17, 1) infinite',
                 'text-slide-4': 'text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
             },
             fontSize: {
