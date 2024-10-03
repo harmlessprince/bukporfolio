@@ -10,7 +10,7 @@ import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
-import Videos from "@/components/Videos.vue";
+import Activities from "@/components/Activities.vue";
 </script>
 
 <template>
@@ -77,7 +77,7 @@ import Videos from "@/components/Videos.vue";
       </h2>
       <div class="max-w-full bg-secondary">
         <Container>
-          <Videos />
+          <Activities/>
         </Container>
       </div>
     </section>
