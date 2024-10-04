@@ -119,4 +119,5 @@ import Activities from "@/components/Activities.vue";
   width: 98px;
   height: 98px;
 }
+
 </style>
