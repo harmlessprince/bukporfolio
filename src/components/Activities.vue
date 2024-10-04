@@ -6,13 +6,25 @@ import {useVideoStore} from "@/store/videos.store.js";
 import {ref,} from "vue";
 import HomeVideoActivity from "@/components/HomeVideoAcitivity.vue";
 import Home from "@/pages/Home.vue";
-
+import PrimeVueCarousel from 'PrimeVueCarousel';
+import PrimeVueButton from 'PrimeVueButton';
 
 const currentVideo = ref(null);
 const currentIndex = ref(0);
 const currentDirection = ref('forward');
 const store = useVideoStore()
-
+const images = ref([
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg',
+  'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg',
+]);
 const playVideo = (video) => {
   currentVideo.value = video;
 };
@@ -20,26 +32,20 @@ const playVideo = (video) => {
 </script>
 
 <template>
-  <div class="w-full flex max-sm:flex-col justify-center gap-[3rem] mt-[2rem] py-[5rem]">
+  <div class="w-full flex max-sm:flex-col justify-center gap-[3rem] py-[5rem] h-[70.3rem]">
     <div class="max-w-[37.5rem] grow flex flex-col gap-[0.8rem]">
-      <!-- <VueperSlides>
-        <VueperSlides
-          v-for="(slide, i) in slides"
-          :key="i"
-          :image="slide.image" />
-      </VueperSlides> -->
-      <!-- <div
-        class="thumbnail w-full h-[36.4rem]"
-        v-for="(video, index) in store.videos"
-        :key="index"
-        @click="playVideo(video)"
-      >
-        <img
-          :src="video.thumbnail"
-          :alt="video.name"
-          class="w-full h-full object-cover object-center"
-        />
-      </div> -->
+      <PrimeVueCarousel :value="images" :numVisible="2" :numScroll="1" orientation="vertical"
+                        verticalViewPortHeight="600px" containerClass="flex items-center">
+        <template #item="slotProps">
+          <div>
+            <div class="mb-[1rem]">
+              <div class="relative mx-auto h-[300px]">
+                <img :src="slotProps.data" :alt="slotProps.data" class="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </template>
+      </PrimeVueCarousel>
     </div>
     <!-- video -->
     <div class="text-center w-[35rem] grow">
@@ -48,7 +54,7 @@ const playVideo = (video) => {
         Hear directly from Bright UK
       </header>
       <div class="w-full h-[56.7rem]">
-        <HomeVideoActivity />
+        <HomeVideoActivity/>
       </div>
     </div>
   </div>
