@@ -46,7 +46,7 @@ function nextPage() {
 
 <template>
   <div>
-    <div class="grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] w-full gap-2">
+    <div class="grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
       <div v-for="(path, index) in paginatedVideos" :key="index" class="h-auto max-w-full">
         <div>
           <video-player

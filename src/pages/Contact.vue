@@ -108,9 +108,9 @@ async function sendEmail(values, {resetForm}) {
 
       <!-- form section -->
       <section class="mt-[2rem] mb-[5rem]">
-        <Form class="font-[500] text-[2rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
+        <Form class="font-[500] text-[2rem] max-sm:text-[1.6rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
               :validation-schema="validationSchema">
-          <div class="flex flex-row justify-between gap-y-[2.7rem] flex-wrap">
+          <div class="flex flex-row justify-between gap-y-[2.7rem] max-sm:gap-y-[1.5rem] flex-wrap">
             <div class="w-[47.7rem]">
               <label class="">Full Name</label>
               <ContactFormInput name="fullName" label="Full Name" placeholder="John Doe"/>
@@ -176,16 +176,19 @@ async function sendEmail(values, {resetForm}) {
 
         <div
             class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#ffffff] font-[500] mt-[4.8rem]">
+            <a href="mailto:iambrightuk@gmail.com">
           <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
             <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
             <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
           </div>
+          </a>
 
+          <a href="tel:+2348135273602">
           <div class=" min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
             <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
             <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
-
           </div>
+          </a>
 
           <div class="min-h-[17.5rem] rounded-[10px] p-[1.5rem] bg-[#000000]">
             <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>

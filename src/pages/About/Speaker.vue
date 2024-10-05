@@ -163,7 +163,7 @@ onBeforeMount(() => {
           <Heading title="Inspirational words from Bright UK"/>
         </div>
         <div
-            class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] mt-[2rem]"
+            class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-sm:gap-[0.3rem] mt-[2rem]"
         >
           <InspirationCard
               v-for="(item, index) in store.quotes"

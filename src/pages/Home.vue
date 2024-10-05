@@ -65,6 +65,7 @@ import Activities from "@/components/Activities.vue";
         </div>
       </Container>
     </section>
+    <!-- different roles of bright uk -->
     <Roles />
     <!-- personal development section -->
     <Books />
@@ -83,7 +84,7 @@ import Activities from "@/components/Activities.vue";
     <!-- end of gallery -->
 
     <!-- start of testimonies -->
-    <section class="py-[5rem] w-full bg-basic">
+    <section class="py-[5rem] w-full bg-basic max-sm:mt-[2rem]">
       <Container>
         <div
           class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"

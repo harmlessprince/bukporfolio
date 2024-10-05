@@ -1,5 +1,4 @@
 <script setup>
-
 import AboutBanner from "@/assets/trainerbanner.png";
 import Container from "@/components/Container.vue";
 import {ref} from "vue";
@@ -30,7 +29,7 @@ function toggleTab(name) {
   <Container class="mb-[25rem]">
     <div class="mt-[3.4rem] mb-[1.7rem] text-center">
       <div
-          class="w-[48.1rem] mb-[1.7rem] h-[45px] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex p-1">
+          class="w-[48.1rem] max-sm:w-full mb-[1.7rem] h-[45px] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex p-1">
         <button class="gallery_tab transition-all duration-300 ease-in-out transform" @click="toggleTab('videos')"
                 :class="currentTab === 'videos' ? 'selected' : 'unselected'">Videos
         </button>

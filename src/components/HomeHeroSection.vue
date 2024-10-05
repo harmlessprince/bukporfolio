@@ -36,19 +36,19 @@ const quotes = ref([
         <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
           CHANGE YOUR THINKING TO
           <span
-              class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] overflow-hidden">
+              class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] max-sm:h-full overflow-hidden">
             <ul class="block text-left [&_li]:block animate-text-slide-3">
 
-              <li class="mb-[4.4rem]" v-for="(item, index) in quotes" :key="index" :aria-hidden="index === quotes.length - 1 ? 'true' : 'false'">
+              <li class="mb-[4.4rem] max-sm:mb-0 mt-[1rem] max-sm:py-[2rem]" v-for="(item, index) in quotes" :key="index" :aria-hidden="index === quotes.length - 1 ? 'true' : 'false'">
                  <span>{{item.title}}</span>
-                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[2.4rem] mb-[2.1rem] max-sm:mb-[1rem]">
+                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[2.4rem] mb-[2.1rem] max-sm:mb-0">
                    {{item.description}}
                   </p>
               </li>
             </ul>
           </span>
           <RouterLink
-              class="bg-primary w-[22.2rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] px-[6rem] font-sm flex items-center justify-center self-start"
+              class="bg-primary w-[22.2rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] max-sm:py-[0.5rem] px-[6rem] font-sm flex items-center justify-center self-start"
               :to="{name: 'contact'}"
           >
             Book Bright UK

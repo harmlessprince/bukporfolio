@@ -4,7 +4,7 @@ import Container from "@/components/Container.vue";
 import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
-import { FwbDropdown } from 'flowbite-vue'
+
 
 const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
@@ -29,25 +29,19 @@ const sideBarStore = useToggleSidebar()
             </RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink :to="{ name: 'speaker'}" class="mainnavlink"
-              >
-              <fwb-dropdown placement="bottom" text="About">
-                <div class="w-52">
-                  <p class="p-2">
-                    Dropdown content line one
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line two
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line three
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line four
-                  </p>
-                </div>
-              </fwb-dropdown>
-            </RouterLink>
+            <div class="dropdown">
+              <div class="dropbtn space-x-[0.7rem] flex items-end">
+                <span>About</span>
+                <span class="material-icons">keyboard_arrow_down</span>
+              </div>
+              <div class="dropdown-content">
+                <RouterLink class="mainnavlink" :to="{name: 'author'}">Author</RouterLink>
+               <RouterLink class="mainnavlink" :to="{name: 'speaker'}">Speaker</RouterLink>
+                <RouterLink class="mainnavlink" :to="{name: 'trainer'}">Trainer</RouterLink>
+                <RouterLink class="mainnavlink" :to="{name: 'coach'}">Coach</RouterLink>
+                <RouterLink class="mainnavlink" :to="{name: 'blog'}">Entrepreneur</RouterLink>
+              </div>
+            </div>
           </li>
           <li class="mainnav__links">
             <RouterLink :to="{name: 'gallery'}" class="mainnavlink">Gallery</RouterLink>
@@ -89,4 +83,40 @@ const sideBarStore = useToggleSidebar()
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
