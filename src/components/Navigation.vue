@@ -4,7 +4,7 @@ import Container from "@/components/Container.vue";
 import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
-import { FwbDropdown } from 'flowbite-vue'
+
 
 const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
@@ -42,25 +42,6 @@ const sideBarStore = useToggleSidebar()
                 <RouterLink class="mainnavlink" :to="{name: 'blog'}">Entrepreneur</RouterLink>
               </div>
             </div>
-            <!-- <RouterLink :to="{ name: 'speaker'}" class="mainnavlink"
-              >
-              <fwb-dropdown placement="bottom" text="About">
-                <div class="w-52">
-                  <p class="p-2">
-                    Dropdown content line one
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line two
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line three
-                  </p>
-                  <p class="p-2">
-                    Dropdown content line four
-                  </p>
-                </div>
-              </fwb-dropdown>
-            </RouterLink> -->
           </li>
           <li class="mainnav__links">
             <RouterLink :to="{name: 'gallery'}" class="mainnavlink">Gallery</RouterLink>
