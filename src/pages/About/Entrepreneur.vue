@@ -1,6 +1,4 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/enterpreneurbanner.png';
 import Container from "@/components/Container.vue";
 import Scribe from '@/assets/scribe.png';
@@ -11,6 +9,8 @@ const store = useEntrepreneurStore()
 onBeforeMount(() => {
   store.getEntrepreneurs();
 });
+
+
 </script>
 
 <template>
