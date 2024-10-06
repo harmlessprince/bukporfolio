@@ -113,7 +113,7 @@ const sideBarStore = useToggleSidebar()
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #C7AE2E}
 
 .dropdown:hover .dropdown-content {
   display: block;

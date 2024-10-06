@@ -38,23 +38,23 @@ gsap.fromTo(".meetBrightBoxText",
 },
 })
 
-gsap.fromTo(".textimonialBoxImage",
+gsap.fromTo(".testimonialBoxImage",
 { y: 150 }, 
 { y: 0, 
   duration: 1, 
   scrollTrigger: {
-  trigger: ".textimonialBoxImage",
-  start: 'top 70%'
+  trigger: ".testimonialBoxImage",
+  start: 'top 50%'
 },
 })
 
-gsap.fromTo(".textimonialBoxText",
+gsap.fromTo(".testimonialBoxText",
 { x: 250 }, 
 { x: 0, 
   duration: 1, 
   scrollTrigger: {
-  trigger: ".textimonialBoxText",
-  start: 'top 90%'
+  trigger: ".testimonialBoxText",
+  start: 'top 50%'
 },
 })
 })
@@ -136,7 +136,7 @@ gsap.fromTo(".textimonialBoxText",
         <div
           class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"
         >
-          <div class="textimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
+          <div class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
             <img
               :src="BrightTestimony"
               class="w-full h-full object-center object-cover"
@@ -144,7 +144,7 @@ gsap.fromTo(".textimonialBoxText",
             />
           </div>
 
-          <Testimonies class="textimonialBoxText" />
+          <Testimonies class="testimonialBoxText" />
         </div>
       </Container>
     </section>
