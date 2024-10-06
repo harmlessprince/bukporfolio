@@ -167,4 +167,5 @@ gsap.fromTo(".textimonialBoxText",
   width: 98px;
   height: 98px;
 }
+
 </style>

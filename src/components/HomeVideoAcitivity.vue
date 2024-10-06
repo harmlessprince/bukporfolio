@@ -54,10 +54,5 @@ const getYouTubeEmbedUrl = (url) => {
 </template>
 
 <style scoped>
-.carousel__prev{
-  color: red !important;
-}
-.carousel .carousel__next{
-  color: red !important;
-}
+
 </style>
