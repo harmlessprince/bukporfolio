@@ -1,5 +1,4 @@
 <script setup>
-
 import HomeBanner from "@/assets/home_banner_background.png";
 import HomeBright1 from "@/assets/home_banner_bright.png";
 import Container from "@/components/Container.vue";
