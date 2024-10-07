@@ -8,10 +8,12 @@ const props = defineProps(['title', 'year', 'day', 'month', 'author', "url", "ca
 
 <template>
   <div
-      class="rounded-[10px] border border-[#BEBEBE] text-left mb-[2rem] h-full flex flex-col justify-between gap-[1rem]">
+      class="rounded-[10px] border border-[#BEBEBE] text-left mb-[2rem] h-full flex flex-col justify-between">
     <div>
-      <img :src=generateThumbnailFromText(props.title) class="w-[100%] h-[21.2rem] rounded-t-[10px]"
+      <div class="w-full h-[21.2rem">
+      <img :src=generateThumbnailFromText(props.title) class="w-[100%] h-full rounded-t-[10px]"
            alt="book"/>
+      </div>
       <div class="p-[1rem]">
         <div class="flex flex-row items-center">
           <div class="mr-[0.7rem] text-xlg text-center text-basicColor W-[6.6rem] bg-secondary px-[1.3rem]">

@@ -50,8 +50,8 @@ function onCategoryChange(category) {
       </div>
     </section>
 
-    <Container>
-      <div class="mt-[3.4rem] text-center">
+    <Container> 
+      <div class="mt-[3.4rem] max-small:mt-[2rem] text-center">
         <Subheading title="Glean insights to transform your mind and get more out of life" class="mb-[0.5rem]"/>
         <Heading title="The Musings of Bright UK"/>
         <div
