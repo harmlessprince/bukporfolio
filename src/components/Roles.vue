@@ -28,8 +28,11 @@ function getRoleLink(name) {
 <template>
   <section class="bg-[#DADADA] pt-[4.7rem] pb-[4.7rem]">
     <Container class="w-full">
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(23.6rem,1fr))] max-sm:grid-cols-1 gap-[1.2rem] gap-y-[2rem]">
-        <div class="rounded-[10px] overflow-hidden max-sm:w-[28rem] max-sm:mx-auto" v-for="(role, index) in store.roles" :key="index"
+      <div 
+      class="grid grid-cols-[repeat(auto-fill,minmax(23.6rem,1fr))] max-small:grid-cols-[repeat(auto-fill,minmax(35rem,1fr))]
+            small:max-medium:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] 
+      gap-[1.2rem] gap-y-[2rem]">
+        <div class="rounded-[10px] overflow-hidden w-full max-sm:mx-auto" v-for="(role, index) in store.roles" :key="index"
              @click="getRoleLink(role.name.toLowerCase())">
           <img :src="role.image ?? Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" :alt="role.name"/>
           <div class="bg-primary text-xlg font-lg text-center text-white py-[0.65rem]">{{

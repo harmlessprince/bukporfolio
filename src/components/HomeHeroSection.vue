@@ -1,9 +1,8 @@
 <script setup>
-
 import HomeBanner from "@/assets/home_banner_background.png";
 import HomeBright1 from "@/assets/home_banner_bright.png";
 import Container from "@/components/Container.vue";
-import {ref} from "vue";
+import {ref, onMounted, onBeforeUnmount} from "vue";
 
 const quotes = ref([
   {
@@ -23,6 +22,7 @@ const quotes = ref([
     description: "You are not disadvantaged as you think, you are only disadvantaged by your thinking",
   },
 ])
+
 </script>
 
 <template>
@@ -36,12 +36,12 @@ const quotes = ref([
         <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
           CHANGE YOUR THINKING TO
           <span
-              class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] max-sm:h-full overflow-hidden">
+              class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] max-sm:h-[26.5rem] overflow-hidden">
             <ul class="block text-left [&_li]:block animate-text-slide-3">
 
               <li class="mb-[4.4rem] max-sm:mb-0 mt-[1rem] max-sm:py-[2rem]" v-for="(item, index) in quotes" :key="index" :aria-hidden="index === quotes.length - 1 ? 'true' : 'false'">
                  <span>{{item.title}}</span>
-                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[2.4rem] mb-[2.1rem] max-sm:mb-0">
+                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[1.rem] mb-[2.1rem] max-sm:mb-0">
                    {{item.description}}
                   </p>
               </li>
