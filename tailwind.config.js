@@ -103,9 +103,10 @@ export default {
             },
 
             screens: {
-                small: "400px",
-                medium: "768px",
-                large: "900px",
+                xsmall: "349px",
+                small: "450px",
+                medium: "782px",
+                large: "1000px",
                 xlarge: "1900px",
             },
             fontFamily: {

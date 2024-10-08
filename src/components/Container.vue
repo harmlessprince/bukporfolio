@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-  <!-- using tailwind dimension for mobile responsiveness -->
-  <div class="max-w-[111rem]  max-sm:max-w-[34rem] my-0 mx-auto w-full">
+  <!-- screen dimension for responsiveness is in tailwind config -->
+  <div class="max-w-[111rem] my-0 mx-auto w-full max-large:px-3">
     <slot></slot>
   </div>
 </template>

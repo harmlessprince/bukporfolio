@@ -28,8 +28,8 @@ const getYouTubeEmbedUrl = (url) => {
   <div class="home_video_carousel">
     <Carousel v-bind="settings">
       <Slide v-for="(item, index) in store.videos" :key="index">
-        <div class="w-full flex items-center justify-center gap-2.5">
-          <div v-if="isYouTube(item.url)" class="w-[55rem]">
+        <div class="w-full flex items-center justify-center gap-2.5 max-medium:gap-0">
+          <div v-if="isYouTube(item.url)" class="w-[55rem] max-medium:w-full">
               <iframe
                   class="w-full"
                   height="544"

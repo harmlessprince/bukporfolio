@@ -1,19 +1,63 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
-import Footer from '@/components/footer.vue';
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
+import { onMounted } from 'vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WhoIam from '@/assets/trainerprofile.png';
 import Brands from "@/components/Brands.vue";
 import Heading from '@/components/Heading.vue';
 import UkLogo from '@/assets/ukLogo.svg';
 import Coach from '@/assets/trainerImage2.png';
 
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.fromTo(".bookBrightImage",
+{ x: -400 }, 
+{ x: 0, 
+  duration: 1, 
+  scrollTrigger: {
+  trigger: ".bookBrightImage",
+  start: 'top 60%'
+},
+});
+
+gsap.fromTo(".bookBrightText",
+{ x: 400 }, 
+{ x: 0, 
+  duration: 1, 
+  scrollTrigger: {
+  trigger: ".bookBrightText",
+  start: 'top 70%'
+},
+});
+
+gsap.fromTo(".coachBrightImage",
+{ x: 300 }, 
+{ x: 0, 
+  duration: 1, 
+  scrollTrigger: {
+  trigger: ".coachBrightImage",
+  start: 'top 60%'
+},
+});
+
+gsap.fromTo(".coachBrightText",
+{ y: 400 }, 
+{ y: 0, 
+  duration: 1, 
+  scrollTrigger: {
+  trigger: ".coachBrightText",
+  start: 'top 100%'
+},
+});
+})
+
 </script>
 
 <template>
   <main class="text-primary">
-
     <!-- about hero section -->
     <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -27,13 +71,13 @@ import Coach from '@/assets/trainerImage2.png';
 
     <Container>
       <div
-          class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] justify-between items-center my-[5rem] max-sm:my-[2.7rem]">
-        <div class="w-[47.6rem] max-sm:w-full min-h-[62.8rem] max-sm:min-h-[34.7rem] rounded-[10px] relative">
+          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
+        <div class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
           <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
           <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
                alt="footer logo"/>
         </div>
-        <div class="w-[47.7rem] max-sm:w-full">
+        <div class="w-[47.7rem] max-medium:w-full bookBrightText">
           <p class="font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
             Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company helping
             individuals and organizations to lead the future by catalysing their reinvention and exponential growth
@@ -66,11 +110,11 @@ import Coach from '@/assets/trainerImage2.png';
 
     <Container id="#coach">
       <div
-          class="grid grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-sm:my-[2.7rem]">
-        <div class="w-[48.0rem] max-sm:w-full min-h-[43.3rem] max-sm:min-h-[27.8rem] sm:hidden">
+          class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
+        <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
           <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-[47.9rem] max-sm:w-full">
+        <div class="w-full coachBrightText">
           <Heading title="Coach"/>
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[0.5rem]">
             In today's broken world, many individuals struggle with psychological issues that hinder their progress in
@@ -96,18 +140,8 @@ import Coach from '@/assets/trainerImage2.png';
               Register your team for a Group Coaching Session
             </RouterLink>
           </div>
-
-          <!-- <div>
-            <button class="block h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary"> Book a
-              Personal Coaching Session
-            </button>
-            <br/>
-            <button class="block h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm">Register your
-              team for a Group Coaching Session
-            </button>
-          </div>      -->
         </div>
-        <div class="w-[48.0rem] min-h-[43.3rem] max-sm:hidden">
+        <div class="w-full min-h-[43.3rem] max-medium:hidden coachBrightImage">
           <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
       </div>

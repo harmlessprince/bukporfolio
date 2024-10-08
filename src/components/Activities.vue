@@ -32,8 +32,8 @@ const playVideo = (video) => {
 </script>
 
 <template>
-  <div class="w-full flex max-sm:flex-col justify-center gap-[3rem] py-[5rem] h-[70.3rem]">
-    <div class="max-w-[37.5rem] grow flex flex-col gap-[0.8rem]">
+  <div class="w-full flex max-medium:flex-col justify-center gap-[3rem] py-[5rem] h-[70.3rem] max-medium:h-full">
+    <div class="max-w-[37.5rem] max-medium:max-w-full grow flex flex-col gap-[0.8rem]">
       <PrimeVueCarousel :value="images" :numVisible="2" :numScroll="1" orientation="vertical"
                         verticalViewPortHeight="600px" containerClass="flex items-center">
         <template #item="slotProps">
@@ -48,7 +48,7 @@ const playVideo = (video) => {
       </PrimeVueCarousel>
     </div>
     <!-- video -->
-    <div class="text-center w-[35rem] grow">
+    <div class="text-center w-[35rem] max-medium:w-full grow">
       <Subheading title="Videos"/>
       <header class="text-xlg font-header text-[#f9f7ea] mb-10">
         Hear directly from Bright UK

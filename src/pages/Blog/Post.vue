@@ -57,10 +57,12 @@ function decodeUnicode(str) {
     </section>
 
     <Container>
-      <div class="mt-[2.4rem] mb-[5rem] text-center flex flex-row max-sm:flex-col justify-between items-top space-y-[2rem]">
-        <div class="w-[70rem] max-sm:w-full text-left" v-if="blogStore.singlePost">
-          <img :src="generateThumbnailFromText(blogStore.singlePost.title)" class="w-[100%] h-[41.7rem] relative"
+      <div class="mt-[2.4rem] max-sm:mt-[1.5rem] mb-[5rem] text-center flex flex-row max-medium:flex-col justify-between items-top space-y-[2rem]">
+        <div class="w-[70rem] max-medium:w-full text-left" v-if="blogStore.singlePost">
+          <div class="w-full h-[41.7rem] max-sm:h-[20rem]">
+          <img :src="generateThumbnailFromText(blogStore.singlePost.title)" class="w-[100%] h-full relative"
                alt="blogpics"/>
+              </div>
           <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
             <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
               <span class="material-icons">calendar_month</span>
@@ -91,7 +93,7 @@ function decodeUnicode(str) {
           </div>
         </div>
         <!-- second part of the flex -->
-        <div class="w-[31.1rem] max-sm:w-full">
+        <div class="w-[31.1rem] max-medium:w-full">
           <div v-if="blogStore.recentPosts.length > 0">
 
             <div class="text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">

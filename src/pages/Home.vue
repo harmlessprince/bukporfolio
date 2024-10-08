@@ -1,4 +1,7 @@
 <script setup>
+import { onMounted } from 'vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WhoIam from '@/assets/who_i_am.png';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
@@ -11,6 +14,9 @@ import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
 import Activities from "@/components/Activities.vue";
+
+gsap.registerPlugin(ScrollTrigger);
+
 </script>
 
 <template>
@@ -24,7 +30,7 @@ import Activities from "@/components/Activities.vue";
     <section class="">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
-          <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer">
+          <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
             <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
             <div class="w-full absolute left-0 bottom-5">
               <img
@@ -34,7 +40,7 @@ import Activities from "@/components/Activities.vue";
               />
             </div>
           </div>
-          <div class="w-[39.2rem] px-6">
+          <div class="w-[39.2rem] max-sm:w-full px-6 meetBrightBoxText">
             <h3
               class="font-lg text-basic text-primary font-primary mb-[0.7rem] max-sm:mb-0"
             >
@@ -89,7 +95,7 @@ import Activities from "@/components/Activities.vue";
         <div
           class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"
         >
-          <div class="grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
+          <div class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
             <img
               :src="BrightTestimony"
               class="w-full h-full object-center object-cover"
@@ -97,7 +103,7 @@ import Activities from "@/components/Activities.vue";
             />
           </div>
 
-          <Testimonies />
+          <Testimonies class="testimonialBoxText" />
         </div>
       </Container>
     </section>

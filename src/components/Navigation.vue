@@ -16,13 +16,13 @@ const sideBarStore = useToggleSidebar()
     class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-[500]"
   >
     <Container>
-      <nav class="px-12 py-5 flex items-center justify-between ">
+      <nav class="px-12 max-medium:px-2 py-5 flex items-center justify-between ">
         <div class="logo w-[5.3rem] h-[5.3rem]">
           <a href="/">
             <img :src="Logo" alt="My Logo" />
           </a>
         </div>
-        <ul class="text-white font-xsm text-sm flex items-center max-sm:hidden">
+        <ul class="text-white font-xsm text-sm flex items-center max-medium:hidden">
           <li class="mainnav__links">
             <RouterLink :to="{ name: 'home'}" class="mainnavlink"
               >Home
@@ -59,16 +59,16 @@ const sideBarStore = useToggleSidebar()
           </li>
         </ul>
         <div>
-          <RouterLink :to="{ name: 'contact'}" class="border-0 max-sm:hidden" activeClass="border-0">
+          <RouterLink :to="{ name: 'contact'}" class="border-0 max-medium:hidden" activeClass="border-0">
             <button
-              class="font-sm text-xsm border text-primary border-primary p-4  rounded-md outline-0"
+              class="font-sm text-xsm border text-primary border-primary p-4 rounded-md outline-0"
             >
               Contact me
             </button>
           </RouterLink>
         </div>
         <!-- this only appears on mobile  -->
-        <div class="sm:hidden flex items-center">
+        <div class="medium:hidden flex items-center">
           <li class="mt-3 mr-[2rem] relative">
             <RouterLink class="mainnavlink" :to="{name: 'cart'}">
               <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
@@ -113,7 +113,7 @@ const sideBarStore = useToggleSidebar()
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #C7AE2E}
 
 .dropdown:hover .dropdown-content {
   display: block;
