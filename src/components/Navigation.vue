@@ -39,7 +39,7 @@ const sideBarStore = useToggleSidebar()
                <RouterLink class="mainnavlink" :to="{name: 'speaker'}">Speaker</RouterLink>
                 <RouterLink class="mainnavlink" :to="{name: 'trainer'}">Trainer</RouterLink>
                 <RouterLink class="mainnavlink" :to="{name: 'coach'}">Coach</RouterLink>
-                <RouterLink class="mainnavlink" :to="{name: 'blog'}">Entrepreneur</RouterLink>
+                <RouterLink class="mainnavlink" :to="{name: 'entrepreneur'}">Entrepreneur</RouterLink>
               </div>
             </div>
           </li>
@@ -61,7 +61,7 @@ const sideBarStore = useToggleSidebar()
         <div>
           <RouterLink :to="{ name: 'contact'}" class="border-0 max-medium:hidden" activeClass="border-0">
             <button
-              class="font-sm text-xsm border text-primary border-primary p-4 rounded-md outline-0"
+              class="hover:scale-[1.2] font-sm text-xsm border text-primary border-primary p-4 rounded-md outline-0"
             >
               Contact me
             </button>

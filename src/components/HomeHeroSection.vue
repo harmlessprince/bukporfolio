@@ -86,10 +86,13 @@ const resetQuotesCount = () => {
             </ul>
           </span>
           <RouterLink
-              class="bg-primary w-[22.2rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] max-sm:py-[0.5rem] px-[6rem] font-sm flex items-center justify-center self-start"
               :to="{name: 'contact'}"
           >
+           <button
+           class="hover:scale-[1.1] hover:ml-[1.2rem] bg-primary w-[22.2rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] max-sm:py-[0.5rem] px-[6rem] font-sm flex items-center justify-center self-start"
+           >
             Book Bright UK
+           </button>
           </RouterLink>
         </div>
       </div>
