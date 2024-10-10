@@ -4,10 +4,34 @@ import Container from "@/components/Container.vue";
 import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
+import { useRoute } from 'vue-router';
 
 
 const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
+const route = useRoute(); // Access the current route object
+
+const isRouteActive = (link, routePath) => {
+      if(link === "about"){
+        let pathLink  = route.path;
+        console.log(pathLink)
+        return /^\/about/.test(route.path);
+      }
+      if(link === "shop"){
+        let pathLink  = route.path;
+        console.log(pathLink)
+        return /^\/shop/.test(route.path);
+      }
+
+      if(link === "blog"){
+        let pathLink  = route.path;
+        console.log(pathLink)
+        return /^\/blog/.test(route.path);
+      }
+
+      return route.path === routePath;
+
+    };
 
 </script>
 
@@ -24,33 +48,41 @@ const sideBarStore = useToggleSidebar()
         </div>
         <ul class="text-white font-xsm text-sm flex items-center max-medium:hidden">
           <li class="mainnav__links">
-            <RouterLink :to="{ name: 'home'}" class="mainnavlink"
+            <RouterLink :to="{ name: 'home'}"
+            :class='isRouteActive("", "/") ? "mainNavLinkActive" : "mainnavlink"'
               >Home
             </RouterLink>
           </li>
           <li class="mainnav__links">
             <div class="dropdown">
-              <div class="dropbtn space-x-[0.7rem] flex items-end">
+              <div :class='isRouteActive("about", "") ? "dropbtnActive space-x-[0.7rem] flex items-end" : "dropbtn space-x-[0.7rem] flex items-end hover:text-primaryColor"'>
                 <span>About</span>
                 <span class="material-icons">keyboard_arrow_down</span>
               </div>
               <div class="dropdown-content">
-                <RouterLink class="mainnavlink" :to="{name: 'author'}">Author</RouterLink>
-               <RouterLink class="mainnavlink" :to="{name: 'speaker'}">Speaker</RouterLink>
-                <RouterLink class="mainnavlink" :to="{name: 'trainer'}">Trainer</RouterLink>
-                <RouterLink class="mainnavlink" :to="{name: 'coach'}">Coach</RouterLink>
-                <RouterLink class="mainnavlink" :to="{name: 'entrepreneur'}">Entrepreneur</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/author") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'author'}">Author</RouterLink>
+               <RouterLink :class='isRouteActive("", "/about/speaker") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'speaker'}">Speaker</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/trainer") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'trainer'}">Trainer</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/coach") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'coach'}">Coach</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/entrepreneur") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'entrepreneur'}">Entrepreneur</RouterLink>
               </div>
             </div>
           </li>
           <li class="mainnav__links">
-            <RouterLink :to="{name: 'gallery'}" class="mainnavlink">Gallery</RouterLink>
+            <RouterLink :to="{name: 'gallery'}" 
+            :class='isRouteActive("", "/gallery") ? "mainNavLinkActive" : "mainnavlink"'
+            >Gallery</RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink :to="{name: 'products'}" class="mainnavlink">Shop</RouterLink>
+            <RouterLink :to="{name: 'products'}" 
+              :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'
+            >Shop</RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink class="mainnavlink" :to="{name: 'blog'}">Blog</RouterLink>
+            <RouterLink 
+              :class='isRouteActive("blog", "") ? "mainNavLinkActive" : "mainnavlink"'
+              :to="{name: 'blog'}"
+             >Blog</RouterLink>
           </li>
           <li class="mainnav__links relative mt-4">
             <RouterLink class="mainnavlink" :to="{name: 'cart'}">
@@ -67,6 +99,7 @@ const sideBarStore = useToggleSidebar()
             </button>
           </RouterLink>
         </div>
+
         <!-- this only appears on mobile  -->
         <div class="medium:hidden flex items-center">
           <li class="mt-3 mr-[2rem] relative">
@@ -90,6 +123,17 @@ const sideBarStore = useToggleSidebar()
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+
+.dropbtnActive{
+  color: #C7AE2E;
+  border-bottom: 4px solid #C7AE2E;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropbtn:hover{
+  color: #C7AE2E;
 }
 
 .dropdown {
@@ -117,6 +161,23 @@ const sideBarStore = useToggleSidebar()
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.mainnavlink{
+  border-bottom: 0 solid #000;
+  transition: all 1s ease;
+}
+
+.mainnavlink:hover{
+  transition: all 1s ease;
+  color: #C7AE2E;
+  border-bottom: 4px solid #C7AE2E;
+
+}
+
+.mainNavLinkActive{
+  color: #C7AE2E;
+  border-bottom: 4px solid #C7AE2E;
 }
 
 </style>

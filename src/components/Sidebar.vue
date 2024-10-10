@@ -1,10 +1,26 @@
 <script setup>
 import { ref } from "vue";
+import { useRoute } from 'vue-router';
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
 const props = defineProps(['menuState'])
 const toggleSidebar = useToggleSidebar()
 
 const aboutDropdown = ref(false);
+const route = useRoute(); // Access the current route object
+
+console.log(route.path)
+
+const isRouteActive = (link, routePath) => {
+      // return route.path === routePath; // Compares the current path to the provided one
+      if(link === "about"){
+        let pathLink  = route.path;
+        console.log(pathLink)
+        return /^\/about/.test(route.path);
+      }
+
+      return route.path === routePath;
+
+    };
 
 function toggleAboutDropdown() {
        aboutDropdown.value = !aboutDropdown.value
@@ -17,13 +33,14 @@ function toggleAboutDropdown() {
 <!-- <nav class="sidebarContainer"> -->
     <div class="text-[#000] font-xsm text-sm w-full">
       <ul class=" font-xsm text-[1.8rem] flex-col items-center w-full space-y-[3rem]">
-        <li class="sideBarLink w-full">
+        <li :class='isRouteActive("", "/") ?  "bg-primaryColor text-[#000] sideBarLink w-full" : "sideBarLink w-full"'>
           <RouterLink :to="{ name: 'home'}" class="w-full block p-[1rem]" @click="toggleSidebar.hideSideBar()"
             >Home
           </RouterLink>
         </li>
         <li class="dropdown">
-          <div @click="toggleAboutDropdown()" class="w-full flex justify-between cursor-pointer items-end p-[1rem]">
+          <div @click="toggleAboutDropdown()" 
+          :class='isRouteActive("about", "") ? "bg-primaryColor text-[#000] w-full flex justify-between cursor-pointer items-end p-[1rem]" : "w-full flex justify-between cursor-pointer items-end p-[1rem]"'>
             <span>About</span>
             <span class="material-icons">keyboard_arrow_down</span>
           </div>

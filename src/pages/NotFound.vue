@@ -40,7 +40,7 @@ defineProps({
         </div>
 
         <RouterLink :to="{name: route}"
-                    class="flex items-center justify-center text-secondary bg-primary w-[22.5rem] h-[5.5rem] rounded-[8px] place-self-center text-[1.4rem] font-medium">
+                    class="hover:scale-[1.1] flex items-center justify-center text-secondary bg-primary w-[22.5rem] h-[5.5rem] rounded-[8px] place-self-center text-[1.4rem] font-medium">
          {{buttonText}}
         </RouterLink>
       </div>
