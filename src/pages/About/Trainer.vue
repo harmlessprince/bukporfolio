@@ -98,7 +98,7 @@ gsap.fromTo(".coachBrightText",
           </p>
 
           <RouterLink
-              class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+              class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
               :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
             Book bright UK
           </RouterLink>
@@ -129,13 +129,13 @@ gsap.fromTo(".coachBrightText",
 
           <div>
             <RouterLink
-                class="h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
+                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
                 :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
               Personal Coaching Session
             </RouterLink>
 
             <RouterLink
-                class="h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
+                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
                 :to="{name: 'contact', query: {service: 'groupTrainingCoachingSession' }}">
               Register your team for a Group Coaching Session
             </RouterLink>

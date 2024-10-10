@@ -60,7 +60,7 @@ gsap.registerPlugin(ScrollTrigger);
               rather than machines.
             </p>
             <button
-              class="border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
+              class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
             >
               <span class="font-sm text-xsm text-btnText mr-[1rem]"
                 >see more</span

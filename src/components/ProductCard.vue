@@ -30,14 +30,14 @@ const props = defineProps(['title', "image", "price", "description", "id"])
     </div>
     <div class="flex gap-[1rem]">
       <button
-        class="min-w-[13.7rem] grow  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]"
+        class="hover:scale-[1.1] min-w-[13.7rem] grow  h-[4.3rem] bg-primary border border-primary text-secondary text-xsm font-sm rounded-[8px]"
         @click="cartStore.addToCart({id, price: price, title, variation : 'hardcover', image})"
       >
         Add to Cart
       </button>
       <RouterLink
           :to="{name: 'item', params: {id}}"
-        class="min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px] flex items-center justify-center"
+        class="hover:scale-[1.1] min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px] flex items-center justify-center"
       >
         View more
       </RouterLink>

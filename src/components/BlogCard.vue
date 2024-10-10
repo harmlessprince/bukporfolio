@@ -44,7 +44,7 @@ const props = defineProps(['title', 'year', 'day', 'month', 'author', "url", "ca
     <div class="p-[1rem]">
       <div class="text-regular font-xsm text-xsm">
         <RouterLink :to="{name: 'post', params: {id: props.id}}"
-                    class="flex items-center justify-center border-[1px] border-[#C7AE2E] h-[4.3rem] rounded-[8px] text-center text-[#000000] font-medium">
+                    class="hover:scale-y-[1.1] hover:bg-primaryColor flex items-center justify-center border-[1px] border-[#C7AE2E] h-[4.3rem] rounded-[8px] text-center text-[#000000] font-medium">
           Read Post
         </RouterLink>
       </div>
