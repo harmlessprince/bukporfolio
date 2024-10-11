@@ -28,9 +28,7 @@ const isRouteActive = (link, routePath) => {
         console.log(pathLink)
         return /^\/blog/.test(route.path);
       }
-
       return route.path === routePath;
-
     };
 
 </script>

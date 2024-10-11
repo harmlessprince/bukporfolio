@@ -14,37 +14,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   gsap.fromTo(".bookBrightImage",
-{ x: -400 }, 
+{ x: -100 }, 
 { x: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".bookBrightImage",
-  start: 'top 60%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".bookBrightText",
-{ x: 400 }, 
+{ x: 100 }, 
 { x: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".bookBrightText",
-  start: 'top 70%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".coachBrightImage",
-{ x: 300 }, 
-{ x: 0, 
+{ y: 100 }, 
+{ y: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".coachBrightImage",
-  start: 'top 60%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".coachBrightText",
-{ y: 400 }, 
+{ y: 100 }, 
 { y: 0, 
   duration: 1, 
   scrollTrigger: {
@@ -57,7 +57,7 @@ gsap.fromTo(".coachBrightText",
 </script>
 
 <template>
-  <main class="text-primary">
+  <main class="text-primary overflow-x-none">
     <!-- about hero section -->
     <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
