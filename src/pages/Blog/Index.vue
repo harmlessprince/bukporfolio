@@ -54,12 +54,16 @@ function onCategoryChange(category) {
       <div class="mt-[3.4rem] max-small:mt-[2rem] text-center">
         <Subheading title="Glean insights to transform your mind and get more out of life" class="mb-[0.5rem]"/>
         <Heading title="The Musings of Bright UK"/>
-        <div
-            class="mt-[1.4rem] mx-auto h-[4.5rem] max-sm:h-auto font-sm text-xsm  flex flex-row overflow-x-auto overflow-y-hidden bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem] space-x-[2.5rem] ">
-          <button class="blog_category_tab transition-all duration-300 ease-in-out transform"
+        <!-- <div
+            class="mt-[1.4rem] mx-auto h-[4.5rem] max-sm:h-auto font-sm text-xsm  flex flex-row flex-wrap  bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem] space-x-[2.5rem]"
+            > -->
+            <div
+            class="mt-[1.4rem] mx-auto h-auto max-sm:h-auto font-sm text-xsm grid grid-cols-[repeat(auto-fill,minmax(9.3rem,1fr))] gap-y-[1.2rem] bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem]"
+            >
+          <button class="blog_category_tab transition-all duration-300 ease-in-out transform h-[3.7rem]"
                   :class="currentCategory === 'all' ? 'selected' : 'unselected'" @click="onCategoryChange('all')">All
           </button>
-          <button class="blog_category_tab transition-all duration-300 ease-in-out transform"
+          <button class="blog_category_tab transition-all duration-300 ease-in-out transform h-[3.7rem]"
                   :class="currentCategory === item ? 'selected' : 'unselected'"
                   v-for="(item, index) in blogStore.categories" :key="index" @click="onCategoryChange(item)">
             {{ item }}
