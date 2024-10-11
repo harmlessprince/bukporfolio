@@ -58,6 +58,12 @@ onBeforeMount(() => {
         </div>
         <div v-else>
           <div class="grid grid-cols-2 max-large:grid-cols-1 medium:max-large:px-[5rem] gap-4">
+            <!-- this logo shows for mobile only -->
+            <div class="medium:hidden">
+              <div class="w-[47.7rem] max-large:w-full">
+                <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
+              </div>
+            </div>
             <!-- <div class="animate-slideInLeft delay-400"> -->
               <div>
               <div class="w-[47.8rem] max-large:w-full p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
@@ -69,7 +75,7 @@ onBeforeMount(() => {
               </div>
             </div>
             <!-- <div class="animate-slideInRight delay-400"> -->
-              <div>
+              <div class="max-medium:hidden">
               <div class="w-[47.7rem] max-large:w-full">
                 <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
               </div>
