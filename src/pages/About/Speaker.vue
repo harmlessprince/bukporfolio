@@ -93,9 +93,10 @@ gsap.fromTo(".bookBrightText",
           </p>
 
           <RouterLink
-              class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
               :to="{name: 'contact', query: {service: 'speaker'}}">
-            Book bright UK
+            <button
+            class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+            >Book bright UK</button>
           </RouterLink>
         </div>
       </div>

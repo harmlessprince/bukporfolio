@@ -38,7 +38,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    linkActiveClass: 'text-primaryColor max-sm:bg-primaryColor max-sm:text-[#fff] border-b-4 border-primaryColor',
+    // linkActiveClass: 'text-primaryColor border-b-4 border-primaryColor',
     // linkExactActiveClass: 'text-primary border-b-4 border-primary',
     routes,
     scrollBehavior(to, from, savedPosition) {

@@ -14,37 +14,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   gsap.fromTo(".bookBrightImage",
-{ x: -400 }, 
+{ x: -100 }, 
 { x: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".bookBrightImage",
-  start: 'top 60%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".bookBrightText",
-{ x: 400 }, 
+{ x: 100 }, 
 { x: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".bookBrightText",
-  start: 'top 70%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".coachBrightImage",
-{ x: 300 }, 
-{ x: 0, 
+{ y: 100 }, 
+{ y: 0, 
   duration: 1, 
   scrollTrigger: {
   trigger: ".coachBrightImage",
-  start: 'top 60%'
+  start: 'top 90%'
 },
 });
 
 gsap.fromTo(".coachBrightText",
-{ y: 400 }, 
+{ y: 100 }, 
 { y: 0, 
   duration: 1, 
   scrollTrigger: {
@@ -57,7 +57,7 @@ gsap.fromTo(".coachBrightText",
 </script>
 
 <template>
-  <main class="text-primary">
+  <main class="text-primary overflow-x-none">
     <!-- about hero section -->
     <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
@@ -98,7 +98,7 @@ gsap.fromTo(".coachBrightText",
           </p>
 
           <RouterLink
-              class="font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+              class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
               :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
             Book bright UK
           </RouterLink>
@@ -129,13 +129,13 @@ gsap.fromTo(".coachBrightText",
 
           <div>
             <RouterLink
-                class="h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
+                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
                 :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
               Personal Coaching Session
             </RouterLink>
 
             <RouterLink
-                class="h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
+                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
                 :to="{name: 'contact', query: {service: 'groupTrainingCoachingSession' }}">
               Register your team for a Group Coaching Session
             </RouterLink>
