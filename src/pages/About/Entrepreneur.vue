@@ -13,11 +13,11 @@ onBeforeMount(() => {
 
 const skeletonLoader = ref(true)
 
-// onMounted(() => {
-//   setTimeout(() => {
-//       skeletonLoader.value = false;
-//     }, 5000);
-// })
+onMounted(() => {
+  setTimeout(() => {
+      skeletonLoader.value = false;
+    }, 5000);
+})
 
 
 </script>
@@ -25,13 +25,13 @@ const skeletonLoader = ref(true)
 <template>
     <!-- about hero section -->
   <section class="">
-    <!-- <div
+    <div
     v-if="skeletonLoader" 
         class="w-full h-[55rem]"
     >
     <SkeletonLoderImage  />
-    </div> -->
-    <div  class="relative h-[55rem]">
+    </div>
+    <div v-else class="relative h-[55rem]">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"

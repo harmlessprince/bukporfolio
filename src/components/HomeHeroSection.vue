@@ -65,21 +65,14 @@ const resetQuotesCount = () => {
     >
        <div class="grow-[2] flex-shrink-0 basis-0">
       
-        <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.6rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
+        <div class="text-white font-bold font-title text-[4.8rem] max-sm:text-[3.2rem] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
           CHANGE YOUR THINKING TO
           <span
-              class="text-primary font-bold font-title text-[3.5rem] mb-[2.1rem] block h-[15rem] max-small:h-[26.5rem] small:max-medium:h-[22rem] medium:max-large:h-[18.5rem] overflow-hidden">
-            <!-- <ul class="block text-left [&_li]:block animate-text-slide-3"> -->
+              class="text-primary font-bold font-title text-[3.5rem] max-small:text-[2.2rem]  mb-[2.1rem] block h-[15rem] max-small:h-[18.5rem] small:max-medium:h-[22rem] medium:max-large:h-[18.5rem] overflow-hidden">
               <ul class="block text-left [&_li]:block subTextBox">
-              <!-- <li class="max-h-[45rem] mb-[4.4rem] max-sm:mb-0 mt-[1rem] max-sm:mt-0 max-sm:py-[2rem]" v-for="(item, index) in quotes" :key="index" :aria-hidden="index === quotes.length - 1 ? 'true' : 'false'">
-                 <span>{{item.title}}</span>
-                 <p class="text-[#949494] text-[2rem] font-normal mt-2 max-sm:text-[1.rem] mb-[2.1rem] max-sm:mb-0">
-                   {{item.description}}
-                  </p>
-              </li> -->
               <li class="mb-[4.4rem] max-sm:mb-0 mt-[1rem] max-sm:mt-0 max-sm:py-[2rem]">
                 <span>{{quotes[quotesCount].title}}</span>
-                <p class="text-[#949494] text-[2rem] font-normal mt-2 mb-[2.1rem] max-medium:leading-[32px] max-sm:mb-0">
+                <p class="text-[#949494] text-[2rem] max-small:text-[1.5rem] font-normal mt-2 mb-[2.1rem] max-medium:leading-[32px] max-sm:mb-0">
                   {{quotes[quotesCount].description}}
                  </p>
              </li>

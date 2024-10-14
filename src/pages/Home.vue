@@ -40,16 +40,16 @@ gsap.registerPlugin(ScrollTrigger);
               />
             </div>
           </div>
-          <div class="w-[39.2rem] max-sm:w-full px-6 meetBrightBoxText">
+          <div class="w-[39.2rem] max-sm:w-full meetBrightBoxText">
             <h3
-              class="font-lg text-basic text-primary font-primary mb-[0.7rem] max-sm:mb-0"
+              class="font-lg text-basic text-primaryColor font-primary mb-[0.7rem] max-sm:mb-0"
             >
               Who I am
             </h3>
             <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
-            <p class="font-sm text-regular text-basic my-[1rem]">
+            <p class="font-sm text-regularColor text-basic text-xsm my-[1rem]">
               Bright 'UK' Ukwenga is a dynamic professional wearing multiple
               hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
               Coach. He is renowned for his ability to ignite mental

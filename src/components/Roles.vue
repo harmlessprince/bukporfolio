@@ -1,5 +1,4 @@
 <script setup>
-
 import Bright1 from "@/assets/bright1.png";
 import {useRoleStore} from "@/store/roles.store.js";
 import {onBeforeMount, onMounted, watch} from "vue";
@@ -35,7 +34,7 @@ function getRoleLink(name) {
         <div class="rounded-[10px] overflow-hidden w-full max-sm:mx-auto" v-for="(role, index) in store.roles" :key="index"
              @click="getRoleLink(role.name.toLowerCase())">
           <img :src="role.image ?? Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" :alt="role.name"/>
-          <div class="bg-primary text-xlg font-lg text-center text-white py-[0.65rem]">{{
+          <div class="bg-primary text-xlg max-small:text-sm font-lg text-center text-white py-[0.65rem]">{{
               role.name
             }}
           </div>
