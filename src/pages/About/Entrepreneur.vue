@@ -1,14 +1,23 @@
 <script setup>
 import AboutBanner from '@/assets/enterpreneurbanner.png';
+import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
 import Container from "@/components/Container.vue";
 import Scribe from '@/assets/scribe.png';
 import {useEntrepreneurStore} from "@/store/entrepreneur.store.js";
-import {onBeforeMount} from "vue";
+import {onBeforeMount, onMounted, ref} from "vue";
 
 const store = useEntrepreneurStore()
 onBeforeMount(() => {
   store.getEntrepreneurs();
 });
+
+const skeletonLoader = ref(true)
+
+// onMounted(() => {
+//   setTimeout(() => {
+//       skeletonLoader.value = false;
+//     }, 5000);
+// })
 
 
 </script>
@@ -16,7 +25,13 @@ onBeforeMount(() => {
 <template>
     <!-- about hero section -->
   <section class="">
-    <div class="relative h-[55rem]">
+    <!-- <div
+    v-if="skeletonLoader" 
+        class="w-full h-[55rem]"
+    >
+    <SkeletonLoderImage  />
+    </div> -->
+    <div  class="relative h-[55rem]">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"
@@ -39,13 +54,13 @@ onBeforeMount(() => {
         <div v-if="index%2 === 0">
           <div class="grid grid-cols-2 max-large:grid-cols-1 gap-4 medium:max-large:px-[5rem] my-[5rem] max-medium:my-[3.7rem]">
             <!-- <div class="animate-slideInLeft delay-200"> -->
-              <div>
+              <div class="medium:animate-slideInRight medium:delay-400">
               <div class="w-[47.7rem] medium:max-large:w-full max-medium:w-full">
                 <img :src="item.logo" class="w-full rounded-[10px]" :class="store.entrepreneurs.length < 1 ? 'animate-pulse': '' " alt="bright"/>
               </div>
             </div>
             <!-- <div class="animate-slideInRight delay-200"> -->
-              <div>
+              <div class="medium:animate-slideInRight medium:delay-400">
               <div class="w-[47.8rem] max-medium:w-full max-large:w-full p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
@@ -65,7 +80,7 @@ onBeforeMount(() => {
               </div>
             </div>
             <!-- <div class="animate-slideInLeft delay-400"> -->
-              <div>
+              <div class="medium:animate-slideInRight medium:delay-400">
               <div class="w-[47.8rem] max-large:w-full p-[1.5rem] bg-secondary rounded-[10px] text-basicColor flex flex-col justify-between h-full">
                 <header class="font-header text-xlg">{{item.title}}</header>
                 <p class="font-sm text-xsm mb-[1rem]">
@@ -74,8 +89,9 @@ onBeforeMount(() => {
                 <a class="hover:scale-[1.1] w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website">Visit our website</a>
               </div>
             </div>
+            <!-- this logo shows for screensize above 782 -->
             <!-- <div class="animate-slideInRight delay-400"> -->
-              <div class="max-medium:hidden">
+              <div class="max-medium:hidden medium:animate-slideInRight medium:delay-400">
               <div class="w-[47.7rem] max-large:w-full">
                 <img :src="item.logo" class="w-full  rounded-[10px]" alt="bright"/>
               </div>

@@ -1,7 +1,8 @@
 <script setup>
 import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
-import { onMounted } from 'vue'
+import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
+import { onMounted, ref } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WhoIam from '@/assets/trainerprofile.png';
@@ -11,8 +12,13 @@ import UkLogo from '@/assets/ukLogo.svg';
 import Coach from '@/assets/trainerImage2.png';
 
 gsap.registerPlugin(ScrollTrigger);
+const skeletonLoader = ref(true)
 
 onMounted(() => {
+  setTimeout(() => {
+      skeletonLoader.value = false;
+    }, 5000);
+
   gsap.fromTo(".bookBrightImage",
 { x: -100 }, 
 { x: 0, 
@@ -58,8 +64,14 @@ gsap.fromTo(".coachBrightText",
 
 <template>
   <main class="text-primary overflow-x-none">
-    <!-- about hero section -->
-    <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
+    <div
+    v-if="skeletonLoader" 
+        class="w-full h-[55rem]"
+    >
+    <SkeletonLoderImage  />
+    </div>
+    <!-- hero section -->
+    <section v-else class="flex items-center justify-center relative  h-[55rem] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">TRAINER</h1>
@@ -73,9 +85,14 @@ gsap.fromTo(".coachBrightText",
       <div
           class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
         <div class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
+          <div  v-if="skeletonLoader" class="w-full h-[62rem]">
+          <SkeletonLoderImage />
+         </div>
+          <div v-else>
           <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
           <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
                alt="footer logo"/>
+          </div>
         </div>
         <div class="w-[47.7rem] max-medium:w-full bookBrightText">
           <p class="font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
@@ -111,8 +128,12 @@ gsap.fromTo(".coachBrightText",
     <Container id="#coach">
       <div
           class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
-        <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
-          <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <!-- this image displays on mobile only -->
+          <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
+            <div  v-if="skeletonLoader" class="w-full h-[48rem]">
+              <SkeletonLoderImage />
+             </div>
+            <img v-else :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-full coachBrightText">
           <Heading title="Coach"/>
@@ -141,8 +162,12 @@ gsap.fromTo(".coachBrightText",
             </RouterLink>
           </div>
         </div>
+        <!-- this image displays on desktop only -->
         <div class="w-full min-h-[43.3rem] max-medium:hidden coachBrightImage">
-          <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <div  v-if="skeletonLoader" class="w-full h-[43rem]">
+            <SkeletonLoderImage />
+           </div>
+          <img v-else :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
       </div>
     </Container>
