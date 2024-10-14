@@ -1,6 +1,7 @@
 <script setup>
 
-import {computed, ref} from "vue";
+import {computed, ref, onMounted} from "vue";
+import SkeletonLoderImage from "./SkeletonLoader/SkeletonLoderImage.vue";
 import { FwbButton, FwbModal } from 'flowbite-vue'
 
 const imagesArray = [
@@ -18,6 +19,7 @@ const imagesArray = [
 
 let modalImage = ref(null)
 const isShowModal = ref(false)
+const skeletonLoader = ref(true)
 
 function closeModal () {
   isShowModal.value = false
@@ -53,6 +55,14 @@ function nextPage() {
     currentPage.value++;
   }
 }
+
+onMounted(() => {
+    // When the component is mounted, trigger setTimeout
+    setTimeout(() => {
+      skeletonLoader.value = false; // Stop loading after 3 seconds
+    }, 5000);
+  })
+
 // const currentIndex = ref(0)
 // function setSlide(index) {
 //   currentIndex.value = index
@@ -98,7 +108,17 @@ function nextPage() {
         </div>
       </div> -->
       <div>
+        <div
+        v-if="skeletonLoader" 
+            class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
+        >
+        <div v-for="n in 8" :key="n" class="h-[30rem] rounded-lg bg-[#000]">
+        <SkeletonLoderImage  />
+        </div>
+      </div>
+
       <div
+      v-else
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
         <div v-for="(image, index) in paginatedImages" :key="index" 
@@ -137,6 +157,14 @@ function nextPage() {
 </template>
 
 <style scoped>
+.pagination_button {
+  @apply w-[3.2rem] h-[3.2rem] rounded-[0.8rem] flex items-center justify-center border-[0.1rem] border-[#F1F1F1] p-[1rem] font-bold;
+}
+
+.active {
+  @apply bg-secondary text-white;
+}
+
 .modalContainer{
   background-color: rgba(0,0,0,0.4);
 }
