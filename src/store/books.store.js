@@ -33,6 +33,7 @@ export const useBookstore = defineStore("booksStore", () => {
                 id: doc.id,
                 title: data.name,
                 summary: data.summary,
+                learn: data.learn,
                 description: data.description,
                 forms: data.forms,
                 default: defaultBook,
@@ -78,6 +79,7 @@ export const useBookstore = defineStore("booksStore", () => {
             forms: data.forms,
             default: defaultBook,
             image: data.image,
+            learn: data.learn,
         }
         loaderStore.done()
     }

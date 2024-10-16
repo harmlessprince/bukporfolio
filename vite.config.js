@@ -10,6 +10,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       'PrimeVueCarousel': 'primevue/carousel',
       'PrimeVueButton': 'primevue/button',
+      'PrimeVueImage': 'primevue/image',
     }
   }
 })

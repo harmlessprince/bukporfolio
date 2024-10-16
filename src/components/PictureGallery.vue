@@ -1,7 +1,7 @@
 <script setup>
 
 import {computed, ref} from "vue";
-import { FwbButton, FwbModal } from 'flowbite-vue'
+import PrimeVueImage from 'PrimeVueImage';
 
 const imagesArray = [
   'https://res.cloudinary.com/chiaka/image/upload/v1727719532/dynamic_fq4frf.webp',
@@ -53,59 +53,18 @@ function nextPage() {
     currentPage.value++;
   }
 }
-// const currentIndex = ref(0)
-// function setSlide(index) {
-//   currentIndex.value = index
-// }
-// function nextSlide() {
-//   currentIndex.value = (currentIndex.value + 1) % images.value.length;
-// }
-// setInterval(() => {
-//   nextSlide();
-// }, 3000);
-// Function to go to the previous slide
-// function prevSlide() {
-//   currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length;
-// }
-// function getOffset(index) {
-//   const slideHeight = 180; // Height of each image (18rem)
-//   const maxVisibleSlides = 5; // Number of visible slides
-//   const totalHeight = maxVisibleSlides * slideHeight;
-
-  // Calculate the offset to slide images upward
-  // const currentSlidePosition = currentIndex.value * slideHeight;
-  // const indexPosition = index * slideHeight;
-
-  // If the current index is beyond the visible area, slide it up
-//   return Math.min(0, totalHeight - indexPosition - currentSlidePosition);
-// }
 
 </script>
 
 <template>
-      <!-- <div class="flex flex-row gap-5">
-        <div class="flex flex-col max-h-[90rem] gap-5 overflow-y-scroll">
-          <div v-for="(image, index) in images" :key="index"
-               class="relative cursor-pointer transition-transform duration-700 ease-in-out"
-               @click="setSlide(index)"
-          >
-            <img class="rounded-lg object-cover h-[18rem] w-full" :src="image" alt="">
-            <div v-if="currentIndex === index" class="absolute inset-0 bg-black bg-opacity-30 rounded-lg"></div>
-          </div>
-        </div>
-        <div class="flex flex-col items-center justify-center duration-700 ease-in-out">
-          <img class="max-h-[90rem] max-w-full rounded-lg" :src="images[currentIndex]" alt="">
-        </div>
-      </div> -->
       <div>
       <div
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
-        <div v-for="(image, index) in paginatedImages" :key="index" 
-            @click="showModal(image)"
-            class="relative cursor-pointer transition-transform duration-700 ease-in-out rounded-lg h-[30rem]"
+        <div v-for="(image, index) in paginatedImages" :key="index"
+            class="relative cursor-pointer h-[30rem]"
            >
-          <img class="rounded-lg h-full w-full" :src="image" alt="">
+          <PrimeVueImage :src="image" alt="Image" width="250"  class="rounded-lg h-full w-full" preview />
         </div>
       </div>
 
@@ -126,13 +85,6 @@ function nextPage() {
       <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>
     </div>
 
-    <!-- modal popup -->
-    <div :class='!isShowModal ? "hidden" : "modalContainer fixed top-[9rem] py-[1rem] left-0 z-[200] w-full h-[100vh] overflow-y-auto"'> 
-      <div class="modalImageContainer py-[1rem] relative max-w-[111rem] bg-[#fff] mx-auto">
-        <div @click="closeModal" class="material-icons text-[2.5rem] text-[#000] absolute top-[1rem] right-[1rem] cursor-pointer hover:bg-[#D3D3D3] ">close</div>
-        <img class="modalImage mx-auto" :src="modalImage" alt="">
-      </div>
-      </div>
   </div>
 </template>
 

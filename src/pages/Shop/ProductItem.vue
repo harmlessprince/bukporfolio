@@ -183,12 +183,7 @@ function toggleVariationTab(name) {
             <transition name="fade" mode="out-in">
               <ul v-if="currentTab === 'learn'" class="font-xsm text-xsm text-secondary ml-[2rem] list-disc py-[2rem]">
 
-                <li>Make the most of your mind to see and seize opportunities.</li>
-                <li>Prevent and solve problems using four excellent techniques.</li>
-                <li>Failureproof your goals.</li>
-                <li>Make the most of failure</li>
-                <li>Multiply your earning potential and command uncommon results</li>
-                <li>Build strategic networks to profit from the corridors of power.</li>
+                <li v-for="(item, index) in bookstore.selectedBook?.learn" :key="index">{{item}}</li>
               </ul>
             </transition>
             <transition name="fade" mode="out-in">

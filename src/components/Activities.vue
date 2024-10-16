@@ -5,10 +5,7 @@ import Subheading from "@/components/SubHeading.vue";
 import {useVideoStore} from "@/store/videos.store.js";
 import {ref,} from "vue";
 import HomeVideoActivity from "@/components/HomeVideoAcitivity.vue";
-import Home from "@/pages/Home.vue";
 import PrimeVueCarousel from 'PrimeVueCarousel';
-import PrimeVueButton from 'PrimeVueButton';
-
 const currentVideo = ref(null);
 const currentIndex = ref(0);
 const currentDirection = ref('forward');
