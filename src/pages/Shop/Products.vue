@@ -1,24 +1,12 @@
 <script setup>
 import AboutBanner from '@/assets/shopbanner.png';
 import {ref, onMounted} from "vue";
-import ShopProductSkeleton from '../../components/SkeletonLoader/ShopProductSkeleton.vue';
 import Books from "@/components/Books.vue";
-
-const skeletonLoader = ref(true)
-
-onMounted(() => {
-    // When the component is mounted, trigger setTimeout
-    setTimeout(() => {
-      skeletonLoader.value = false; // Stop loading after 3 seconds
-    }, 3000);
-  })
-
 </script>
 
 <template>
     <!-- about hero section -->
-     <ShopProductSkeleton v-if="skeletonLoader" />
-     <div v-else>
+     <div>
      <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] text-basic mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Shop</h1>

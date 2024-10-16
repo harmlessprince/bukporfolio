@@ -1,6 +1,5 @@
 <script setup>
 import AboutBanner from '@/assets/enterpreneurbanner.png';
-import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
 import Container from "@/components/Container.vue";
 import Scribe from '@/assets/scribe.png';
 import {useEntrepreneurStore} from "@/store/entrepreneur.store.js";
@@ -11,27 +10,13 @@ onBeforeMount(() => {
   store.getEntrepreneurs();
 });
 
-const skeletonLoader = ref(true)
-
-onMounted(() => {
-  setTimeout(() => {
-      skeletonLoader.value = false;
-    }, 5000);
-})
-
 
 </script>
 
 <template>
     <!-- about hero section -->
   <section class="">
-    <div
-    v-if="skeletonLoader" 
-        class="w-full h-[55rem]"
-    >
-    <SkeletonLoderImage  />
-    </div>
-    <div v-else class="relative h-[55rem]">
+    <div class="relative h-[55rem]">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"

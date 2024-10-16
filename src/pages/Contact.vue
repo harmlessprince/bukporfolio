@@ -12,13 +12,11 @@ import {useAlertStore} from "@/store/alert.store.js";
 import Alert from "@/components/Alert.vue";
 import {createContactEmailTemplate} from "@/services/util.js";
 import { useRoute } from 'vue-router';
-import SkeletonLoderImage from '@/components/SkeletonLoader/SkeletonLoderImage.vue';
 
 const alertStore = useAlertStore();
 const route = useRoute();
 const sendingMessage = ref(false);
 const selectedService = ref('');
-const skeletonLoader = ref(true)
 const services = ref([
   {
     name: "Speaker",
@@ -55,10 +53,6 @@ onMounted(() => {
   if (optionFromQuery) {
     selectedService.value = optionFromQuery;
   }
-
-  setTimeout(() => {
-      skeletonLoader.value = false; 
-    }, 5000);
 });
 
 async function sendEmail(values, {resetForm}) {
@@ -95,13 +89,7 @@ async function sendEmail(values, {resetForm}) {
 <template>
   <main class="text-secondary">
     <!-- hero section -->
-    <div
-    v-if="skeletonLoader" 
-        class="w-full h-[75vh]"
-    >
-    <SkeletonLoderImage  />
-    </div>
-    <section v-else class="flex items-center justify-center relative aboutBanner h-[75vh] w-full bg-cover bg-no-repeat"
+    <section class="flex items-center justify-center relative aboutBanner h-[75vh] w-full bg-cover bg-no-repeat"
              :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[200]">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Contact me</h1>
@@ -120,7 +108,7 @@ async function sendEmail(values, {resetForm}) {
 
       <!-- form section -->
       <section class="mt-[2rem] mb-[5rem]">
-        <Form class="font-[500] text-[2rem] max-sm:text-[1.6rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
+        <Form class="font-[500] text-[2rem] max-small:text-[1.4rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
               :validation-schema="validationSchema">
           <div class="space-y-[2rem]">
            <div class="grid grid-cols-2 max-medium:grid-cols-1 gap-[2.5rem]">

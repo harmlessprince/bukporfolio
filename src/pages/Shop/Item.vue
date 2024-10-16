@@ -1,7 +1,6 @@
 <script setup>
 import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/footer.vue';
-import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
 import Container from "@/components/Container.vue";
 import WhoIam from '@/assets/who_i_am.png';
 import Star from '@/assets/star.svg';
@@ -10,7 +9,6 @@ import { ref, onMounted } from 'vue';
 
 //state
 let toggledetails = ref('details');
-const skeletonLoader = ref(true)
 
 const whatYouWillLearn = () => {
     toggledetails.value = 'learn';
@@ -20,12 +18,6 @@ const whatYouWillLearn = () => {
 const bookDetails = () => {
     toggledetails.value = 'details';
 }
-
-onMounted(() => {
-    setTimeout(() => {
-      skeletonLoader.value = false; 
-    }, 5000);
-})
 </script>
 
 <template>
@@ -33,10 +25,7 @@ onMounted(() => {
     <Container>
         <div class="w-full my-[14rem] flex flex-row max-sm:flex-col items-top max-sm:space-y-[2rem] space-x-[3rem] max-sm:space-x-0">
             <div class="w-[48.1rem] max-sm:w-full max-h-[60.4rem]">
-                <div v-if="skeletonLoader" class="w-full h-[60rem]">
-                <SkeletonLoderImage />
-                 </div>
-                <img v-else :src="WhoIam" class="w-full h-full relative" alt="brand"/>
+                <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
             </div>
             <div class="w-[48.1rem] max-sm:w-full space-y-[1.5rem]">
                 <div>

@@ -42,7 +42,7 @@ function toggleAboutDropdown() {
   <nav :class='toggleSidebar.sideBar ? "sidebarContainer" : "sidebarContainerClose"'>
 <!-- <nav class="sidebarContainer"> -->
     <div class="text-[#000] font-xsm text-sm w-full">
-      <ul class=" font-xsm text-[1.8rem] flex-col items-center w-full space-y-[3rem]">
+      <ul class=" font-xsm text-[1.5rem] flex-col items-center w-full space-y-[3rem]">
         <li :class='isRouteActive("", "/") ?  "bg-primaryColor text-[#000] sideBarLink w-full" : "sideBarLink w-full"'>
           <RouterLink :to="{ name: 'home'}" class="w-full block p-[1rem]" @click="toggleSidebar.hideSideBar()"
             >Home

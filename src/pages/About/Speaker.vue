@@ -1,7 +1,6 @@
 <script setup>
 import AboutBanner from '@/assets/aboutbanner.png';
 import { onMounted, ref } from 'vue'
-import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
@@ -21,9 +20,6 @@ onBeforeMount(() => {
 });
 
 onMounted(() => {
-  setTimeout(() => {
-      skeletonLoader.value = false;
-    }, 5000);
   // InspirationCards animation
 gsap.fromTo(".scrollBox",
 { y: 150 }, 
@@ -59,13 +55,7 @@ gsap.fromTo(".bookBrightText",
 
 <template>
   <main class="text-primary">
-    <div
-    v-if="skeletonLoader" 
-        class="w-full h-[55rem]"
-    >
-    <SkeletonLoderImage  />
-    </div>
-    <div v-else class="relative h-[55rem] max-sm:w-full">
+    <div class="relative h-[55rem] max-sm:w-full">
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"
@@ -83,10 +73,9 @@ gsap.fromTo(".bookBrightText",
     </div>
 
     <Container>
-      <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
+      <div class="w-full flex  max-small:flex-col items-center mt-[5rem] max-small:mt-[3rem]">
         <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
-          <SkeletonLoderImage v-if="skeletonLoader" />
-          <img v-else :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem]  max-sm:w-full bookBrightText">
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">

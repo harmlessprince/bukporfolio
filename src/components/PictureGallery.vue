@@ -1,7 +1,6 @@
 <script setup>
 
 import {computed, ref, onMounted} from "vue";
-import SkeletonLoderImage from "./SkeletonLoader/SkeletonLoderImage.vue";
 import { FwbButton, FwbModal } from 'flowbite-vue'
 
 const imagesArray = [
@@ -19,7 +18,6 @@ const imagesArray = [
 
 let modalImage = ref(null)
 const isShowModal = ref(false)
-const skeletonLoader = ref(true)
 
 function closeModal () {
   isShowModal.value = false
@@ -56,13 +54,6 @@ function nextPage() {
   }
 }
 
-onMounted(() => {
-    // When the component is mounted, trigger setTimeout
-    setTimeout(() => {
-      skeletonLoader.value = false; // Stop loading after 3 seconds
-    }, 5000);
-  })
-
 // const currentIndex = ref(0)
 // function setSlide(index) {
 //   currentIndex.value = index
@@ -93,32 +84,7 @@ onMounted(() => {
 </script>
 
 <template>
-      <!-- <div class="flex flex-row gap-5">
-        <div class="flex flex-col max-h-[90rem] gap-5 overflow-y-scroll">
-          <div v-for="(image, index) in images" :key="index"
-               class="relative cursor-pointer transition-transform duration-700 ease-in-out"
-               @click="setSlide(index)"
-          >
-            <img class="rounded-lg object-cover h-[18rem] w-full" :src="image" alt="">
-            <div v-if="currentIndex === index" class="absolute inset-0 bg-black bg-opacity-30 rounded-lg"></div>
-          </div>
-        </div>
-        <div class="flex flex-col items-center justify-center duration-700 ease-in-out">
-          <img class="max-h-[90rem] max-w-full rounded-lg" :src="images[currentIndex]" alt="">
-        </div>
-      </div> -->
-      <div>
-        <div
-        v-if="skeletonLoader" 
-            class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
-        >
-        <div v-for="n in 8" :key="n" class="h-[30rem] rounded-lg bg-[#000]">
-        <SkeletonLoderImage  />
-        </div>
-      </div>
-
       <div
-      v-else
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
         <div v-for="(image, index) in paginatedImages" :key="index" 
@@ -153,7 +119,6 @@ onMounted(() => {
         <img class="modalImage mx-auto" :src="modalImage" alt="">
       </div>
       </div>
-  </div>
 </template>
 
 <style scoped>

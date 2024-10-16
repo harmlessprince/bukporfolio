@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import SkeletonLoderImage from '../../components/SkeletonLoader/SkeletonLoderImage.vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutBanner from '@/assets/authorbanner.png';
@@ -9,8 +8,6 @@ import WhoIam from '@/assets/authorprofile.png';
 import Books from "@/components/Books.vue";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const skeletonLoader = ref(true)
 
 onMounted(() => {
   // InspirationCards animation
@@ -33,10 +30,6 @@ gsap.fromTo(".authorTextBox",
   start: 'top 85%'
 },
 });
-
-setTimeout(() => {
-      skeletonLoader.value = false; // Stop loading after 3 seconds
-    }, 5000);
 })
 
 </script>
@@ -44,15 +37,8 @@ setTimeout(() => {
 <template>
 
   <main class="text-primary">
-   
     <!-- about hero section -->
-    <div
-    v-if="skeletonLoader" 
-        class="w-full h-[50rem]"
-    >
-    <SkeletonLoderImage  />
-    </div>
-     <section v-else class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" 
+     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" 
      :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
       <div class="w-[47.7rem] max-sm:w-full text-basicText mx-auto text-center z-[200]">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Author</h1>
@@ -65,8 +51,7 @@ setTimeout(() => {
      <Container>
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
       <div class="w-[47.6rem] max-sm:w-full h-[39rem] rounded-[10px] authorImageBox"> 
-        <SkeletonLoderImage v-if="skeletonLoader" />
-        <img v-else :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
+        <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
       </div>
       <div class="w-[47.7rem] max-sm:w-full authorTextBox">
         <p class="font-xsm text-[2.4rem] max-medium:text-[2rem] text-[#2B2B2B]">
