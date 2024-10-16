@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact.vue";
 import NotFound from "@/pages/NotFound.vue";
 import Gallery from "@/pages/Gallery.vue";
 
+
 const routes = [
     {path: '/', component: Home, name: 'home', meta: {title: 'Bright UK Portfolio -  Home'}},
     {path: '/about/speaker', component: Speaker, name: 'speaker', meta: {title: 'Bright-UK-Speaker'}},

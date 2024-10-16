@@ -1,16 +1,15 @@
 <script setup>
-import Logo from '@/assets/logo.svg';
 import Container from "@/components/Container.vue";
-import {ref} from 'vue'
 import {useCartStore} from "@/store/cart.store.js";
 import {useToggleSidebar} from "@/store/toggleSideBar.store.js";
 import { useRoute } from 'vue-router';
+import {ref, watch} from "vue";
 
 
 const cartStore = useCartStore();
 const sideBarStore = useToggleSidebar()
 const route = useRoute(); // Access the current route object
-
+const isLogoLoaded = ref(false);
 const isRouteActive = (link, routePath) => {
       if(link === "about"){
         return /^\/about/.test(route.path);
@@ -25,6 +24,10 @@ const isRouteActive = (link, routePath) => {
       return route.path === routePath;
     };
 
+function logoLoaded(){
+  isLogoLoaded.value = true;
+  console.log("I am called");
+}
 </script>
 
 <template>
@@ -35,7 +38,9 @@ const isRouteActive = (link, routePath) => {
       <nav class="px-12 max-medium:px-2 py-5 flex items-center justify-between ">
         <div class="logo w-[5.3rem] h-[5.3rem]">
           <a href="/">
-            <img :src="Logo" alt="My Logo" />
+
+            <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059215/logo_cl6hiq.svg" alt="My Logo" @load="logoLoaded()" v-show="isLogoLoaded" />
+            <span  v-if="!isLogoLoaded" class="text-white font-bold italic block">BRIGHT UK</span>
           </a>
         </div>
         <ul class="text-white font-xsm text-sm flex items-center max-medium:hidden">
@@ -79,7 +84,7 @@ const isRouteActive = (link, routePath) => {
           <li class="mainnav__links relative mt-4">
             <RouterLink class="mainnavlink" :to="{name: 'cart'}">
               <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
-             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
+             <span class="bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
           </li>
         </ul>
         <div>
@@ -97,7 +102,7 @@ const isRouteActive = (link, routePath) => {
           <li class="mt-3 mr-[2rem] relative">
             <RouterLink class="mainnavlink" :to="{name: 'cart'}">
               <span class="material-icons text-[#fff] text-[22px]">local_mall</span>
-             <span class="block bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
+             <span class="bg-primary flex items-center justify-center w-[15px] h-[15px] rounded-full text-[#fff] text-[13px] absolute -top-[0.5rem] -right-[0.5rem] z-50">{{cartStore.cartItemCount}}</span></RouterLink>
           </li>
           <span v-if="!sideBarStore.sideBar" class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.showSideBar()">menu</span>
           <span v-else class="material-icons text-[#fff] text-[27px] cursor-pointer" @click="sideBarStore.hideSideBar()">close</span>

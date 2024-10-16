@@ -1,8 +1,6 @@
 <script setup>
-import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/footer.vue';
 import Container from "@/components/Container.vue";
-import WhoIam from '@/assets/who_i_am.png';
 import Star from '@/assets/star.svg';
 import Heading from '@/components/Heading.vue';
 import { ref } from 'vue';
@@ -25,7 +23,7 @@ const bookDetails = () => {
     <Container>
         <div class="w-full my-[14rem] flex flex-row max-sm:flex-col items-top max-sm:space-y-[2rem] space-x-[3rem] max-sm:space-x-0">
             <div class="w-[48.1rem] max-sm:w-full max-h-[60.4rem]">
-                <img :src="WhoIam" class="w-full h-full relative" alt="brand"/>
+                <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full relative" alt="brand"/>
             </div>
             <div class="w-[48.1rem] max-sm:w-full space-y-[1.5rem]">
                 <div>

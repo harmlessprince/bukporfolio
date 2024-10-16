@@ -1,13 +1,10 @@
 <script setup>
-import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import { onMounted } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import WhoIam from '@/assets/trainerprofile.png';
 import Brands from "@/components/Brands.vue";
 import Heading from '@/components/Heading.vue';
-import UkLogo from '@/assets/ukLogo.svg';
 import Coach from '@/assets/trainerImage2.png';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -60,7 +57,7 @@ gsap.fromTo(".coachBrightText",
   <main class="text-primary overflow-x-none">
     <!-- about hero section -->
     <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+             :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
       <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">TRAINER</h1>
         <div class="font-lg text-basic">
@@ -73,8 +70,8 @@ gsap.fromTo(".coachBrightText",
       <div
           class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
         <div class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
-          <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
-          <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
                alt="footer logo"/>
         </div>
         <div class="w-[47.7rem] max-medium:w-full bookBrightText">

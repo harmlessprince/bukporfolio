@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutBanner from '@/assets/authorbanner.png';
 import Container from "@/components/Container.vue";
-import WhoIam from '@/assets/authorprofile.png';
 import Books from "@/components/Books.vue";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -52,7 +51,7 @@ gsap.fromTo(".authorTextBox",
      <Container>
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
       <div class="w-[47.6rem] max-sm:w-full h-[39rem] rounded-[10px] authorImageBox"> 
-        <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
+        <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
       </div>
       <div class="w-[47.7rem] max-sm:w-full authorTextBox">
         <p class="font-xsm text-[2.4rem] max-medium:text-[2rem] text-[#2B2B2B]">

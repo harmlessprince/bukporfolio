@@ -1,5 +1,4 @@
-<script setup>;
-import AboutBanner from '@/assets/trainerbanner.png';
+<script setup>
 import Container from "@/components/Container.vue";
 import {useBlogStore} from "@/store/blog.store.js";
 import {onBeforeMount, ref, watch} from "vue";
@@ -46,7 +45,7 @@ function decodeUnicode(str) {
 <template>
     <!-- hero section -->
     <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+             :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
       <div class="w-[47.7rem] max-sm:w-full text-basicText mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Blog</h1>
         <div class="font-lg text-basic">

@@ -2,10 +2,8 @@
 import { onMounted } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import WhoIam from '@/assets/who_i_am.png';
 import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
-import UkLogo from '@/assets/ukLogo.svg';
 import Container from "@/components/Container.vue";
 import HomeHeroSection from "@/components/HomeHeroSection.vue";
 import Brands from "@/components/Brands.vue";
@@ -31,10 +29,10 @@ gsap.registerPlugin(ScrollTrigger);
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
-            <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
+            <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full relative" alt="brand" />
             <div class="w-full absolute left-0 bottom-5">
               <img
-                :src="UkLogo"
+                src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg"
                 class="w-[113px] h-[113px] relative mx-auto"
                 alt="brand"
               />

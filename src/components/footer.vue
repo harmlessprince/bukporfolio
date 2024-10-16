@@ -1,5 +1,4 @@
 <script setup>
-import UkLogo from '@/assets/ukLogo.svg';
 import Facebook from '@/assets/facebook.svg';
 import Twitter from '@/assets/twitter.svg';
 import Youtube from '@/assets/youtube.svg';
@@ -26,7 +25,7 @@ const isRouteActive = (link, routePath) => {
 
 <template>
   <footer class="text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff] footer">
-    <img :src="UkLogo" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
+    <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
     <div class="text-basicText space-x-[3rem] max-medium:space-x-0 max-medium:space-y-[3rem] font-xsm flex flex-row max-medium:flex-col w-full justify-center mt-sm max-medium:text-center">
      <span> 

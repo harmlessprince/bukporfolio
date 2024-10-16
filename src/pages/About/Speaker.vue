@@ -1,10 +1,8 @@
 <script setup>
-import AboutBanner from '@/assets/aboutbanner.png';
 import { onMounted } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
-import WhoIam from '@/assets/who_i_am.png';
 import Heading from '@/components/Heading.vue';
 import Subheading from '@/components/SubHeading.vue';
 import InspirationCard from '@/components/InspirationCard.vue';
@@ -58,7 +56,7 @@ gsap.fromTo(".bookBrightText",
       <!-- Background image with opacity -->
       <div class="absolute inset-0 bg-black"></div>
       <div class="absolute inset-0  bg-cover bg-center"
-           :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
+           :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png)' }"></div>
       <!-- Text on top of the image -->
       <div
           class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
@@ -74,7 +72,7 @@ gsap.fromTo(".bookBrightText",
     <Container>
       <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
         <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
-          <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem]  max-sm:w-full bookBrightText">
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">

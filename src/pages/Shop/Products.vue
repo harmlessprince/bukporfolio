@@ -1,11 +1,10 @@
 <script setup>
-import AboutBanner from '@/assets/shopbanner.png';
 import Books from "@/components/Books.vue";
 </script>
 
 <template>
     <!-- about hero section -->
-     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
+     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059213/cartbanner_k5wqbe.png)' }">
       <div class="w-[47.7rem] text-basic mx-auto text-center">
         <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Shop</h1>
         <div class="font-lg text-basic">  
