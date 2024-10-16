@@ -15,24 +15,25 @@ import NotFound from "@/pages/NotFound.vue";
 import Gallery from "@/pages/Gallery.vue";
 
 const routes = [
-    {path: '/', component: Home, name: 'home'},
-    {path: '/about/speaker', component: Speaker, name: 'speaker'},
-    {path: '/about/author', component: Author, name: 'author'},
-    {path: '/about/trainer', component: Trainer, name: 'trainer'},
-    {path: '/about/coach', component: Trainer, name: 'coach'},
-    {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur'},
-    {path: '/shop/products', component: Products, name: 'products'},
-    {path: '/shop/item/:id', component: Item, name: 'item'},
-    {path: '/shop/cart', component: Cart, name: 'cart'},
-    {path: '/blog', component: Blog, name: 'blog'},
-    {path: '/blog/post/:id', component: Post, name: 'post'},
-    {path: '/contact', component: Contact, name: 'contact'},
-    {path: '/gallery', component: Gallery, name: 'gallery'},
+    {path: '/', component: Home, name: 'home', meta: {title: 'Bright UK Portfolio -  Home'}},
+    {path: '/about/speaker', component: Speaker, name: 'speaker', meta: {title: 'Bright-UK-Speaker'}},
+    {path: '/about/author', component: Author, name: 'author', meta: {title: 'Bright-UK-Author'}},
+    {path: '/about/trainer', component: Trainer, name: 'trainer', meta: {title: 'Bright-UK-Author'}},
+    {path: '/about/coach', component: Trainer, name: 'coach', meta: {title: 'Bright-UK-Coach'}},
+    {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur', meta: {title: 'Bright-UK-Entrepreneur'}},
+    {path: '/shop/products', component: Products, name: 'products', meta: {title: 'Bright-UK-Books'}},
+    {path: '/shop/item/:id', component: Item, name: 'item', meta: {title: 'Bright-UK-Books-Details'}},
+    {path: '/shop/cart', component: Cart, name: 'cart', meta: {title: 'Bright-UK-Cart'}},
+    {path: '/blog', component: Blog, name: 'blog', meta: {title: 'Bright-UK-Blog'}},
+    {path: '/blog/post/:id', component: Post, name: 'post', meta: {title: 'Bright-UK-Speaker'}},
+    {path: '/contact', component: Contact, name: 'contact', meta: {title: 'Bright-UK-Contact'}},
+    {path: '/gallery', component: Gallery, name: 'gallery', meta: {title: 'Bright-UK-Gallery'}},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
         component: NotFound,
         props: (route) => ({ message: route.query?.message, reason: route.query?.reason, route: route.query?.route, buttonText: route.query?.buttonText }),
+        meta: {title: 'Bright-UK-Not-Found'}
     },
 ]
 
@@ -62,7 +63,11 @@ const router = createRouter({
         }
         // Scroll to the top of the page
         return { top: 0, behavior: 'smooth' };
-    }
+    },
 })
 
+router.beforeEach((toRoute, from, next) => {
+    window.document.title = toRoute.meta && toRoute?.meta.title ? toRoute.meta.title : 'Bright UK Portfolio';
+    next();
+})
 export default router;

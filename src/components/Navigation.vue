@@ -13,19 +13,13 @@ const route = useRoute(); // Access the current route object
 
 const isRouteActive = (link, routePath) => {
       if(link === "about"){
-        let pathLink  = route.path;
-        console.log(pathLink)
         return /^\/about/.test(route.path);
       }
       if(link === "shop"){
-        let pathLink  = route.path;
-        console.log(pathLink)
         return /^\/shop/.test(route.path);
       }
 
       if(link === "blog"){
-        let pathLink  = route.path;
-        console.log(pathLink)
         return /^\/blog/.test(route.path);
       }
       return route.path === routePath;
