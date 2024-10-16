@@ -2,7 +2,6 @@
 import { onMounted } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import BrightTestimony from '@/assets/brightTestimony.png';
 import RightArrow from '@/assets/rightArrow.svg';
 import Container from "@/components/Container.vue";
 import HomeHeroSection from "@/components/HomeHeroSection.vue";
@@ -95,8 +94,8 @@ gsap.registerPlugin(ScrollTrigger);
         >
           <div class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
             <img
-              :src="BrightTestimony"
-              class="w-full h-full object-center object-cover"
+              src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729082241/Document_from_Damilola_jab8od.jpg"
+              class="w-full h-full object-top object-contain"
               alt="bright"
             />
           </div>

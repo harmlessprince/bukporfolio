@@ -32,8 +32,12 @@ const playVideo = (video) => {
 </script>
 
 <template>
-  <div class="w-full flex max-medium:flex-col justify-center gap-[3rem] py-[5rem] h-[70.3rem] max-medium:h-full">
+  <div class="w-full flex max-medium:flex-col justify-center gap-[3rem] py-[2rem]  max-medium:h-full">
     <div class="max-w-[37.5rem] max-medium:max-w-full grow flex flex-col gap-[0.8rem]">
+      <Subheading title="Images"/>
+      <header class="text-xlg font-header text-[#f9f7ea] mb-4">
+        Bright UK Memories
+      </header>
       <PrimeVueCarousel :value="images" :numVisible="2" :numScroll="1" orientation="vertical"
                         verticalViewPortHeight="600px" containerClass="flex items-center">
         <template #item="slotProps">

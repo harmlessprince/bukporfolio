@@ -8,12 +8,12 @@ const props = defineProps(['title', "image", "price", "description", "id"])
 
 <template>
   <div
-    class="rounded-[10px] border border-[#BEBEBE] p-[1rem] text-left mb-[2rem] flex flex-col justify-center gap-[1rem]"
+    class="rounded-[10px] border border-[#BEBEBE] p-[1rem] text-left mb-[2rem] flex flex-col justify-center gap-[1rem] items-center"
   >
-    <div class="w-[100%] h-[247px] relative">
+    <div class="w-[291px] h-[247px]">
       <img
         :src="image"
-        class="w-full h-full object-cover object-center"
+        class="w-full max-h-full object-top"
         alt="book"
       />
     </div>
