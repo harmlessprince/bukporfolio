@@ -1,9 +1,8 @@
 <script setup>
-import AboutBanner from '@/assets/enterpreneurbanner.png';
 import Container from "@/components/Container.vue";
-import Scribe from '@/assets/scribe.png';
 import {useEntrepreneurStore} from "@/store/entrepreneur.store.js";
 import {onBeforeMount} from "vue";
+import HeroSection from "@/components/HeroSection.vue";
 
 const store = useEntrepreneurStore()
 onBeforeMount(() => {
@@ -14,22 +13,11 @@ onBeforeMount(() => {
 </script>
 
 <template>
-    <!-- about hero section -->
-  <section class="">
-    <div class="relative h-[55rem]">
-      <!-- Background image with opacity -->
-      <div class="absolute inset-0 bg-black"></div>
-      <div class="absolute inset-0  bg-cover bg-center"
-           :style="{ 'background-image': 'url(' + AboutBanner + ')' }"></div>
-      <!-- Text on top of the image -->
-      <div class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">ENTREPRENEUR</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  <HeroSection
+      imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png"
+      page="Entrepreneur"
+  />
 
 
     <Container>

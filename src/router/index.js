@@ -26,7 +26,7 @@ const routes = [
     {path: '/shop/item/:id', component: Item, name: 'item', meta: {title: 'Bright-UK-Books-Details'}},
     {path: '/shop/cart', component: Cart, name: 'cart', meta: {title: 'Bright-UK-Cart'}},
     {path: '/blog', component: Blog, name: 'blog', meta: {title: 'Bright-UK-Blog'}},
-    {path: '/blog/post/:id', component: Post, name: 'post', meta: {title: 'Bright-UK-Speaker'}},
+    {path: '/blog/post/:id', component: Post, name: 'post', meta: {title: 'Bright-UK-Blog'}},
     {path: '/contact', component: Contact, name: 'contact', meta: {title: 'Bright-UK-Contact'}},
     {path: '/gallery', component: Gallery, name: 'gallery', meta: {title: 'Bright-UK-Gallery'}},
     {
@@ -37,7 +37,7 @@ const routes = [
         meta: {title: 'Bright-UK-Not-Found'}
     },
 ]
-
+let previousRoute = null;
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     // linkActiveClass: 'text-primaryColor border-b-4 border-primaryColor',
@@ -69,6 +69,11 @@ const router = createRouter({
 
 router.beforeEach((toRoute, from, next) => {
     window.document.title = toRoute.meta && toRoute?.meta.title ? toRoute.meta.title : 'Bright UK Portfolio';
+    previousRoute = from.name || 'Home';
     next();
 })
+export function getPreviousRoute() {
+    return previousRoute;
+}
+
 export default router;

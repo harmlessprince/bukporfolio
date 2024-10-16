@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Brands from "@/components/Brands.vue";
 import Heading from '@/components/Heading.vue';
-import Coach from '@/assets/trainerImage2.png';
+import HeroSection from "@/components/HeroSection.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,16 +55,11 @@ gsap.fromTo(".coachBrightText",
 
 <template>
   <main class="text-primary overflow-x-none">
-    <!-- about hero section -->
-    <section class="flex items-center justify-center relative  h-[50rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
-      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">TRAINER</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
-        </div>
-      </div>
-    </section>
+
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
+        page="Trainer"
+    />
 
     <Container>
       <div
@@ -109,7 +104,7 @@ gsap.fromTo(".coachBrightText",
       <div
           class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
         <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
-          <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-full coachBrightText">
           <Heading title="Coach"/>
@@ -139,7 +134,7 @@ gsap.fromTo(".coachBrightText",
           </div>
         </div>
         <div class="w-full min-h-[43.3rem] max-medium:hidden coachBrightImage">
-          <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerImage2_rz0aer.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
       </div>
     </Container>

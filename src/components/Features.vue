@@ -2,8 +2,6 @@
 import {Carousel, Navigation, Slide} from 'vue3-carousel'
 import {useFeaturesStore} from "@/store/features.store.js";
 import {onBeforeMount, onMounted, ref} from "vue";
-import Brand1 from "@/assets/brand1.svg";
-import Brand2 from "@/assets/brand2.svg";
 import Container from "@/components/Container.vue";
 
 const breakpoints = ref({
@@ -40,7 +38,7 @@ onBeforeMount(() => {
         <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
           <Slide v-for="(slide, index) in store.features" :key="index" >
             <img
-                :src="slide.image ?? Brand1"
+                :src="slide.image"
                 class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0 grayscale"
                 :alt="slide.name"
                 :key="index"

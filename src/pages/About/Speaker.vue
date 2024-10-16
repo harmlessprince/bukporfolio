@@ -8,6 +8,7 @@ import Subheading from '@/components/SubHeading.vue';
 import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
+import HeroSection from "@/components/HeroSection.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,27 +53,15 @@ gsap.fromTo(".bookBrightText",
 
 <template>
   <main class="text-primary">
-    <div class="relative h-[55rem] max-sm:w-full">
-      <!-- Background image with opacity -->
-      <div class="absolute inset-0 bg-black"></div>
-      <div class="absolute inset-0  bg-cover bg-center"
-           :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png)' }"></div>
-      <!-- Text on top of the image -->
-      <div
-          class="w-[47.7rem]  max-sm:w-full relative flex items-center flex-col justify-center h-full text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Speaker</h1>
-        <p class="text-[#E1E1E1] font-xsm text-basic">Phenomenal, highly engaging sessions of insight, inspiration, and
-          impact</p>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
-        </div>
-      </div>
-    </div>
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png"
+        page="Speaker"
+    />
 
     <Container>
       <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
         <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem]  max-sm:w-full bookBrightText">
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">

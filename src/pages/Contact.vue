@@ -12,6 +12,7 @@ import {useAlertStore} from "@/store/alert.store.js";
 import Alert from "@/components/Alert.vue";
 import {createContactEmailTemplate} from "@/services/util.js";
 import { useRoute } from 'vue-router';
+import HeroSection from "@/components/HeroSection.vue";
 
 const alertStore = useAlertStore();
 const route = useRoute();
@@ -89,16 +90,11 @@ async function sendEmail(values, {resetForm}) {
 <template>
   <main class="text-secondary">
     <!-- hero section -->
-    <section class="flex items-center justify-center relative aboutBanner h-[70vh] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
-      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center z-[200]">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Contact me</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Contact Bright UK</span>
-        </div>
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
+        page="Contact"
+    />
 
-      </div>
-    </section>
 
     <Container>
       <div class="mt-[3.4rem] text-center">

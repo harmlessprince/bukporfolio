@@ -1,6 +1,5 @@
 <script setup>
-import HomeBanner from "@/assets/home_banner_background.png";
-import HomeBright1 from "@/assets/home_banner_bright.png";
+
 import Container from "@/components/Container.vue";
 import {ref, onMounted, onBeforeUnmount} from "vue";
 import { gsap } from "gsap";
@@ -61,7 +60,7 @@ const resetQuotesCount = () => {
   <section class="bg-secondary mt-[9.3rem] max-sm:py-[3rem] h-[52.2rem] max-sm:h-full relative">
     <Container
         class="w-[98rem] h-full overflow-hidden text-basic flex max-sm:flex-col justify-center items-center flex-nowrap gap-4"
-        :style="{ 'background-image': 'url(' + HomeBanner + ')' }"
+        :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729078294/home_banner_background_qs1ged.png)' }"
     >
        <div class="grow-[2] flex-shrink-0 basis-0">
       
@@ -98,7 +97,7 @@ const resetQuotesCount = () => {
       </div>
       <div class="h-full w-full flex-grow flex-shrink-0 basis-0 max-sm:hidden">
         <img
-            :src="HomeBright1"
+            src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
             class="w-full h-full object-cover object-center"
             alt="homebanner"
         />

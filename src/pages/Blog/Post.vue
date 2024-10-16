@@ -10,6 +10,7 @@ import {
 } from "@/services/util.js";
 import he from 'he';
 import DOMPurify from 'dompurify';
+import HeroSection from "@/components/HeroSection.vue";
 
 const blogStore = useBlogStore();
 const route = useRoute();
@@ -43,94 +44,91 @@ function decodeUnicode(str) {
 </script>
 
 <template>
-    <!-- hero section -->
-    <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
-      <div class="w-[47.7rem] max-sm:w-full text-basicText mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Blog</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-bannerNavColor"> > Blog</span> > <span
-            class="text-primary">{{ blogStore.singlePost?.title ?? '' }}</span>
-        </div>
-      </div>
-    </section>
+  <!-- hero section -->
 
-    <Container>
-      <div class="mt-[2.4rem] max-sm:mt-[1.5rem] mb-[5rem] text-center flex flex-row max-medium:flex-col justify-between items-top space-y-[2rem]">
-        <div class="w-[70rem] max-medium:w-full text-left" v-if="blogStore.singlePost">
-          <div class="w-full h-[41.7rem] max-sm:h-[20rem]">
+  <HeroSection
+      imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
+      page="Blog"
+      :text="blogStore.singlePost?.title ?? null"
+  />
+
+  <Container>
+    <div
+        class="mt-[2.4rem] max-sm:mt-[1.5rem] mb-[5rem] text-center flex flex-row max-medium:flex-col justify-between items-top space-y-[2rem]">
+      <div class="w-[70rem] max-medium:w-full text-left" v-if="blogStore.singlePost">
+        <div class="w-full h-[41.7rem] max-sm:h-[20rem]">
           <img :src="generateThumbnailFromText(blogStore.singlePost.title)" class="w-[100%] h-full relative"
                alt="blogpics"/>
-              </div>
-          <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
-            <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-              <span class="material-icons">calendar_month</span>
-              <span>
+        </div>
+        <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
+          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
+            <span class="material-icons">calendar_month</span>
+            <span>
                 {{ getBlogDate(blogStore.singlePost.published) }}
                </span>
-            </div>
-
-            <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-              <span class="material-icons">person</span>
-              <span>{{ blogStore.singlePost.author.displayName }}</span>
-            </div>
           </div>
-          <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
+
+          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
+            <span class="material-icons">person</span>
+            <span>{{ blogStore.singlePost.author.displayName }}</span>
+          </div>
+        </div>
+        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
             <span class="font-bold text-2xl" v-for="(category, index) in blogStore.singlePost.labels ?? []"
                   :key="index">
             {{ category }}
             </span>
-          </div>
-          <div class="mt-[1.7rem] font-[400] leading-[1.69rem] text-[1.4rem] text-[#7a7a7a]">
-            <h1 class="mb-[1rem] font-[700] text-[2.8rem] leading-[3.38rem] text-secondaryColor">
-              {{ blogStore.singlePost.title }}
-            </h1>
-          </div>
-          <div v-html="sanitizedHtml(blogStore.singlePost.content)" class="post_detail"></div>
-          <div>
-
-          </div>
         </div>
-        <!-- second part of the flex -->
-        <div class="w-[31.1rem] max-medium:w-full">
-          <div v-if="blogStore.recentPosts.length > 0">
+        <div class="mt-[1.7rem] font-[400] leading-[1.69rem] text-[1.4rem] text-[#7a7a7a]">
+          <h1 class="mb-[1rem] font-[700] text-[2.8rem] leading-[3.38rem] text-secondaryColor">
+            {{ blogStore.singlePost.title }}
+          </h1>
+        </div>
+        <div v-html="sanitizedHtml(blogStore.singlePost.content)" class="post_detail"></div>
+        <div>
 
-            <div class="text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
-              <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Recent Post</h3>
-              <RouterLink :to="{name: 'post', params: {id: post.id}}" v-for="(post, index ) in blogStore.recentPosts"
-                          :key="index">
-                <div class="flex flex-row py-[0.5rem] border border-[#dddddd] border-x-0 border-t-0 mb-[1.2rem]">
-                  <img :src="generateThumbnailFromText(post.title)" class="w-[6.1rem] h-[5.9rem] mr-[1.1rem]"
-                       :alt="post.title"/>
-                  <div class="text-[1.4rem] leading-[1.69rem]">
-                    <h3 class="font-[700] ">{{ post.title }}</h3>
-                    <div class="font-[400] text-[#7a7a7a] flex items-center">
-                      <span class="material-icons">calendar_month</span>
-                      <span>
+        </div>
+      </div>
+      <!-- second part of the flex -->
+      <div class="w-[31.1rem] max-medium:w-full">
+        <div v-if="blogStore.recentPosts.length > 0">
+
+          <div class="text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
+            <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Recent Post</h3>
+            <RouterLink :to="{name: 'post', params: {id: post.id}}" v-for="(post, index ) in blogStore.recentPosts"
+                        :key="index">
+              <div class="flex flex-row py-[0.5rem] border border-[#dddddd] border-x-0 border-t-0 mb-[1.2rem]">
+                <img :src="generateThumbnailFromText(post.title)" class="w-[6.1rem] h-[5.9rem] mr-[1.1rem]"
+                     :alt="post.title"/>
+                <div class="text-[1.4rem] leading-[1.69rem]">
+                  <h3 class="font-[700] ">{{ post.title }}</h3>
+                  <div class="font-[400] text-[#7a7a7a] flex items-center">
+                    <span class="material-icons">calendar_month</span>
+                    <span>
                      {{ getBlogDate(post.published) }}
                     </span>
-                    </div>
                   </div>
                 </div>
-              </RouterLink>
-            </div>
+              </div>
+            </RouterLink>
           </div>
+        </div>
 
-          <div
-              class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
-            <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
+        <div
+            class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
+          <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
 
-            <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
+          <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
             <span class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
                   :key="index">
             {{ category }}
             </span>
-            </div>
-
           </div>
+
         </div>
       </div>
-    </Container>
+    </div>
+  </Container>
 </template>
 
 <style scoped>
