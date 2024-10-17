@@ -71,12 +71,17 @@ export const useBookstore = defineStore("booksStore", () => {
                 price: data.price ?? 0.0,
             }
         }
+        let available_forms = [];
+        if (data.forms){
+            available_forms = data.forms?.map(item => item.name);
+        }
         selectedBook.value = {
             id: bookId,
             title: data.name,
             summary: data.summary,
             description: data.description,
             forms: data.forms,
+            available_forms: available_forms,
             default: defaultBook,
             image: data.image,
             learn: data.learn,

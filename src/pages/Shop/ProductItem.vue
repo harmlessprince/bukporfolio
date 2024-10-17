@@ -171,7 +171,7 @@ function toggleVariationTab(name) {
         <div>
           <div class="flex flex-row items-center space-x-[2rem] border border-[#777575] border-t-0 border-x-0">
             <button @click="toggleTab('learn')" class="transition-all duration-300 ease-in-out transform font-medium"
-                    :class="currentTab === 'learn' ? 'item_tab_selected' : 'item_tab_unselected'">What
+                    :class="currentTab === 'learn' ? 'item_tab_selected' : 'item_tab_unselected'" v-show="bookstore.selectedBook?.learn?.length > 0">What
               you will learn
             </button>
             <button @click="toggleTab('details')" class="transition-all duration-300 ease-in-out transform font-medium"
@@ -188,7 +188,7 @@ function toggleVariationTab(name) {
             </transition>
             <transition name="fade" mode="out-in">
               <div v-if="currentTab === 'details'" class="font-xsm text-xsm text-secondary py-[2rem] space-x-[1rem]">
-                <div v-html="bookstore.selectedBook.description">
+                <div v-html="bookstore.selectedBook.description" class="custom-html">
 
                 </div>
               </div>
@@ -216,6 +216,13 @@ function toggleVariationTab(name) {
   @apply rounded-[6px] min-w-[9rem] h-[3.7rem] p-[1rem] flex justify-center items-center text-center capitalize;
 }
 
+.custom-html ul {
+  @apply list-disc list-inside ml-4;
+}
+
+.custom-html li {
+  @apply mb-2;
+}
 .variation_tab_selected {
   background-color: #121212;
   color: white;

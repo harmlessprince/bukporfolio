@@ -8,7 +8,7 @@ export const useQuoteStore = defineStore("quoteStore", () => {
     const quotes = ref([]);
 
     async function getQuotes() {
-        const quotesRef = collection(database, "qoutes");
+        const quotesRef = collection(database, "quotes");
         const querySnapshot = await getDocs(quotesRef);
         const items = [];
         querySnapshot.forEach((doc) => {
@@ -18,7 +18,7 @@ export const useQuoteStore = defineStore("quoteStore", () => {
             items.push({
                 id: doc.id,
                 title: data.title,
-                quote: data.quote,
+                quote: data.body,
             });
         });
         quotes.value = items;

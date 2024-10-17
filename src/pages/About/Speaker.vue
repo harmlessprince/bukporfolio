@@ -9,6 +9,7 @@ import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
+import {FwbButton, FwbModal} from "flowbite-vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,7 +103,7 @@ gsap.fromTo(".bookBrightText",
           <InspirationCard
               v-for="(item, index) in store.quotes"
               :title="item.title"
-              :qoute="item.quote"
+              :quote="item.quote"
               :key="index"
               
           />
