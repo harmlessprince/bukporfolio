@@ -1,7 +1,7 @@
 <script setup>
-import { onMounted } from 'vue'
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {computed, onMounted, ref} from 'vue'
+import {gsap} from "gsap";
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
 import Heading from '@/components/Heading.vue';
 import Subheading from '@/components/SubHeading.vue';
@@ -9,46 +9,62 @@ import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
-import {FwbButton, FwbModal} from "flowbite-vue";
-import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
-gsap.registerPlugin(ScrollTrigger);
+import Pagination from "@/components/Pagination.vue";
 
+gsap.registerPlugin(ScrollTrigger);
 const store = useQuoteStore()
+
+
+const currentPage = ref(1);
+const perPage = 6;
+const paginatedQuotes = computed(() => {
+  const start = (currentPage.value - 1) * perPage;
+  const end = start + perPage;
+  return store.quotes.slice(start, end);
+})
+
+function updatePage(page) {
+  currentPage.value = page;
+}
+
 onBeforeMount(() => {
   store.getQuotes();
 });
 
 onMounted(() => {
   // InspirationCards animation
-gsap.fromTo(".scrollBox",
-{ y: 150 }, 
-{ y: 0, 
-  duration: 1, 
-  scrollTrigger: {
-  trigger: ".scrollBox",
-  start: 'top 90%'
-},
-});
+  gsap.fromTo(".scrollBox",
+      {y: 150},
+      {
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".scrollBox",
+          start: 'top 90%'
+        },
+      });
 
-gsap.fromTo(".bookBrightImage",
-{ x: -400 }, 
-{ x: 0, 
-  duration: 1, 
-  scrollTrigger: {
-  trigger: ".bookBrightImage",
-  start: 'top 60%'
-},
-});
+  gsap.fromTo(".bookBrightImage",
+      {x: -400},
+      {
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".bookBrightImage",
+          start: 'top 60%'
+        },
+      });
 
-gsap.fromTo(".bookBrightText",
-{ y: 300 }, 
-{ y: 0, 
-  duration: 1, 
-  scrollTrigger: {
-  trigger: ".bookBrightText",
-  start: 'top 100%'
-},
-});
+  gsap.fromTo(".bookBrightText",
+      {y: 300},
+      {
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".bookBrightText",
+          start: 'top 100%'
+        },
+      });
 })
 </script>
 
@@ -62,7 +78,8 @@ gsap.fromTo(".bookBrightText",
     <Container>
       <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
         <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png"
+               class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem]  max-sm:w-full bookBrightText">
           <p class="font-xsm text-basic text-[#2B2B2B] mb-[2rem]">
@@ -83,8 +100,9 @@ gsap.fromTo(".bookBrightText",
           <RouterLink
               :to="{name: 'contact', query: {service: 'speaker'}}">
             <button
-            class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
-            >Book bright UK</button>
+                class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+            >Book bright UK
+            </button>
           </RouterLink>
         </div>
       </div>
@@ -100,21 +118,20 @@ gsap.fromTo(".bookBrightText",
         <div
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
-<!--          <InspirationCard-->
-<!--              v-for="(item, index) in store.quotes"-->
-<!--              :title="item.title"-->
-<!--              :quote="item.quote"-->
-<!--              :key="index"-->
-
-<!--          />-->
           <InspirationCard
-              v-for="(item, index) in store.quotes"
+              v-for="(item, index) in paginatedQuotes"
               :title="item.title"
               :quote="item.quote"
               :key="index"
-
           />
         </div>
+        <Pagination
+            :currentPage="currentPage"
+            :totalItems="store.quotes.length"
+            :perPage="perPage"
+            @updatePage="updatePage"
+        />
+
       </Container>
     </section>
   </main>
@@ -128,6 +145,10 @@ gsap.fromTo(".bookBrightText",
   left: 0;
   width: 100%;
   background-color: #000;
+}
+
+.scroller {
+  height: 100%;
 }
 
 </style>
