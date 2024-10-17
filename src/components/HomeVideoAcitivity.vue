@@ -2,6 +2,7 @@
 import {useVideoStore} from "@/store/videos.store.js";
 import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
 import {onBeforeMount, ref, watch} from "vue";
+import {VideoPlayer} from "@videojs-player/vue";
 const store = useVideoStore()
 const settings = ref({
   itemsToShow: 1,
@@ -37,16 +38,24 @@ const getYouTubeEmbedUrl = (url) => {
                   allowfullscreen
               ></iframe>
           </div>
-          <div v-else>
-            <source :src="item.url" type="video/mp4" />
-            Your browser does not support the video tag.
+          <div v-else class="w-[55rem] max-medium:w-full h-full">
+<!--            <source :src="item.url" type="video/mp4" />-->
+            <video-player
+                :src="item.url"
+                controls
+                :loop="true"
+                :volume="0.6"
+                :fluid="true"
+                height="544"
+            />
+<!--            Your browser does not support the video tag.-->
           </div>
         </div>
 
       </Slide>
 
       <template #addons>
-        <Pagination />
+<!--        <Pagination />-->
         <Navigation />
       </template>
     </Carousel>

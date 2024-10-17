@@ -246,3 +246,20 @@ q {
     background-color: #C7AE2E !important;
     opacity: 0.5 !important;
 }
+
+.gallery .vjs-matrix.video-js {
+    color: #C7AE2E !important;
+}
+
+/* Change the border of the big play button. */
+.gallery .vjs-matrix .vjs-big-play-button {
+    border-color: #C7AE2E !important;
+}
+
+/* Change the color of various "bars". */
+.gallery .vjs-matrix .vjs-volume-level,
+.vjs-matrix .vjs-play-progress,
+.vjs-matrix .vjs-slider-bar {
+    background: #C7AE2E !important;
+}
+

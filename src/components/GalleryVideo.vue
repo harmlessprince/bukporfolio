@@ -15,38 +15,25 @@ const videoArray = [
 ]
 import {VideoPlayer} from '@videojs-player/vue'
 import 'video.js/dist/video-js.css'
+import Pagination from "@/components/Pagination.vue";
 
 const currentPage = ref(1);
 const perPage = 4;
-
-const totalPages = computed(() => Math.ceil(videoArray.length / perPage));
 const paginatedVideos = computed(() => {
   const start = (currentPage.value - 1) * perPage;
   const end = start + perPage;
   return videoArray.slice(start, end);
 })
 
-function setPage(page) {
+function updatePage(page) {
   currentPage.value = page;
-}
-
-function previousPage() {
-  if (currentPage.value > 1) {
-    currentPage.value--;
-  }
-}
-
-function nextPage() {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++;
-  }
 }
 </script>
 
 
 <template>
   <div>
-    <div class="grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
+    <div class="gallery grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
       <div v-for="(path, index) in paginatedVideos" :key="index" class="h-auto max-w-full">
         <div>
           <video-player
@@ -57,26 +44,33 @@ function nextPage() {
               :height=468
               :width=488
               :fluid="true"
+              class="vjs-matrix video-js"
           />
         </div>
       </div>
     </div>
     <!-- Pagination Controls -->
-    <div class="flex flex-row items-center justify-center text-center space-x-2 text-secondary mt-[2.4rem]">
-      <button @click="previousPage()" :disabled="currentPage === 1" class="pagination_button"><<</button>
+    <Pagination
+        :currentPage="currentPage"
+        :totalItems="videoArray.length"
+        :perPage="perPage"
+        @updatePage="updatePage"
+    />
+<!--    <div class="flex flex-row items-center justify-center text-center space-x-2 text-secondary mt-[2.4rem]">-->
+<!--      <button @click="previousPage()" :disabled="currentPage === 1" class="pagination_button"><<</button>-->
 
-      <button
-          v-for="page in totalPages"
-          :key="page"
-          @click="setPage(page)"
-          :class="currentPage === page ? 'active' : ''"
-          class="pagination_button"
-      >
-        {{ page }}
-      </button>
+<!--      <button-->
+<!--          v-for="page in totalPages"-->
+<!--          :key="page"-->
+<!--          @click="setPage(page)"-->
+<!--          :class="currentPage === page ? 'active' : ''"-->
+<!--          class="pagination_button"-->
+<!--      >-->
+<!--        {{ page }}-->
+<!--      </button>-->
 
-      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>
-    </div>
+<!--      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>-->
+<!--    </div>-->
   </div>
 </template>
 
