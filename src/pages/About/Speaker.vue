@@ -10,7 +10,7 @@ import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
 import {FwbButton, FwbModal} from "flowbite-vue";
-
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 gsap.registerPlugin(ScrollTrigger);
 
 const store = useQuoteStore()
@@ -100,14 +100,20 @@ gsap.fromTo(".bookBrightText",
         <div
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
+<!--          <InspirationCard-->
+<!--              v-for="(item, index) in store.quotes"-->
+<!--              :title="item.title"-->
+<!--              :quote="item.quote"-->
+<!--              :key="index"-->
+
+<!--          />-->
           <InspirationCard
               v-for="(item, index) in store.quotes"
               :title="item.title"
               :quote="item.quote"
               :key="index"
-              
-          />
 
+          />
         </div>
       </Container>
     </section>

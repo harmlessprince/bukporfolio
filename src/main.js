@@ -1,6 +1,7 @@
 import {createApp} from 'vue'
 import PrimeVue from "primevue/config";
 import './style.css'
+import VueVirtualScroller from 'vue-virtual-scroller'
 import App from './App.vue'
 
 import router from "@/router";
@@ -12,6 +13,6 @@ app.use(router)
 app.use(PrimeVue, {
     unstyled: false
 });
-
+app.use(VueVirtualScroller)
 
 app.mount('#app')
