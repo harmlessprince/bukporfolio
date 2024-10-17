@@ -38,7 +38,7 @@ const getYouTubeEmbedUrl = (url) => {
                   allowfullscreen
               ></iframe>
           </div>
-          <div v-else class="w-[55rem] max-medium:w-full h-full">
+          <div v-else class="w-[562px] max-medium:w-full h-[545px] bg-red-500 gallery-video">
 <!--            <source :src="item.url" type="video/mp4" />-->
             <video-player
                 :src="item.url"
@@ -46,7 +46,9 @@ const getYouTubeEmbedUrl = (url) => {
                 :loop="true"
                 :volume="0.6"
                 :fluid="true"
-                height="544"
+                class="video-js  vjs-matrix vjs-fill vjs-big-play-centered"
+                :height=600
+                :width=562
             />
 <!--            Your browser does not support the video tag.-->
           </div>
@@ -56,7 +58,7 @@ const getYouTubeEmbedUrl = (url) => {
 
       <template #addons>
 <!--        <Pagination />-->
-        <Navigation />
+<!--        <Navigation />-->
       </template>
     </Carousel>
   </div>

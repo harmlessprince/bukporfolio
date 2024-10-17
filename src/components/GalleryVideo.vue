@@ -33,7 +33,7 @@ function updatePage(page) {
 
 <template>
   <div>
-    <div class="gallery grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
+    <div class="gallery-video grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
       <div v-for="(path, index) in paginatedVideos" :key="index" class="h-auto max-w-full">
         <div>
           <video-player
@@ -44,7 +44,7 @@ function updatePage(page) {
               :height=468
               :width=488
               :fluid="true"
-              class="vjs-matrix video-js"
+              class="vjs-matrix video-js vjs-big-play-centered"
           />
         </div>
       </div>
