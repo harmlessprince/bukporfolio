@@ -12,7 +12,7 @@ export const useBlogStore = defineStore("blogsStore", () => {
     const posts = ref([])
     const recentPosts = ref([])
     const singlePost = ref(null)
-    const categories = ref(["news", "lifestyle", "travel", "business", "food", "cicd", "devops"])
+    const categories = ref(["author", "entrepreneur", "speaker", "coach"])
 
     async function fetchAllPostsFromAPI() {
         loaderStore.start()

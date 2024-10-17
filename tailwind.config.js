@@ -110,8 +110,9 @@ export default {
                 xlarge: "1900px",
             },
             fontFamily: {
-                primary: ["Inter"],
-                title: ["Roboto", "sans-serif"],
+                primary: ["Metropolis"],
+                title: ["Metropolis", "sans-serif"],
+                sans: ['Metropolis', 'sans-serif'],
             },
         },
     },

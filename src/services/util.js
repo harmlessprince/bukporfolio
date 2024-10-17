@@ -1,7 +1,7 @@
 
 
 export const generateThumbnailFromText = (text) => {
-    return `https://placehold.co/356x215/776002/white?text=${text.slice(0,1)}`;
+    return `https://placehold.co/356x215/776002/white?text=${text.trim().slice(0,1)}`;
 }
 
 export const monthNames = [
