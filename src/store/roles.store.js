@@ -14,14 +14,16 @@ export const useRoleStore = defineStore("roleStore", () => {
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
+            if (doc.id !== 'coach'){
+                items.push({
+                    id: doc.id,
+                    name: data.name,
+                    summary: data.summary,
+                    description: data.description,
+                    image: data.image,
+                });
+            }
 
-            items.push({
-                id: doc.id,
-                name: data.name,
-                summary: data.summary,
-                description: data.description,
-                image: data.image,
-            });
         });
         roles.value = items;
     }

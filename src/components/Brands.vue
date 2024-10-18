@@ -1,5 +1,4 @@
 <script setup>
-import Brand1 from "@/assets/brand1.svg";
 import {useBrandStore} from "@/store/brand.store.js";
 import {onBeforeMount, onMounted, ref} from "vue";
 import Container from "@/components/Container.vue";
@@ -42,8 +41,8 @@ const settings = ref({
           <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
             <Slide v-for="(slide, index) in brandStore.brands" :key="index" >
               <img
-                  :src="slide.image ?? Brand1"
-                  class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0 grayscale"
+                  :src="slide.image"
+                  class="w-[17.1rem] max-sm:w-[16rem] h-[8.5rem] mr-[2rem] max-small:mr-0 grayscale"
                   :alt="slide.name"
                   :key="index"
               />

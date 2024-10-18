@@ -1,14 +1,11 @@
 <script setup>
-import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import { onMounted, ref } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import WhoIam from '@/assets/trainerprofile.png';
 import Brands from "@/components/Brands.vue";
 import Heading from '@/components/Heading.vue';
-import UkLogo from '@/assets/ukLogo.svg';
-import Coach from '@/assets/trainerImage2.png';
+import HeroSection from "@/components/HeroSection.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,27 +55,20 @@ gsap.fromTo(".coachBrightText",
 
 <template>
   <main class="text-primary overflow-x-none">
-    <!-- hero section -->
-    <section class="flex items-center justify-center relative  h-[55rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">TRAINER</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > About</span>
-        </div>
-      </div>
-    </section>
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
+        page="Trainer"
+    />
 
     <Container>
       <div
-          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
+          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-start my-[5rem] max-medium:my-[2.7rem]">
         <div class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
-          <div>
-          <img :src="WhoIam" class="w-full h-full rounded-[10px]" alt="bright"/>
-          <img :src="UkLogo" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
                alt="footer logo"/>
           </div>
-        </div>
+       
         <div class="w-[47.7rem] max-medium:w-full bookBrightText">
           <div class="space-y-5 font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
            <p> Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company helping
@@ -120,9 +110,8 @@ gsap.fromTo(".coachBrightText",
     <Container id="#coach">
       <div
           class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
-          <!-- this image displays on mobile only -->
-          <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
-            <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+        <div class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-full coachBrightText">
           <Heading title="Coach"/>
@@ -159,7 +148,7 @@ gsap.fromTo(".coachBrightText",
         </div>
         <!-- this image displays on desktop only -->
         <div class="w-full min-h-[43.3rem] max-medium:hidden coachBrightImage">
-          <img :src="Coach" class="w-full h-full rounded-[10px]" alt="bright"/>
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerImage2_rz0aer.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
       </div>
     </Container>

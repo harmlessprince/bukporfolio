@@ -1,28 +1,20 @@
 <script setup>
-import AboutBanner from '@/assets/shopbanner.png';
-import {ref, onMounted} from "vue";
 import Books from "@/components/Books.vue";
+import HeroSection from "@/components/HeroSection.vue";
 </script>
 
 <template>
-    <!-- about hero section -->
-     <div>
-     <section class="flex items-center justify-center relative h-[50rem] w-full bg-cover bg-no-repeat" :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Shop</h1>
-        <div class="font-lg text-basic">  
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > shop</span>
-        </div>
-      </div>
-     </section>
-    <section class="mb-[25rem]">
-      <Books />
-    </section>
-  </div>
+  <HeroSection
+      imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059213/cartbanner_k5wqbe.png"
+      page="Shop"
+  />
+  <section class="mb-[25rem]">
+    <Books/>
+  </section>
 </template>
 
 <style scoped>
-.aboutBanner::after{
+.aboutBanner::after {
   content: "";
   position: absolute;
   top: 0;

@@ -7,9 +7,9 @@ const firebaseConfig = {
     authDomain: `${projectId}.firebaseapp.com`,
     projectId: projectId,
     storageBucket: `${projectId}.appspot.com`,
-    messagingSenderId: "702166084486",
+    messagingSenderId: "167885372154",
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
-    measurementId: "G-3PHNE5S8ZF",
+    measurementId: "G-WEERN1F3QT",
     databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 

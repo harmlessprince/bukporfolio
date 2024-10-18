@@ -1,7 +1,7 @@
 <script setup>
-
-import {computed, ref, onMounted} from "vue";
-import { FwbButton, FwbModal } from 'flowbite-vue'
+import {computed, ref} from "vue";
+import PrimeVueImage from 'PrimeVueImage';
+import Pagination from "@/components/Pagination.vue";
 
 const imagesArray = [
   'https://res.cloudinary.com/chiaka/image/upload/v1727719532/dynamic_fq4frf.webp',
@@ -16,29 +16,16 @@ const imagesArray = [
   'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg',
 ];
 
-let modalImage = ref(null)
-const isShowModal = ref(false)
-
-function closeModal () {
-  isShowModal.value = false
-}
-function showModal (img) {
-  isShowModal.value = true
-  modalImage.value = img;
-
-}
-
 const currentPage = ref(1);
 const perPage = 8;
 
-const totalPages = computed(() => Math.ceil(imagesArray.length / perPage));
 const paginatedImages = computed(() => {
   const start = (currentPage.value - 1) * perPage;
   const end = start + perPage;
   return imagesArray.slice(start, end);
 })
 
-function setPage(page) {
+function updatePage(page) {
   currentPage.value = page;
 }
 
@@ -84,20 +71,24 @@ function nextPage() {
 </script>
 
 <template>
+  <div class="picture-gallery">
       <div
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
-        <div v-for="(image, index) in paginatedImages" :key="index" 
-            @click="showModal(image)"
-            class="relative cursor-pointer transition-transform duration-700 ease-in-out rounded-lg h-[30rem]"
+        <div v-for="(image, index) in paginatedImages" :key="index"
+            class="relative cursor-pointer h-[30rem]"
            >
-          <img class="rounded-lg h-full w-full" :src="image" alt="">
+          <PrimeVueImage :src="image" alt="Image" width="250"  class="rounded-lg h-full w-full" preview />
         </div>
       </div>
 
       <!-- Pagination Controls -->
-    <div class="flex flex-row items-center justify-center text-center space-x-2 text-secondary mt-[2.4rem]">
-      <button @click="previousPage()" :disabled="currentPage === 1" class="pagination_button"><<</button>
+        <Pagination
+            :currentPage="currentPage"
+            :totalItems="imagesArray.length"
+            :perPage="perPage"
+            @updatePage="updatePage"
+        />
 
       <button
           v-for="page in totalPages"
@@ -138,6 +129,9 @@ function nextPage() {
   width: 100%;
   height: auto;
   display: block;
+}
+.picture-gallery .p-image-toolbar div {
+  border-color: #C7AE2E !important;
 }
 </style>
 <style src="vue3-carousel/dist/carousel.css"></style>

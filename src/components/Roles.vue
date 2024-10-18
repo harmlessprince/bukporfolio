@@ -1,5 +1,4 @@
 <script setup>
-import Bright1 from "@/assets/bright1.png";
 import {useRoleStore} from "@/store/roles.store.js";
 import {onBeforeMount, onMounted, watch} from "vue";
 import Container from "@/components/Container.vue";
@@ -33,8 +32,8 @@ function getRoleLink(name) {
       gap-[1.2rem] gap-y-[2rem]">
         <div class="rounded-[10px] overflow-hidden w-full max-sm:mx-auto" v-for="(role, index) in store.roles" :key="index"
              @click="getRoleLink(role.name.toLowerCase())">
-          <img :src="role.image ?? Bright1" class="w-[100%] h-[241px] rounded-t-[10px] relative" :alt="role.name"/>
-          <div class="bg-primary text-xlg max-small:text-sm font-lg text-center text-white py-[0.65rem]">{{
+          <img :src="role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'" class="w-[100%] h-[241px] rounded-t-[10px] relative object-top object-cover" :alt="role.name"/>
+          <div class="bg-primary text-xlg font-lg text-center text-white py-[0.65rem]">{{
               role.name
             }}
           </div>

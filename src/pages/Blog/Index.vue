@@ -1,18 +1,15 @@
 <script setup>
 import Navigation from '@/components/Navigation.vue';
-import AboutBanner from '@/assets/trainerbanner.png';
 import Container from "@/components/Container.vue";
 import Heading from '@/components/Heading.vue';
 import Subheading from '@/components/SubHeading.vue';
 import Blogcard from '../../components/BlogCard.vue';
 import {useBlogStore} from "@/store/blog.store.js";
-import {useLoaderStore} from "@/store/loader.store.js";
 import {onBeforeMount, ref, watch} from "vue";
-import Loader from "@/components/Loader.vue";
 import {getDayFromDate, getMonthFromDate, getYearFromDate} from "@/services/util.js";
+import HeroSection from "@/components/HeroSection.vue";
 
 const blogStore = useBlogStore();
-const loaderStore = useLoaderStore();
 const currentCategory = ref("all")
 
 onBeforeMount(() => {
@@ -38,17 +35,10 @@ function onCategoryChange(category) {
 <template>
 
   <main class="text-secondary">
-    <Navigation/>
-    <!-- about hero section -->
-    <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Blog</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Blog</span>
-        </div>
-      </div>
-    </section>
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
+        page="Blog"
+    />
 
     <Container> 
       <div class="mt-[3.4rem] max-small:mt-[2rem] text-center">
@@ -74,7 +64,6 @@ function onCategoryChange(category) {
           <Blogcard
               :id="item.id"
               :title=item.title
-              :url="AboutBanner"
               :author=item?.author?.displayName
               :day=getDayFromDate(item.published)
               :month=getMonthFromDate(item.published)

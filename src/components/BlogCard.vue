@@ -2,7 +2,7 @@
 import Person from '@/assets/person.svg';
 import {generateThumbnailFromText} from "@/services/util.js";
 
-const props = defineProps(['title', 'year', 'day', 'month', 'author', "url", "categories", "id"])
+const props = defineProps(['title', 'year', 'day', 'month', 'author', "categories", "id"])
 
 </script>
 

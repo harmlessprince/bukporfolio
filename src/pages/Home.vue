@@ -1,11 +1,8 @@
 <script setup>
-import { onMounted } from 'vue'
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import WhoIam from '@/assets/who_i_am.png';
-import BrightTestimony from '@/assets/brightTestimony.png';
+import {onMounted} from 'vue'
+import {gsap} from "gsap";
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import RightArrow from '@/assets/rightArrow.svg';
-import UkLogo from '@/assets/ukLogo.svg';
 import Container from "@/components/Container.vue";
 import HomeHeroSection from "@/components/HomeHeroSection.vue";
 import Brands from "@/components/Brands.vue";
@@ -15,6 +12,7 @@ import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
 import Activities from "@/components/Activities.vue";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 </script>
@@ -22,21 +20,25 @@ gsap.registerPlugin(ScrollTrigger);
 <template>
   <div class="text-primary relative isolate">
     <!-- hero/banner starts here -->
-    <HomeHeroSection />
+    <HomeHeroSection/>
     <!-- brands touched starts here -->
-    <Brands />
+    <Brands/>
+
+
+
 
     <!-- meet bright uk -->
     <section class="">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
-            <img :src="WhoIam" class="w-full h-full relative" alt="brand" />
+            <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
+                 class="w-full h-full relative" alt="brand"/>
             <div class="w-full absolute left-0 bottom-5">
               <img
-                :src="UkLogo"
-                class="w-[113px] h-[113px] relative mx-auto"
-                alt="brand"
+                  src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg"
+                  class="w-[113px] h-[113px] relative mx-auto"
+                  alt="brand"
               />
             </div>
           </div>
@@ -60,21 +62,21 @@ gsap.registerPlugin(ScrollTrigger);
               rather than machines.
             </p>
             <button
-              class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
+                class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
             >
               <span class="font-sm text-xsm text-btnText mr-[1rem]"
-                >see more</span
+              >see more</span
               >
-              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow" />
+              <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
             </button>
           </div>
         </div>
       </Container>
     </section>
     <!-- different roles of bright uk -->
-    <Roles />
+    <Roles/>
     <!-- personal development section -->
-    <Books />
+    <Books/>
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
       <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
@@ -93,17 +95,18 @@ gsap.registerPlugin(ScrollTrigger);
     <section class="py-[5rem] w-full bg-basic max-sm:mt-[2rem]">
       <Container>
         <div
-          class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"
+            class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"
         >
-          <div class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
+          <div
+              class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">
             <img
-              :src="BrightTestimony"
-              class="w-full h-full object-center object-cover"
-              alt="bright"
+                src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729082241/Document_from_Damilola_jab8od.jpg"
+                class="w-full h-full object-top object-contain"
+                alt="bright"
             />
           </div>
 
-          <Testimonies class="testimonialBoxText" />
+          <Testimonies class="testimonialBoxText"/>
         </div>
       </Container>
     </section>

@@ -14,14 +14,15 @@ export const useVideoStore = defineStore("videoStore", () => {
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
-
-            items.push({
-                id: doc.id,
-                title: data.title,
-                url: data.url,
-                thumbnail: data.thumbnail,
-                source: data.source,
-            });
+            if (!data.url.includes('https://youtu')) {
+                items.push({
+                    id: doc.id,
+                    title: data.title,
+                    url: data.url,
+                    thumbnail: data.thumbnail,
+                    source: data.source,
+                });
+            }
         });
         videos.value = items;
     }

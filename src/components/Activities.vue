@@ -5,9 +5,8 @@ import Subheading from "@/components/SubHeading.vue";
 import {useVideoStore} from "@/store/videos.store.js";
 import {ref,} from "vue";
 import HomeVideoActivity from "@/components/HomeVideoAcitivity.vue";
-import Home from "@/pages/Home.vue";
 import PrimeVueCarousel from 'PrimeVueCarousel';
-import PrimeVueButton from 'PrimeVueButton';
+import {f} from "vue-multiselect/dist/vue-multiselect.common.js";
 
 const currentVideo = ref(null);
 const currentIndex = ref(0);
@@ -32,15 +31,17 @@ const playVideo = (video) => {
 </script>
 
 <template>
-  <div class="w-full flex max-medium:flex-col justify-center gap-[3rem] py-[5rem] h-[70.3rem] max-medium:h-full">
-    <div class="max-w-[37.5rem] max-medium:max-w-full grow flex flex-col gap-[0.8rem]">
+
+  <div class="w-full flex max-medium:flex-col justify-center  max-medium:h-full">
+    <div class="max-w-[37.5rem] max-medium:max-w-full grow flex flex-col">
       <PrimeVueCarousel :value="images" :numVisible="2" :numScroll="1" orientation="vertical"
-                        verticalViewPortHeight="600px" containerClass="flex items-center">
+                        verticalViewPortHeight="682px" containerClass="flex items-center" :showNavigators="false"
+                        :showIndicators="false" circular :autoplayInterval="3000">
         <template #item="slotProps">
           <div>
             <div class="mb-[1rem]">
-              <div class="relative mx-auto h-[300px]">
-                <img :src="slotProps.data" :alt="slotProps.data" class="w-full h-full object-cover" />
+              <div class="relative mx-auto h-[330px]">
+                <img :src="slotProps.data" :alt="slotProps.data" class="w-full h-full object-cover"/>
               </div>
             </div>
           </div>
@@ -48,7 +49,7 @@ const playVideo = (video) => {
       </PrimeVueCarousel>
     </div>
     <!-- video -->
-    <div class="text-center w-[35rem] max-medium:w-full grow">
+    <div class="text-center w-[35rem] max-medium:w-full grow py-[2rem] ">
       <Subheading title="Videos"/>
       <header class="text-xlg font-header text-[#f9f7ea] mb-10">
         Hear directly from Bright UK

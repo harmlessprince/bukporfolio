@@ -13,5 +13,4 @@ app.use(PrimeVue, {
     unstyled: false
 });
 
-
 app.mount('#app')

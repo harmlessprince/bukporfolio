@@ -1,5 +1,4 @@
 <script setup>
-import AboutBanner from '@/assets/cartbanner.png';
 import Container from "@/components/Container.vue";
 import OrderSummary from "@/components/OrderSummary.vue";
 import CartItem from "@/components/CartItem.vue";
@@ -7,6 +6,7 @@ import {useCartStore} from "@/store/cart.store.js";
 import Subheading from "@/components/SubHeading.vue";
 import Alert from "@/components/Alert.vue";
 import {useAlertStore} from "@/store/alert.store.js";
+import HeroSection from "@/components/HeroSection.vue";
 
 const cartStore = useCartStore();
 const alertStore = useAlertStore();
@@ -14,16 +14,10 @@ const alertStore = useAlertStore();
 
 <template>
   <main class="font-primary">
-    <!-- cart hero section -->
-    <section class="flex items-center justify-center relative h-[55rem] w-full bg-cover bg-no-repeat"
-             :style="{ 'background-image': 'url(' + AboutBanner + ')' }">
-      <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">
-        <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Cart</h1>
-        <div class="font-lg text-basic">
-          <span class="text-bannerNavColor">Home</span> <span class="text-primary"> > Shopping Cart</span>
-        </div>
-      </div>
-    </section>
+    <HeroSection
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059213/cartbanner_k5wqbe.png"
+        page="Cart"
+    />
 
     <Container>
       <div class="mt-[3.4rem] text-center">
