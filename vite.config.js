@@ -11,6 +11,7 @@ export default defineConfig({
       'PrimeVueCarousel': 'primevue/carousel',
       'PrimeVueButton': 'primevue/button',
       'PrimeVueImage': 'primevue/image',
+      'PrimeVueGallery': 'primevue/galleria',
     }
   }
 })

@@ -5,7 +5,7 @@ import {ref} from "vue";
 import GalleryVideo from "@/components/GalleryVideo.vue";
 import PictureGallery from "@/components/PictureGallery.vue";
 
-const currentTab = ref("videos")
+const currentTab = ref("pictures")
 
 function toggleTab(name) {
   currentTab.value = name;
