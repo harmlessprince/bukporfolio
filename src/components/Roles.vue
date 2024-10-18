@@ -41,9 +41,9 @@ function getRoleLink(name) {
             <!-- Overlay for text with sliding effect -->
             <div class="absolute opacity-0  inset-0 bg-black bg-opacity-60 flex justify-center items-start group-hover:opacity-100 flex-col">
               <p class="text-white font-medium  text-xl transform translate-x-10 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 p-2">
-                {{role.summary.substring(0,250)}}
+                {{role.summary.substring(0,300)}}
               </p>
-              <span class="text-white text-xl font-bold p-2">Read More..</span>
+              <span class="text-white text-xl font-bold p-2 cursor-pointer">Read More..</span>
             </div>
           </div>
 
