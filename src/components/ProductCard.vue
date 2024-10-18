@@ -14,7 +14,7 @@ const props = defineProps(['title', "image", "price", "description", "id"])
       <div class="w-[291px] h-[247px]">
         <img
             :src="image"
-            class="w-full max-h-full object-top"
+            class="w-full max-h-full object-top object-contain"
             alt="book"
         />
       </div>
