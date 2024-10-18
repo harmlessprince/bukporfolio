@@ -1,5 +1,4 @@
 <script setup>
-
 import Container from "@/components/Container.vue";
 import {ref, onMounted, onBeforeUnmount} from "vue";
 import { gsap } from "gsap";
@@ -37,15 +36,37 @@ const resetQuotesCount = () => {
       timeoutId = setInterval(() => {
         let zeroBasedQuotesLength = quotes.value.length - 1;
         zeroBasedQuotesLength > quotesCount.value ?  incrementCount() : resetQuotesCount()
-        gsap.fromTo(".subTextBox",
-        { y: 150 }, 
+        gsap.fromTo(".subTextHeader",
+        { y: 25 }, 
         { y: 0, 
-          duration: 1, 
+          duration: 0.4, 
           scrollTrigger: {
-          trigger: ".subTextBox",
+          trigger: ".subTextHeader",
         },
-        });    
+        });  
+
+        gsap.fromTo(".subTextParagraph",
+        { x: 100 }, 
+        { x: 0, 
+          duration: 0.4, 
+          scrollTrigger: {
+          trigger: ".subTextParagraph",
+        },
+        }); 
       }, 5000);
+
+      gsap.fromTo(".bannerImage ",
+        { 
+          x: 100,
+          scale: 1.5
+         }, 
+        { scale: 1,
+          x: 0, 
+          duration: 1,
+          scrollTrigger: {
+          trigger: ".bannerImage ",
+        },
+        }); 
     });
 
     onBeforeUnmount(() => {
@@ -68,10 +89,10 @@ const resetQuotesCount = () => {
           CHANGE YOUR THINKING TO
           <span
               class="text-primary font-bold font-title text-[3.5rem] max-small:text-[2.2rem]  mb-[2.1rem] block h-[15rem] max-small:h-[18.5rem] small:max-medium:h-[22rem] medium:max-large:h-[18.5rem] overflow-hidden">
-              <ul class="block text-left [&_li]:block subTextBox">
+              <ul class="block text-left [&_li]:block">
               <li class="mb-[4.4rem] max-sm:mb-0 mt-[1rem] max-sm:mt-0 max-sm:py-[2rem]">
-                <span>{{quotes[quotesCount].title}}</span>
-                <p class="text-[#949494] text-[2rem] max-small:text-[1.5rem] font-normal mt-2 mb-[2.1rem] max-medium:leading-[32px] max-sm:mb-0">
+                <header class="subTextHeader">{{quotes[quotesCount].title}}</header>
+                <p class="subTextParagraph text-[#949494] text-[2rem] max-small:text-[1.5rem] font-normal mt-2 mb-[2.1rem] max-medium:leading-[32px] max-sm:mb-0">
                   {{quotes[quotesCount].description}}
                  </p>
              </li>
@@ -88,7 +109,7 @@ const resetQuotesCount = () => {
           </RouterLink>
         </div>
       </div>
-      <div class="h-full w-full flex-grow flex-shrink-0 basis-0 max-sm:hidden">
+      <div class="h-full w-full flex-grow flex-shrink-0 basis-0 max-sm:hidden bannerImage">
         <img
             src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
             class="w-full h-full object-cover object-center"

@@ -15,6 +15,46 @@ import Activities from "@/components/Activities.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
+onMounted(() => {
+  gsap.fromTo(".whoIamHeader ",
+        { 
+          x: 100,
+         }, 
+        {
+          x: 0, 
+          duration: 0.5, 
+          scrollTrigger: {
+          trigger: ".whoIamHeader",
+        },
+        }); 
+
+  gsap.fromTo(".whoIamParagraph",
+  { 
+    x: 100,
+    }, 
+  {
+    x: 0, 
+    duration: 1, 
+    scrollTrigger: {
+    trigger: ".whoIamParagraph",
+  },
+  }); 
+
+  gsap.fromTo(".whoIamDotBackground",
+  { 
+    scale: 0.2,
+    }, 
+  {
+  scale: 1, 
+    duration: 0.5, 
+    scrollTrigger: {
+    trigger: ".whoIamDotBackground",
+  },
+  }); 
+
+
+});
+
 </script>
 
 <template>
@@ -30,7 +70,7 @@ gsap.registerPlugin(ScrollTrigger);
     <!-- meet bright uk -->
     <section class="">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
-        <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
+        <div class="flex max-sm:flex-col items-start bg-white gap-[3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
             <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
                  class="w-full h-full relative" alt="brand"/>
@@ -48,10 +88,10 @@ gsap.registerPlugin(ScrollTrigger);
             >
               Who I am
             </h3>
-            <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
+            <h2 class="whoIamHeader font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
-            <p class="font-sm text-regularColor text-basic text-xsm my-[1rem]">
+            <p class="whoIamParagraph leading-[24px] font-sm text-regularColor text-basicText max-sm:text-xsm my-[1rem]">
               Bright 'UK' Ukwenga is a dynamic professional wearing multiple
               hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
               Coach. He is renowned for his ability to ignite mental
