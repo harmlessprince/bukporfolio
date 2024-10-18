@@ -31,7 +31,7 @@ function getRoleLink(name) {
       class="grid grid-cols-[repeat(auto-fill,minmax(26.6rem,1fr))] max-small:grid-cols-[repeat(auto-fill,minmax(35rem,1fr))]
             small:max-medium:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]
       gap-[1.2rem] gap-y-[2rem]">
-        <div class="overflow-hidden w-full max-sm:mx-auto relative group cursor-pointer h-[371px] bg-no-repeat bg-cover bg-center transition-transform duration-500"
+        <div class="overflow-hidden w-full max-sm:mx-auto relative group cursor-pointer h-[371px] bg-cover bg-center bg-no-repeat"
              v-for="(role, index) in store.roles" :key="index"
              @click="getRoleLink(role.name.toLowerCase())"
              :style="{ backgroundImage: `url(${role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'})` }"
