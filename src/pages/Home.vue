@@ -28,7 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
     <!-- meet bright uk -->
-    <section class="">
+    <section class="mb-10">
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
