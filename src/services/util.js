@@ -37,6 +37,11 @@ export function getBlogDate(dateString) {
 export function formatMoney(money) {
     return new Intl.NumberFormat().format(money);
 }
+export function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+        return word.replace(word[0], word[0].toUpperCase());
+    }).join(' ');
+}
 
 export const createContactEmailTemplate = ({fullName, phoneNumber, email, companyName, country, service, message}) => {
     return `

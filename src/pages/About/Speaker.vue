@@ -11,11 +11,24 @@ import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
 import Pagination from "@/components/Pagination.vue";
 
+
+const items = ref([...Array(100).keys()].map(i => ({id: i, name: `Item ${i + 1}`}))); // Example items
+const paginatedItems = ref([]);
+const pageSize = 10; // Number of items per page
+
+function loadMore() {
+  const start = currentPage.value * pageSize;
+  const end = start + pageSize;
+  paginatedItems.value.push(...items.value.slice(start, end));
+  currentPage.value++;
+  console.log(currentPage.value)
+}
+
 gsap.registerPlugin(ScrollTrigger);
 const store = useQuoteStore()
 
 
-const currentPage = ref(1);
+const currentPage = ref(0);
 const perPage = 6;
 const paginatedQuotes = computed(() => {
   const start = (currentPage.value - 1) * perPage;
@@ -29,6 +42,7 @@ function updatePage(page) {
 
 onBeforeMount(() => {
   store.getQuotes();
+  loadMore()
 });
 
 onMounted(() => {
@@ -115,16 +129,19 @@ onMounted(() => {
           <Subheading title="Quotes"/>
           <Heading title="Inspirational words from Bright UK"/>
         </div>
-        <div
-            class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
-        >
-          <InspirationCard
-              v-for="(item, index) in paginatedQuotes"
-              :title="item.title"
-              :quote="item.quote"
-              :key="index"
-          />
-        </div>
+
+          <div
+              class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
+          >
+            <InspirationCard
+                v-for="(item, index) in paginatedQuotes"
+                :title="item.title"
+                :quote="item.quote"
+                :key="index"
+                :style="{ transitionDelay: `${index * 100}ms` }"
+            />
+          </div>
+
         <Pagination
             :currentPage="currentPage"
             :totalItems="store.quotes.length"
@@ -134,10 +151,32 @@ onMounted(() => {
 
       </Container>
     </section>
+    <div>
+      <div class="list-container">
+        <transition-group name="fade" tag="div">
+          <div
+              v-for="(item, index) in paginatedItems"
+              :key="item.id"
+              class="list-item"
+              :style="{ transitionDelay: `${index * 100}ms` }"
+          >
+          {{ item.name }}
+      </div>
+      </transition-group>
+      </div>
+
+      <button @click="loadMore">Load More</button>
+    </div>
   </main>
 </template>
 
 <style scoped>
+.list-container {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
 .speakerBanner::after {
   content: "";
   position: absolute;
@@ -151,4 +190,22 @@ onMounted(() => {
   height: 100%;
 }
 
+.list-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation timing */
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; /* Fade out */
+  transform: translateY(20px); /* Move down */
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

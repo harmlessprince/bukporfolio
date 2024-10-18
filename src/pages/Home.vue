@@ -18,17 +18,19 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <template>
-  <div class="text-primary relative isolate">
-    <!-- hero/banner starts here -->
-    <HomeHeroSection/>
-    <!-- brands touched starts here -->
-    <Brands/>
+  <div class="text-primary relative isolate space-y-40">
+    <div>
+      <!-- hero/banner starts here -->
+      <HomeHeroSection/>
+      <!-- brands touched starts here -->
+      <Brands/>
+    </div>
 
 
 
 
     <!-- meet bright uk -->
-    <section class="mb-10">
+    <section >
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
@@ -76,7 +78,7 @@ gsap.registerPlugin(ScrollTrigger);
     <!-- different roles of bright uk -->
     <Roles/>
     <!-- personal development section -->
-    <Books/>
+    <Books />
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
       <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
@@ -113,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger);
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <Features/>
+    <Features />
     <!-- end of featured -->
   </div>
 </template>

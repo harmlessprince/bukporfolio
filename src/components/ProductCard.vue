@@ -1,6 +1,6 @@
 <script setup>
 import {useCartStore} from "@/store/cart.store.js";
-import {formatMoney} from "../services/util.js";
+import {formatMoney, titleCase} from "../services/util.js";
 
 const cartStore = useCartStore();
 const props = defineProps(['title', "image", "price", "description", "id"])
@@ -20,8 +20,8 @@ const props = defineProps(['title', "image", "price", "description", "id"])
       </div>
     </div>
 
-    <h4 class="text-secondary font-header text-basic mt-[0.5rem]">
-      {{ title }}
+    <h4 class="text-secondary font-header text-basic mt-[0.5rem] capitalize">
+      {{ titleCase(title) }}
     </h4>
     <div class="text-regular font-xsm text-xsm">
       <p>

@@ -48,9 +48,10 @@ function getRoleLink(name) {
           </div>
 
 
-          <div class="bg-primary text-xlg font-lg text-center text-white py-[0.65rem] absolute bottom-0 left-0 w-full z-10 grayscale-0">{{
-              role.name
-            }}
+          <div class="bg-primary text-xlg font-lg text-center text-white py-[0.65rem] absolute bottom-0 left-0 w-full z-10 ">
+            <span class="filter-none">
+               {{role.name}}
+            </span>
           </div>
 <!--          <img :src="role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'" class="w-[100%] h-[241px] rounded-t-[10px] relative object-top object-cover" :alt="role.name"/>-->
         </div>
@@ -64,5 +65,10 @@ function getRoleLink(name) {
 </template>
 
 <style scoped>
-
+.grayscale-item {
+  filter: grayscale(100%);
+}
+.filter-none {
+  filter: none !important; /* Override the parent filter */
+}
 </style>
