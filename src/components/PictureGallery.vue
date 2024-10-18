@@ -1,5 +1,4 @@
 <script setup>
-
 import {computed, ref} from "vue";
 import PrimeVueImage from 'PrimeVueImage';
 import Pagination from "@/components/Pagination.vue";
@@ -30,10 +29,49 @@ function updatePage(page) {
   currentPage.value = page;
 }
 
+function previousPage() {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+  }
+}
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+  }
+}
+
+// const currentIndex = ref(0)
+// function setSlide(index) {
+//   currentIndex.value = index
+// }
+// function nextSlide() {
+//   currentIndex.value = (currentIndex.value + 1) % images.value.length;
+// }
+// setInterval(() => {
+//   nextSlide();
+// }, 3000);
+// Function to go to the previous slide
+// function prevSlide() {
+//   currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length;
+// }
+// function getOffset(index) {
+//   const slideHeight = 180; // Height of each image (18rem)
+//   const maxVisibleSlides = 5; // Number of visible slides
+//   const totalHeight = maxVisibleSlides * slideHeight;
+
+  // Calculate the offset to slide images upward
+  // const currentSlidePosition = currentIndex.value * slideHeight;
+  // const indexPosition = index * slideHeight;
+
+  // If the current index is beyond the visible area, slide it up
+//   return Math.min(0, totalHeight - indexPosition - currentSlidePosition);
+// }
+
 </script>
 
 <template>
-      <div class="picture-gallery">
+  <div class="picture-gallery">
       <div
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
@@ -52,10 +90,37 @@ function updatePage(page) {
             @updatePage="updatePage"
         />
 
-  </div>
+      <button
+          v-for="page in totalPages"
+          :key="page"
+          @click="setPage(page)"
+          :class="currentPage === page ? 'active' : ''"
+          class="pagination_button"
+      >
+        {{ page }}
+      </button>
+
+      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>
+    </div>
+
+    <!-- modal popup -->
+    <div :class='!isShowModal ? "hidden" : "modalContainer fixed top-[9rem] py-[1rem] left-0 z-[200] w-full h-[100vh] overflow-y-auto"'> 
+      <div class="modalImageContainer py-[1rem] relative max-w-[111rem] bg-[#fff] mx-auto">
+        <div @click="closeModal" class="material-icons text-[2.5rem] text-[#000] absolute top-[1rem] right-[1rem] cursor-pointer hover:bg-[#D3D3D3] ">close</div>
+        <img class="modalImage mx-auto" :src="modalImage" alt="">
+      </div>
+      </div>
 </template>
 
 <style scoped>
+.pagination_button {
+  @apply w-[3.2rem] h-[3.2rem] rounded-[0.8rem] flex items-center justify-center border-[0.1rem] border-[#F1F1F1] p-[1rem] font-bold;
+}
+
+.active {
+  @apply bg-secondary text-white;
+}
+
 .modalContainer{
   background-color: rgba(0,0,0,0.4);
 }

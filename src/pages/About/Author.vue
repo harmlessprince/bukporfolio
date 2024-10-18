@@ -38,9 +38,7 @@ onMounted(() => {
 <template>
 
   <main class="text-primary">
-
     <!-- about hero section -->
-
     <HeroSection
         imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059209/authorbanner_lzjjj1.png"
         page="Author"

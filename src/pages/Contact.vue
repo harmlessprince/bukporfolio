@@ -104,7 +104,7 @@ async function sendEmail(values, {resetForm}) {
 
       <!-- form section -->
       <section class="mt-[2rem] mb-[5rem]">
-        <Form class="font-[500] text-[2rem] max-sm:text-[1.6rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
+        <Form class="font-[500] text-[2rem] max-small:text-[1.4rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
               :validation-schema="validationSchema">
           <div class="space-y-[2rem]">
            <div class="grid grid-cols-2 max-medium:grid-cols-1 gap-[2.5rem]">

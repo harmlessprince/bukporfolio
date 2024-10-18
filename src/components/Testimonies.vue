@@ -70,7 +70,7 @@ function previousQuote() {
         v-if="currentQuote"
       >
         <q
-          class="font-sm text-secondary text-xlg italic mb-[1.7rem] leading-[3rem] overflow-clip"
+          class="font-sm text-secondary text-xlg max-small:text-sm italic mb-[1.7rem] leading-[3rem] overflow-clip"
         >
           {{ currentQuote.quote }}
         </q>
@@ -82,7 +82,7 @@ function previousQuote() {
               class="w-[55px] h-[59px] mr-[1rem] rounded-full"
               alt="bright"
             />
-            <span class="font-header text-xlg text-secondary"
+            <span class="font-header text-xlg max-sm:text-sm text-secondary"
               >{{ currentQuote.name }}<br />
               <span class="font-sm text-[#838080] text-xsm"
                 >{{

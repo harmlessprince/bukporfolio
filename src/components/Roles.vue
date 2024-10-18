@@ -1,5 +1,4 @@
 <script setup>
-
 import {useRoleStore} from "@/store/roles.store.js";
 import {onBeforeMount, onMounted, watch} from "vue";
 import Container from "@/components/Container.vue";

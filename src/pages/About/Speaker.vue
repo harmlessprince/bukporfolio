@@ -76,7 +76,7 @@ onMounted(() => {
     />
 
     <Container>
-      <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
+      <div class="w-full flex  max-small:flex-col items-center mt-[5rem] max-small:mt-[3rem]">
         <div class="w-[47.6rem]  max-sm:w-full h-[47.9rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>

@@ -1,6 +1,6 @@
 <script setup>
 import Container from "@/components/Container.vue";
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Brands from "@/components/Brands.vue";
@@ -55,7 +55,6 @@ gsap.fromTo(".coachBrightText",
 
 <template>
   <main class="text-primary overflow-x-none">
-
     <HeroSection
         imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png"
         page="Trainer"
@@ -63,24 +62,31 @@ gsap.fromTo(".coachBrightText",
 
     <Container>
       <div
-          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
+          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-start my-[5rem] max-medium:my-[2.7rem]">
         <div class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png" class="w-full h-full rounded-[10px]" alt="bright"/>
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg" class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
                alt="footer logo"/>
-        </div>
+          </div>
+       
         <div class="w-[47.7rem] max-medium:w-full bookBrightText">
-          <p class="font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
-            Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company helping
+          <div class="space-y-5 font-xsm text-basicText text-[#2B2B2B] mb-[2rem] leading-[2rem]">
+           <p> Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company helping
             individuals and organizations to lead the future by catalysing their reinvention and exponential growth
             through strategy, training, and consulting.
+          </p>
+            <p>
             He is certified by the International Council of Management Consulting Institutes (ICMCI). He is also a
             Fellow of the Institute of Management Consultants of Nigeria and a member of the Chartered Institute of
             Directors. An alumnus of the National Institute of Policy and Strategic Studies, Kuru, he holds a
             certificate in Policy, Strategy, and Leadership from the nation’s foremost policy think tank.
+          </p>
+          <p>
             As a Professional Coach and Trainer, Bright works with C-suite executives and ambitious professionals to
             bridge the gap between their potential and performance towards achieving high productivity as well as
             establishing thought leadership in their space.
+          </p>
+          <p>
             He is adept at identifying knowledge and soft skills gaps as well as designing and delivering highly
             engaging training and retreats, and his first-rate Corporate Training expertise has been utilized by local
             organizations and multinationals, including
@@ -88,6 +94,7 @@ gsap.fromTo(".coachBrightText",
             (GTB), First Bank Insurance Brokers, Nigerian Institute of Town Planners (NITP), etc. to boost the
             effectiveness and productivity of their workforce.
           </p>
+          </div>
 
           <RouterLink
               class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
@@ -108,16 +115,22 @@ gsap.fromTo(".coachBrightText",
         </div>
         <div class="w-full coachBrightText">
           <Heading title="Coach"/>
-          <p class="font-xsm text-basic text-[#2B2B2B] mb-[0.5rem]">
+          <div class="font-xsm text-basic text-[#2B2B2B] mb-[0.5rem] space-y-2">
+            <p>
             In today's broken world, many individuals struggle with psychological issues that hinder their progress in
             leadership, wealth-building, and relationships, and impact their overall well-being as they find themselves
             trapped in patterns of negative thinking, self-sabotage, and limiting beliefs. 
+          </p>
+          <p>
             As a Transformation Coach, Bright UK helps individuals to close the gap between their potential and
             performance through bespoke mind engineering processes that helps them achieve healing and wholeness, regain
             control of their lives, lead effectively, and ultimately attain wealth and well-being. 
-            Whether to reinvent yourself, develop new habits, meet your wildly ambitious goals, or lead more
-            effectively, Bright UK will hold your hands and walk you through where you are to where you ought to be. 
           </p>
+            <p>
+            Whether to reinvent yourself, develop new habits, meet your wildly ambitious goals, or lead more
+            effectively, Bright UK will hold your hands and walk you through where you are to where you ought to be.
+          </p>
+          </div>
 
           <div>
             <RouterLink
@@ -133,6 +146,7 @@ gsap.fromTo(".coachBrightText",
             </RouterLink>
           </div>
         </div>
+        <!-- this image displays on desktop only -->
         <div class="w-full min-h-[43.3rem] max-medium:hidden coachBrightImage">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerImage2_rz0aer.png" class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
