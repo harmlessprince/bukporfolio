@@ -26,7 +26,6 @@ const isRouteActive = (link, routePath) => {
 
 function logoLoaded(){
   isLogoLoaded.value = true;
-  console.log("I am called");
 }
 </script>
 
@@ -71,7 +70,7 @@ function logoLoaded(){
             >Gallery</RouterLink>
           </li>
           <li class="mainnav__links">
-            <RouterLink :to="{name: 'products'}" 
+            <RouterLink :to="{name: 'books'}"
               :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'
             >Shop</RouterLink>
           </li>

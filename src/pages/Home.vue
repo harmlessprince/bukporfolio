@@ -53,10 +53,11 @@ gsap.registerPlugin(ScrollTrigger);
             <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
-            <p class="font-sm text-regular text-basic my-[1rem]">
+            <p class="font-normal text-regular text-basic my-[1rem] text-justify">
               Bright 'UK' Ukwenga is a dynamic professional wearing multiple
               hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
-              Coach. He is renowned for his ability to ignite mental
+              Coach.
+              He is renowned for his ability to ignite mental
               transformations using his groundbreaking #SixthSense framework.
               Having earned a bachelor's degree in Electrical & Electronics
               Engineering from one of Africa's top Universities of Technology,
@@ -67,7 +68,7 @@ gsap.registerPlugin(ScrollTrigger);
                 class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
             >
               <span class="font-sm text-xsm text-btnText mr-[1rem]"
-              >see more</span
+              >Learn more</span
               >
               <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
             </button>

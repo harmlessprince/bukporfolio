@@ -21,12 +21,12 @@ function toggleTab(name) {
       <h1 class="text-forty max-sm:text-[3.0rem] font-xlg text-basicColor">Gallery</h1>
       <div class="font-lg text-basic">
         <span class="text-bannerNavColor">Home</span> <span class="text-primaryColor"> > Gallery</span><span
-          class="text-primaryColor uppercase"> > {{currentTab}}</span>
+          class="text-primaryColor sentence"> > {{currentTab}}</span>
       </div>
     </div>
   </section>
 
-  <Container class="mb-[25rem]">
+  <Container class="mb-[10rem]">
     <div class="mt-[3.4rem] mb-[1.7rem] text-center">
       <div
           class="w-[48.1rem] max-sm:w-full mb-[1.7rem] h-[45px] mx-auto bg-[#dddddd] rounded-[6px] font-[500] leading-[1.69rem] text-[1.4rem] flex p-1">

@@ -39,7 +39,7 @@ const props = defineProps(['title', "image", "price", "description", "id"])
         Add to Cart
       </button>
       <RouterLink
-          :to="{name: 'item', params: {id}}"
+          :to="{name: 'book', params: {id}}"
           class="hover:scale-[1.1] min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px] flex items-center justify-center"
       >
         View more

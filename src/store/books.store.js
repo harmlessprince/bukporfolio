@@ -55,7 +55,7 @@ export const useBookstore = defineStore("booksStore", () => {
                 query: {
                     message: 'The book you are looking for does not exist',
                     reason: 'You may have visited and old link or the book has been removed',
-                    route: 'products',
+                    route: 'books',
                     buttonText: 'Go To Shop',
                 }
             });
