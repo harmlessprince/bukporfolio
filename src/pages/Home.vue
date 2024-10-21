@@ -27,10 +27,8 @@ gsap.registerPlugin(ScrollTrigger);
     </div>
 
 
-
-
     <!-- meet bright uk -->
-    <section >
+    <section>
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
@@ -53,17 +51,26 @@ gsap.registerPlugin(ScrollTrigger);
             <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
-            <p class="font-normal text-regular text-basic my-[1rem] text-justify">
-              Bright 'UK' Ukwenga is a dynamic professional wearing multiple
-              hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
-              Coach.
-              He is renowned for his ability to ignite mental
-              transformations using his groundbreaking #SixthSense framework.
-              Having earned a bachelor's degree in Electrical & Electronics
-              Engineering from one of Africa's top Universities of Technology,
-              Bright realized that his true passion lies in engineering minds
-              rather than machines.
-            </p>
+            <div class="font-normal text-regular text-basic my-[1rem] text-justify space-y-2">
+              <p>
+                Bright 'UK' Ukwenga is a dynamic professional wearing multiple
+                hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
+                Coach.
+              </p>
+              <p>
+                He is renowned for his ability to ignite mental
+                transformations using his groundbreaking #SixthSense framework.
+              </p>
+              <p>
+                Having earned a bachelor's degree in Electrical & Electronics
+                Engineering from one of Africa's top Universities of Technology,
+                Bright realized that his true passion lies in engineering minds
+                rather than machines.
+              </p>
+
+
+            </div>
+
             <button
                 class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
             >
@@ -79,7 +86,7 @@ gsap.registerPlugin(ScrollTrigger);
     <!-- different roles of bright uk -->
     <Roles/>
     <!-- personal development section -->
-    <Books />
+    <Books/>
     <!-- gallery -->
     <section class="bg-basic text-center pt-[3rem]">
       <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
@@ -116,7 +123,7 @@ gsap.registerPlugin(ScrollTrigger);
     <!-- end of testimony -->
 
     <!-- start of featured on -->
-    <Features />
+    <Features/>
     <!-- end of featured -->
   </div>
 </template>
