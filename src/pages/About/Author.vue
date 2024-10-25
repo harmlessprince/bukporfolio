@@ -46,16 +46,19 @@ onMounted(() => {
 
     <Container>
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
-        <div class="w-[47.6rem] max-sm:w-full h-[39rem] rounded-[10px] authorImageBox">
+        <div class="w-[47.6rem] max-sm:w-full max-h-full rounded-[10px] authorImageBox">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem] max-sm:w-full authorTextBox">
-          <p class="font-xsm text-[2.4rem] max-medium:text-[2rem] text-[#2B2B2B]">
-            As a prolific writer, Bright UK is the author of three books and many resourceful publications.
-            He is a former contributor to Business Day Newspaper which is widely read across Nigeria and Ghana.
-            He is th author of three books and many resourceful publication on leadership ,wealth and well-being
-          </p>
+          <div class="font-normal text-basic text-[#2B2B2B] mb-[2rem] leading-[2rem] text-justify space-y-2">
+            <p>
+              As a prolific writer, Bright UK is the author of three books and many resourceful publications.
+              He is a former contributor to Business Day Newspaper which is widely read across Nigeria and Ghana.
+              He is th author of three books and many resourceful publication on leadership, wealth and well-being.
+            </p>
+          </div>
+
         </div>
       </div>
     </Container>

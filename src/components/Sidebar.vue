@@ -72,7 +72,7 @@ function toggleAboutDropdown() {
           @click="toggleSidebar.hideSideBar()">Gallery</RouterLink>
         </li>
         <li class="">
-          <RouterLink :to="{name: 'products'}" 
+          <RouterLink :to="{name: 'books'}"
           :class='isRouteActive("shop", "") ? "bg-primaryColor p-[1rem] block" : "p-[1rem] block"'
           @click="toggleSidebar.hideSideBar()">Shop</RouterLink>
         </li>

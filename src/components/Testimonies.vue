@@ -133,4 +133,17 @@ function previousQuote() {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.transition-transform {
+  transition: transform 0.5s ease-in-out;
+}
+.translate-x-full {
+  transform: translateX(100%); /* Slide out to the right */
+}
+.-translate-x-full {
+  transform: translateX(-100%); /* Slide out to the left */
+}
+.translate-x-0 {
+  transform: translateX(0); /* Slide in */
+}
+</style>

@@ -2,7 +2,7 @@
 
 <template>
   <!-- screen dimension for responsiveness is in tailwind config -->
-  <div class="max-w-[111rem] my-0 mx-auto w-full max-large:px-3">
+  <div class="max-w-[111rem] my-0 mx-auto w-full max-large:px-3 mb-10">
     <slot></slot>
   </div>
 </template>

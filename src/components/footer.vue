@@ -43,7 +43,7 @@ const isRouteActive = (link, routePath) => {
         :class='isRouteActive("", "/gallery") ? "mainNavLinkActive" : "mainnavlink"'
         >Gallery</RouterLink></span>
         <span>
-          <RouterLink :to="{ name: 'products'}" 
+          <RouterLink :to="{ name: 'books'}"
           :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'
           >Shop</RouterLink></span>
           <span><RouterLink :to="{ name: 'contact'}" 

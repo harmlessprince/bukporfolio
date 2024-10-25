@@ -39,7 +39,7 @@ onBeforeMount(() => {
           <Slide v-for="(slide, index) in store.features" :key="index" >
             <img
                 :src="slide.image"
-                class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0 grayscale"
+                class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0"
                 :alt="slide.name"
                 :key="index"
             />

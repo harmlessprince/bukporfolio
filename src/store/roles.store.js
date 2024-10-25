@@ -24,6 +24,8 @@ export const useRoleStore = defineStore("roleStore", () => {
                 });
             }
 
+            items.sort((a, b) => a?.position - b?.position);
+
         });
         roles.value = items;
     }

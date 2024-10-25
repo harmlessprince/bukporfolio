@@ -74,7 +74,7 @@ function decodeUnicode(str) {
           </div>
         </div>
         <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
-            <span class="font-bold text-2xl" v-for="(category, index) in blogStore.singlePost.labels ?? []"
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"
                   :key="index">
             {{ category }}
             </span>

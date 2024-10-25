@@ -1,6 +1,6 @@
 <script setup>
 import {useCartStore} from "@/store/cart.store.js";
-import {formatMoney} from "../services/util.js";
+import {formatMoney, titleCase} from "../services/util.js";
 
 const cartStore = useCartStore();
 const props = defineProps(['title', "image", "price", "description", "id"])
@@ -14,14 +14,14 @@ const props = defineProps(['title', "image", "price", "description", "id"])
       <div class="w-[291px] h-[247px]">
         <img
             :src="image"
-            class="w-full max-h-full object-top"
+            class="w-full max-h-full object-top object-contain"
             alt="book"
         />
       </div>
     </div>
 
-    <h4 class="text-secondary font-header text-basic mt-[0.5rem]">
-      {{ title }}
+    <h4 class="text-secondary font-header text-basic mt-[0.5rem] capitalize">
+      {{ titleCase(title) }}
     </h4>
     <div class="text-regular font-xsm text-xsm">
       <p>
@@ -39,7 +39,7 @@ const props = defineProps(['title', "image", "price", "description", "id"])
         Add to Cart
       </button>
       <RouterLink
-          :to="{name: 'item', params: {id}}"
+          :to="{name: 'book', params: {id}}"
           class="hover:scale-[1.1] min-w-[13.7rem] grow  h-[4.3rem] bg-transparent border border-primary text-secondary text-xsm font-sm rounded-[8px] flex items-center justify-center"
       >
         View more

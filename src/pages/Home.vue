@@ -58,17 +58,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="text-primary relative isolate">
-    <!-- hero/banner starts here -->
-    <HomeHeroSection/>
-    <!-- brands touched starts here -->
-    <Brands/>
-
-
+  <div class="text-primary relative isolate space-y-40">
+    <div>
+      <!-- hero/banner starts here -->
+      <HomeHeroSection/>
+      <!-- brands touched starts here -->
+      <Brands/>
+    </div>
 
 
     <!-- meet bright uk -->
-    <section class="">
+    <section>
       <Container class="mt-[3.2rem] mb-[2.6rem]">
         <div class="flex max-sm:flex-col items-start bg-white gap-[3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
@@ -91,21 +91,31 @@ onMounted(() => {
             <h2 class="whoIamHeader font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
-            <p class="whoIamParagraph leading-[24px] font-sm text-regularColor text-basicText max-sm:text-xsm my-[1rem]">
-              Bright 'UK' Ukwenga is a dynamic professional wearing multiple
-              hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
-              Coach. He is renowned for his ability to ignite mental
-              transformations using his groundbreaking #SixthSense framework.
-              Having earned a bachelor's degree in Electrical & Electronics
-              Engineering from one of Africa's top Universities of Technology,
-              Bright realized that his true passion lies in engineering minds
-              rather than machines.
-            </p>
+            <div class="font-normal text-regular text-basic my-[1rem] text-justify space-y-2">
+              <p>
+                Bright 'UK' Ukwenga is a dynamic professional wearing multiple
+                hats as a Speaker, Author, Digital Entrepreneur, Psychologist, and
+                Coach.
+              </p>
+              <p>
+                He is renowned for his ability to ignite mental
+                transformations using his groundbreaking #SixthSense framework.
+              </p>
+              <p>
+                Having earned a bachelor's degree in Electrical & Electronics
+                Engineering from one of Africa's top Universities of Technology,
+                Bright realized that his true passion lies in engineering minds
+                rather than machines.
+              </p>
+
+
+            </div>
+
             <button
                 class="hover:scale-[1.2] border border-primary rounded-[8px] py-[1rem] px-[2rem] flex flex-row items-center"
             >
               <span class="font-sm text-xsm text-btnText mr-[1rem]"
-              >see more</span
+              >Learn more</span
               >
               <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
             </button>
