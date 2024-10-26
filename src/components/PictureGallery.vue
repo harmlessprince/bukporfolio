@@ -82,16 +82,6 @@ function nextPage() {
 
 <template>
   <div class="picture-gallery">
-<<<<<<< HEAD
-      <div
-            class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
-        >
-        <div v-for="(image, index) in paginatedImages" :key="index"
-            class="relative cursor-pointer h-[30rem]"
-           >
-          <PrimeVueImage :src="image" alt="Image" width="250"  class="rounded-lg h-full w-full" preview />
-        </div>
-=======
     <div
         class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(21.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
     >
@@ -100,7 +90,6 @@ function nextPage() {
       >
         <PrimeVueImage :src="image.url" :alt="image.title" width="100%"
                        class="rounded-lg max-w-full h-full object-top object-cover" preview/>
->>>>>>> origin/main
       </div>
     </div>
 
@@ -153,21 +142,8 @@ function nextPage() {
 </template>
 
 <style scoped>
-<<<<<<< HEAD
-.pagination_button {
-  @apply w-[3.2rem] h-[3.2rem] rounded-[0.8rem] flex items-center justify-center border-[0.1rem] border-[#F1F1F1] p-[1rem] font-bold;
-}
-
-.active {
-  @apply bg-secondary text-white;
-}
-
-.modalContainer{
-  background-color: rgba(0,0,0,0.4);
-=======
 .modalContainer {
   background-color: rgba(0, 0, 0, 0.4);
->>>>>>> origin/main
 }
 
 .modalImageContainer {

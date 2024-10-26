@@ -3,20 +3,25 @@ import Container from "@/components/Container.vue";
 import {ref, onMounted, onBeforeUnmount} from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { RoughEase } from 'gsap/EasePack'
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(RoughEase);
+
 
 const quotes = ref([
   {
-    title: "CHANGE YOUR LIFE",
+    title: "TO CHANGE YOUR LIFE",
     description: "You are not disadvantaged as you think, you are only disadvantaged by your thinking",
   },
   {
-    title: "ELEVATE YOUR LEADERSHIP",
+    title: "TO ELEVATE YOUR LEADERSHIP",
     description: "Your growth is your factor of inspiration. As you grow into the best version of yourself, you give others the permission to do the same."
   },
   {
-    title: "CREATE YOUR OWN POSSIBILITIES",
+    title: "TO CREATE YOUR OWN POSSIBILITIES",
     description: "You can create wealth without capital if you know how to leverage capital beyond money."
   }
 ])
@@ -36,24 +41,24 @@ const resetQuotesCount = () => {
       timeoutId = setInterval(() => {
         let zeroBasedQuotesLength = quotes.value.length - 1;
         zeroBasedQuotesLength > quotesCount.value ?  incrementCount() : resetQuotesCount()
-        gsap.fromTo(".subTextHeader",
-        { y: 25 }, 
-        { y: 0, 
-          duration: 0.4, 
-          scrollTrigger: {
-          trigger: ".subTextHeader",
-        },
-        });  
+        // gsap.fromTo(".subTextHeader",
+        // { y: 25 }, 
+        // { y: 0, 
+        //   duration: 0.4, 
+        //   scrollTrigger: {
+        //   trigger: ".subTextHeader",
+        // },
+        // });  
 
         gsap.fromTo(".subTextParagraph",
-        { x: 100 }, 
-        { x: 0, 
+        { y: 100 }, 
+        { y: 0, 
           duration: 0.4, 
-          scrollTrigger: {
-          trigger: ".subTextParagraph",
-        },
+        //   scrollTrigger: {
+        //   trigger: ".subTextParagraph",
+        // },
         }); 
-      }, 5000);
+      }, 6000);
 
       gsap.fromTo(".bannerImage ",
         { 
@@ -67,6 +72,19 @@ const resetQuotesCount = () => {
           trigger: ".bannerImage ",
         },
         }); 
+
+        let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
+        let typingTL = gsap.timeline({repeat: -1})
+
+        quotes.value.forEach((quote, index) => {
+          console.log(quote)
+          console.log(index)
+          let tl = gsap.timeline({repeat: 1, yoyo: true});
+          tl.to('.text', {duration: 3, text: quote.title})
+          typingTL.add(tl)
+        })
+
+
     });
 
     onBeforeUnmount(() => {
@@ -78,10 +96,28 @@ const resetQuotesCount = () => {
 </script>
 
 <template>
-  <section class="bg-secondary mt-[9.3rem] max-sm:py-[3rem] h-[52.2rem] max-sm:h-full relative">
-    <Container
+  <section class="bg-secondary max-sm:py-[3rem] h-[100vh] max-sm:h-full relative homeHero flex items-center text-center">
+     <Container class="w-[95rem] text-center">  
+      <div class="min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3.2rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
+        <span class="text-[#C7AE2E]">CHANGE YOUR THINKING </span> 
+        <span class="text"></span>
+        <span class="cursor">_</span>
+      </div>
+      <div class="w-[65rem] min-h-[10rem] text-[#fff] font-[500] leading-[32px] text-[2.4rem] mx-auto mb-[4.6rem] subTextParagraph">
+        {{quotes[quotesCount].description}}
+      </div>
+      <RouterLink
+      :to="{name: 'contact'}"
+      >
+   <button
+   class="hover:scale-[1.1] bg-primaryColor mx-auto w-[22.2rem] h-[5.5rem] rounded-[6px] border border-primary text-btnText text-xsm py-[1.75rem] max-sm:py-[0.5rem] px-[6rem] font-sm flex items-center justify-center self-start"
+   >
+    Book Bright UK
+   </button>
+  </RouterLink>
+  </Container>
+    <!-- <Container
         class="w-[98rem] h-full overflow-hidden text-basic flex max-sm:flex-col justify-center items-center flex-nowrap gap-4"
-        :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729078294/home_banner_background_qs1ged.png)' }"
     >
        <div class="grow-[2] flex-shrink-0 basis-0">
       
@@ -116,10 +152,14 @@ const resetQuotesCount = () => {
             alt="homebanner"
         />
       </div>
-    </Container>
+    </Container> -->
   </section>
 </template>
 
 <style scoped>
-
+.homeHero{
+  background-image: url('@/assets/homeBannerBackground.png');
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}
 </style>

@@ -24,7 +24,7 @@ function getRoleLink(name) {
 </script>
 
 <template>
-  <section class="bg-[#DADADA]">
+  <section class="bg-[#DADADA] py-[4.4em]">
     <Container class="w-full">
       <div
       class="grid grid-cols-[repeat(auto-fill,minmax(26.6rem,1fr))] max-small:grid-cols-[repeat(auto-fill,minmax(35rem,1fr))]

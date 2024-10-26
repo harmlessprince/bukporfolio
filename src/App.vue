@@ -13,16 +13,12 @@ const cartStore = useCartStore();
 const toggleSidebar = useToggleSidebar()
 onMounted(() => {
   cartStore.loadCart();
-  console.log(toggleSidebar.sideBar)
 });
 </script>
 
 <template>
   <div class="page-container">
     <Navigation/>
-    <!-- having issues with integrating side bar. 
-     check togglesidebar.store.js
-    the ui is ready -->
     <Sidebar />
     <main class="text-primary mb-[5rem]">
       <loader v-show="loaderStore.loading"></loader>

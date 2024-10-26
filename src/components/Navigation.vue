@@ -30,8 +30,9 @@ function logoLoaded(){
 </script>
 
 <template>
+  <!-- bg-[#00000080] -->
   <div
-    class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-[500]"
+    class="h-[9.3rem] bg-[#00000080] border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-[500]"
   >
     <Container>
       <nav class="px-12 max-medium:px-2 py-5 flex items-center justify-between ">

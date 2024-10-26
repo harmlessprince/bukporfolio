@@ -13,10 +13,10 @@ onBeforeMount(() => {
 <template>
   <section class="">
     <Container>
-      <div class="text-center pt-[3rem] ">
-        <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem] max-medium:mb-0">Books</h3>
-        <h2 class="font-header text-header max-medium:text-[3.0rem] text-secondary mb-[3rem]">
-          Personal Development Books
+      <div class="text-center">
+        <!-- <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem] max-medium:mb-0">Books</h3> -->
+        <h2 class="font-header text-[3.2rem] max-medium:text-[3.0rem] text-[#000000] leading-[4.2rem] mb-[4rem]">
+          Books by Bright UK
         </h2>
         <div
           class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem]"
@@ -31,6 +31,13 @@ onBeforeMount(() => {
             :key="index"
           />
         </div>
+      </div>
+      <div class="font-[600] text-[2rem] leading-[2rem] text-center underline">
+        <RouterLink
+        class="inline"
+        :to="{name: 'books'}">
+        View all books
+    </RouterLink>
       </div>
     </Container>
   </section>

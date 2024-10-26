@@ -1,5 +1,4 @@
 <script setup>
-
 import Niyi from "@/assets/niyi.png";
 import CommentIcon1 from "@/assets/commentIcon1.svg";
 import Subheading from "@/components/SubHeading.vue";
