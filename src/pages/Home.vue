@@ -2,7 +2,7 @@
 import {onMounted} from 'vue'
 import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import RightArrow from '@/assets/rightArrow.svg';
+import MeetUk from '@/assets/meetUk.png';
 import Container from "@/components/Container.vue";
 import HomeHeroSection from "@/components/HomeHeroSection.vue";
 import Brands from "@/components/Brands.vue";
@@ -11,14 +11,65 @@ import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
 import Testimonies from "@/components/Testimonies.vue";
 import Activities from "@/components/Activities.vue";
+import Facebook from '@/assets/facebook.svg';
+import Twitter from '@/assets/twitter.svg';
+import Youtube from '@/assets/youtube.svg';
+import LinkedIn from '@/assets/linkedIn.svg';
+import Instagram from '@/assets/instagram.svg';
+import Role1 from '@/assets/role1.png';
+import Role2 from '@/assets/role2.png';
+import Role3 from '@/assets/role3.png';
+import Role4 from '@/assets/role4.png';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
+onMounted(() => {
+  gsap.fromTo(".whoIamParagraphMobile",
+        { 
+          y: 50,
+         }, 
+        {
+          y: 0, 
+          duration: 0.5, 
+          scrollTrigger: {
+          trigger: ".whoIamParagraphMobile",
+          start: "top 85%"
+        },
+        }); 
+
+  gsap.fromTo(".whoIamParagraph",
+  { 
+    x: 100,
+    }, 
+  {
+    x: 0, 
+    duration: 1, 
+    scrollTrigger: {
+    trigger: ".whoIamParagraph",
+  },
+  }); 
+
+  gsap.fromTo(".meetUkImage",
+  { 
+    scale: 1.5,
+    }, 
+  {
+  scale: 1, 
+    duration: 2, 
+    scrollTrigger: {
+    trigger: ".meetUkImage",
+    start: "top 85%"
+  },
+  }); 
+
+
+});
+
 </script>
 
 <template>
-  <div class="text-primary relative isolate space-y-40">
+  <div class="relative isolate space-y-[4.4em]">
     <div>
       <!-- hero/banner starts here -->
       <HomeHeroSection/>
@@ -26,11 +77,53 @@ gsap.registerPlugin(ScrollTrigger);
       <Brands/>
     </div>
 
-
     <!-- meet bright uk -->
-    <section>
-      <Container class="mt-[3.2rem] mb-[2.6rem]">
-        <div class="flex max-sm:flex-col items-center bg-white gap-[2.3rem]">
+    <section class="w-full bg-[#282309]">
+      <Container>
+      <div class="w-full flex max-sm:flex-col items-start gap-[3em]">
+        <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[49rem] relative meetUkImage">
+          <img :src="MeetUk"
+               class="w-full h-full relative" alt="brand"/>
+        </div>
+
+        <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] mt-[4em] max-small:mt-[1.6rem] max-medium:whoIamParagraphMobile medium:whoIamParagraph">
+          <h1 class="font-[700] text-[3.2rem] leading-[4.2rem]">Meet Bright UK</h1>
+          <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.6rem]">
+            <p>
+            Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, Author, 
+            Digital Entrepreneur, Psychologist, and Coach. He is renowned for his ability to ignite mental 
+            transformations using his groundbreaking #SixthSense framework.
+          </p>
+            <p>
+            Having earned a bachelor's degree in Electrical & Electronics Engineering from one of Africa's top Universities
+           of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+          </p>
+          </div>
+
+          <div class=" flex flex-row w-full justify-left items-center my-sm space-x-[1.4rem] mt-[4rem]">
+            <a href="https://x.com/brightostle" target="_blank" rel="noopener noreferrer">
+              <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons" />
+            </a>
+            <a href="https://www.youtube.com/@brightuk_" target="_blank" rel="noopener noreferrer">
+              <img :src="Youtube" class="w-[20px] h-[20px]" alt="icons" />
+            </a>
+            <a href="https://www.linkedin.com/in/brightuk/" target="_blank" rel="noopener noreferrer">
+              <img :src="LinkedIn" class="w-[20px] h-[20px]" alt="icons" />
+            </a>
+            <a href="https://www.facebook.com/brightukwenga/" target="_blank" rel="noopener noreferrer">
+              <img :src="Facebook" class="w-[20px] h-[20px]" alt="icons" />
+            </a>
+            <a href="https://www.instagram.com/bright.uk/" target="_blank" rel="noopener noreferrer">
+              <img :src="Instagram" class="w-[20px] h-[20px]" alt="icons" />
+            </a>       
+          </div>
+      
+        </div>
+      </div>
+
+
+      <!-- <Container class="mt-[3.2rem] mb-[2.6rem]">
+        <div class="flex max-sm:flex-col items-start bg-white gap-[3rem]">
           <div class="w-[56.1rem] max-sm:hidden max-sm:w-full h-[54.5rem] relative imgContainer meetBrightBoxImage">
             <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
                  class="w-full h-full relative" alt="brand"/>
@@ -42,13 +135,13 @@ gsap.registerPlugin(ScrollTrigger);
               />
             </div>
           </div>
-          <div class="w-[39.2rem] max-sm:w-full px-6 meetBrightBoxText">
+          <div class="w-[39.2rem] max-sm:w-full meetBrightBoxText">
             <h3
-                class="font-lg text-basic text-primary font-primary mb-[0.7rem] max-sm:mb-0"
+              class="font-lg text-basic text-primaryColor font-primary mb-[0.7rem] max-sm:mb-0"
             >
               Who I am
             </h3>
-            <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
+            <h2 class="whoIamHeader font-header text-header max-sm:text-[3.0rem] text-secondary mb-[0.7rem]">
               Meet Bright UK
             </h2>
             <div class="font-normal text-regular text-basic my-[1rem] text-justify space-y-2">
@@ -80,15 +173,16 @@ gsap.registerPlugin(ScrollTrigger);
               <img :src="RightArrow" class="w-[12px] h-[9px]" alt="arrow"/>
             </button>
           </div>
-        </div>
-      </Container>
+        </div> 
+      </Container> -->
+    </Container>
     </section>
     <!-- different roles of bright uk -->
     <Roles/>
     <!-- personal development section -->
     <Books/>
     <!-- gallery -->
-    <section class="bg-basic text-center pt-[3rem]">
+    <!-- <section class="bg-basic text-center pt-[3rem]">
       <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
       <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary">
         Bright UK Activities
@@ -98,7 +192,7 @@ gsap.registerPlugin(ScrollTrigger);
           <Activities/>
         </Container>
       </div>
-    </section>
+    </section> -->
     <!-- end of gallery -->
 
     <!-- start of testimonies -->

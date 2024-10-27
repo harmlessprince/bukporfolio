@@ -14,7 +14,7 @@ onBeforeMount(() => {
   <section class="">
     <Container>
       <div class="text-center pt-[3rem] ">
-        <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem] max-medium:mb-0">Books</h3>
+        <!-- <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem] max-medium:mb-0">Books</h3> -->
         <h2 class="font-header text-header max-medium:text-[3.0rem] text-secondary mb-[3rem]">
           Personal Development Books
         </h2>
