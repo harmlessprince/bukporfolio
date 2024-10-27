@@ -3,6 +3,7 @@ import {createMemoryHistory, createRouter, createWebHistory} from 'vue-router'
 import Home from "@/pages/Home.vue";
 import Speaker from "@/pages/About/Speaker.vue";
 import Interview from "@/pages/About/interviews.vue";
+import Podcast from "@/pages/About/Podcast.vue";
 import Author from "@/pages/About/Author.vue";
 import Trainer from "@/pages/About/Trainer.vue";
 import Entrepreneur from "@/pages/About/Entrepreneur.vue";
@@ -20,6 +21,7 @@ const routes = [
     {path: '/', component: Home, name: 'home', meta: {title: 'Bright UK Portfolio -  Home'}},
     {path: '/about/speaker', component: Speaker, name: 'speaker', meta: {title: 'Bright-UK-Speaker'}},
     {path: '/about/interviews', component: Interview, name: 'interview', meta: {title: 'Bright-UK-Interview'}},
+    {path: '/about/podcast', component: Podcast, name: 'podcast', meta: {title: 'Bright-UK-Podcast'}},
     {path: '/about/author', component: Author, name: 'author', meta: {title: 'Bright-UK-Author'}},
     {path: '/about/trainer', component: Trainer, name: 'trainer', meta: {title: 'Bright-UK-Author'}},
     {path: '/about/coach', component: Trainer, name: 'coach', meta: {title: 'Bright-UK-Coach'}},

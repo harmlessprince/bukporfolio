@@ -61,6 +61,7 @@ function logoLoaded(){
                <RouterLink :class='isRouteActive("", "/about/speaker") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'speaker'}">Speaker</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/trainer") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'trainer'}">Trainer</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/coach") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'coach'}">Coach</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/interviews") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'interview'}">Interview</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/entrepreneur") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'entrepreneur'}">Entrepreneur</RouterLink>
               </div>
             </div>
