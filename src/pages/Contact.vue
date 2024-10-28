@@ -122,7 +122,8 @@ async function sendEmail(values, {resetForm}) {
               </div>
               <div>
               <h1 class="text-[2.4rem] leading-[3rem] font-[700]">Address</h1>
-              <div class="text-[2rem] leading-[3.2rem] font-[400]">The Ridge Terrace, off kusenla Road lekki lagos</div>
+              <div class="text-[2rem] leading-[3.2rem] font-[400]">BrownStone Estate<br>
+                Lekki, Lagos</div>
             </div>
             </div>
 
