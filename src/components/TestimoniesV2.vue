@@ -27,7 +27,7 @@ const settings = {
       snapAlign: 'center',
     },
     700: {
-      itemsToShow: 1,
+      itemsToShow: 2,
       snapAlign: 'center',
     },
     // 1024 and up
