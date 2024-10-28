@@ -46,7 +46,7 @@ onBeforeMount(() => {
           </Slide>
 
           <template #addons>
-            <Navigation />
+<!--            <Navigation />-->
           </template>
         </Carousel>
       </div>
