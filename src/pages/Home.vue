@@ -26,54 +26,54 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   gsap.fromTo(".whoIamParagraph",
-      {
-        y: 100,
-      },
-      {
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".whoIamParagraph",
-          start: "top 85%"
-        },
-      });
+  { 
+    y: 100,
+    }, 
+  {
+    y: 0, 
+    duration: 1, 
+    scrollTrigger: {
+    trigger: ".whoIamParagraph",
+     start: "top 85%"
+  },
+  }); 
 
   let mm = gsap.matchMedia();
 
 // add a media query. When it matches, the associated function will run
-  mm.add("(min-width: 720px)", () => {
-    // this setup code only runs when viewport is at least 800px wide
-    gsap.fromTo(".meetUkImage",
-        {
-          scale: 1.5,
-        },
-        {
-          scale: 1,
-          duration: 2,
-          scrollTrigger: {
-            trigger: ".meetUkImage",
-            start: "top 85%"
-          },
-        });
+mm.add("(min-width: 720px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
+  gsap.fromTo(".meetUkImage",
+  { 
+    scale: 1.5,
+    }, 
+  {
+  scale: 1, 
+    duration: 2, 
+    scrollTrigger: {
+    trigger: ".meetUkImage",
+    start: "top 85%"
+  },
+  }); 
 
-  });
+});
 
-  mm.add("(max-width: 720px)", () => {
-    // this setup code only runs when viewport is at least 800px wide
-    gsap.fromTo(".meetUkImage",
-        {
-          y: 100,
-        },
-        {
-          y: 0,
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: ".meetUkImage",
-            start: "top 80%"
-          },
-        });
+mm.add("(max-width: 720px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
+  gsap.fromTo(".meetUkImage",
+  { 
+    y: 100,
+    }, 
+  {
+  y: 0, 
+    duration: 0.5, 
+    scrollTrigger: {
+    trigger: ".meetUkImage",
+    start: "top 80%"
+  },
+  }); 
 
-  });
+});
 
 });
 
@@ -81,16 +81,17 @@ onMounted(() => {
 
 <template>
   <div class="relative isolate space-y-[4.4em]">
-    <section>
+    <div>
+      <!-- hero/banner starts here -->
       <HomeHeroSection/>
-    </section>
-    <section>
+      <!-- brands touched starts here -->
       <Brands/>
-    </section>
+    </div>
 
     <!-- meet bright uk -->
-    <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem]">
-      <div class="w-full flex max-sm:flex-col items-start gap-[3em]">
+    <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem]"> 
+      <div class="max-w-[111rem]">
+      <div class="w-full flex max-sm:flex-col items-start gap-[3rem]">
         <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[40rem] relative meetUkImage">
           <img :src="MeetUk"
                class="w-full h-full relative" alt="brand"/>
@@ -100,35 +101,34 @@ onMounted(() => {
           <h1 class="font-[700] text-[3.2rem] leading-[4.2rem]">Meet Bright UK</h1>
           <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.2rem]">
             <p>
-              Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, Author,
-              Digital Entrepreneur, Psychologist, and Coach. He is renowned for his ability to ignite mental
-              transformations using his groundbreaking #SixthSense framework.
-            </p>
+            Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, Author, 
+            Digital Entrepreneur, Psychologist, and Coach. He is renowned for his ability to ignite mental 
+            transformations using his groundbreaking #SixthSense framework.
+          </p>
             <p>
-              Having earned a bachelor's degree in Electrical & Electronics Engineering from one of Africa's top
-              Universities
-              of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
-            </p>
+            Having earned a bachelor's degree in Electrical & Electronics Engineering from one of Africa's top Universities
+           of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+          </p>
           </div>
 
           <div class=" flex flex-row w-full justify-left items-center my-sm space-x-[1.4rem] mt-[4rem]">
             <a href="https://x.com/brightostle" target="_blank" rel="noopener noreferrer">
-              <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons"/>
+              <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons" />
             </a>
             <a href="https://www.youtube.com/@brightuk_" target="_blank" rel="noopener noreferrer">
-              <img :src="Youtube" class="w-[20px] h-[20px]" alt="icons"/>
+              <img :src="Youtube" class="w-[20px] h-[20px]" alt="icons" />
             </a>
             <a href="https://www.linkedin.com/in/brightuk/" target="_blank" rel="noopener noreferrer">
-              <img :src="LinkedIn" class="w-[20px] h-[20px]" alt="icons"/>
+              <img :src="LinkedIn" class="w-[20px] h-[20px]" alt="icons" />
             </a>
             <a href="https://www.facebook.com/brightukwenga/" target="_blank" rel="noopener noreferrer">
-              <img :src="Facebook" class="w-[20px] h-[20px]" alt="icons"/>
+              <img :src="Facebook" class="w-[20px] h-[20px]" alt="icons" />
             </a>
             <a href="https://www.instagram.com/bright.uk/" target="_blank" rel="noopener noreferrer">
-              <img :src="Instagram" class="w-[20px] h-[20px]" alt="icons"/>
-            </a>
+              <img :src="Instagram" class="w-[20px] h-[20px]" alt="icons" />
+            </a>       
           </div>
-
+      
         </div>
       </div>
 
@@ -186,6 +186,7 @@ onMounted(() => {
           </div>
         </div> 
       </Container> -->
+      </div>
     </section>
     <!-- different roles of bright uk -->
     <Roles/>

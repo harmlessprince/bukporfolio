@@ -32,7 +32,7 @@ function logoLoaded(){
 <template>
   <!-- bg-[#00000080] -->
   <div
-    class="h-[9.3rem] bg-[#000000A6] border-b-[1.5px] border-mainBorder flex items-center fixed top-0 z-[500] w-full max-w-[155rem]"
+    class="h-[9.3rem] bg-[#000000A6] border-b-[1.5px] border-mainBorder flex items-center fixed top-0 z-[500] w-full"
   >
     <Container>
       <nav class="px-12 max-medium:px-2 py-5 flex items-center justify-between ">
