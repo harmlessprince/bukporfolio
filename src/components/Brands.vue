@@ -27,10 +27,10 @@ const settings = ref({
 </script>
 
 <template>
-  <section class="bg-[#dadada]">
+  <section class="bg-[#fff]">
     <Container>
       <div
-        class="w-full text-center pt-[1.4rem] pb-[5rem] overflow-x-scroll no-scrollbar"
+        class="w-full text-center pt-[1.4rem] overflow-x-scroll no-scrollbar"
       >
         <h3 class="text-[#727272] text-[2.4rem] font-lg mb-[2.5rem]">
           Some Brands Touched

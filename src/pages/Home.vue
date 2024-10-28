@@ -25,31 +25,24 @@ import Role4 from '@/assets/role4.png';
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  gsap.fromTo(".whoIamParagraphMobile",
-        { 
-          y: 50,
-         }, 
-        {
-          y: 0, 
-          duration: 0.5, 
-          scrollTrigger: {
-          trigger: ".whoIamParagraphMobile",
-          start: "top 85%"
-        },
-        }); 
-
   gsap.fromTo(".whoIamParagraph",
   { 
-    x: 100,
+    y: 100,
     }, 
   {
-    x: 0, 
+    y: 0, 
     duration: 1, 
     scrollTrigger: {
     trigger: ".whoIamParagraph",
+     start: "top 85%"
   },
   }); 
 
+  let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 720px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
   gsap.fromTo(".meetUkImage",
   { 
     scale: 1.5,
@@ -63,6 +56,24 @@ onMounted(() => {
   },
   }); 
 
+});
+
+mm.add("(max-width: 720px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
+  gsap.fromTo(".meetUkImage",
+  { 
+    y: 100,
+    }, 
+  {
+  y: 0, 
+    duration: 0.5, 
+    scrollTrigger: {
+    trigger: ".meetUkImage",
+    start: "top 80%"
+  },
+  }); 
+
+});
 
 });
 
@@ -78,17 +89,16 @@ onMounted(() => {
     </div>
 
     <!-- meet bright uk -->
-    <section class="w-full bg-[#282309]">
-      <Container>
+    <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem]"> 
       <div class="w-full flex max-sm:flex-col items-start gap-[3em]">
-        <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[49rem] relative meetUkImage">
+        <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[40rem] relative meetUkImage">
           <img :src="MeetUk"
                class="w-full h-full relative" alt="brand"/>
         </div>
 
-        <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] mt-[4em] max-small:mt-[1.6rem] max-medium:whoIamParagraphMobile medium:whoIamParagraph">
+        <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] mt-[4rem] max-small:mt-[0.1rem] whoIamParagraph">
           <h1 class="font-[700] text-[3.2rem] leading-[4.2rem]">Meet Bright UK</h1>
-          <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.6rem]">
+          <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.2rem]">
             <p>
             Bright 'UK' Ukwenga is a dynamic professional wearing multiple hats as a Speaker, Author, 
             Digital Entrepreneur, Psychologist, and Coach. He is renowned for his ability to ignite mental 
@@ -175,7 +185,6 @@ onMounted(() => {
           </div>
         </div> 
       </Container> -->
-    </Container>
     </section>
     <!-- different roles of bright uk -->
     <Roles/>

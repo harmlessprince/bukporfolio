@@ -162,4 +162,10 @@ const resetQuotesCount = () => {
   background-size: 100% 100vh;
   background-repeat: no-repeat;
 }
+
+@media only screen and (max-width: 600px) {
+  .homeHero{
+  background-image: url('@/assets/homeBannerBackground.png');
+}
+}
 </style>
