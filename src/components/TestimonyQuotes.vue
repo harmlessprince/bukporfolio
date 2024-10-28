@@ -36,7 +36,7 @@ defineProps({
     <q
         class="font-medium text-[16px] leading-[2.4rem] text-[#000000] text-justify"
     >
-      {{ quote.slice(0, 200) }}
+      {{ quote.substring(0, 300) }}
     </q>
 
     <div class="flex flex-row justify-between items-center">

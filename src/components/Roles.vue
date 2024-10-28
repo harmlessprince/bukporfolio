@@ -38,11 +38,11 @@ function getRoleLink(name) {
 <!--          </div>-->
 <!--        </div>-->
 
-        <div class="overflow-hidden w-full max-sm:mx-auto relative group cursor-pointer h-[371px] bg-cover bg-center bg-no-repeat"
+        <div class="overflow-hidden w-full max-sm:mx-auto relative group cursor-pointer h-[371px] bg-cover bg-top bg-no-repeat"
              v-for="(role, index) in store.roles" :key="index"
              @click="getRoleLink(role.name.toLowerCase())"
         >
-          <div class="absolute inset-0 grayscale bg-cover bg-center opacity-100 z-0" :style="{ backgroundImage: `url(${role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'})`}"></div>
+          <div class="absolute inset-0 grayscale bg-cover bg-top opacity-100 z-0" :style="{ backgroundImage: `url(${role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'})`}"></div>
           <div class="">
 <!--            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 transform group-hover:-translate-x-10" :style="{ backgroundImage: `url(${role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'})` }"></div>-->
             <!-- Overlay for text with sliding effect -->
