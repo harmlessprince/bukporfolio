@@ -8,22 +8,25 @@ const brandStore = useBrandStore()
 onBeforeMount(() => {
   brandStore.getBrands();
 });
-const breakpoints = ref({
-  // 700px and up
-  700: {
-    itemsToShow: 3.5,
-    snapAlign: 'center',
-  },
-  // 1024 and up
-  1024: {
-    itemsToShow: 5,
-    snapAlign: 'start',
-  },
-});
-const settings = ref({
-  itemsToShow: 5,
-  snapAlign: 'start',
-})
+const settings = {
+  wrapAround: true,
+  breakpoints :{
+    // 700px and up
+    300: {
+      itemsToShow: 2,
+      snapAlign: 'center',
+    },
+    700: {
+      itemsToShow: 3,
+      snapAlign: 'center',
+    },
+    // 1024 and up
+    1024: {
+      itemsToShow: 5,
+      snapAlign: 'start',
+    },
+  }
+}
 </script>
 
 <template>

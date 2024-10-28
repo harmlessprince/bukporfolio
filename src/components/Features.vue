@@ -4,22 +4,26 @@ import {useFeaturesStore} from "@/store/features.store.js";
 import {onBeforeMount, onMounted, ref} from "vue";
 import Container from "@/components/Container.vue";
 
-const breakpoints = ref({
-  // 700px and up
-  700: {
-    itemsToShow: 3.5,
-    snapAlign: 'center',
-  },
-  // 1024 and up
-  1024: {
-    itemsToShow: 5,
-    snapAlign: 'start',
-  },
-});
-const settings = ref({
-  itemsToShow: 5,
-  snapAlign: 'center',
-})
+const settings = {
+  snapAlign: 'start',
+  wrapAround: true,
+  breakpoints :{
+    // 700px and up
+    300: {
+      itemsToShow: 2,
+      snapAlign: 'center',
+    },
+    700: {
+      itemsToShow: 3,
+      snapAlign: 'center',
+    },
+    // 1024 and up
+    1024: {
+      itemsToShow: 5,
+      snapAlign: 'start',
+    },
+  }
+}
 const store = useFeaturesStore()
 onBeforeMount(() => {
   store.getFeatures();
