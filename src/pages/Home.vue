@@ -89,7 +89,7 @@ onMounted(() => {
     <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem] mb-[4.4rem]">
       <div class="max-w-[111rem] mx-auto">
         <div class="w-full flex max-sm:flex-col items-start gap-[3rem]">
-          <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[40rem] relative meetUkImage">
+          <div class="w-[53.1em] max-sm:w-full  relative meetUkImage">
             <img :src="MeetUk"
                  class="w-full h-full relative" alt="brand"/>
           </div>
