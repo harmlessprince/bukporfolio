@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="page-container max-w-[140rem] w-full mx-auto">
+  <div class="page-container max-w-[155rem] w-full mx-auto">
     <Navigation/>
     <!-- having issues with integrating side bar. 
      check togglesidebar.store.js
