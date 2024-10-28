@@ -10,7 +10,7 @@ export const useRoleStore = defineStore("roleStore", () => {
     async function getRoles() {
         const rolesRef = collection(database, "roles");
         const querySnapshot = await getDocs(rolesRef);
-        const items = [];
+        let items = [];
         querySnapshot.forEach((doc) => {
             // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
@@ -21,11 +21,10 @@ export const useRoleStore = defineStore("roleStore", () => {
                     summary: data.summary,
                     description: data.description,
                     image: data.image,
+                    position: data.position,
                 });
             }
-
             items.sort((a, b) => a?.position - b?.position);
-
         });
         roles.value = items;
     }

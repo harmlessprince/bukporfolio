@@ -22,7 +22,7 @@ const breakpoints = ref({
 });
 const settings = ref({
   itemsToShow: 5,
-  snapAlign: 'center',
+  snapAlign: 'start',
 })
 </script>
 
@@ -32,24 +32,21 @@ const settings = ref({
       <div
         class="w-full text-center pt-[1.4rem] overflow-x-scroll no-scrollbar"
       >
-        <h3 class="text-[#727272] text-[2.4rem] font-lg mb-[2.5rem]">
-          Some Brands Touched
-        </h3>
         <div
           class="flex flex-row items-center gap-[4.6rem] justify-start overflow-x-scroll no-scrollbar"
         >
           <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
-            <Slide v-for="(slide, index) in brandStore.brands" :key="index" >
+            <Slide v-for="(slide, index) in brandStore.brands" :key="index">
               <img
                   :src="slide.image"
-                  class="w-[17.1rem] max-sm:w-[16rem] h-[10rem] mr-[2rem] max-small:mr-0"
+                  class=""
                   :alt="slide.name"
                   :key="index"
               />
             </Slide>
 
             <template #addons>
-              <Navigation />
+<!--              <Navigation />-->
             </template>
           </Carousel>
         </div>
@@ -58,4 +55,8 @@ const settings = ref({
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.carousel__slide{
+  margin-right: 20px;
+}
+</style>

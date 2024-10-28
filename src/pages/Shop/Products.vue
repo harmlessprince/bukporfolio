@@ -9,7 +9,7 @@ import HeroSection from "@/components/HeroSection.vue";
       page="Shop"
   />
   <section class="mb-[25rem]">
-    <Books/>
+    <Books :shouldSlice="false"/>
   </section>
 </template>
 

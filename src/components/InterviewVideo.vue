@@ -10,14 +10,13 @@ const videoArray = [
   "https://res.cloudinary.com/ibreathcode/video/upload/v1729166974/bukportfolio/videos/vid5_kc6oe2.mp4",
   "https://res.cloudinary.com/ibreathcode/video/upload/v1729167003/bukportfolio/videos/vid6_tpj8qy.mp4",
   "https://res.cloudinary.com/ibreathcode/video/upload/v1729166981/bukportfolio/videos/vid7_zzfvnw.mp4",
-  "https://res.cloudinary.com/ibreathcode/video/upload/v1729166985/bukportfolio/videos/vid8_hwn8ut.mp4",
 ]
 import {VideoPlayer} from '@videojs-player/vue'
 import 'video.js/dist/video-js.css'
 import Pagination from "@/components/Pagination.vue";
 
 const currentPage = ref(1);
-const perPage = 4;
+const perPage = 6;
 const paginatedVideos = computed(() => {
   const start = (currentPage.value - 1) * perPage;
   const end = start + perPage;
@@ -56,21 +55,6 @@ function updatePage(page) {
         :perPage="perPage"
         @updatePage="updatePage"
     />
-    <!--    <div class="flex flex-row items-center justify-center text-center space-x-2 text-secondary mt-[2.4rem]">-->
-    <!--      <button @click="previousPage()" :disabled="currentPage === 1" class="pagination_button"><<</button>-->
-
-    <!--      <button-->
-    <!--          v-for="page in totalPages"-->
-    <!--          :key="page"-->
-    <!--          @click="setPage(page)"-->
-    <!--          :class="currentPage === page ? 'active' : ''"-->
-    <!--          class="pagination_button"-->
-    <!--      >-->
-    <!--        {{ page }}-->
-    <!--      </button>-->
-
-    <!--      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>-->
-    <!--    </div>-->
   </div>
 </template>
 

@@ -20,21 +20,33 @@ const sendingMessage = ref(false);
 const selectedService = ref('');
 const services = ref([
   {
-    name: "Speaker",
-    value: "speaker",
+    name: "Keynote",
+    value: "keynote",
   },
   {
-    name: "Personal Coaching/Training Session",
-    value: "personalTrainingCoachingSession",
+    name: "Masterclass",
+    value: "masterclass",
   },
   {
-    name: "Group Coaching/Training Session",
-    value: "groupTrainingCoachingSession",
+    name: "Coaching",
+    value: "coaching",
   },
   {
-    name: "Others",
-    value: "other",
-  }
+    name: "Discussion Panel",
+    value: "discussion_panel",
+  },
+  {
+    name: "Jury Panel",
+    value: "jury_panel",
+  },
+  {
+    name: "Masterclass",
+    value: "masterclass",
+  },
+  {
+    name: "Cooperate Event Host",
+    value: "cooperate_event_host",
+  },
 ])
 
 const validationSchema = toTypedSchema(

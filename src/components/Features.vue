@@ -39,7 +39,7 @@ onBeforeMount(() => {
           <Slide v-for="(slide, index) in store.features" :key="index" >
             <img
                 :src="slide.image"
-                class="w-[17.1rem] max-sm:w-[16rem] h-[6.5rem] mr-[2rem] max-small:mr-0"
+                class=""
                 :alt="slide.name"
                 :key="index"
             />
@@ -54,4 +54,8 @@ onBeforeMount(() => {
   </Container>
 </template>
 
-<style scoped></style>
+<style scoped>
+.carousel__slide{
+  margin-right: 20px;
+}
+</style>
