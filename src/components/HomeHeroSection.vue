@@ -96,7 +96,7 @@ const resetQuotesCount = () => {
 </script>
 
 <template>
-  <section class="bg-secondary max-sm:py-[3rem] h-[100vh] relative homeHero flex items-center text-center">
+  <section class="bg-secondary max-sm:py-[3rem] lg:h-[631px] relative homeHero flex items-center text-center">
      <Container class="w-[95rem] text-center">  
       <div class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
         <span class="text-[#C7AE2E]">CHANGE YOUR THINKING </span> 
@@ -159,7 +159,7 @@ const resetQuotesCount = () => {
 <style scoped>
 .homeHero{
   background-image: url('@/assets/homeBannerBackground.png');
-  background-size: 100% 100vh;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
