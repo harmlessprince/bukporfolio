@@ -126,7 +126,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .homeHero {
   background-image: url('@/assets/homeBannerBackground.png');
-  background-size:  100% 631px;
+  background-size:  100% 631px; /* w x h */
   background-repeat: no-repeat;
 }
 

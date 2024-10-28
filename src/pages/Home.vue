@@ -173,7 +173,7 @@ onMounted(() => {
 <!--        </div>-->
 <!--      </Container>-->
 <!--    </section>-->
-    <section class="py-[5rem] w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
+    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
       </Container>

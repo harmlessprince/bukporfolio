@@ -8,7 +8,7 @@ const props = defineProps(['title', "image", "price", "description", "id"])
 
 <template>
   <div
-      class="rounded-[10px] border border-[#BEBEBE] p-[1rem] text-left mb-[2rem] flex flex-col justify-center gap-[1rem] "
+      class="rounded-[10px] border border-[#BEBEBE] p-[1rem] text-left flex flex-col justify-center gap-[1rem] "
   >
     <div class="w-full flex justify-center items-center">
       <div class="w-[291px] h-[247px]">
