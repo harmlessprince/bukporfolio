@@ -90,7 +90,8 @@ mm.add("(max-width: 720px)", () => {
 
     <!-- meet bright uk -->
     <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem]"> 
-      <div class="w-full flex max-sm:flex-col items-start gap-[3em]">
+      <div class="max-w-[111rem]">
+      <div class="w-full flex max-sm:flex-col items-start gap-[3rem]">
         <div class="w-[53.1em] max-sm:w-full h-[63rem] max-sm:h-[40rem] relative meetUkImage">
           <img :src="MeetUk"
                class="w-full h-full relative" alt="brand"/>
@@ -185,6 +186,7 @@ mm.add("(max-width: 720px)", () => {
           </div>
         </div> 
       </Container> -->
+      </div>
     </section>
     <!-- different roles of bright uk -->
     <Roles/>
