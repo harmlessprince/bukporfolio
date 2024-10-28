@@ -30,8 +30,9 @@ function logoLoaded(){
 </script>
 
 <template>
+  <!-- bg-[#00000080] -->
   <div
-    class="h-[9.3rem] bg-secondary border-b-[1.5px] border-mainBorder flex items-center fixed top-0 w-full z-[500]"
+    class="h-[9.3rem] bg-[#000000A6] border-b-[1.5px] border-mainBorder flex items-center fixed top-0 z-[500] w-full max-w-[155rem]"
   >
     <Container>
       <nav class="px-12 max-medium:px-2 py-5 flex items-center justify-between ">
@@ -60,6 +61,7 @@ function logoLoaded(){
                <RouterLink :class='isRouteActive("", "/about/speaker") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'speaker'}">Speaker</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/trainer") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'trainer'}">Trainer</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/coach") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'coach'}">Coach</RouterLink>
+                <RouterLink :class='isRouteActive("", "/about/interviews") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'interview'}">Interview</RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/entrepreneur") ? "bg-primaryColor" : "bg-transparent"' :to="{name: 'entrepreneur'}">Entrepreneur</RouterLink>
               </div>
             </div>

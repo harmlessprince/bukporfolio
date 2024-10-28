@@ -1,5 +1,4 @@
 <script setup>
-
 import {useRoleStore} from "@/store/roles.store.js";
 import {onBeforeMount, onMounted, watch} from "vue";
 import Container from "@/components/Container.vue";
@@ -25,10 +24,10 @@ function getRoleLink(name) {
 </script>
 
 <template>
-  <section class="bg-[#DADADA]">
+  <section class="bg-[#DADADA] py-[4.4em]">
     <Container class="w-full">
       <div
-      class="grid grid-cols-[repeat(auto-fill,minmax(26.6rem,1fr))] max-small:grid-cols-[repeat(auto-fill,minmax(35rem,1fr))]
+      class="grid grid-cols-[repeat(auto-fill,minmax(26.6rem,1fr))] max-small:grid-cols-[repeat(auto-fill,minmax(100%,1fr))]
             small:max-medium:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]
       gap-[1.2rem] gap-y-[2rem]">
         <div class="overflow-hidden w-full max-sm:mx-auto relative group cursor-pointer h-[371px] bg-cover bg-center bg-no-repeat"

@@ -98,16 +98,54 @@ async function sendEmail(values, {resetForm}) {
 
     <Container>
       <div class="mt-[3.4rem] text-center">
-        <Subheading title="Contact"/>
-        <Heading title="Get in Touch with Bright UK"/>
+        <Heading title="Contact Bright UK"/>
       </div>
+
+      <div
+            class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#414141] mt-[4.8rem]">
+            
+            <div class="min-h-[11.5rem] max-medium:min-h-full rounded-[8px] p-[1.5rem] bg-[#F8EFC0] flex gap-[1rem]">
+              <div class="bg-[#282309] min-w-[6.3rem] h-[6.6rem] flex items-center justify-center rounded-[8px]">
+                <i class="material-icons text-[2.4rem] text-[#fff]">location_on</i>
+              </div>
+              <div>
+              <h1 class="text-[2.4rem] leading-[3rem] font-[700]">Address</h1>
+              <div class="text-[2rem] leading-[3.2rem] font-[400]">The Ridge Terrace, off kusenla Road lekki lagos</div>
+            </div>
+            </div>
+
+          <a href="tel:+2348135273602">
+          <div class=" min-h-[11.5rem] max-medium:min-h-full rounded-[8px] p-[1.5rem] bg-[#F8EFC0] flex gap-[1rem]">
+            <div class="bg-[#282309] min-w-[6.3rem] h-[6.6rem] flex items-center justify-center rounded-[8px]">
+              <i class="material-icons text-[2.4rem] text-[#fff]">call</i>
+            </div>
+            <div>
+            <h1 class="text-[2.4rem] leading-[3rem] font-[700]">Phone number</h1>
+            <div class="text-[2rem] leading-[3.2rem] font-[400]">+2348135273602</div>
+          </div>
+          </div>
+          </a>
+
+          <a href="mailto:iambrightuk@gmail.com">
+            <div class=" min-h-[11.5rem] max-medium:min-h-full rounded-[8px] p-[1.5rem] bg-[#F8EFC0] flex gap-[1rem]">
+              <div class="bg-[#282309] min-w-[6.3rem] h-[6.6rem] flex items-center justify-center rounded-[8px]">
+                <i class="material-icons text-[2.4rem] text-[#fff]">call</i>
+              </div>
+              <div>
+              <h1 class="text-[2.4rem] leading-[3rem] font-[700]">Email</h1>
+              <div class="text-[2rem] leading-[3.2rem] font-[400]">iambrightuk@gmail.com</div>
+            </div>
+            </div>
+            </a>
+        </div>
 
       <!-- form section -->
       <section class="mt-[2rem] mb-[5rem]">
         <Form class="font-[500] text-[2rem] max-sm:text-[1.6rem] leading-[4.2rem] text-secondaryColor contact_form" @submit="sendEmail"
               :validation-schema="validationSchema">
-          <div class="space-y-[2rem]">
+          <div class="">
            <div class="grid grid-cols-2 max-medium:grid-cols-1 gap-[2.5rem]">
+            <div class="w-full space-y-[2rem]">
             <div class="w-full">
               <label class="">Full Name</label>
               <ContactFormInput name="fullName" label="Full Name" placeholder="John Doe"/>
@@ -118,8 +156,6 @@ async function sendEmail(values, {resetForm}) {
               <ContactFormInput name="email" label="Email Address" placeholder="johndoes@example.com" type="email"/>
               <ErrorMessage name="email" class="text-red-500"/>
             </div>
-          </div>
-          <div class="grid grid-cols-2 max-medium:grid-cols-1 gap-[2rem]">
             <div class="w-full">
               <label class="">Phone Number</label>
               <ContactFormInput name="phoneNumber" label="Full Name" placeholder="John Doe"/>
@@ -130,8 +166,6 @@ async function sendEmail(values, {resetForm}) {
               <ContactFormInput name="companyName" label="Company Name" placeholder="John Doe Limited"/>
               <ErrorMessage name="companyName" class="text-red-500"/>
             </div>
-          </div>
-          <div class="grid grid-cols-2 gap-[2rem] max-medium:grid-cols-1 items-end">
             <div class="w-full">
               <label class="">Country</label>
               <ContactFormInput name="country" label="Country" placeholder="Nigeria"/>
@@ -149,13 +183,14 @@ async function sendEmail(values, {resetForm}) {
               <ErrorMessage name="service" class="text-red-500"/>
             </div>
           </div>
-            <div class="w-full">
-              <label class="">Message</label>
-              <Field name="message" as="textarea" rows="12" key="message"/>
-              <ErrorMessage name="message" class="text-red-500"/>
-            </div>
+          <div class="w-full h-full">
+            <label class="">Message</label>
+            <Field name="message" as="textarea" key="message" class="min-h-[94%]"/>
+            <ErrorMessage name="message" class="text-red-500"/>
           </div>
-
+          </div>  
+          </div>
+          <div class="w-full text-center mt-[4.4rem]">
           <button class="hover:scale-[1.1] w-[22.5rem] h-[5.5rem] bg-primaryColor rounded-[8px]" type="submit" :disabled="sendingMessage">
           <span v-if="sendingMessage">
             <svg aria-hidden="true" role="status" class="inline w-4 h-4 me-3 text-white animate-spin"
@@ -173,32 +208,9 @@ async function sendEmail(values, {resetForm}) {
              Send Message
           </span>
           </button>
+        </div>
           <Alert v-if="alertStore.show"/>
         </Form>
-
-        <div
-            class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#ffffff] font-[500] mt-[4.8rem]">
-            <a href="mailto:iambrightuk@gmail.com">
-          <div class=" min-h-[15.5rem] max-medium:min-h-full rounded-[10px] p-[1.5rem] bg-[#000000]">
-            <h1 class="text-[3.2rem] leading-[4.2rem]">Email</h1>
-            <div class="text-[2rem] leading-[2.8rem]">iambrightuk@gmail.com</div>
-          </div>
-          </a>
-
-          <a href="tel:+2348135273602">
-          <div class=" min-h-[15.5rem] max-medium:min-h-full rounded-[10px] p-[1.5rem] bg-[#000000]">
-            <h1 class="text-[3.2rem] leading-[4.2rem]">Phone number</h1>
-            <div class="text-[2rem] leading-[2.8rem]">+2348135273602</div>
-          </div>
-          </a>
-
-          <div class="min-h-[15.5rem] max-medium:min-h-full rounded-[10px] p-[1.5rem] bg-[#000000]">
-            <h1 class="text-[3.2rem] leading-[4.2rem]">Address</h1>
-            <div class="text-[2rem] leading-[2.8rem]">The Ridge Terrace, off kusenla Road lekki lagos</div>
-
-          </div>
-        </div>
-
       </section>
     </Container>
   </main>
