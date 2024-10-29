@@ -1,10 +1,4 @@
 <script setup>
-
-import Niyi from "@/assets/niyi.png";
-import CommentIcon1 from "@/assets/commentIcon1.svg";
-import Subheading from "@/components/SubHeading.vue";
-import Heading from "@/components/Heading.vue";
-
 import {useTestimoniesStore} from "@/store/testimonies.store.js";
 import {onBeforeMount, watch, ref} from "vue";
 import Container from "@/components/Container.vue";
@@ -49,30 +43,30 @@ onBeforeMount(() => {
   store.getTestimonies();
 });
 
-function onQuoteChange(index) {
-  currentIndex.value = index;
-  currentQuote.value = store.testimonies[currentIndex.value];
-}
+// function onQuoteChange(index) {
+//   currentIndex.value = index;
+//   currentQuote.value = store.testimonies[currentIndex.value];
+// }
 
-function nextQuote() {
-  if (currentIndex.value < store.testimonies.length - 1) {
-    currentIndex.value++;
-  } else {
-    currentIndex.value = 0; // Loop back to the first item
-  }
-  currentQuote.value = store.testimonies[currentIndex.value];
-  currentDirection.value = 'forward';
-}
+// function nextQuote() {
+//   if (currentIndex.value < store.testimonies.length - 1) {
+//     currentIndex.value++;
+//   } else {
+//     currentIndex.value = 0; // Loop back to the first item
+//   }
+//   currentQuote.value = store.testimonies[currentIndex.value];
+//   currentDirection.value = 'forward';
+// }
 
-function previousQuote() {
-  if (currentIndex.value > 0) {
-    currentIndex.value--;
-  } else {
-    currentIndex.value = store.testimonies.length - 1; // Loop to the last item
-  }
-  currentQuote.value = store.testimonies[currentIndex.value];
-  currentDirection.value = 'backward';
-}
+// function previousQuote() {
+//   if (currentIndex.value > 0) {
+//     currentIndex.value--;
+//   } else {
+//     currentIndex.value = store.testimonies.length - 1; // Loop to the last item
+//   }
+//   currentQuote.value = store.testimonies[currentIndex.value];
+//   currentDirection.value = 'backward';
+// }
 </script>
 
 <template>
