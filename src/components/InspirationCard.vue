@@ -12,7 +12,7 @@ const props = defineProps(['title', "quote", "img","ind"])
 
   <div
       class="inspirationContainer cursor-pointer relative bg-cover bg-no-repeat w-full min-h-[28.4rem] rounded-[10px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0 flex flex-col justify-between gap-[1rem]"
-       :style="{'background-image': `url(${Inspiration})`}"
+       :style="{'background-image': `url(${img})`}"
       >
       <img :src="Quotation" class="w-[3.3rem] z-50 h-[2.7rem] absolute top-5 right-3" alt="book"/>
     <div 
@@ -38,7 +38,7 @@ const props = defineProps(['title', "quote", "img","ind"])
 }
 
 #quote{
-  opacity: 0;
+  display: none;
   transition: all 1s ease-in-out;
 }
 
@@ -48,7 +48,7 @@ const props = defineProps(['title', "quote", "img","ind"])
 }
 
 .inspirationContainer:hover #quote {
- opacity: 1;
+  display: block;
   transition: all 1s ease-in-out;
 }
 </style>

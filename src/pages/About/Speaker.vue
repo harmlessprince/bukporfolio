@@ -14,48 +14,14 @@ import aboutSpeaker from '@/assets/about_speaker.png';
 
 
 const items = ref([...Array(100).keys()].map(i => ({id: i, name: `Item ${i + 1}`}))); // Example items
-// const paginatedItems = ref([]);
-const paginatedItems = ref([{
-  title: "On Leadership",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Empathy",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Productivity",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Excellence",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Ownership",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Assumption",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Problem-solving",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-}]);
+const paginatedItems = ref([]);
+
 const pageSize = 10; // Number of items per page
 
 function loadMore() {
   const start = currentPage.value * pageSize;
   const end = start + pageSize;
-  // paginatedItems.value.push(...items.value.slice(start, end));
+  paginatedItems.value.push(...items.value.slice(start, end));
   currentPage.value++;
   console.log(currentPage.value)
 }
@@ -132,7 +98,7 @@ onMounted(() => {
             :src="aboutSpeaker"
             class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-[64.1rem]  max-small:w-full bookBrightText">
+        <div class="w-[64.1rem] max-small:mt-[5rem]  max-small:w-full bookBrightText">
           <div class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
             <div class="max-medium:space-y-[1.6rem]">
               <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
@@ -181,12 +147,12 @@ onMounted(() => {
           <div
               class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
           >
-          <!-- v-for="(item, index) in paginatedQuotes" -->
+          
             <InspirationCard
-                v-for="(item, index) in paginatedItems" 
+            v-for="(item, index) in paginatedQuotes"
                 :title="item.title"
                 :quote="item.quote"
-                :img="item.img"
+                :img="item.image"
                 :key="index"
                 :ind="index"
                 :style="{ transitionDelay: `${index * 100}ms` }"
