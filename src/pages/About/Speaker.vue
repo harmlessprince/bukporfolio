@@ -93,12 +93,12 @@ onMounted(() => {
 
     <Container>
       <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
-        <div class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
+        <div class="w-[47.6rem]  max-sm:w-full h-[57.7rem] max-small:h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
           <img 
             :src="aboutSpeaker"
             class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-[64.1rem] max-small:mt-[5rem]  max-small:w-full bookBrightText">
+        <div class="w-[64.1rem]   max-small:w-full bookBrightText">
           <div class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
             <div class="max-medium:space-y-[1.6rem]">
               <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay

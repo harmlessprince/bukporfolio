@@ -40,6 +40,7 @@ const props = defineProps(['title', "quote", "img","ind"])
 #quote{
   display: none;
   transition: all 1s ease-in-out;
+ 
 }
 
 .inspirationContainer:hover #overlay {
@@ -48,7 +49,7 @@ const props = defineProps(['title', "quote", "img","ind"])
 }
 
 .inspirationContainer:hover #quote {
-  display: block;
-  transition: all 1s ease-in-out;
+ display: block;
+  transition: all 4s ease-in-out;
 }
 </style>
