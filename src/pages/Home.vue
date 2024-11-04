@@ -104,8 +104,11 @@ onMounted(() => {
               </p>
               <p>
                 Having earned a bachelor's degree in Electrical & Electronics Engineering from one of Africa's top
-                Universities
-                of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+                Universities of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+                This revelation led him to reinvent himself as a Mental Engineer, dedicated to transforming lives and empowering individuals to lead effectively and unlock their full potential by shaping their thinking patterns.
+              </p>
+              <p>
+                He coaches individuals, consults for companies and organizations, writes for top-tier tabloids, and speaks regularly at conferences around the nation on subjects that impact human behaviour, empower leaders, shape culture, and democratize prosperity.
               </p>
             </div>
 
