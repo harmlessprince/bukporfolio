@@ -19,6 +19,7 @@ export const useQuoteStore = defineStore("quoteStore", () => {
                 id: doc.id,
                 title: data.title,
                 quote: data.body,
+                image: data.image
             });
         });
         quotes.value = items;

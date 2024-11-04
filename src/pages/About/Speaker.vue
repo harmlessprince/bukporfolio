@@ -14,48 +14,14 @@ import aboutSpeaker from '@/assets/about_speaker.png';
 
 
 const items = ref([...Array(100).keys()].map(i => ({id: i, name: `Item ${i + 1}`}))); // Example items
-// const paginatedItems = ref([]);
-const paginatedItems = ref([{
-  title: "On Leadership",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Empathy",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Productivity",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Excellence",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Ownership",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Assumption",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-},
-{
-  title: "On Problem-solving",
-  quote: "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsumloremipsumvv loremipsum loremipsum  loremipsum",
-  img: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059214/home_banner_bright_tn4yty.png"
-}]);
+const paginatedItems = ref([]);
+
 const pageSize = 10; // Number of items per page
 
 function loadMore() {
   const start = currentPage.value * pageSize;
   const end = start + pageSize;
-  // paginatedItems.value.push(...items.value.slice(start, end));
+  paginatedItems.value.push(...items.value.slice(start, end));
   currentPage.value++;
   console.log(currentPage.value)
 }
@@ -127,31 +93,39 @@ onMounted(() => {
     <section class="mb-[4.4rem]">
       <Container>
         <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
-          <div class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0 overflow-hidden">
+          <div
+              class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0 overflow-hidden">
             <img
                 src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730706744/speaker_image_1_ya01iy.png"
                 class="w-full h-full rounded-[10px]" alt="bright"/>
           </div>
           <div class="w-[64.1rem]  max-small:w-full bookBrightText">
-            <div class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
+            <div
+                class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
               <div class="max-medium:space-y-[1.6rem]">
-                <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
+                <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise
+                  leaders pay
                   keen attention.
                 </p>
-                <p>As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on behaviour
+                <p>As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on
+                  behaviour
                   in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and
-                  democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement, and
+                  democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement,
+                  and
                   National Development.
                 </p>
               </div>
 
               <div class="max-medium:space-y-[1.6rem]">
                 <p>
-                  His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and contemporary
-                  stories, and distill them in simple language endears him to both old and young, established veterans and
+                  His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and
+                  contemporary
+                  stories, and distill them in simple language endears him to both old and young, established veterans
+                  and
                   upwardly mobile professionals alike.
                 </p>
-                <p>He has been featured on notable media platforms and has spoken to diverse audiences including entrepreneurs
+                <p>He has been featured on notable media platforms and has spoken to diverse audiences including
+                  entrepreneurs
                   and business leaders, faith-based organizations, academicians, etc.
                 </p>
                 <p>
@@ -180,20 +154,20 @@ onMounted(() => {
           <Heading title="Inspirational words from Bright UK"/>
         </div>
 
-          <div
-              class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
-          >
-          <!-- v-for="(item, index) in paginatedQuotes" -->
-            <InspirationCard
-                v-for="(item, index) in paginatedItems" 
-                :title="item.title"
-                :quote="item.quote"
-                :img="item.img"
-                :key="index"
-                :ind="index"
-                :style="{ transitionDelay: `${index * 100}ms` }"
-            />
-          </div>
+        <div
+            class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
+        >
+
+          <InspirationCard
+              v-for="(item, index) in paginatedQuotes"
+              :title="item.title"
+              :quote="item.quote"
+              :img="item.image"
+              :key="index"
+              :ind="index"
+              :style="{ transitionDelay: `${index * 100}ms` }"
+          />
+        </div>
 
         <Pagination
             :currentPage="currentPage"

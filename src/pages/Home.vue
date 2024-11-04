@@ -176,6 +176,7 @@ onMounted(() => {
     <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
+           <!-- <Testimonies /> -->
       </Container>
     </section>
     <section class="mb-[4.4rem]">
