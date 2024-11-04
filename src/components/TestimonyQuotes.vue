@@ -40,7 +40,7 @@ defineProps({
     </q>
 
     <div class="flex flex-row justify-between items-center">
-      <div class="flex flex-row">
+      <div class="flex flex-row items-center">
         <img
             :src="image"
             class="w-[59px] h-[59px] mr-[1rem] rounded-full"
