@@ -47,7 +47,7 @@ defineProps({
             alt="bright"
         />
         <div class="text-left">
-          <p  class="text-[2rem] text-secondary font-bold">{{ name }}</p>
+          <p  class="text-[1.6rem] text-secondary font-bold">{{ name }}</p>
           <p class="font-sm text-[#838080] text-xsm"> {{ company ?? '' }}</p>
         </div>
       </div>
