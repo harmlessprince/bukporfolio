@@ -43,7 +43,7 @@ defineProps({
       <div class="flex flex-row">
         <img
             :src="image"
-            class="w-[55px] h-[59px] mr-[1rem] rounded-full"
+            class="w-[59px] h-[59px] mr-[1rem] rounded-full"
             alt="bright"
         />
         <span class="text-[20px] text-secondary font-bold"
