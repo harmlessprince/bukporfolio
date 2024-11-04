@@ -49,7 +49,7 @@ onMounted(() => {
     <Container>
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
         <div class="w-[47.6rem] max-sm:w-full max-h-full rounded-[10px] authorImageBox">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730705045/Author_Image_fudbod.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem] max-sm:w-full authorTextBox">

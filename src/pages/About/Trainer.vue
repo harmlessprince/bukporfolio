@@ -70,7 +70,7 @@ onMounted(() => {
           class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
         <div
             class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730704899/Trainer_Image_yn88oe.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg"
                class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"

@@ -124,54 +124,56 @@ onMounted(() => {
         imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png"
         page="Speaker"
     />
-
-    <Container>
-      <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
-        <div class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0">
-          <img 
-            :src="aboutSpeaker"
-            class="w-full h-full rounded-[10px]" alt="bright"/>
-        </div>
-        <div class="w-[64.1rem]  max-small:w-full bookBrightText">
-          <div class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
-            <div class="max-medium:space-y-[1.6rem]">
-              <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
-              keen attention.
-            </p>
-              <p>As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on behaviour
-              in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and
-              democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement, and
-              National Development.
-            </p>
-            </div>
-
-            <div class="max-medium:space-y-[1.6rem]">
-              <p>
-              His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and contemporary
-              stories, and distill them in simple language endears him to both old and young, established veterans and
-              upwardly mobile professionals alike.
-            </p>
-              <p>He has been featured on notable media platforms and has spoken to diverse audiences including entrepreneurs
-              and business leaders, faith-based organizations, academicians, etc.
-              </p>
-              <p>
-              He is in demand at conferences, seminars, and workshops across the nation.
-            </p>
-            </div>
+    <section class="mb-[4.4rem]">
+      <Container>
+        <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
+          <div class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0 overflow-hidden">
+            <img
+                src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730706744/speaker_image_1_ya01iy.png"
+                class="w-full h-full rounded-[10px]" alt="bright"/>
           </div>
-          <RouterLink
-              :to="{name: 'contact', query: {service: 'speaker'}}">
-            <button
-                class="hover:scale-[1.1] font-[500] max-small:font-[400] text-[1.6rem] max-small:text-[1.4rem] text-secondary w-[20.4rem] max-small:w-full h-[5rem] max-small:h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
-            >Book bright UK
-            </button>
-          </RouterLink>
+          <div class="w-[64.1rem]  max-small:w-full bookBrightText">
+            <div class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
+              <div class="max-medium:space-y-[1.6rem]">
+                <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise leaders pay
+                  keen attention.
+                </p>
+                <p>As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on behaviour
+                  in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and
+                  democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement, and
+                  National Development.
+                </p>
+              </div>
+
+              <div class="max-medium:space-y-[1.6rem]">
+                <p>
+                  His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and contemporary
+                  stories, and distill them in simple language endears him to both old and young, established veterans and
+                  upwardly mobile professionals alike.
+                </p>
+                <p>He has been featured on notable media platforms and has spoken to diverse audiences including entrepreneurs
+                  and business leaders, faith-based organizations, academicians, etc.
+                </p>
+                <p>
+                  He is in demand at conferences, seminars, and workshops across the nation.
+                </p>
+              </div>
+            </div>
+            <RouterLink
+                :to="{name: 'contact', query: {service: 'speaker'}}">
+              <button
+                  class="hover:scale-[1.1] font-[500] max-small:font-[400] text-[1.6rem] max-small:text-[1.4rem] text-secondary w-[20.4rem] max-small:w-full h-[5rem] max-small:h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
+              >Book bright UK
+              </button>
+            </RouterLink>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </section>
+
 
     <!-- inspiration words from bright -->
-    <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[6rem]">
+    <section class="w-full bg-[#F1F1F1] py-top mt-[1rem] mb-[4.4rem]">
       <Container>
         <div class="w-full text-center mt-[2rem]">
           <!-- <Subheading title="Quotes"/> -->
@@ -202,22 +204,7 @@ onMounted(() => {
 
       </Container>
     </section>
-    <div>
-      <div class="list-container">
-        <transition-group name="fade" tag="div">
-          <div
-              v-for="(item, index) in paginatedItems"
-              :key="item.id"
-              class="list-item"
-              :style="{ transitionDelay: `${index * 100}ms` }"
-          >
-          {{ item.name }}
-      </div>
-      </transition-group>
-      </div>
 
-      <button @click="loadMore">Load More</button>
-    </div>
   </main>
 </template>
 

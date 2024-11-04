@@ -141,9 +141,17 @@ onBeforeUnmount(() => {
     background-size:  100% 1500px;
   }
 }
+
+@media only screen and (max-width: 1500px) {
+  .homeHero {
+    background-size:  100% 750px;
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   .homeHero {
     background-size:  100% 700px;
+    background-position: center;
   }
 }
 </style>
