@@ -46,16 +46,14 @@ defineProps({
             class="w-[59px] h-[59px] mr-[1rem] rounded-full"
             alt="bright"
         />
-        <span class="text-[20px] text-secondary font-bold"
-        >{{ name }}<br />
-              <span class="font-sm text-[#838080] text-xsm"
-              > {{ company ?? '' }}</span
-              >
-            </span>
+        <div class="text-left">
+          <p  class="text-[2rem] text-secondary font-bold">{{ name }}</p>
+          <p class="font-sm text-[#838080] text-xsm"> {{ company ?? '' }}</p>
+        </div>
       </div>
       <img
           :src="CommentIcon1"
-          class="w-[24px] h-[18px] mr-[1rem]"
+          class="w-[24px] h-[18px]"
           alt="comment"
       />
     </div>
