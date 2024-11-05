@@ -79,8 +79,6 @@ onMounted(() => {
   let typingTL = gsap.timeline({repeat: -1})
 
   quotes.value.forEach((quote, index) => {
-    console.log(quote)
-    console.log(index)
     let tl = gsap.timeline({repeat: 1, yoyo: true});
     tl.to('.text', {duration: 3, text: quote.title})
     typingTL.add(tl)
