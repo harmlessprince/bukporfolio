@@ -63,6 +63,12 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   // Cleanup if component is destroyed
+  cursor.kill();
+  cursor = null;
+  typingTL.kill();
+  typingTL = null;
+  tl.kill();
+  tl = null;
   clearTimeout(timeoutId);
 });
 
