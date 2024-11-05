@@ -9,8 +9,6 @@ import Brands from "@/components/Brands.vue";
 import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
-import Testimonies from "@/components/Testimonies.vue";
-import Activities from "@/components/Activities.vue";
 import Facebook from '@/assets/facebook.svg';
 import Twitter from '@/assets/twitter.svg';
 import Youtube from '@/assets/youtube.svg';
@@ -88,13 +86,13 @@ onMounted(() => {
     <!-- meet bright uk -->
     <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem] mb-[4.4rem]">
       <div class="max-w-[111rem] mx-auto">
-        <div class="w-full flex max-sm:flex-col items-start gap-[3rem]">
-          <div class="w-[53.1em] max-sm:w-full  relative meetUkImage">
+        <div class="w-full flex max-md:flex-col max-md:items-center  items-start gap-[3rem]">
+          <div class="w-[53.1em] max-sm:w-full  relative meetUkImage lg:py-[4rem]">
             <img :src="MeetUk"
                  class="w-full h-full relative" alt="brand"/>
           </div>
 
-          <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] mt-[4rem] max-small:mt-[0.1rem] whoIamParagraph">
+          <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] lg:py-[4rem] max-small:mt-[0.1rem] whoIamParagraph">
             <h1 class="font-[700] text-[3.2rem] leading-[4.2rem]">Meet Bright UK</h1>
             <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.2rem]">
               <p>
