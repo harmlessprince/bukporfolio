@@ -111,6 +111,7 @@ export default {
             },
             fontFamily: {
                 primary: ["Metropolis"],
+                metropolis: ['Metropolis', 'sans-serif'],
                 title: ["Metropolis", "sans-serif"],
                 sans: ['Metropolis', 'sans-serif'],
             },

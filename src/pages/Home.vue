@@ -9,8 +9,6 @@ import Brands from "@/components/Brands.vue";
 import Roles from "@/components/Roles.vue";
 import Books from "@/components/Books.vue";
 import Features from "@/components/Features.vue";
-import Testimonies from "@/components/Testimonies.vue";
-import Activities from "@/components/Activities.vue";
 import Facebook from '@/assets/facebook.svg';
 import Twitter from '@/assets/twitter.svg';
 import Youtube from '@/assets/youtube.svg';
@@ -88,13 +86,13 @@ onMounted(() => {
     <!-- meet bright uk -->
     <section class="w-full bg-[#282309] max-large:px-3 max-small:py-[2rem] mb-[4.4rem]">
       <div class="max-w-[111rem] mx-auto">
-        <div class="w-full flex max-sm:flex-col items-start gap-[3rem]">
-          <div class="w-[53.1em] max-sm:w-full  relative meetUkImage">
+        <div class="w-full flex max-md:flex-col max-md:items-center  items-start gap-[3rem]">
+          <div class="w-[53.1em] max-sm:w-full  relative meetUkImage lg:py-[4rem]">
             <img :src="MeetUk"
                  class="w-full h-full relative" alt="brand"/>
           </div>
 
-          <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] mt-[4rem] max-small:mt-[0.1rem] whoIamParagraph">
+          <div class="max-w-[64.4em] max-sm:max-w-full text-[#E0E0E0] lg:py-[4rem] max-small:mt-[0.1rem] whoIamParagraph">
             <h1 class="font-[700] text-[3.2rem] leading-[4.2rem]">Meet Bright UK</h1>
             <div class="space-y-[1.6em] text-[1.6rem] leading-[2.4rem] font-[500] mt-[1.2rem]">
               <p>
@@ -104,8 +102,11 @@ onMounted(() => {
               </p>
               <p>
                 Having earned a bachelor's degree in Electrical & Electronics Engineering from one of Africa's top
-                Universities
-                of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+                Universities of Technology, Bright realized that his true passion lies in engineering minds rather than machines.
+                This revelation led him to reinvent himself as a Mental Engineer, dedicated to transforming lives and empowering individuals to lead effectively and unlock their full potential by shaping their thinking patterns.
+              </p>
+              <p>
+                He coaches individuals, consults for companies and organizations, writes for top-tier tabloids, and speaks regularly at conferences around the nation on subjects that impact human behaviour, empower leaders, shape culture, and democratize prosperity.
               </p>
             </div>
 
@@ -176,6 +177,7 @@ onMounted(() => {
     <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
+           <!-- <Testimonies /> -->
       </Container>
     </section>
     <section class="mb-[4.4rem]">
