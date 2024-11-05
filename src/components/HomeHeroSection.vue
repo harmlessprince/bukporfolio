@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
 
 @media only screen and (min-width: 1500px) {
   .homeHero {
-    background-size:  100% 1500px;
+    background-size:  100% 750px;
   }
 }
 
