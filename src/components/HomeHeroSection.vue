@@ -102,12 +102,15 @@ onBeforeUnmount(() => {
     <Container class="w-[95rem] text-center">
       <div
           class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
-        <span class="text-[#C7AE2E]">CHANGE YOUR THINKING </span>
-        <span class="text"></span>
-        <span class="cursor">_</span>
+        <div class="text-[#C7AE2E]">CHANGE YOUR THINKING </div>
+        <div class="max-small:min-h-[10rem] small:max-large:min-h-[15rem]">
+          <span class="text"></span>
+         <span class="cursor">_</span>
+        </div>
+        
       </div>
       <div
-          class="w-[65rem] max-medium:w-full min-h-[10rem] text-[#fff] font-[500] max-medium:font-[400] max-medium:leading-[28px] leading-[32px] text-[2.4rem] max-medium:text-[1.8rem] mx-auto mb-[4.6rem] subTextParagraph">
+          class="w-[65rem] max-medium:w-full min-h-[10rem] max-small:min-h-[12rem] text-[#fff] font-[500] max-medium:font-[400] max-medium:leading-[28px] leading-[32px] text-[2.4rem] max-medium:text-[1.8rem] mx-auto mb-[4.6rem] subTextParagraph">
         {{ quotes[quotesCount].description }}
       </div>
       <RouterLink
