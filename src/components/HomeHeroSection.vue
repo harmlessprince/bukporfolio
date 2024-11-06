@@ -26,8 +26,7 @@ const quotes = ref([
   }
 ])
 
-const quotesCount = ref(1)
-let timeoutId;
+const quotesCount = ref(0)
 
 const incrementCount = () => {
   quotesCount.value += 1;
@@ -65,7 +64,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  // Cleanup if component is destroyed
   cursor.kill();
   cursor = null;
   typingTL.kill();
