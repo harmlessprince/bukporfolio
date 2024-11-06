@@ -38,23 +38,26 @@ const resetQuotesCount = () => {
 }
 
 onMounted(() => {
-  timeoutId = setInterval(() => {
-    let zeroBasedQuotesLength = quotes.value.length - 1;
-    zeroBasedQuotesLength > quotesCount.value ? incrementCount() : resetQuotesCount()
-    gsap.fromTo(".subTextParagraph",
+  let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
+  let typingTL = gsap.timeline({repeat: -1})
+
+  quotes.value.forEach((quote, index) => {
+    let tl = gsap.timeline({repeat: 1, 
+    yoyo: true,
+    onComplete: () => {
+      let zeroBasedQuotesLength = quotes.value.length - 1;
+      zeroBasedQuotesLength > quotesCount.value ? incrementCount() : resetQuotesCount()
+      gsap.fromTo(".subTextParagraph",
         {y: 100},
         {
           y: 0,
           duration: 1,
         });
-  }, 6000);
-
-  let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
-  let typingTL = gsap.timeline({repeat: -1})
-
-  quotes.value.forEach((quote, index) => {
-    let tl = gsap.timeline({repeat: 1, yoyo: true});
-    tl.to('.text', {duration: 3, text: quote.title})
+    }});
+    tl.to('.text', {
+    duration: 3, 
+    text: quote.title,
+    })
     typingTL.add(tl)
   })
 
@@ -69,7 +72,6 @@ onBeforeUnmount(() => {
   typingTL = null;
   tl.kill();
   tl = null;
-  clearTimeout(timeoutId);
 });
 
 
