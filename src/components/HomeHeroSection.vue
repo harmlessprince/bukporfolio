@@ -64,7 +64,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  // Cleanup if component is destroyed
   cursor.kill();
   cursor = null;
   typingTL.kill();
