@@ -26,8 +26,7 @@ const quotes = ref([
   }
 ])
 
-const quotesCount = ref(1)
-let timeoutId;
+const quotesCount = ref(0)
 
 const incrementCount = () => {
   quotesCount.value += 1;
