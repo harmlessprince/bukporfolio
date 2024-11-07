@@ -56,10 +56,14 @@ const isYouTube = (url) => {
         <div v-if="isYouTube(path)">
           <iframe
               class="w-full"
-              height="362px"
-              width="357px"
+              height="362"
+              width="357"
               :src="getYouTubeEmbedUrl(path)"
               allowfullscreen
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>
         <div v-else>
