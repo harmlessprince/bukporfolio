@@ -20,7 +20,7 @@ import {ref} from "vue";
 
     <Container>
         <div class="text-center mt-[7.7rem]">
-        <Heading title="interviews"/>
+        <Heading title="Interviews"/>
         <h1 class="text-[2rem] font-[500] leading-[32px] text-[#151515]">Watch the exclusive interviews of Bright Uk </h1>
     </div>
     <div class="mt-[4.4rem]">
