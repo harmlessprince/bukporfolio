@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import InterviewVideo from "@/components/InterviewVideo.vue";
 import Heading from '@/components/Heading.vue';
 import Container from "@/components/Container.vue";
+import InterviewImage from "@/assets/interview.png"
 import {ref} from "vue";
 
 // const currentTab = ref("videos")
@@ -13,7 +14,7 @@ import {ref} from "vue";
   <main class="">
     <!-- about hero section -->
     <HeroSection
-        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059209/authorbanner_lzjjj1.png"
+        :imageUrl="InterviewImage"
         page="Interviews"
     />
 

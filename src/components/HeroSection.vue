@@ -3,7 +3,7 @@ import { useRouter, useRoute } from 'vue-router';
 import {onMounted, ref} from "vue";
 import {getPreviousRoute} from "@/router/index.js";
 const props = defineProps({
-  imageUrl: String,
+  imageUrl: String | {},
   page: String,
   text: {
     type: String,
