@@ -65,7 +65,7 @@ const alertStore = useAlertStore();
           <p class="text-gray-500 mt-2 text-[1.5rem] mb-1">It seems like you haven't added any items yet.</p>
 
           <!-- Button to redirect to the shop page -->
-          <RouterLink  :to="{name: 'products'}" class="flex items-center justify-center text-secondary bg-primary w-[22.5rem] h-[5.5rem] rounded-[8px] place-self-center text-[1.4rem] font-medium">
+          <RouterLink  :to="{name: 'books'}" class="flex items-center justify-center text-secondary bg-primary w-[22.5rem] h-[5.5rem] rounded-[8px] place-self-center text-[1.4rem] font-medium">
             Go Shopping
           </RouterLink>
         </div>

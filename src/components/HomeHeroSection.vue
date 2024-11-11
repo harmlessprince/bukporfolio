@@ -26,8 +26,7 @@ const quotes = ref([
   }
 ])
 
-const quotesCount = ref(1)
-let timeoutId;
+const quotesCount = ref(0)
 
 const incrementCount = () => {
   quotesCount.value += 1;
@@ -38,49 +37,26 @@ const resetQuotesCount = () => {
 }
 
 onMounted(() => {
-  timeoutId = setInterval(() => {
-    let zeroBasedQuotesLength = quotes.value.length - 1;
-    zeroBasedQuotesLength > quotesCount.value ? incrementCount() : resetQuotesCount()
-    // gsap.fromTo(".subTextHeader",
-    // { y: 25 },
-    // { y: 0,
-    //   duration: 0.4,
-    //   scrollTrigger: {
-    //   trigger: ".subTextHeader",
-    // },
-    // });
-
-    gsap.fromTo(".subTextParagraph",
-        {y: 100},
-        {
-          y: 0,
-          duration: 0.4,
-          //   scrollTrigger: {
-          //   trigger: ".subTextParagraph",
-          // },
-        });
-  }, 6000);
-
-  // gsap.fromTo(".bannerImage ",
-  //     {
-  //       x: 100,
-  //       scale: 1.5
-  //     },
-  //     {
-  //       scale: 1,
-  //       x: 0,
-  //       duration: 1,
-  //       scrollTrigger: {
-  //         trigger: ".bannerImage ",
-  //       },
-  //     });
-
   let cursor = gsap.to('.cursor', {opacity: 0, ease: "power2.inOut", repeat: -1})
   let typingTL = gsap.timeline({repeat: -1})
 
   quotes.value.forEach((quote, index) => {
-    let tl = gsap.timeline({repeat: 1, yoyo: true});
-    tl.to('.text', {duration: 3, text: quote.title})
+    let tl = gsap.timeline({repeat: 1, 
+    yoyo: true,
+    onComplete: () => {
+      let zeroBasedQuotesLength = quotes.value.length - 1;
+      zeroBasedQuotesLength > quotesCount.value ? incrementCount() : resetQuotesCount()
+      gsap.fromTo(".subTextParagraph",
+        {y: 100},
+        {
+          y: 0,
+          duration: 1,
+        });
+    }});
+    tl.to('.text', {
+    duration: 3, 
+    text: quote.title,
+    })
     typingTL.add(tl)
   })
 
@@ -88,8 +64,12 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  // Cleanup if component is destroyed
-  clearTimeout(timeoutId);
+  cursor.kill();
+  cursor = null;
+  typingTL.kill();
+  typingTL = null;
+  tl.kill();
+  tl = null;
 });
 
 
@@ -100,12 +80,15 @@ onBeforeUnmount(() => {
     <Container class="w-[95rem] text-center">
       <div
           class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
-        <span class="text-[#C7AE2E]">CHANGE YOUR THINKING </span>
-        <span class="text"></span>
-        <span class="cursor">_</span>
+        <div class="text-[#C7AE2E]">CHANGE YOUR THINKING </div>
+        <div class="max-small:min-h-[10rem] small:max-large:min-h-[15rem]">
+          <span class="text"></span>
+         <span class="cursor">_</span>
+        </div>
+        
       </div>
       <div
-          class="w-[65rem] max-medium:w-full min-h-[10rem] text-[#fff] font-[500] max-medium:font-[400] max-medium:leading-[28px] leading-[32px] text-[2.4rem] max-medium:text-[1.8rem] mx-auto mb-[4.6rem] subTextParagraph">
+          class="w-[65rem] max-medium:w-full min-h-[10rem] max-small:min-h-[12rem] text-[#fff] font-[500] max-medium:font-[400] max-medium:leading-[28px] leading-[32px] text-[2.4rem] max-medium:text-[1.8rem] mx-auto mb-[4.6rem] subTextParagraph">
         {{ quotes[quotesCount].description }}
       </div>
       <RouterLink
