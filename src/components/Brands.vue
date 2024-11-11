@@ -42,7 +42,7 @@ const settings = {
             <Slide v-for="(slide, index) in brandStore.brands" :key="index">
               <img
                   :src="slide.image"
-                  class=""
+                  class="w-[15.7rem] h-[6.7rem]"
                   :alt="slide.name"
                   :key="index"
               />
