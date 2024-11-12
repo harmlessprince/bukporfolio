@@ -15,6 +15,7 @@ import Youtube from '@/assets/youtube.svg';
 import LinkedIn from '@/assets/linkedIn.svg';
 import Instagram from '@/assets/instagram.svg';
 import TestimoniesV2 from "@/components/TestimoniesV2.vue";
+import FeaturedLinks from "@/components/FeaturedLinks.vue";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -155,29 +156,16 @@ onMounted(() => {
     </section> -->
     <!-- end of gallery -->
 
-    <!-- start of testimonies -->
-<!--    <section class="py-[5rem] w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">-->
-<!--      <Container>-->
-<!--        <div-->
-<!--            class="w-full h-[42.1rem] gap-[2.4rem] flex max-sm:flex-col justify-center items-center"-->
-<!--        >-->
-<!--          <div-->
-<!--              class="testimonialBoxImage grow w-full basis-0 shrink-0 h-full rounded-[10px] overflow-hidden max-sm:hidden">-->
-<!--            <img-->
-<!--                src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729082241/Document_from_Damilola_jab8od.jpg"-->
-<!--                class="w-full h-full object-top object-contain"-->
-<!--                alt="bright"-->
-<!--            />-->
-<!--          </div>-->
-
-<!--          <Testimonies class="testimonialBoxText"/>-->
-<!--        </div>-->
-<!--      </Container>-->
-<!--    </section>-->
     <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
            <!-- <Testimonies /> -->
+      </Container>
+    </section>
+    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
+      <Container>
+        <FeaturedLinks/>
+        <!-- <Testimonies /> -->
       </Container>
     </section>
     <section class="mb-[4.4rem]">

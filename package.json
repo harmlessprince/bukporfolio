@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ashwamegh/vue-link-preview": "^3.3.0",
     "@netlify/functions": "^2.8.2",
     "@paystack/inline-js": "^2.20.3",
     "@types/video.js": "7.x",
