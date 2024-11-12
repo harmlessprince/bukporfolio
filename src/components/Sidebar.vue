@@ -92,7 +92,7 @@ function toggleAboutDropdown() {
         </li>
         <li class="">
           <RouterLink
-              :class='isRouteActive("interview", "") ? "bg-primaryColor p-[1rem] block" : "p-[1rem] block"'
+              :class='isRouteActive("", "/interview") ? "bg-primaryColor p-[1rem] block" : "p-[1rem] block"'
               :to="{name: 'interview'}" @click="toggleSidebar.hideSideBar()">Interview
           </RouterLink>
         </li>
