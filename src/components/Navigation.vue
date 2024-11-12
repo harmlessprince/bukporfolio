@@ -69,7 +69,7 @@ function logoLoaded() {
                             :to="{name: 'trainer'}">Trainer
                 </RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/coach") ? "bg-primaryColor" : "bg-transparent"'
-                            :to="{name: 'coach'}">Coach
+                            :to="{name: 'coach', hash: '#coach'}">Coach
                 </RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/entrepreneur") ? "bg-primaryColor" : "bg-transparent"'
                             :to="{name: 'entrepreneur'}">Entrepreneur

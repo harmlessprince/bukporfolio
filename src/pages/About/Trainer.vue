@@ -65,7 +65,7 @@ onMounted(() => {
         page="Trainer"
     />
 
-    <Container>
+    <Container id="trainer">
       <div
           class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
         <div
@@ -116,7 +116,7 @@ onMounted(() => {
 
     <Brands/>
 
-    <Container id="#coach">
+    <Container id="coach">
       <div
           class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
         <div
