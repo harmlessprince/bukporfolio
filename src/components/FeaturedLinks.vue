@@ -29,9 +29,14 @@ const settings = {
   }
 }
 const features = [
-  "https://youtu.be/V3zvh7Uw5os?si=q_uGNj7tkrf2ptW4",
   "https://www.youtube.com/watch?v=oJ4GeqfFC_s",
-  "https://deploy-preview-43--bukportfolio.netlify.app/"
+  "https://societynow.ng/things-to-know-as-lead-the-future-conference-holds-nov-22-to-23/",
+  "https://punchng.com/nesg-chairman-others-for-lagos-leadership-conference/",
+  "https://techeconomy.ng/bright-ukwenga-olaniyi-yusuf-others-to-empower-leaders-at-lead-the-future-conference/",
+  "https://independent.ng/ukwenga-yusuf-others-champion-leadership-empowerment-at-lead-the-future-conference/",
+  "https://brandcrunch.com.ng/2024/10/22/bright-ukwenga-olaniyi-yusuf-others-to-empower-leaders-at-lead-the-future-conference/",
+  "https://guardian.ng/news/nigeria/metro/leadership-conference-to-hold-in-lagos/#:~:text=The%20inaugural%20edition%20of%20Lead,November%2022%20and%2023%2C%202024",
+  "https://tribuneonlineng.com/bright-ukwenga-olaniyi-yusuf-others-to-empower-leaders-at-lead-the-future-conference/"
 ]
 
 </script>

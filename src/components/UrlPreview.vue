@@ -15,6 +15,7 @@ const loading = ref(true);
 
 const fetchData = async () => {
    previewData.value = await fetchPreviewData(props.url);
+   console.log(previewData.value);
    loading.value = false;
 };
 
@@ -22,6 +23,7 @@ function limit(description, length){
   return description.length > length ? description.substring(0, length) + '...' : description;
 }
 function extractImage (images, favicon){
+
   if (images){
     if (images.length > 0){
       return images[0];

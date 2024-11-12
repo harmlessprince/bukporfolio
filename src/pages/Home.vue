@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
 import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import MeetUk from '@/assets/meetUk.png';
@@ -17,7 +17,7 @@ import Instagram from '@/assets/instagram.svg';
 import TestimoniesV2 from "@/components/TestimoniesV2.vue";
 import FeaturedLinks from "@/components/FeaturedLinks.vue";
 
-
+const featuredLinkEnabled = ref("no")
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
@@ -52,6 +52,7 @@ onMounted(() => {
           },
         });
 
+    featuredLinkEnabled.value = localStorage.getItem("featuredLinkEnabled");
   });
 
   mm.add("(max-width: 720px)", () => {
@@ -162,7 +163,7 @@ onMounted(() => {
            <!-- <Testimonies /> -->
       </Container>
     </section>
-    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
+    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]" v-if="featuredLinkEnabled === 'yes'">
       <Container>
         <FeaturedLinks/>
         <!-- <Testimonies /> -->
