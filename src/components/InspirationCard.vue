@@ -22,7 +22,7 @@ const props = defineProps(['title', "quote", "img","ind"])
       <p 
       id="quote"
       class="text-[#fff] font-[400] text-[1.4rem] px-[1.6rem] leading-[20px]"
-      >{{ props.quote }}</p>
+      >{{ props.quote.slice(0, 650) }}</p>
     </div>
     <!--    <div>-->
     <!--      <fwb-button @click="showModal" class="bg-transparent text-primary">-->
