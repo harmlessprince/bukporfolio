@@ -21,9 +21,12 @@ export const useEntrepreneurStore = defineStore("entrepreneurStore", () => {
                 body: data.body,
                 website: data.website,
                 logo: data.logo,
+                position: data.position,
             });
         });
+        items.sort((a, b) => a?.position - b?.position);
         entrepreneurs.value = items;
+
     }
 
     return {

@@ -20,11 +20,11 @@ import Gallery from "@/pages/Gallery.vue";
 const routes = [
     {path: '/', component: Home, name: 'home', meta: {title: 'Bright UK Portfolio -  Home'}},
     {path: '/about/speaker', component: Speaker, name: 'speaker', meta: {title: 'Bright-UK-Speaker'}},
-    {path: '/about/interviews', component: Interview, name: 'interview', meta: {title: 'Bright-UK-Interview'}},
+    {path: '/interview', component: Interview, name: 'interview', meta: {title: 'Bright-UK-Interview'}},
     {path: '/about/podcast', component: Podcast, name: 'podcast', meta: {title: 'Bright-UK-Podcast'}},
     {path: '/about/author', component: Author, name: 'author', meta: {title: 'Bright-UK-Author'}},
     {path: '/about/trainer', component: Trainer, name: 'trainer', meta: {title: 'Bright-UK-Author'}},
-    {path: '/about/coach', component: Trainer, name: 'coach', meta: {title: 'Bright-UK-Coach'}},
+    {path: '/about/coach', component: Trainer, name: 'coach',  hash: 'coach', meta: {title: 'Bright-UK-Coach'}},
     {path: '/about/entrepreneur', component: Entrepreneur, name: 'entrepreneur', meta: {title: 'Bright-UK-Entrepreneur'}},
     {path: '/shop/books', component: Products, name: 'books', meta: {title: 'Bright-UK-Books'}},
     {path: '/shop/books/:id', component: Item, name: 'book', meta: {title: 'Bright-UK-Books-Details'}},
@@ -48,19 +48,9 @@ const router = createRouter({
     // linkExactActiveClass: 'text-primary border-b-4 border-primary',
     routes,
     scrollBehavior(to, from, savedPosition) {
+        console.log(to)
         if (to.hash) {
-            return new Promise((resolve) => {
-                // Use a timeout or check if the element exists before scrolling
-                setTimeout(() => {
-                    const element = document.querySelector(to.hash);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                        resolve({ el: to.hash });
-                    } else {
-                        resolve({ top: 0 });
-                    }
-                }, 300); // Delay to ensure DOM is rendered
-            });
+            return { el: to.hash, behavior: 'smooth' };
         }
         // If savedPosition exists (i.e., navigating with the browser back button), restore the scroll position
         if (savedPosition) {

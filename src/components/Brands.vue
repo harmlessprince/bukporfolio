@@ -33,19 +33,21 @@ const settings = {
   <section class="bg-[#fff]">
     <Container>
       <div
-        class="w-full text-center pt-[1.4rem] overflow-x-scroll no-scrollbar"
+        class="w-full text-center pt-[1.4rem] "
       >
         <div
-          class="flex flex-row items-center gap-[4.6rem] justify-start overflow-x-scroll no-scrollbar"
+          class="flex flex-row items-center gap-[4.6rem] justify-start"
         >
           <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
             <Slide v-for="(slide, index) in brandStore.brands" :key="index">
-              <img
-                  :src="slide.image"
-                  class=""
-                  :alt="slide.name"
-                  :key="index"
-              />
+              <div>
+                <img
+                    :src="slide.image"
+                    class=""
+                    :alt="slide.name"
+                    :key="index"
+                />
+              </div>
             </Slide>
 
             <template #addons>

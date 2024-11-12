@@ -76,7 +76,7 @@ onBeforeMount(() => {
       <h2
           class="font-bold text-header max-sm:text-[3.0rem] text-secondary leading-[4.2rem] mb-[2.6rem] text-center"
       >
-        What People are Saying
+        What People Are Saying
       </h2>
       <div
 

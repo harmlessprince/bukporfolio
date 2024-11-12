@@ -11,14 +11,6 @@ const videoArray = [
   "https://youtu.be/FkgyspIC7eY?si=VVBkD9GtC0rv670I",
   "https://youtu.be/LpazSsUS2PU?si=OSS8qJdaAOeMnikB",
   "https://youtu.be/6WMl7l4gRk8?si=HCXXwYUUoh9afFpc"
-
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166242/bukportfolio/videos/vid1_cthnlu.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166234/bukportfolio/videos/vid2_dy5vat.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166250/bukportfolio/videos/vid3_a0bmk3.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166970/bukportfolio/videos/vid4_sgigow.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166974/bukportfolio/videos/vid5_kc6oe2.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729167003/bukportfolio/videos/vid6_tpj8qy.mp4",
-  // "https://res.cloudinary.com/ibreathcode/video/upload/v1729166981/bukportfolio/videos/vid7_zzfvnw.mp4",
 ]
 import {VideoPlayer} from '@videojs-player/vue'
 import 'video.js/dist/video-js.css'

@@ -137,7 +137,7 @@ onMounted(() => {
                 :to="{name: 'contact', query: {service: 'speaker'}}">
               <button
                   class="hover:scale-[1.1] font-[500] max-small:font-[400] text-[1.6rem] max-small:text-[1.4rem] text-secondary w-[20.4rem] max-small:w-full h-[5rem] max-small:h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
-              >Book bright UK
+              >Book Bright UK
               </button>
             </RouterLink>
           </div>
@@ -151,7 +151,7 @@ onMounted(() => {
       <Container>
         <div class="w-full text-center mt-[2rem]">
           <!-- <Subheading title="Quotes"/> -->
-          <Heading title="Inspirational words from Bright UK"/>
+          <Heading title="Inspirational Words From Bright UK"/>
         </div>
 
         <div
