@@ -108,7 +108,7 @@ onMounted(() => {
           <RouterLink
               class="hover:scale-[1.1] font-sm text-xsm text-secondary w-[20.4rem] h-[4.3rem] bg-primary rounded-[8px] flex justify-center items-center"
               :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
-            Book bright UK
+            Book Bright UK
           </RouterLink>
         </div>
       </div>
@@ -153,7 +153,7 @@ onMounted(() => {
             <RouterLink
                 class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
                 :to="{name: 'contact', query: {service: 'groupTrainingCoachingSession' }}">
-              Register your team for a Group Coaching Session
+              Register your Team for a Group Coaching Session
             </RouterLink>
           </div>
         </div>
