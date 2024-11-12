@@ -1,8 +1,5 @@
 <script setup>
 import Quotation from '@/assets/quotation.png';
-import Inspiration from '@/assets/inspiration.png';
-import { gsap } from "gsap";
-import {ref} from 'vue'
 import {FwbButton, FwbModal} from 'flowbite-vue'
 
 const props = defineProps(['title', "quote", "img","ind"])
