@@ -20,7 +20,7 @@ import Gallery from "@/pages/Gallery.vue";
 const routes = [
     {path: '/', component: Home, name: 'home', meta: {title: 'Bright UK Portfolio -  Home'}},
     {path: '/about/speaker', component: Speaker, name: 'speaker', meta: {title: 'Bright-UK-Speaker'}},
-    {path: '/about/interviews', component: Interview, name: 'interview', meta: {title: 'Bright-UK-Interview'}},
+    {path: '/interview', component: Interview, name: 'interview', meta: {title: 'Bright-UK-Interview'}},
     {path: '/about/podcast', component: Podcast, name: 'podcast', meta: {title: 'Bright-UK-Podcast'}},
     {path: '/about/author', component: Author, name: 'author', meta: {title: 'Bright-UK-Author'}},
     {path: '/about/trainer', component: Trainer, name: 'trainer', meta: {title: 'Bright-UK-Author'}},
