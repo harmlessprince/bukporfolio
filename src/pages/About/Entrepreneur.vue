@@ -39,7 +39,7 @@ onBeforeMount(() => {
                 <p class="font-sm text-xsm mb-[1rem]">
                   {{item.body}}
                 </p>
-                <a class="hover:scale-[1.1] w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website">Visit our website</a>
+                <a class="hover:scale-[1.1] w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website" target="_blank">Visit  Website</a>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ onBeforeMount(() => {
                 <p class="font-sm text-xsm mb-[1rem]">
                   {{item.body}}
                 </p>
-                <a class="hover:scale-[1.1] w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website">Visit our website</a>
+                <a class="hover:scale-[1.1] w-[20.4rem] h-[4.3rem] bg-primary text-secondary font-sm text-xsm rounded-[8px] flex items-center justify-center" :href="item.website" target="_blank">Visit Website</a>
               </div>
             </div>
             <!-- <div class="animate-slideInRight delay-400"> -->
