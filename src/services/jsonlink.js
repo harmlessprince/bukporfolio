@@ -20,7 +20,7 @@ export default async function fetchPreviewData (url){
         localStorage.setItem(cacheKey, JSON.stringify(cachedData));
         return {
             status: true,
-            data: cachedData[url],
+            ...cachedData[url],
         };
     }catch(e){
         console.error('An error occurred:', e);
