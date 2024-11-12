@@ -64,12 +64,12 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  cursor.kill();
-  cursor = null;
-  typingTL.kill();
-  typingTL = null;
-  tl.kill();
-  tl = null;
+  // cursor.kill();
+  // cursor = null;
+  // typingTL.kill();
+  // typingTL = null;
+  // tl.kill();
+  // tl = null;
 });
 
 
