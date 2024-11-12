@@ -1,6 +1,6 @@
 <script setup>
 import VueLinkPreview from '@ashwamegh/vue-link-preview';
-import {onMounted, ref, watch} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import fetchPreviewData from "@/services/jsonlink.js";
 import {generateThumbnailFromText} from "@/services/util.js";
 const props = defineProps({
@@ -30,9 +30,9 @@ function extractImage (images, favicon){
   if (favicon.length > 0){
     return favicon;
   }
-  console.log(generateThumbnailFromText("No Image"))
   return generateThumbnailFromText("No Image");
 }
+
 
 
 onMounted(fetchData);
