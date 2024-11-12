@@ -30,7 +30,8 @@ const settings = {
 }
 const features = [
   "https://youtu.be/V3zvh7Uw5os?si=q_uGNj7tkrf2ptW4",
-  "https://www.youtube.com/watch?v=oJ4GeqfFC_s"
+  "https://www.youtube.com/watch?v=oJ4GeqfFC_s",
+  "https://deploy-preview-43--bukportfolio.netlify.app/"
 ]
 
 </script>
