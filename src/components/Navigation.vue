@@ -71,9 +71,6 @@ function logoLoaded() {
                 <RouterLink :class='isRouteActive("", "/about/coach") ? "bg-primaryColor" : "bg-transparent"'
                             :to="{name: 'coach'}">Coach
                 </RouterLink>
-                <RouterLink :class='isRouteActive("", "/about/interviews") ? "bg-primaryColor" : "bg-transparent"'
-                            :to="{name: 'interview'}">Interview
-                </RouterLink>
                 <RouterLink :class='isRouteActive("", "/about/entrepreneur") ? "bg-primaryColor" : "bg-transparent"'
                             :to="{name: 'entrepreneur'}">Entrepreneur
                 </RouterLink>
