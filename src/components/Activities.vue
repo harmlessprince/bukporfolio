@@ -1,7 +1,5 @@
 <script setup>
-
 import Subheading from "@/components/SubHeading.vue";
-
 import {onBeforeMount, ref,} from "vue";
 import HomeVideoActivity from "@/components/HomeVideoAcitivity.vue";
 import PrimeVueCarousel from 'PrimeVueCarousel';

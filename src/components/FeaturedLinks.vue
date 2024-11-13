@@ -1,7 +1,6 @@
 <script setup>
 import {onBeforeMount, watch, ref} from "vue";
 import Container from "@/components/Container.vue";
-
 import {Carousel, Slide} from "vue3-carousel";
 import UrlPreview from "@/components/UrlPreview.vue";
 import TestimonyQuotes from "@/components/TestimonyQuotes.vue";

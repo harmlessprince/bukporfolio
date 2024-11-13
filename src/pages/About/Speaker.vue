@@ -92,9 +92,9 @@ onMounted(() => {
     />
     <section class="mb-[4.4rem]">
       <Container>
-        <div class="w-full flex  max-sm:flex-col items-center mt-[5rem]">
+        <div class="w-full flex max-sm:flex-col items-start mt-[5rem]">
           <div
-              class="w-[47.6rem]  max-sm:w-full max-h-[57.7rem] max-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0 overflow-hidden">
+              class="w-[47.6rem]  max-sm:w-full min-h-[57.7rem] min-small:max-h-[41.7rem] rounded-[10px] bookBrightImage mr-[5rem] max-sm:mr-0 overflow-hidden">
             <img
                 src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730706744/speaker_image_1_ya01iy.png"
                 class="w-full h-full rounded-[10px]" alt="bright"/>
@@ -102,34 +102,30 @@ onMounted(() => {
           <div class="w-[64.1rem]  max-small:w-full bookBrightText">
             <div
                 class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
-              <div class="max-medium:space-y-[1.6rem]">
-                <p>Bright UK has often been described as an old sage is a young body. As such, when he speaks, wise
-                  leaders pay
-                  keen attention.
-                </p>
-                <p>As a frequent keynote speaker, Bright UK’s speaking expertise cuts across subjects that impact on
-                  behaviour
-                  in order to elevate the human condition, empower individuals, raise sound leaders, shape culture, and
-                  democratize prosperity. These include Leadership, Personal Development, Business, Career Advancement,
-                  and
-                  National Development.
-                </p>
-              </div>
-
-              <div class="max-medium:space-y-[1.6rem]">
+              <div class="max-medium:space-y-[1.6rem] space-y-[1.6rem]">
                 <p>
-                  His uncanny ability to extract wisdom from life, weave them into comprehensible frameworks and
-                  contemporary
-                  stories, and distill them in simple language endears him to both old and young, established veterans
-                  and
-                  upwardly mobile professionals alike.
-                </p>
-                <p>He has been featured on notable media platforms and has spoken to diverse audiences including
-                  entrepreneurs
-                  and business leaders, faith-based organizations, academicians, etc.
+                  Bright UK is the voice of the next generation and a trusted guide for future-ready leaders.
                 </p>
                 <p>
-                  He is in demand at conferences, seminars, and workshops across the nation.
+                  Often described as an old sage in a young body, 
+                  he captivates audiences with mind-shifting insights that command the attention of even the wisest leaders.
+                </p>
+                <p>As a sought-after keynote speaker, Bright brings expertise across essential areas that influence 
+                  behaviour and drive positive change. From Leadership and Personal Development to Business, Career Advancement,
+                   and National Development, his speeches are designed to elevate the human 
+                  condition, empower individuals, raise sound leaders, shape culture, and democratize prosperity.
+                </p>
+                <p>
+                  Bright has an exceptional gift for extracting wisdom from everyday life, 
+                  weaving them into actionable frameworks and contemporary stories that resonate with diverse audiences. 
+                  His clear, relatable communication style appeals to both seasoned professionals and aspiring leaders alike.
+                   He has been featured on prominent media platforms, 
+                  inspiring a range of audiences—from entrepreneurs and business leaders to faith-based communities and academicians.
+                </p>
+                <p>
+                  With a growing demand for his engaging presentations, 
+                  Bright UK speaks regularly at conferences, seminars, 
+                  and workshops across the country, leaving a lasting impact wherever he speaks.
                 </p>
               </div>
             </div>
