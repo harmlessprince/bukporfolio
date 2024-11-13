@@ -36,21 +36,21 @@ const settings = {
         class="w-full text-center pt-[1.4rem] "
       >
         <div
-          class="flex flex-row items-end gap-[4.6rem] justify-start"
+          class="flex flex-row"
         >
-          <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
-            <Slide v-for="(slide, index) in brandStore.brands" :key="index">
-              <div>
+          <Carousel v-bind="settings"   snapAlign="start" :itemsToShow="5" :wrapAround="true">
+            <Slide v-for="(slide, index) in brandStore.brands" :key="index" class="flex flex-row">
+              <div class="">
                 <img
                     :src="slide.image"
-                    class=""
+                    class="h-full w-full"
                     :alt="slide.name"
                     :key="index"
                 />
               </div>
             </Slide>
 
-            <template #addons>
+            <template #addons="">
 <!--              <Navigation />-->
             </template>
           </Carousel>
@@ -63,5 +63,8 @@ const settings = {
 <style scoped>
 .carousel__slide{
   margin-right: 20px;
+}
+section > div > div > div > section > div.carousel__viewport > ol > li {
+  width: 20% !important;
 }
 </style>

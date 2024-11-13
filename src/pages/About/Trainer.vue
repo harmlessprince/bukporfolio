@@ -67,9 +67,9 @@ onMounted(() => {
 
     <Container id="trainer">
       <div
-          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
+          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] gap-x-[2rem]  items-center my-[5rem] max-medium:my-[2.7rem]">
         <div
-            class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
+            class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative  max-medium:mr-0">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731497530/Trainer_Image_1_ogovey.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg"
@@ -124,9 +124,9 @@ onMounted(() => {
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-full coachBrightText">
+        <div class="w-full coachBrightText flex flex-col justify-center min-h-[43.3rem]">
           <Heading title="Coach"/>
-          <div class="flex flex-col justify-between min-h-[43.3rem]">
+          <div class="flex flex-col  ">
             <div class="font-normal text-basic text-[#2B2B2B] mb-[0.5rem] text-justify space-y-2">
               <p>
                 As a Transformation Coach, Bright UK helps individuals and organizations to close the gap between their potential and performance
@@ -152,7 +152,6 @@ onMounted(() => {
               </RouterLink>
             </div>
           </div>
-
         </div>
         <div class="w-full max-medium:hidden coachBrightImage">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerImage2_rz0aer.png"
