@@ -18,6 +18,7 @@ import TestimoniesV2 from "@/components/TestimoniesV2.vue";
 import FeaturedLinks from "@/components/FeaturedLinks.vue";
 
 const featuredLinkEnabled = ref("no")
+const whatPeopleAreSayingEnabled = ref("no")
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
@@ -164,7 +165,7 @@ onMounted(() => {
     </section> -->
     <!-- end of gallery -->
 
-    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
+    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]" v-if="whatPeopleAreSayingEnabled === 'no'">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
            <!-- <Testimonies /> -->

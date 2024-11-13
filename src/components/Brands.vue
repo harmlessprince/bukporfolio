@@ -36,7 +36,7 @@ const settings = {
         class="w-full text-center pt-[1.4rem] "
       >
         <div
-          class="flex flex-row items-center gap-[4.6rem] justify-start"
+          class="flex flex-row items-end gap-[4.6rem] justify-start"
         >
           <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
             <Slide v-for="(slide, index) in brandStore.brands" :key="index">

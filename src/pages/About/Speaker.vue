@@ -87,7 +87,7 @@ onMounted(() => {
 <template>
   <main class="text-primary">
     <HeroSection
-        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059210/aboutbanner_wcwdup.png"
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731492454/1280_by_631_v1px_pjygvk.jpg"
         page="Speaker"
     />
     <section class="mb-[4.4rem]">
@@ -102,7 +102,7 @@ onMounted(() => {
           <div class="w-[64.1rem]  max-small:w-full bookBrightText">
             <div
                 class="max-small:mt-[2.4rem] font-[500] text-[1.6rem] max-small:text-[1.4rem] text-[#2B2B2B] mb-[2rem] space-y-[1.6rem] leading-[24px] max-small:leading-[20px]">
-              <div class="max-medium:space-y-[1.6rem] space-y-[1.6rem]">
+              <div class="max-medium:space-y-[1.6rem] space-y-[1.6rem] font-normal text-basic ">
                 <p>
                   Bright UK is the voice of the next generation and a trusted guide for future-ready leaders.
                 </p>
@@ -112,7 +112,7 @@ onMounted(() => {
                 </p>
                 <p>As a sought-after keynote speaker, Bright brings expertise across essential areas that influence 
                   behaviour and drive positive change. From Leadership and Personal Development to Business, Career Advancement,
-                   and National Development, his speeches are designed to elevate the human 
+                   and National Development, his speeches are crafted to elevate the human
                   condition, empower individuals, raise sound leaders, shape culture, and democratize prosperity.
                 </p>
                 <p>

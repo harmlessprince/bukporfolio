@@ -103,15 +103,16 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+
 .homeHero {
-  background-image: url('@/assets/homeBannerBackground.png');
+  background-image: url('@/assets/1280_by_631_v1px.jpg');
   background-size:  100% 631px; /* w x h */
   background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 600px) {
   .homeHero {
-    background-image: url('@/assets/homeBackgroundMobile.png');
+    background-image: url('@/assets/bukspeaking.png');
   }
 }
 
@@ -133,4 +134,37 @@ onBeforeUnmount(() => {
     background-position: center;
   }
 }
+
 </style>
+
+
+<!--//.homeHero {-->
+<!--//  background-image: url('@/assets/homeBannerBackground.png');-->
+<!--//  background-size:  100% 631px;-->
+<!--//  background-repeat: no-repeat;-->
+<!--//}-->
+<!--//-->
+<!--//@media only screen and (max-width: 600px) {-->
+<!--//  .homeHero {-->
+<!--//    background-image: url('@/assets/homeBackgroundMobile.png');-->
+<!--//  }-->
+<!--//}-->
+<!--//-->
+<!--//@media only screen and (min-width: 1500px) {-->
+<!--//  .homeHero {-->
+<!--//    background-size:  100% 750px;-->
+<!--//  }-->
+<!--//}-->
+<!--//-->
+<!--//@media only screen and (max-width: 1500px) {-->
+<!--//  .homeHero {-->
+<!--//    background-size:  100% 750px;-->
+<!--//  }-->
+<!--//}-->
+<!--//-->
+<!--//@media only screen and (max-width: 1280px) {-->
+<!--//  .homeHero {-->
+<!--//    background-size:  100% 700px;-->
+<!--//    background-position: center;-->
+<!--//  }-->
+<!--//}-->

@@ -40,10 +40,19 @@ onMounted(() => {
   <main class="text-primary">
 
     <HeroSection
-        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059209/authorbanner_lzjjj1.png"
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731501326/pexels-pixabay-159711_gtskue.jpg"
         page="Author"
-        class="mb-[4rem]"
-    />
+        class="mb-[4rem] relative"
+    >
+      <template v-slot:overlay>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </template>
+      <template v-slot:description>
+        <p class="text-white font-medium text-3xl w-1/2 text-center">
+          As a prolific writer, Bright UK has authored three books and numerous publications on leadership, wealth, and well-being. He was also a contributor to BusinessDay Newspaper, which is widely read in Nigeria and Ghana.
+        </p>
+      </template>
+    </HeroSection>
 
     <Container v-if="false">
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">

@@ -116,7 +116,7 @@ function logoLoaded() {
             <button
                 class="hover:scale-[1.2] font-sm text-xsm border text-primary border-primary p-4 rounded-md outline-0"
             >
-              Contact me
+              Book Bright UK
             </button>
           </RouterLink>
         </div>

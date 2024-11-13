@@ -110,7 +110,7 @@ async function sendEmail(values, {resetForm}) {
 
     <Container>
       <div class="mt-[3.4rem] text-center">
-        <Heading title="Contact Bright UK"/>
+        <Heading title="Book Bright UK"/>
       </div>
 
       <div
