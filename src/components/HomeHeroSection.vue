@@ -74,7 +74,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="bg-secondary max-sm:py-[3rem] h-[631px]  xl:h-[700px]  2xl:h-[700px] relative homeHero flex items-center text-center">
+  <section class="bg-secondary max-sm:py-[3rem] h-[631px]  xl:h-[631px]  2xl:h-[631px] relative homeHero flex items-center text-center">
     <Container class="w-[95rem] text-center">
       <div
           class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
@@ -108,13 +108,9 @@ onBeforeUnmount(() => {
   background-image: url('@/assets/1280_by_631_v1px.jpg');
   background-size:  100% 631px; /* w x h */
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .homeHero {
-    background-image: url('@/assets/homemobile.png');
-  }
-}
 
 @media only screen and (min-width: 1500px) {
   .homeHero {
@@ -130,8 +126,14 @@ onBeforeUnmount(() => {
 
 @media only screen and (max-width: 1280px) {
   .homeHero {
-    background-size:  100% 700px;
+    background-size:  100%  631px;
     background-position: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homeHero {
+    background-image: url('@/assets/homemobile.png');
   }
 }
 
