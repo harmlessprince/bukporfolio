@@ -145,7 +145,7 @@ onMounted(() => {
       <Container>
         <div class="w-full text-center mt-[2rem]">
           <!-- <Subheading title="Quotes"/> -->
-          <Heading title="Inspirational Words From Bright UK"/>
+          <Heading title="Inspiring Gems From Bright UK"/>
         </div>
 
         <div
