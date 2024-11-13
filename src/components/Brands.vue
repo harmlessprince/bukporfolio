@@ -38,7 +38,7 @@ const settings = {
         <div
           class="flex flex-row"
         >
-          <Carousel v-bind="settings"   snapAlign="start" :itemsToShow="5" :wrapAround="true">
+          <Carousel v-bind="settings"  :autoplay="500"  snapAlign="start" :itemsToShow="5" :wrapAround="true">
             <Slide v-for="(slide, index) in brandStore.brands" :key="index" class="flex flex-row">
               <div class="">
                 <img
