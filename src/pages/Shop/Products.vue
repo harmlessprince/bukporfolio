@@ -7,8 +7,9 @@ import HeroSection from "@/components/HeroSection.vue";
   <HeroSection
       imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059213/cartbanner_k5wqbe.png"
       page="Shop"
+
   />
-  <section class="mb-[25rem]">
+  <section class="mb-[25rem] mt-[3.4rem]">
     <Books :shouldSlice="false"/>
   </section>
 </template>

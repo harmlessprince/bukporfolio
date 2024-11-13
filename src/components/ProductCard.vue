@@ -11,10 +11,10 @@ const props = defineProps(['title', "image", "price", "description", "id"])
       class="rounded-[10px] border border-[#BEBEBE] p-[1rem] text-left flex flex-col justify-center gap-[1rem] "
   >
     <div class="w-full flex justify-center items-center">
-      <div class="w-[281px] h-[230px]">
+      <div class="h-[281px] w-[230px]">
         <img
             :src="image"
-            class="w-full h-full"
+            class="h-full w-full object-cover"
             alt="book"
         />
       </div>

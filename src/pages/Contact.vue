@@ -108,11 +108,10 @@ async function sendEmail(values, {resetForm}) {
     />
 
 
-    <Container>
-      <div class="mt-[3.4rem] text-center">
+    <Container class="mt-[3.4rem]">
+      <div class=" text-center">
         <Heading title="Book Bright UK"/>
       </div>
-
       <div
             class="grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] gap-[3rem] text-[#414141] mt-[4.8rem]">
             

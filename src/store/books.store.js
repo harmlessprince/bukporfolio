@@ -44,6 +44,7 @@ export const useBookstore = defineStore("booksStore", () => {
                 image: data.image,
                 position: data.position,
                 status: data.status,
+                card_image: data.card_image,
             });
         });
 

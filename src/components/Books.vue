@@ -36,7 +36,7 @@ defineProps({
               :title="book.title"
               :description="book.summary"
               :price="book.default.price"
-              :image="book.image ?? 'https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png'"
+              :image="book.card_image ?? 'https://res.cloudinary.com/chiaka/image/upload/v1711909077/uvqagrnsk8sjzwswwnpz.png'"
               :id="book.id"
               v-for="(book, index) in (shouldSlice === true) ? store.books.slice(0, maximumNumberOfBooks) : store.books"
               :key="index"
