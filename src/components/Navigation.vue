@@ -98,7 +98,7 @@ function logoLoaded() {
           </li>
           <li class="mainnav__links">
             <RouterLink
-                :class='isRouteActive("interview", "") ? "mainNavLinkActive" : "mainnavlink"'
+                :class='isRouteActive("", "/interview") ? "mainNavLinkActive" : "mainnavlink"'
                 :to="{name: 'interview'}"
             >Interview
             </RouterLink>

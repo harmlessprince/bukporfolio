@@ -2,11 +2,9 @@
 import Container from "@/components/Container.vue";
 import {ref, onMounted, onBeforeUnmount} from "vue";
 import {gsap} from "gsap";
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {TextPlugin} from 'gsap/TextPlugin';
 import {RoughEase} from 'gsap/EasePack'
 
-gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(RoughEase);
 
