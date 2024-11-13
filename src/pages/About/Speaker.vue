@@ -4,13 +4,11 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
 import Heading from '@/components/Heading.vue';
-import Subheading from '@/components/SubHeading.vue';
 import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
 import Pagination from "@/components/Pagination.vue";
-import aboutSpeaker from '@/assets/about_speaker.png';
 
 
 const items = ref([...Array(100).keys()].map(i => ({id: i, name: `Item ${i + 1}`}))); // Example items
