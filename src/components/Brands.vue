@@ -9,6 +9,7 @@ onBeforeMount(() => {
   brandStore.getBrands();
 });
 const settings = {
+  snapAlign: 'start',
   wrapAround: true,
   breakpoints :{
     // 700px and up
@@ -33,17 +34,14 @@ const settings = {
   <section class="bg-[#fff]">
     <Container>
       <div
-        class="w-full text-center pt-[1.4rem] "
+        class="flex justify-between items-center w-full"
       >
-        <div
-          class="flex flex-row"
-        >
-          <Carousel v-bind="settings"  :autoplay="500"  snapAlign="start" :itemsToShow="5" :wrapAround="true">
+          <Carousel v-bind="settings"  :autoplay="500" :itemsToShow="5" :wrapAround="true">
             <Slide v-for="(slide, index) in brandStore.brands" :key="index" class="flex flex-row">
               <div class="">
                 <img
                     :src="slide.image"
-                    class="h-full w-full"
+                    class=""
                     :alt="slide.name"
                     :key="index"
                 />
@@ -55,7 +53,6 @@ const settings = {
             </template>
           </Carousel>
         </div>
-      </div>
     </Container>
   </section>
 </template>
@@ -64,7 +61,5 @@ const settings = {
 .carousel__slide{
   margin-right: 20px;
 }
-section > div > div > div > section > div.carousel__viewport > ol > li {
-  width: 20% !important;
-}
+
 </style>
