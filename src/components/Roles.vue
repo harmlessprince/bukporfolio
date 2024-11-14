@@ -46,7 +46,7 @@ function getRoleLink(name) {
           <div class="">
 <!--            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 transform group-hover:-translate-x-10" :style="{ backgroundImage: `url(${role.image ?? 'https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729081988/IMG_1711_g9mabj.png'})` }"></div>-->
             <!-- Overlay for text with sliding effect -->
-            <div class="absolute opacity-0  inset-0 bg-black bg-opacity-80 flex justify-center items-start group-hover:opacity-100 flex-col">
+            <div class="absolute opacity-0  inset-0 bg-black bg-opacity-80 flex justify-center items-start group-hover:opacity-100 flex-col items-center">
               <p class="text-white font-medium  text-xl transform translate-x-10 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 p-2 text-center w-[25rem]">
                 {{role.summary.substring(0,300)}}
               </p>
