@@ -79,8 +79,8 @@ onBeforeUnmount(() => {
     <Container class="w-[95rem] text-center max-sm:relative max-md:relative">
       <div
           class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
-        <div class="text-[#C7AE2E]">CHANGE YOUR THINKING </div>
-        <div class="max-small:min-h-[10rem] small:max-large:min-h-[15rem]">
+        <div class="text-[#C7AE2E]">CHANGE YOUR THINKING</div>
+        <div class=" small:max-large:min-h-[15rem]">
           <span class="text"></span>
          <span class="cursor">_</span>
         </div>
