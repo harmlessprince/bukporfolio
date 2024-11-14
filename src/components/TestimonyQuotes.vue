@@ -34,7 +34,7 @@ defineProps({
       class="bg-[#F9F7EA] rounded-[10px] pl-[1.9rem] pr-[3.1rem] pt-[38.5px] pb-[22.5px] min-h-[25.4rem] flex flex-col gap-[2rem] justify-between hover:scale-[1.1] w-full"
   >
     <q
-        class="font-medium text-[16px] leading-[2.4rem] text-[#000000] text-justify"
+        class="font-medium text-[16px] leading-[2.4rem] text-[#000000] text-left"
     >
       {{ quote.substring(0, 300) }}
     </q>
@@ -43,7 +43,7 @@ defineProps({
       <div class="flex flex-row items-center">
         <img
             :src="image"
-            class="w-[59px] h-[59px] mr-[1rem] rounded-full"
+            class="w-[64px] h-[64px] mr-[1rem] rounded-full"
             alt="bright"
         />
         <div class="text-left">

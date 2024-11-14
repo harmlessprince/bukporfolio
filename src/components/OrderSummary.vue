@@ -227,7 +227,7 @@ function formatCountries(countries) {
           Checkout
         </button>
         <RouterLink type="button"
-                    :to="{name: 'products'}"
+                    :to="{name: 'books'}"
                     class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-transparent text-gray-800 border border-gray-300 rounded-md flex items-center justify-center">
           Continue Shopping
         </RouterLink>

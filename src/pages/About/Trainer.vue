@@ -67,10 +67,10 @@ onMounted(() => {
 
     <Container id="trainer">
       <div
-          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] items-center my-[5rem] max-medium:my-[2.7rem]">
+          class="w-full min-h-full flex max-medium:flex-col max-medium:gap-y-[2rem] gap-x-[2rem]  items-center my-[5rem] max-medium:my-[2.7rem]">
         <div
-            class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative mr-[5rem] max-medium:mr-0">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730704899/Trainer_Image_yn88oe.png"
+            class="bookBrightImage w-[47.6rem] max-medium:w-full min-h-[62.8rem] max-medium:min-h-full rounded-[10px] relative  max-medium:mr-0">
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731497530/Trainer_Image_1_ogovey.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg"
                class="w-[7.5rem] h-[7.5rem] mx-auto absolute top-[-0.5rem] right-[0.5rem]"
@@ -118,43 +118,39 @@ onMounted(() => {
 
     <Container id="coach">
       <div
-          class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-end my-[5rem] max-medium:my-[2.7rem]">
+          class="grid grid-cols-2 max-medium:grid-cols-1 max-medium:gap-y-[2rem] gap-x-[2rem] items-start my-[5rem] max-medium:my-[2.7rem]">
         <div
             class="coachBrightImage w-[48.0rem] max-medium:w-full min-h-[43.3rem] max-medium:min-h-[27.8rem] medium:hidden">
           <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059217/trainerprofile_nkw9rp.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
-        <div class="w-full coachBrightText">
+        <div class="w-full coachBrightText flex flex-col justify-center min-h-[43.3rem]">
           <Heading title="Coach"/>
-          <div class="font-normal text-basic text-[#2B2B2B] mb-[0.5rem] text-justify space-y-2">
-            <p>
-              In today's broken world, many individuals struggle with psychological issues that hinder their progress in
-              leadership, wealth-building, and relationships, and impact their overall well-being as they find
-              themselves trapped in patterns of negative thinking, self-sabotage, and limiting beliefs.
-            </p>
-            <p>
-              As a Transformation Coach, Bright UK helps individuals to close the gap between their potential and
-              performance through bespoke mind engineering processes that helps them achieve healing and wholeness,
-              regain control of their lives, lead effectively, and ultimately attain wealth and well-being.
-            </p>
-            <p>
-              Whether to reinvent yourself, develop new habits, meet your wildly ambitious goals, or lead more
-              effectively, Bright UK will hold your hands and walk you through where you are to where you ought to be.
-            </p>
+          <div class="flex flex-col  ">
+            <div class="font-normal text-basic text-[#2B2B2B] mb-[0.5rem] text-justify space-y-2">
+              <p>
+                As a Transformation Coach, Bright UK helps individuals and organizations to close the gap between their potential and performance
+                through bespoke mind engineering processes that help to improve their effectiveness and productivity.
+              </p>
+              <p>
+                Whether to reinvent yourself, develop new habits, meet your wildly ambitious goals, or lead more effectively,
+                Bright UK will hold your hands and walk you through where you are to where you ought to be.
+              </p>
 
-          </div>
-          <div>
-            <RouterLink
-                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
-                :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
-              Personal Coaching Session
-            </RouterLink>
+            </div>
+            <div>
+              <RouterLink
+                  class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] bg-primary font-sm text-xsm text-secondary flex justify-center items-center mb-5"
+                  :to="{name: 'contact', query: {service: 'personalTrainingCoachingSession' }}">
+                Personal Coaching Session
+              </RouterLink>
 
-            <RouterLink
-                class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
-                :to="{name: 'contact', query: {service: 'groupTrainingCoachingSession' }}">
-              Register your Team for a Group Coaching Session
-            </RouterLink>
+              <RouterLink
+                  class="hover:scale-y-[1.1] h-[4.3rem] w-full rounded-[8px] border border-primary font-sm text-xsm flex justify-center items-center mb-5"
+                  :to="{name: 'contact', query: {service: 'groupTrainingCoachingSession' }}">
+                Register your Team for a Group Coaching Session
+              </RouterLink>
+            </div>
           </div>
         </div>
         <div class="w-full max-medium:hidden coachBrightImage">

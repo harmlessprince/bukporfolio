@@ -18,6 +18,7 @@ import TestimoniesV2 from "@/components/TestimoniesV2.vue";
 import FeaturedLinks from "@/components/FeaturedLinks.vue";
 
 const featuredLinkEnabled = ref("no")
+const whatPeopleAreSayingEnabled = ref("no")
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
@@ -110,9 +111,14 @@ onMounted(() => {
               <p>
                 He coaches individuals, consults for companies and organizations, writes for top-tier tabloids, and speaks regularly at conferences around the nation on subjects that impact human behaviour, empower leaders, shape culture, and democratize prosperity.
               </p>
-            </div>
 
-            <div class=" flex flex-row w-full justify-left items-center my-sm space-x-[1.4rem] mt-[4rem]">
+            </div>
+            <div class="mt-1">
+              <a href="#" class="text-primary text-[1.6rem] leading-[2.4rem] font-[500] underline decoration-primary">
+                Learn More
+              </a>
+            </div>
+            <div class=" flex flex-row w-full justify-left items-center space-x-[1.4rem] mt-[3rem]">
               <a href="https://x.com/brightostle" target="_blank" rel="noopener noreferrer">
                 <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons"/>
               </a>
@@ -129,6 +135,8 @@ onMounted(() => {
                 <img :src="Instagram" class="w-[20px] h-[20px]" alt="icons"/>
               </a>
             </div>
+
+
 
           </div>
         </div>
@@ -157,7 +165,7 @@ onMounted(() => {
     </section> -->
     <!-- end of gallery -->
 
-    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]">
+    <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]" v-if="whatPeopleAreSayingEnabled === 'no'">
       <Container>
           <TestimoniesV2 class="testimonialBoxText"/>
            <!-- <Testimonies /> -->

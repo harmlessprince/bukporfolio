@@ -13,7 +13,7 @@ const cartStore = useCartStore();
       </div>
 
       <div class="flex flex-col">
-        <RouterLink  :to="{name: 'item', params: {id: id}}">
+        <RouterLink  :to="{name: 'book', params: {id: id}}">
           <h3 class="text-[1.2rem] font-bold text-gray-800">{{ title }}</h3>
         </RouterLink>
         <p class="text-[0.75rem] font-semibold text-gray-500 mt-0.5">Variation: {{ variation }}</p>

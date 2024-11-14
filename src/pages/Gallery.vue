@@ -9,7 +9,6 @@ const currentTab = ref("pictures")
 
 function toggleTab(name) {
   currentTab.value = name;
-  console.log(currentTab.value);
 }
 </script>
 
