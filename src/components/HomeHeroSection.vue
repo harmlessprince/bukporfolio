@@ -74,8 +74,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="bg-secondary max-sm:py-[3rem] h-[631px]  xl:h-[631px]  2xl:h-[631px] relative homeHero flex items-center text-center">
-    <Container class="w-[95rem] text-center">
+  <section class="bg-secondary max-sm:py-[3rem] h-[631px] max-md:h-[643px] max-sm:h-[519px]  xl:h-[631px]  2xl:h-[631px] relative homeHero flex items-center text-center max-sm:relative max-md:relative">
+    <div class="absolute inset-0 bg-black opacity-50 hidden max-sm:block max-md:block"></div>
+    <Container class="w-[95rem] text-center max-sm:relative max-md:relative">
       <div
           class="mt-[9rem] min-h-[15.2rem] text-white font-bold font-title text-[4.8rem] max-sm:text-[3rem] leading:[56px] max-sm:leading-[44px] mb-[2.1rem] max-sm:mb-[1rem]">
         <div class="text-[#C7AE2E]">CHANGE YOUR THINKING </div>
@@ -111,7 +112,6 @@ onBeforeUnmount(() => {
   background-position: center;
 }
 
-
 @media only screen and (min-width: 1500px) {
   .homeHero {
     background-size:  100% 750px;
@@ -130,10 +130,17 @@ onBeforeUnmount(() => {
     background-position: center;
   }
 }
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 746px) {
   .homeHero {
-    background-image: url('@/assets/homemobile.png');
+    background-image: url('@/assets/hero_section_tap.png');
+    background-size:  100% 643px; /* w x h */
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .homeHero {
+    background-image: url('@/assets/mobile_screen.png');
+    background-size:  100%  519px;
   }
 }
 
