@@ -4,10 +4,26 @@ import HeroSection from "@/components/HeroSection.vue";
 import InterviewVideo from "@/components/InterviewVideo.vue";
 import Heading from '@/components/Heading.vue';
 import Container from "@/components/Container.vue";
+import Events from "@/components/Events.vue";
 import InterviewImage from "@/assets/interview.png"
 import {ref} from "vue";
 
-// const currentTab = ref("videos")
+const arrayOfEvents = [{
+  bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
+  theme: "Lead The future",
+  notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
+},
+{
+  bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
+  theme: "Lead The future",
+  notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
+},
+{
+  bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
+  theme: "Lead The future",
+  notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
+}
+]
 </script>
 
 <template>
@@ -20,11 +36,17 @@ import {ref} from "vue";
 
     <Container>
         <div class="text-center mt-[7.7rem]">
-        <Heading title="Interviews"/>
-        <h1 class="text-[2rem] font-[500] leading-[32px] text-[#151515]">Watch the exclusive interviews of Bright Uk </h1>
+        <Heading title="Upcoming Events"/>
     </div>
-    <div class="mt-[4.4rem]">
-     <InterviewVideo  key="videos"/>
+    <div
+    class="mt-[1.6rem] grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem]"
+>
+     <Events
+     v-for="(event, index) in arrayOfEvents" :key="index"  
+     :bannerUrl="event.bannerUrl"
+     :theme="event.theme"
+     :notes="event.notes"
+     />
     </div>
 </Container>
     
