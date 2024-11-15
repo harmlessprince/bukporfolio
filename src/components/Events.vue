@@ -16,8 +16,10 @@ const props = defineProps(['bannerUrl', 'notes', 'theme'])
         {{ props.notes }}
     </p>
     <div class="mt-[2.4rem] w-full">
+        <a href="https://forms.gle/9ca8wKu8nzZdXScL7" target="_blank">
     <button class="w-full rounded-[8px] h-[4.3rem] bg-[#C7AE2E] font-[500] text-[1.4rem] text-[#000] leading-[1.7rem]">Register for event</button>
-    </div>
+        </a>
+</div>
 
   </div>
 </template>
