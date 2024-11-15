@@ -11,16 +11,19 @@ import {ref} from "vue";
 const arrayOfEvents = [{
   bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
   theme: "Lead The future",
+  eventUrl: "https://forms.gle/9ca8wKu8nzZdXScL7",
   notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
 },
 {
   bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
   theme: "Lead The future",
+  eventUrl: "https://forms.gle/9ca8wKu8nzZdXScL7",
   notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
 },
 {
   bannerUrl: "https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731663698/WhatsApp_Image_2024-11-12_at_08.01.11_e13e5318_1_kfvu6s.png",
   theme: "Lead The future",
+  eventUrl: "https://forms.gle/9ca8wKu8nzZdXScL7",
   notes: 'Office ipsum you must be muted. Downloaded teeth native quick are email usabiltiy baked. Red-flag boys our lunch an technologically design baseline door. Invite goto land shower happenings day. Ourselves every optimize message old optimal ping.'
 }
 ]
@@ -46,6 +49,7 @@ const arrayOfEvents = [{
      :bannerUrl="event.bannerUrl"
      :theme="event.theme"
      :notes="event.notes"
+     :eventUrl="event.eventUrl"
      />
     </div>
 </Container>
