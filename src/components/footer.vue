@@ -38,10 +38,10 @@ const isRouteActive = (link, routePath) => {
       :class='isRouteActive("about", "") ? "mainNavLinkActive" : "mainnavlink"'
       >About</RouterLink>
     </span>
-      <span>
-        <RouterLink :to="{ name: 'gallery'}" 
-        :class='isRouteActive("", "/gallery") ? "mainNavLinkActive" : "mainnavlink"'
-        >Gallery</RouterLink></span>
+      <!-- <span>
+        <RouterLink :to="{ name: 'events'}" 
+        :class='isRouteActive("", "/events") ? "mainNavLinkActive" : "mainnavlink"'
+        >Events</RouterLink></span> -->
         <span>
           <RouterLink :to="{ name: 'books'}"
           :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'
