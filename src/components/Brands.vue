@@ -49,7 +49,6 @@ const settings = {
             </Slide>
 
             <template #addons="">
-<!--              <Navigation />-->
             </template>
           </Carousel>
         </div>

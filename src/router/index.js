@@ -15,6 +15,8 @@ import Post from "@/pages/Blog/Post.vue";
 import Contact from "@/pages/Contact.vue";
 import NotFound from "@/pages/NotFound.vue";
 import Gallery from "@/pages/Gallery.vue";
+import Events from "@/pages/Events.vue";
+
 
 
 const routes = [
@@ -33,6 +35,7 @@ const routes = [
     {path: '/blog/post/:id', component: Post, name: 'post', meta: {title: 'Bright-UK-Blog'}},
     {path: '/contact', component: Contact, name: 'contact', meta: {title: 'Bright-UK-Contact'}},
     {path: '/gallery', component: Gallery, name: 'gallery', meta: {title: 'Bright-UK-Gallery'}},
+    {path: '/events', component: Events, name: 'events', meta: {title: 'Bright-UK-Events'}},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
@@ -48,7 +51,6 @@ const router = createRouter({
     // linkExactActiveClass: 'text-primary border-b-4 border-primary',
     routes,
     scrollBehavior(to, from, savedPosition) {
-        console.log(to)
         if (to.hash) {
             return { el: to.hash, behavior: 'smooth' };
         }

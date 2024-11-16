@@ -78,9 +78,9 @@ function logoLoaded() {
             </div>
           </li>
           <li class="mainnav__links">
-            <RouterLink :to="{name: 'gallery'}"
-                        :class='isRouteActive("", "/gallery") ? "mainNavLinkActive" : "mainnavlink"'
-            >Gallery
+            <RouterLink :to="{name: 'events'}"
+                        :class='isRouteActive("", "/events") ? "mainNavLinkActive" : "mainnavlink"'
+            >Events
             </RouterLink>
           </li>
           <li class="mainnav__links">
