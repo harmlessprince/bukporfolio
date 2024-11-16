@@ -72,12 +72,12 @@ function toggleAboutDropdown() {
             </RouterLink>
           </div>
         </li>
-        <!-- <li class="">
+        <li class="">
           <RouterLink :to="{name: 'events'}"
                       :class='isRouteActive("", "/events") ? "bg-primaryColor p-[1rem] block" : "p-[1rem] block"'
                       @click="toggleSidebar.hideSideBar()">Events
           </RouterLink>
-        </li> -->
+        </li>
         <li class="">
           <RouterLink :to="{name: 'books'}"
                       :class='isRouteActive("shop", "") ? "bg-primaryColor p-[1rem] block" : "p-[1rem] block"'

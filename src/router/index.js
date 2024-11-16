@@ -14,7 +14,9 @@ import Blog from "@/pages/Blog/Index.vue";
 import Post from "@/pages/Blog/Post.vue";
 import Contact from "@/pages/Contact.vue";
 import NotFound from "@/pages/NotFound.vue";
-// import Events from "@/pages/Events.vue";
+import Gallery from "@/pages/Gallery.vue";
+import Events from "@/pages/Events.vue";
+
 
 
 const routes = [
@@ -32,7 +34,8 @@ const routes = [
     {path: '/blog', component: Blog, name: 'blog', meta: {title: 'Bright-UK-Blog'}},
     {path: '/blog/post/:id', component: Post, name: 'post', meta: {title: 'Bright-UK-Blog'}},
     {path: '/contact', component: Contact, name: 'contact', meta: {title: 'Bright-UK-Contact'}},
-    // {path: '/events', component: Events, name: 'events', meta: {title: 'Bright-UK-Events'}},
+    {path: '/gallery', component: Gallery, name: 'gallery', meta: {title: 'Bright-UK-Gallery'}},
+    {path: '/events', component: Events, name: 'events', meta: {title: 'Bright-UK-Events'}},
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",

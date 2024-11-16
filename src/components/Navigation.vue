@@ -77,12 +77,12 @@ function logoLoaded() {
               </div>
             </div>
           </li>
-          <!-- <li class="mainnav__links">
+          <li class="mainnav__links">
             <RouterLink :to="{name: 'events'}"
                         :class='isRouteActive("", "/events") ? "mainNavLinkActive" : "mainnavlink"'
             >Events
             </RouterLink>
-          </li> -->
+          </li>
           <li class="mainnav__links">
             <RouterLink :to="{name: 'books'}"
                         :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'
