@@ -24,6 +24,7 @@
     "nodemailer": "^6.9.15",
     "pinia": "^2.2.2",
     "primevue": "^4.2.1",
+    "swiper": "^11.1.14",
     "vee-validate": "^4.13.2",
     "video.js": "7.x",
     "vue": "^3.4.37",

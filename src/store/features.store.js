@@ -18,8 +18,11 @@ export const useFeaturesStore = defineStore("featuresStore", () => {
                 id: doc.id,
                 image: data.image,
                 name: data.name,
+                position: data.position,
             });
         });
+        items.sort((a, b) => a?.position - b?.position);
+        console.log(items);
         features.value = items;
     }
 
