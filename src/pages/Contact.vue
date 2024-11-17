@@ -170,7 +170,7 @@ async function sendEmail(values, {resetForm}) {
             </div>
             <div class="w-full">
               <label class="">Phone Number</label>
-              <ContactFormInput name="phoneNumber" label="Full Name" placeholder="John Doe"/>
+              <ContactFormInput name="phoneNumber" label="Phone Number" placeholder=""/>
               <ErrorMessage name="phoneNumber" class="text-red-500"/>
             </div>
             <div class="w-full">
