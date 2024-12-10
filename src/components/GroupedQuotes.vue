@@ -47,7 +47,7 @@ const quotesConfig = {
         </div>
         <div class="flex mb-2">
           <div v-for="(slide, index) in props.quotes" :key="index" v-show="index === currentSlide">
-            <p class="text-left">{{ slide.substring(0, 350) }}</p>
+            <p class="text-left">{{ slide.substring(0, 500) }}</p>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@ const quotesConfig = {
         </div>
         <div class="flex mb-2">
           <div v-for="(slide, index) in props.quotes" :key="index" v-show="index === currentSlide">
-            <p class="text-left">{{ slide.substring(0, 350) }}</p>
+            <p class="text-left">{{ slide.substring(0, 500) }}</p>
           </div>
         </div>
       </div>
