@@ -80,7 +80,24 @@ const quotesConfig = {
         <img :src="props.icon" class="w-[2.5rem] z-50 h-[2.5rem]" alt="about speaker bright uk"/>
         <header class="text-[1.8rem] leading-[24px] font-[700]">{{ props.title }}</header>
       </div>
-      <!--      {{ props.quotes.slice(0, 400) }}-->
+      <div class="flex flex-col justify-between">
+        <div class="flex mb-2">
+          <div  v-for="(slide, index) in props.quotes" :key="index" v-show="index === currentSlide">
+            <p class="text-left">{{ slide }}</p>
+          </div>
+        </div>
+        <div class="flex space-x-[0.5rem] justify-end items-center">
+          <button
+              v-for="(_, index) in props.quotes"
+              :key="`${index}`+'button'"
+              @click="slideTo(index)"
+              :class="index === currentSlide ? 'bg-black text-white' : 'bg-gray-50 text-black'"
+              class="round_pagination_button "
+          >
+          </button>
+          <p>{{currentSlide + 1}}/{{props.quotes.length}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -113,6 +130,6 @@ const quotesConfig = {
 }
 
 .round_pagination_button {
-  @apply w-[1px] h-[1px] p-[7px] rounded-full flex items-center justify-center border-[0.1rem] border-[#F1F1F1] font-bold;
+  @apply  p-[7px] rounded-full flex items-center justify-center border-[0.1rem] border-[#F1F1F1] font-bold;
 }
 </style>
