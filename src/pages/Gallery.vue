@@ -13,7 +13,6 @@ function toggleTab(name) {
 </script>
 
 <template>
-  <!-- about hero section -->
   <section class="flex items-center justify-center relative h-[60rem] w-full bg-cover bg-no-repeat"
            :style="{ 'background-image': 'url(https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059216/trainerbanner_ljje9a.png)' }">
     <div class="w-[47.7rem] max-sm:w-full text-basic mx-auto text-center">

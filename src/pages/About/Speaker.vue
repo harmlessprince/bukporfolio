@@ -21,7 +21,6 @@ function loadMore() {
   const end = start + pageSize;
   paginatedItems.value.push(...items.value.slice(start, end));
   currentPage.value++;
-  console.log(currentPage.value)
 }
 
 gsap.registerPlugin(ScrollTrigger);
