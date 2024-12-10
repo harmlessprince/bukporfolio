@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import InterviewVideo from "@/components/InterviewVideo.vue";
 import Heading from '@/components/Heading.vue';
 import Container from "@/components/Container.vue";
-import InterviewImage from "@/assets/interview.png"
+import InterviewImage from "@/assets/interview_banner.jpg"
 import {ref} from "vue";
 
 // const currentTab = ref("videos")
@@ -16,7 +16,11 @@ import {ref} from "vue";
     <HeroSection
         :imageUrl="InterviewImage"
         page="Interviews"
-    />
+    >
+      <template v-slot:overlay>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </template>
+    </HeroSection>
 
     <Container>
         <div class="text-center mt-[7.7rem]">

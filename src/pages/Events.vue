@@ -22,8 +22,9 @@ const arrayOfEvents = [{
 <template>
   <main class="">
     <!-- about hero section -->
+    <!-- :imageUrl="EventImage" -->
     <HeroSection
-        :imageUrl="EventImage"
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731492454/1280_by_631_v1px_pjygvk.jpg"
         page="Events"
     />
 
