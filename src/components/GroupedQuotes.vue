@@ -30,7 +30,7 @@ const quotesConfig = {
 
   >
     <div class="quoteIcon ">
-      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem] justify-end " alt="quote icone"/>
+      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem] justify-end " alt="quote icon"/>
     </div>
     <!--    Front start-->
     <div class="text-center text-[#000] iconDiv h-full flex flex-col items-center justify-center">
