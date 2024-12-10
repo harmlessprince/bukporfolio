@@ -9,9 +9,9 @@ import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";
 import Pagination from "@/components/Pagination.vue";
+import GroupedQuotes from "@/components/GroupedQuotes.vue";
 
 
-const items = ref([...Array(100).keys()].map(i => ({id: i, name: `Item ${i + 1}`}))); // Example items
 const paginatedItems = ref([]);
 
 const pageSize = 10; // Number of items per page
@@ -19,7 +19,7 @@ const pageSize = 10; // Number of items per page
 function loadMore() {
   const start = currentPage.value * pageSize;
   const end = start + pageSize;
-  paginatedItems.value.push(...items.value.slice(start, end));
+  paginatedItems.value.push(...store.groupedQuotes.slice(start, end));
   currentPage.value++;
 }
 
@@ -32,7 +32,7 @@ const perPage = 6;
 const paginatedQuotes = computed(() => {
   const start = (currentPage.value - 1) * perPage;
   const end = start + perPage;
-  return store.quotes.slice(start, end);
+  return store.groupedQuotes.slice(start, end);
 })
 
 function updatePage(page) {
@@ -40,7 +40,7 @@ function updatePage(page) {
 }
 
 onBeforeMount(() => {
-  store.getQuotes();
+  store.getGroupedQuotes();
   loadMore()
 });
 
@@ -151,20 +151,30 @@ onMounted(() => {
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
 
-          <InspirationCard
+<!--          <InspirationCard-->
+<!--              v-for="(item, index) in paginatedQuotes"-->
+<!--              :title="item.title"-->
+<!--              :quote="item.quote"-->
+<!--              :img="item.image"-->
+<!--              :key="index"-->
+<!--              :ind="index"-->
+<!--              :style="{ transitionDelay: `${index * 100}ms` }"-->
+<!--          />-->
+
+          <GroupedQuotes
               v-for="(item, index) in paginatedQuotes"
               :title="item.title"
-              :quote="item.quote"
-              :img="item.image"
+              :quotes="item.quotes"
+              :icon="item.icon"
               :key="index"
-              :ind="index"
+              :index="index"
               :style="{ transitionDelay: `${index * 100}ms` }"
           />
         </div>
 
         <Pagination
             :currentPage="currentPage"
-            :totalItems="store.quotes.length"
+            :totalItems="store.groupedQuotes.length"
             :perPage="perPage"
             @updatePage="updatePage"
         />
@@ -213,4 +223,5 @@ onMounted(() => {
   opacity: 1;
   transform: translateY(0);
 }
+
 </style>
