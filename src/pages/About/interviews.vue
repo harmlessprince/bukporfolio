@@ -16,7 +16,11 @@ import {ref} from "vue";
     <HeroSection
         :imageUrl="InterviewImage"
         page="Interviews"
-    />
+    >
+      <template v-slot:overlay>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </template>
+    </HeroSection>
 
     <Container>
         <div class="text-center mt-[7.7rem]">
