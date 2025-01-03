@@ -39,17 +39,25 @@ onMounted(() => {
 
   <main class="text-primary">
 
-    <!-- about hero section -->
-
     <HeroSection
-        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059209/authorbanner_lzjjj1.png"
+        imageUrl="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1731501326/pexels-pixabay-159711_gtskue.jpg"
         page="Author"
-    />
+        class="mb-[4rem] relative"
+    >
+      <template v-slot:overlay>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </template>
+      <template v-slot:description>
+        <p class="text-white font-medium text-3xl w-1/2 text-center">
+          As a prolific writer, Bright UK has authored three books and numerous publications on leadership, wealth, and well-being. He was also a contributor to BusinessDay Newspaper, which is widely read in Nigeria and Ghana.
+        </p>
+      </template>
+    </HeroSection>
 
-    <Container>
+    <Container v-if="false">
       <div class="w-full flex max-sm:flex-col max-sm:gap-y-[2rem] gap-x-[2rem] items-center my-[5rem] max-sm:my-[2rem]">
         <div class="w-[47.6rem] max-sm:w-full max-h-full rounded-[10px] authorImageBox">
-          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059221/who_i_am_jfd3xn.png"
+          <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1730705045/Author_Image_fudbod.png"
                class="w-full h-full rounded-[10px]" alt="bright"/>
         </div>
         <div class="w-[47.7rem] max-sm:w-full authorTextBox">

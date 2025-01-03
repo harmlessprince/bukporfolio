@@ -24,7 +24,7 @@ const isRouteActive = (link, routePath) => {
 </script>
 
 <template>
-  <footer class="text-center w-full bg-[#0f0f13] py-[1rem] text-[#fff] footer">
+  <footer class="text-center w-full bg-[#141105] py-[1rem] text-[#fff] footer">
     <img src="https://res.cloudinary.com/dcr1pvlh3/image/upload/v1729059218/ukLogo_eavpu6.svg" class="w-[6.4rem] h-[6.4rem] mx-auto" alt="footer logo" />
 
     <div class="text-basicText space-x-[3rem] max-medium:space-x-0 max-medium:space-y-[3rem] font-xsm flex flex-row max-medium:flex-col w-full justify-center mt-sm max-medium:text-center">
@@ -39,9 +39,9 @@ const isRouteActive = (link, routePath) => {
       >About</RouterLink>
     </span>
       <span>
-        <RouterLink :to="{ name: 'gallery'}" 
-        :class='isRouteActive("", "/gallery") ? "mainNavLinkActive" : "mainnavlink"'
-        >Gallery</RouterLink></span>
+        <RouterLink :to="{ name: 'events'}" 
+        :class='isRouteActive("", "/events") ? "mainNavLinkActive" : "mainnavlink"'
+        >Events</RouterLink></span>
         <span>
           <RouterLink :to="{ name: 'books'}"
           :class='isRouteActive("shop", "") ? "mainNavLinkActive" : "mainnavlink"'

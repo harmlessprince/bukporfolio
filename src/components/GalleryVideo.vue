@@ -33,16 +33,16 @@ function updatePage(page) {
 <template>
   <div>
     <div
-        class="gallery-video grid grid-cols-[repeat(auto-fill,minmax(48.8rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
-      <div v-for="(path, index) in paginatedVideos" :key="index" class="h-auto max-w-full">
-        <div>
+        class="gallery-video grid grid-cols-[repeat(auto-fill,minmax(35.7rem,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(30.8rem,1fr))] w-full gap-2">
+      <div v-for="(path, index) in paginatedVideos" :key="index" class="h-full max-w-full">
+        <div class="">
           <video-player
               :src="path"
               controls
               :loop="true"
               :volume="0.6"
-              :height=468
-              :width=488
+              :height="362"
+              :width=357
               :fluid="true"
               class="vjs-matrix video-js vjs-big-play-centered"
           />

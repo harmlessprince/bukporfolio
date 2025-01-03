@@ -18,8 +18,12 @@ export const useBookstore = defineStore("booksStore", () => {
         const querySnapshot = await getDocs(booksRef);
         const items = [];
         querySnapshot.forEach((doc) => {
+
             // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
+            if (!data.status){
+                return;
+            }
             let defaultBook = null;
             if (Array.isArray(data?.forms)) {
                 defaultBook = data?.forms?.find(item => item.default === true);
@@ -38,8 +42,14 @@ export const useBookstore = defineStore("booksStore", () => {
                 forms: data.forms,
                 default: defaultBook,
                 image: data.image,
+                position: data.position,
+                status: data.status,
+                card_image: data.card_image,
             });
         });
+
+        items.sort((a, b) => a?.position - b?.position)
+        console.log(items);
         books.value = items;
         loaderStore.done()
     }

@@ -1,10 +1,5 @@
 <script setup>
-
-import Niyi from "@/assets/niyi.png";
 import CommentIcon1 from "@/assets/commentIcon1.svg";
-import Subheading from "@/components/SubHeading.vue";
-import Heading from "@/components/Heading.vue";
-
 import {useTestimoniesStore} from "@/store/testimonies.store.js";
 import {onBeforeMount, watch, ref} from "vue";
 import Container from "@/components/Container.vue";
@@ -54,13 +49,8 @@ function previousQuote() {
 <template>
   <section class="grow-[2] shrink-0 basis-0">
     <Container>
-      <h3
-        class="font-lg text-basic text-primary font-primary leading-[2rem] mb-[0.7rem] max-sm:mb-0"
-      >
-        Testimony
-      </h3>
       <h2
-        class="font-header text-header max-sm:text-[3.0rem] text-secondary leading-[4.2rem] mb-[2.6rem]"
+        class="font-bold text-header max-sm:text-[3.0rem] text-secondary leading-[4.2rem] mb-[2.6rem]"
       >
         What People are Saying
       </h2>
