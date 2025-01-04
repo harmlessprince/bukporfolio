@@ -17,6 +17,7 @@ const blogStore = useBlogStore();
 const route = useRoute();
 onBeforeMount(() => {
   blogStore.fetchSinglePosts(route.params.id);
+  blogStore.fetchRecentPostsFromAPI();
 });
 
 watch(
@@ -26,14 +27,13 @@ watch(
         document.title = newPost.title;
         // Uncomment and update meta tags if needed
         updateMetaTag('description', newPost.title || 'Single Blog Post');
-         const keywords = newPost.labels?.join(",");
-        updateMetaTag('keywords', keywords || "");
+        const keywords = newPost.labels?.join(",");
         updateMetaTag('keywords', keywords || "");
       } else {
         document.title = 'Single Blog Post';
       }
     },
-    { immediate: true }
+    {immediate: true}
 );
 
 onBeforeRouteUpdate(async (to, from) => {
@@ -129,23 +129,19 @@ function decodeUnicode(str) {
           </div>
         </div>
 
-                <div
-                    class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
-                  <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
+        <div
+            class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
+          <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
 
-                  <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
-                    <RouterLink class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
-                          :key="index" :to="{name: 'blog', query: {category: category}}">
-                    {{ category }}
+          <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
+            <RouterLink class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
+                        :key="index" :to="{name: 'blog', query: {category: category}}">
+              {{ category }}
 
-                    </RouterLink>
-<!--                    <RouterLink :to="{name: 'post', params: {id: props.id}}"-->
-<!--                                class="hover:scale-y-[1.1] hover:bg-primaryColor flex items-center justify-center border-[1px] border-[#C7AE2E] h-[4.3rem] rounded-[8px] text-center text-[#000000] font-medium">-->
-<!--                      Read Post-->
-<!--                    </RouterLink>-->
-                  </div>
+            </RouterLink>
+          </div>
 
-                </div>
+        </div>
       </div>
     </div>
   </Container>
