@@ -118,3 +118,21 @@ export const createOrderEmailTemplate = ({ firstName, lastName, email, country, 
     </div>
     `;
 };
+export  function updateMetaTag(name, content) {
+    let metaTag = document.querySelector(`meta[name="${name}"]`);
+    let propMetaTag = document.querySelector(`meta[property="og:${name}"]`);
+    if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', name);
+        metaTag.setAttribute('property', `og:${name}`);
+        document.head.appendChild(metaTag);
+    }
+
+    if (!propMetaTag) {
+        propMetaTag = document.createElement('meta');
+        propMetaTag.setAttribute('property', `og:${name}`);
+        document.head.appendChild(propMetaTag);
+    }
+    propMetaTag.setAttribute('content', content);
+    metaTag.setAttribute('content', content);
+}
