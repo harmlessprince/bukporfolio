@@ -78,7 +78,7 @@ onMounted(() => {
         </div>
         <div class="w-[47.7rem] max-medium:w-full bookBrightText">
           <Heading title="Trainer" class="mb-2"/>
-          <div class="font-normal text-basic text-[#2B2B2B] mb-[2rem] leading-[2rem] text-justify space-y-2">
+          <div class="font-normal text-basic text-[#2B2B2B] mb-[2rem] leading-[2rem] text-justify space-y-[1.6rem]">
             <p>
               Bright UK is the Principal Consultant at Sixth Sense Leadership Consulting, an innovative company
               helping
@@ -127,7 +127,7 @@ onMounted(() => {
         <div class="w-full coachBrightText flex flex-col justify-center min-h-[43.3rem]">
           <Heading title="Coach"/>
           <div class="flex flex-col  ">
-            <div class="font-normal text-basic text-[#2B2B2B] mb-[0.5rem] text-justify space-y-2">
+            <div class="font-normal text-basic text-[#2B2B2B] mb-[0.5rem] text-justify space-y-5">
               <p>
                 As a Transformation Coach, Bright UK helps individuals and organizations to close the gap between their potential and performance
                 through bespoke mind engineering processes that help to improve their effectiveness and productivity.

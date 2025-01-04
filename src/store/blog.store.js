@@ -12,7 +12,8 @@ export const useBlogStore = defineStore("blogsStore", () => {
     const posts = ref([])
     const recentPosts = ref([])
     const singlePost = ref(null)
-    const categories = ref(["author", "entrepreneur", "speaker", "coach"])
+    const categories = ref([])
+    const currentCategory = ref("all")
 
     async function fetchAllPostsFromAPI() {
         loaderStore.start()
@@ -23,6 +24,7 @@ export const useBlogStore = defineStore("blogsStore", () => {
             posts.value = data?.items ?? []
         }
         loaderStore.done()
+        await retrievePostsLabels()
     }
     async function fetchAllPostsByTagFromAPI(category) {
         if (category === 'all'){
@@ -39,6 +41,21 @@ export const useBlogStore = defineStore("blogsStore", () => {
         loaderStore.done()
     }
 
+
+    async function retrievePostsLabels() {
+        const categoriesSet = new Set();
+        posts.value.forEach(item => {
+           if (item?.labels) {
+               categoriesSet.add(...item.labels)
+           }
+        });
+        categoriesSet.forEach(item => {
+            if (categories.value.indexOf(item) < 0) {
+                categories.value.push(item)
+            }
+        })
+        console.log(categories.value)
+    }
 
 
     async function fetchRecentPostsFromAPI() {
