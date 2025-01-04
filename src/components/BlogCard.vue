@@ -11,8 +11,8 @@ const props = defineProps(['title', 'year', 'day', 'month', 'author', "categorie
       class="rounded-[10px] border border-[#BEBEBE] text-left mb-[2rem] h-full flex flex-col justify-between gap-[1rem]">
     <div>
       <div class="w-full h-[21.2rem">
-      <img :src=generateThumbnailFromText(props.title) class="w-[100%] h-full rounded-t-[10px]"
-           alt="book"/>
+        <img :src=generateThumbnailFromText(props.title) class="w-[100%] h-full rounded-t-[10px]"
+             alt="book"/>
       </div>
       <div class="p-[1rem]">
         <div class="flex flex-row items-center">
@@ -22,10 +22,10 @@ const props = defineProps(['title', 'year', 'day', 'month', 'author', "categorie
             <span class="font-header">{{ props.month }}</span>
           </div>
           <div class="flex flex-col items-start">
-            <div class="font-xsm text-xsm text-[#7A7A7A] flex flex-row items-center">
-              <img :src="Person" class="mr-1">
-              <span>{{ props.author }}</span>
-            </div>
+            <!--            <div class="font-xsm text-xsm text-[#7A7A7A] flex flex-row items-center">-->
+            <!--              <img :src="Person" class="mr-1">-->
+            <!--              <span>{{ props.author }}</span>-->
+            <!--            </div>-->
             <div class="flex flex-row items-center space-x-[1rem] mt-1">
              <span class="font-bold" v-for="(category, index) in props.categories" :key="index">
             {{ category }}

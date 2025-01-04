@@ -27,6 +27,8 @@ watch(
 function onCategoryChange(category) {
   currentCategory.value = category;
   blogStore.fetchAllPostsByTagFromAPI(category)
+  currentCategory.value = category;
+  console.log(currentCategory.value == category);
 }
 
 
@@ -90,9 +92,17 @@ function onCategoryChange(category) {
 
 }
 
+
+
+.blog_category_tab:hover {
+  transform: scale(1.05); /* Slight grow on hover */
+  background-color: #e0e0e0; /* Light background on hover */
+  color: #545454;
+}
+
 .selected {
-  background-color: #121212;
-  color: white;
+  background-color: #121212 !important;
+  color: white !important;
   transform: scale(1.1); /* Slight scale effect */
 }
 
@@ -100,12 +110,6 @@ function onCategoryChange(category) {
   background-color: transparent;
   color: #545454;
   transform: scale(1); /* Normal size when unselected */
-}
-
-.blog_category_tab:hover {
-  transform: scale(1.05); /* Slight grow on hover */
-  background-color: #e0e0e0; /* Light background on hover */
-  color: #545454;
 }
 
 .transition-all {

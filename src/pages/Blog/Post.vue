@@ -62,23 +62,23 @@ function decodeUnicode(str) {
         </div>
         <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
           <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-            <span class="material-icons">calendar_month</span>
+<!--            <span class="material-icons">calendar_month</span>-->
             <span>
                 {{ getBlogDate(blogStore.singlePost.published) }}
                </span>
           </div>
 
-          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-            <span class="material-icons">person</span>
-            <span>{{ blogStore.singlePost.author.displayName }}</span>
-          </div>
+<!--          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">-->
+<!--            <span class="material-icons">person</span>-->
+<!--            <span>{{ blogStore.singlePost.author.displayName }}</span>-->
+<!--          </div>-->
         </div>
-        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
-            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"
-                  :key="index">
-            {{ category }}
-            </span>
-        </div>
+<!--        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">-->
+<!--            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"-->
+<!--                  :key="index">-->
+<!--            {{ category }}-->
+<!--            </span>-->
+<!--        </div>-->
         <div class="mt-[1.7rem] font-[400] leading-[1.69rem] text-[1.4rem] text-[#7a7a7a]">
           <h1 class="mb-[1rem] font-[700] text-[2.8rem] leading-[3.38rem] text-secondaryColor">
             {{ blogStore.singlePost.title }}
@@ -114,18 +114,18 @@ function decodeUnicode(str) {
           </div>
         </div>
 
-        <div
-            class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">
-          <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
+<!--        <div-->
+<!--            class="h-[204px] mt-[1.8rem] text-left border border-[#dddddd] rounded-[10px] p-[1.2rem] text-secondaryColor">-->
+<!--          <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>-->
 
-          <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
-            <span class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
-                  :key="index">
-            {{ category }}
-            </span>
-          </div>
+<!--          <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">-->
+<!--            <span class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"-->
+<!--                  :key="index">-->
+<!--            {{ category }}-->
+<!--            </span>-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
       </div>
     </div>
   </Container>
