@@ -28,7 +28,6 @@ watch(
         updateMetaTag('description', newPost.title || 'Single Blog Post');
          const keywords = newPost.labels?.join(",");
         updateMetaTag('keywords', keywords || "");
-        updateMetaTag('keywords', keywords || "");
       } else {
         document.title = 'Single Blog Post';
       }
