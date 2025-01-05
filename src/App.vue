@@ -13,12 +13,11 @@ const cartStore = useCartStore();
 const toggleSidebar = useToggleSidebar()
 onMounted(() => {
   cartStore.loadCart();
-  console.log(toggleSidebar.sideBar)
 });
 </script>
 
 <template>
-  <div class="page-container w-full mx-auto">
+  <div class="page-container w-full mx-auto overflow-x-hidden">
     <Navigation/>
     <!-- having issues with integrating side bar. 
      check togglesidebar.store.js
