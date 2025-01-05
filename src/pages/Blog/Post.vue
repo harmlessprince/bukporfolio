@@ -1,12 +1,13 @@
 <script setup>
 import Container from "@/components/Container.vue";
 import {useBlogStore} from "@/store/blog.store.js";
-import {onBeforeMount, ref, watch} from "vue";
+import {onBeforeMount, onMounted, watch} from "vue";
 import {useRoute} from "vue-router";
 import {onBeforeRouteUpdate} from 'vue-router'
+
 import {
   generateThumbnailFromText,
-  getBlogDate,
+  getBlogDate, updateMetaTag,
 } from "@/services/util.js";
 import he from 'he';
 import DOMPurify from 'dompurify';
@@ -16,10 +17,24 @@ const blogStore = useBlogStore();
 const route = useRoute();
 onBeforeMount(() => {
   blogStore.fetchSinglePosts(route.params.id);
-});
-onBeforeMount(() => {
   blogStore.fetchRecentPostsFromAPI();
 });
+
+watch(
+    () => blogStore.singlePost,
+    (newPost) => {
+      if (newPost?.title) {
+        document.title = newPost.title;
+        // Uncomment and update meta tags if needed
+        updateMetaTag('description', newPost.title || 'Single Blog Post');
+        const keywords = newPost.labels?.join(",");
+        updateMetaTag('keywords', keywords || "");
+      } else {
+        document.title = 'Single Blog Post';
+      }
+    },
+    {immediate: true}
+);
 
 onBeforeRouteUpdate(async (to, from) => {
   blogStore.fetchSinglePosts(to.params.id);
@@ -62,23 +77,23 @@ function decodeUnicode(str) {
         </div>
         <div class="mt-[2.4rem] flex flex-row items-center space-x-[1rem]">
           <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-            <span class="material-icons">calendar_month</span>
+            <!--            <span class="material-icons">calendar_month</span>-->
             <span>
                 {{ getBlogDate(blogStore.singlePost.published) }}
                </span>
           </div>
 
-          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">
-            <span class="material-icons">person</span>
-            <span>{{ blogStore.singlePost.author.displayName }}</span>
-          </div>
+          <!--          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">-->
+          <!--            <span class="material-icons">person</span>-->
+          <!--            <span>{{ blogStore.singlePost.author.displayName }}</span>-->
+          <!--          </div>-->
         </div>
-        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">
-            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"
-                  :key="index">
-            {{ category }}
-            </span>
-        </div>
+        <!--        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">-->
+        <!--            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"-->
+        <!--                  :key="index">-->
+        <!--            {{ category }}-->
+        <!--            </span>-->
+        <!--        </div>-->
         <div class="mt-[1.7rem] font-[400] leading-[1.69rem] text-[1.4rem] text-[#7a7a7a]">
           <h1 class="mb-[1rem] font-[700] text-[2.8rem] leading-[3.38rem] text-secondaryColor">
             {{ blogStore.singlePost.title }}
@@ -119,10 +134,11 @@ function decodeUnicode(str) {
           <h3 class="font-[700] text-[2rem] leading-[2.42rem]">Categories</h3>
 
           <div class="flex flex-row items-center space-x -m-2 mt-1 flex-wrap">
-            <span class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
-                  :key="index">
-            {{ category }}
-            </span>
+            <RouterLink class="font-bold text-2xl m-2" v-for="(category, index) in blogStore.categories ?? []"
+                        :key="index" :to="{name: 'blog', query: {category: category}}">
+              {{ category }}
+
+            </RouterLink>
           </div>
 
         </div>

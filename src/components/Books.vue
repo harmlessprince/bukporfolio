@@ -3,10 +3,13 @@ import ProductCard from "@/components/ProductCard.vue";
 import {useBookstore} from "@/store/books.store.js";
 import {onBeforeMount} from "vue";
 import Container from "@/components/Container.vue";
+import {useRoute} from "vue-router";
 
 const store = useBookstore()
+const route = useRoute()
 onBeforeMount(() => {
   store.getBooks();
+  console.log(route.params);
 });
 defineProps({
   maximumNumberOfBooks: {

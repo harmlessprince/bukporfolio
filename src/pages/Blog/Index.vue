@@ -6,14 +6,24 @@ import Subheading from '@/components/SubHeading.vue';
 import Blogcard from '../../components/BlogCard.vue';
 import {useBlogStore} from "@/store/blog.store.js";
 import {onBeforeMount, ref, watch} from "vue";
+import {useRoute, useRouter} from "vue-router";
 import {getDayFromDate, getMonthFromDate, getYearFromDate} from "@/services/util.js";
 import HeroSection from "@/components/HeroSection.vue";
 
 const blogStore = useBlogStore();
 const currentCategory = ref("all")
+const route = useRoute();
+const router = useRouter();
 
 onBeforeMount(() => {
-  blogStore.fetchAllPostsFromAPI();
+  if (route.query?.category) {
+    currentCategory.value = route.query.category;
+  }
+  if (currentCategory.value === "all") {
+    blogStore.fetchAllPostsFromAPI();
+  } else {
+    blogStore.fetchAllPostsByTagFromAPI(currentCategory.value);
+  }
 });
 watch(
     () => blogStore.posts,
@@ -27,6 +37,14 @@ watch(
 function onCategoryChange(category) {
   currentCategory.value = category;
   blogStore.fetchAllPostsByTagFromAPI(category)
+  currentCategory.value = category;
+  router.push({
+    path: route.path,
+    query: {
+      ...route.query, // Keep existing query params
+      category: category, // Update or add the new query param
+    },
+  });
 }
 
 
@@ -40,16 +58,16 @@ function onCategoryChange(category) {
         page="Blog"
     />
 
-    <Container> 
+    <Container>
       <div class="mt-[3.4rem] max-small:mt-[2rem] text-center">
         <Subheading title="Glean insights to transform your mind and get more out of life" class="mb-[0.5rem]"/>
         <Heading title="The Musings of Bright UK"/>
         <!-- <div
             class="mt-[1.4rem] mx-auto h-[4.5rem] max-sm:h-auto font-sm text-xsm  flex flex-row flex-wrap  bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem] space-x-[2.5rem]"
             > -->
-            <div
+        <div
             class="mt-[1.4rem] mx-auto h-auto max-sm:h-auto font-sm text-xsm grid grid-cols-[repeat(auto-fill,minmax(9.3rem,1fr))] gap-y-[1.2rem] bg-[#dddddd] rounded-[1rem] text-white p-[0.6rem]"
-            >
+        >
           <button class="blog_category_tab transition-all duration-300 ease-in-out transform h-[3.7rem]"
                   :class="currentCategory === 'all' ? 'selected' : 'unselected'" @click="onCategoryChange('all')">All
           </button>
@@ -90,9 +108,16 @@ function onCategoryChange(category) {
 
 }
 
+
+.blog_category_tab:hover {
+  transform: scale(1.05); /* Slight grow on hover */
+  background-color: #e0e0e0; /* Light background on hover */
+  color: #545454;
+}
+
 .selected {
-  background-color: #121212;
-  color: white;
+  background-color: #121212 !important;
+  color: white !important;
   transform: scale(1.1); /* Slight scale effect */
 }
 
@@ -100,12 +125,6 @@ function onCategoryChange(category) {
   background-color: transparent;
   color: #545454;
   transform: scale(1); /* Normal size when unselected */
-}
-
-.blog_category_tab:hover {
-  transform: scale(1.05); /* Slight grow on hover */
-  background-color: #e0e0e0; /* Light background on hover */
-  color: #545454;
 }
 
 .transition-all {

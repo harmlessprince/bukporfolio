@@ -181,14 +181,14 @@ function toggleVariationTab(name) {
           </div>
           <div>
             <transition name="fade" mode="out-in">
-              <ul v-if="currentTab === 'learn'" class="font-xsm text-xsm text-secondary ml-[2rem] list-disc py-[2rem]">
+              <ul v-if="currentTab === 'learn'" class="font-xsm text-xsm text-secondary ml-[2rem] list-disc py-[2rem] space-y-3">
 
                 <li v-for="(item, index) in bookstore.selectedBook?.learn" :key="index">{{item}}</li>
               </ul>
             </transition>
             <transition name="fade" mode="out-in">
               <div v-if="currentTab === 'details'" class="font-xsm text-xsm text-secondary py-[2rem] space-x-[1rem]">
-                <div v-html="bookstore.selectedBook.description" class="custom-html">
+                <div v-html="bookstore.selectedBook.description" class="custom-html space-y-3">
 
                 </div>
               </div>
