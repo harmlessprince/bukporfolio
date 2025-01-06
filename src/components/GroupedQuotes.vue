@@ -7,10 +7,7 @@ const props = defineProps(['title', "quotes", "icon", "index"])
 const carouselRef = ref();
 const currentSlide = ref(0);
 const slideTo = (nextSlide) => {
-  console.log(nextSlide);
-  console.log("Before: ", currentSlide.value);
   currentSlide.value = nextSlide
-  console.log("After: ", currentSlide.value);
 };
 
 const quotesConfig = {
@@ -22,16 +19,15 @@ const quotesConfig = {
 </script>
 
 <template>
-
+  
   <div
       v-if="index%2 === 0"
-      class="inspirationContainer cursor-pointer w-full h-[35rem] rounded-[40px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0"
+      class="inspirationContainer relative cursor-pointer w-full h-[35rem] rounded-[40px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0"
       :style="{'background-color': `#e8d29b`}"
-
   >
-    <div class="quoteIcon ">
-      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem] justify-end " alt="quote icone"/>
-    </div>
+    <!-- <div class="quoteIcon absolute top-10 left-[4rem]">
+      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem]" alt="quote icon"/>
+    </div> -->
     <!--    Front start-->
     <div class="text-center text-[#000] iconDiv h-full flex flex-col items-center justify-center">
       <img :src="props.icon" class="w-[11.3rem] z-50 h-[11.7rem] mx-auto" alt="about speaker bright uk"/>
@@ -39,12 +35,18 @@ const quotesConfig = {
     </div>
     <!--    Front end-->
     <!--    Back start-->
-    <div class="qoutation">
+       
+    <div 
+    class="qoutation relative"
+    >
       <div>
         <div class="flex flex-row gap-x-[0.5rem] mb-[1rem] items-center">
           <img :src="props.icon" class="w-[2.5rem] z-50 h-[2.5rem]" alt="about speaker bright uk"/>
           <header class="text-[1.8rem] leading-[24px] font-[700]">{{ props.title }}</header>
         </div>
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <img :src="Quotation" class="opacity-40 w-[20.5rem] h-[20.5rem] mx-auto" alt="quote icon"/>
+      </div>
         <div class="flex mb-2">
           <div v-for="(slide, index) in props.quotes" :key="index" v-show="index === currentSlide">
             <p class="text-left">{{ slide.substring(0, 500) }}</p>
@@ -52,7 +54,7 @@ const quotesConfig = {
         </div>
       </div>
 
-      <div class="flex space-x-[0.5rem] justify-end items-center mt-auto">
+      <div class="flex space-x-[0.5rem] justify-end items-center mt-auto relative z-50">
         <button
             v-for="(_, index) in props.quotes"
             :key="`${index}`+'button'"
@@ -72,9 +74,6 @@ const quotesConfig = {
       class="inspirationContainer cursor-pointer w-full h-[35rem] rounded-[40px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0 "
       :style="{'background-color': `#ddd7c8`}"
   >
-    <div class="quoteIcon ">
-      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem] justify-end " alt="quote icone"/>
-    </div>
     <!--    Front start-->
     <div class="text-center text-[#000] iconDiv h-full flex flex-col items-center justify-center">
       <img :src="props.icon" class="w-[11.3rem] z-50 h-[11.7rem] mx-auto" alt="about speaker bright uk"/>
@@ -82,7 +81,10 @@ const quotesConfig = {
     </div>
     <!--    Front end-->
     <!--    Back start-->
-    <div class="qoutation">
+    <div class="qoutation relative">
+      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <img :src="Quotation" class="opacity-40 w-[20.5rem] h-[20.5rem] mx-auto" alt="quote icon"/>
+      </div>
       <div>
         <div class="flex flex-row gap-x-[0.5rem] mb-[1rem] items-center">
           <img :src="props.icon" class="w-[2.5rem] z-50 h-[2.5rem]" alt="about speaker bright uk"/>
@@ -95,7 +97,7 @@ const quotesConfig = {
         </div>
       </div>
 
-      <div class="flex space-x-[0.5rem] justify-end items-center mt-auto">
+      <div class="flex space-x-[0.5rem] justify-end items-center mt-auto relative z-50">
         <button
             v-for="(_, index) in props.quotes"
             :key="`${index}`+'button'"
@@ -147,7 +149,7 @@ const quotesConfig = {
 
 .inspirationContainer:hover .quoteIcon {
   transition: all 1s ease-in-out;
-  @apply flex justify-end w-full;
+ 
 }
 
 .inspirationContainer:hover .iconDiv {

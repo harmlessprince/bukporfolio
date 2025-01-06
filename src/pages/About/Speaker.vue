@@ -151,16 +151,6 @@ onMounted(() => {
             class="scrollBox grid grid-cols-[repeat(auto-fill,minmax(31.1rem,1fr))] w-full gap-[3.1rem] max-medium:gap-[1.5rem] mt-[2rem]"
         >
 
-<!--          <InspirationCard-->
-<!--              v-for="(item, index) in paginatedQuotes"-->
-<!--              :title="item.title"-->
-<!--              :quote="item.quote"-->
-<!--              :img="item.image"-->
-<!--              :key="index"-->
-<!--              :ind="index"-->
-<!--              :style="{ transitionDelay: `${index * 100}ms` }"-->
-<!--          />-->
-
           <GroupedQuotes
               v-for="(item, index) in paginatedQuotes"
               :title="item.title"
