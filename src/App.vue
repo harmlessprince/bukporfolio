@@ -13,7 +13,6 @@ const cartStore = useCartStore();
 const toggleSidebar = useToggleSidebar()
 onMounted(() => {
   cartStore.loadCart();
-  console.log(toggleSidebar.sideBar)
 });
 </script>
 
