@@ -1,6 +1,5 @@
 <script setup>
 import Quotation from '@/assets/quote.png';
-import {Carousel, Slide} from 'vue3-carousel';
 import {ref} from "vue";
 
 const props = defineProps(['title', "quotes", "icon", "index"])
@@ -25,9 +24,6 @@ const quotesConfig = {
       class="inspirationContainer relative cursor-pointer w-full h-[35rem] rounded-[40px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0"
       :style="{'background-color': `#e8d29b`}"
   >
-    <!-- <div class="quoteIcon absolute top-10 left-[4rem]">
-      <img :src="Quotation" class="w-[2.5rem] h-[2.5rem]" alt="quote icon"/>
-    </div> -->
     <!--    Front start-->
     <div class="text-center text-[#000] iconDiv h-full flex flex-col items-center justify-center">
       <img :src="props.icon" class="w-[11.3rem] z-50 h-[11.7rem] mx-auto" alt="about speaker bright uk"/>

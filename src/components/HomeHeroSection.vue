@@ -58,16 +58,6 @@ onMounted(() => {
     typingTL.add(tl)
   })
 
-
-});
-
-onBeforeUnmount(() => {
-  // cursor.kill();
-  // cursor = null;
-  // typingTL.kill();
-  // typingTL = null;
-  // tl.kill();
-  // tl = null;
 });
 
 

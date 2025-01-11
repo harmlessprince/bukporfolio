@@ -43,30 +43,6 @@ onBeforeMount(() => {
   store.getTestimonies();
 });
 
-// function onQuoteChange(index) {
-//   currentIndex.value = index;
-//   currentQuote.value = store.testimonies[currentIndex.value];
-// }
-
-// function nextQuote() {
-//   if (currentIndex.value < store.testimonies.length - 1) {
-//     currentIndex.value++;
-//   } else {
-//     currentIndex.value = 0; // Loop back to the first item
-//   }
-//   currentQuote.value = store.testimonies[currentIndex.value];
-//   currentDirection.value = 'forward';
-// }
-
-// function previousQuote() {
-//   if (currentIndex.value > 0) {
-//     currentIndex.value--;
-//   } else {
-//     currentIndex.value = store.testimonies.length - 1; // Loop to the last item
-//   }
-//   currentQuote.value = store.testimonies[currentIndex.value];
-//   currentDirection.value = 'backward';
-// }
 </script>
 
 <template>
@@ -98,18 +74,8 @@ onBeforeMount(() => {
           </Slide>
 
           <template #addons>
-            <!--            <Navigation />-->
           </template>
         </Carousel>
-<!--        <TestimonyQuotes-->
-<!--            v-for="(item, index) in store.testimonies"-->
-<!--            :key="index"-->
-<!--            :image="item.image"-->
-<!--            :name="item.name"-->
-<!--            :quote="item.quote"-->
-<!--            :position="item.position"-->
-<!--            :company="item.company"-->
-<!--        />-->
       </div>
 
     </Container>

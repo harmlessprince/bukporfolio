@@ -1,7 +1,7 @@
 <script setup>
-import {Carousel, Navigation, Slide} from 'vue3-carousel'
+import {Carousel, Slide} from 'vue3-carousel'
 import {useFeaturesStore} from "@/store/features.store.js";
-import {onBeforeMount, onMounted, ref} from "vue";
+import {onBeforeMount} from "vue";
 import Container from "@/components/Container.vue";
 
 const settings = {
@@ -50,7 +50,6 @@ onBeforeMount(() => {
           </Slide>
 
           <template #addons>
-<!--            <Navigation />-->
           </template>
         </Carousel>
       </div>

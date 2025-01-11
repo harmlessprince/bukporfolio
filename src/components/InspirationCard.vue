@@ -1,7 +1,6 @@
 <script setup>
 import king from '@/assets/king.png';
 import Quotation from '@/assets/quote.png';
-import {FwbButton, FwbModal} from 'flowbite-vue'
 
 const props = defineProps(['title', "quote", "img","ind"])
 </script>
@@ -13,21 +12,6 @@ const props = defineProps(['title', "quote", "img","ind"])
       class="inspirationContainer cursor-pointer relative w-full min-h-[28.4rem] rounded-[10px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0 flex items-center justify-center"
        :style="{'background-color': `#e8d29b`}"
       >
-      <!-- <img :src="Quotation" class="w-[3.3rem] z-50 h-[2.7rem] absolute top-5 right-3" alt="book"/> -->
-    <!-- <div 
-      id="overlay"
-      class="absolute w-full h-[5rem] rounded-[10px] bottom-0 left-0 bg-[#000000B3]">
-      <header class="text-[2rem] leading-[24px] font-[700] text-[#FFEE95] px-[1.6rem] pt-[1.6rem]">{{ props.title }}</header>
-      <p 
-      id="quote"
-      class="text-[#fff] font-[400] text-[1.4rem] px-[1.6rem] leading-[20px]"
-      >{{ props.quote.slice(0, 650) }}</p>
-    </div> -->
-    <!--    <div>-->
-    <!--      <fwb-button @click="showModal" class="bg-transparent text-primary">-->
-    <!--        Read more-->
-    <!--      </fwb-button>-->
-    <!--    </div>-->
 
     <div class="text-center text-[#000] iconDiv">
       <img :src="king" class="w-[11.3rem] z-50 h-[11.7rem] mx-auto" alt="about speaker bright uk"/>
@@ -48,21 +32,6 @@ const props = defineProps(['title', "quote", "img","ind"])
     class="inspirationContainer cursor-pointer relative w-full min-h-[28.4rem] rounded-[10px] p-[1.2rem] text-left mb-[2rem] max-small:mb-0 flex items-center justify-center"
      :style="{'background-color': `#ddd7c8`}"
     >
-    <!-- <img :src="Quotation" class="w-[3.3rem] z-50 h-[2.7rem] absolute top-5 right-3" alt="book"/> -->
-  <!-- <div 
-    id="overlay"
-    class="absolute w-full h-[5rem] rounded-[10px] bottom-0 left-0 bg-[#000000B3]">
-    <header class="text-[2rem] leading-[24px] font-[700] text-[#FFEE95] px-[1.6rem] pt-[1.6rem]">{{ props.title }}</header>
-    <p 
-    id="quote"
-    class="text-[#fff] font-[400] text-[1.4rem] px-[1.6rem] leading-[20px]"
-    >{{ props.quote.slice(0, 650) }}</p>
-  </div> -->
-  <!--    <div>-->
-  <!--      <fwb-button @click="showModal" class="bg-transparent text-primary">-->
-  <!--        Read more-->
-  <!--      </fwb-button>-->
-  <!--    </div>-->
 
   <div class="text-center text-[#000] iconDiv">
     <img :src="king" class="w-[11.3rem] z-50 h-[11.7rem] mx-auto" alt="about speaker bright uk"/>

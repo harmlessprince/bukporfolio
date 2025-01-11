@@ -149,16 +149,12 @@ function toggleVariationTab(name) {
                 -
               </button>
             </div>
-            <!-- removed the primary_button and secondary_button class tag, because it wasn't making the buttons responsive -->
             <button
                 class="w-[13.7rem] text-[#000] max-sm:w-full h-[4.3rem] bg-primary border border-primary rounded-[8px] text-xsm font-sm"
             >
               Add to cart
             </button>
-            <!-- <RouterLink class="secondary_button max-sm:w-full flex justify-center items-center" :to="{name: 'cart'}"
-            >
-              Buy Now
-            </RouterLink> -->
+           
             <RouterLink class="w-[13.7rem] max-sm:w-full" :to="{name: 'cart'}"
             >
             <button class="w-[13.7rem] text-[#000] max-sm:w-full h-[4.3rem] border border-primary rounded-[8px] text-xsm font-sm">

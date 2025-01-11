@@ -55,7 +55,6 @@ const isRouteActive = (link, routePath) => {
     </div>
 
     <div class=" flex flex-row w-full justify-center items-center my-sm space-x-[1rem]">
-      <!-- <RouterLink :to="{ name: 'speaker'}" class=" hover:text-primaryColor">Get in touch</RouterLink> -->
       <a href="https://x.com/brightostle" target="_blank" rel="noopener noreferrer">
         <img :src="Twitter" class="w-[20px] h-[20px]" alt="icons" />
       </a>

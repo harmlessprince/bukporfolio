@@ -12,7 +12,6 @@ export const useQuoteStore = defineStore("quoteStore", () => {
         const querySnapshot = await getDocs(quotesRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
 
             items.push({
@@ -30,7 +29,6 @@ export const useQuoteStore = defineStore("quoteStore", () => {
         const querySnapshot = await getDocs(quotesRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
 
             items.push({

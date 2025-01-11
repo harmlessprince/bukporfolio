@@ -9,7 +9,6 @@ const store = useBookstore()
 const route = useRoute()
 onBeforeMount(() => {
   store.getBooks();
-  console.log(route.params);
 });
 defineProps({
   maximumNumberOfBooks: {
@@ -27,7 +26,6 @@ defineProps({
 
   <Container>
     <div class="">
-      <!-- <h3 class="font-lg text-basic text-primary font-primary mb-[1.3rem] max-medium:mb-0">Books</h3> -->
       <h2 class="font-header text-header max-medium:text-[3.0rem] text-secondary mb-[3rem] text-center">
         Books by Bright UK
       </h2>

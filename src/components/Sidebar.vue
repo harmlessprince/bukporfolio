@@ -9,8 +9,6 @@ const toggleSidebar = useToggleSidebar()
 const aboutDropdown = ref(false);
 const route = useRoute(); // Access the current route object
 
-console.log(route.path)
-
 const isRouteActive = (link, routePath) => {
   if (link === "about") {
     return /^\/about/.test(route.path);

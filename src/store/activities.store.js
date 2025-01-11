@@ -12,7 +12,6 @@ export const useActivitiesStore = defineStore("activitiesStore", () => {
         const querySnapshot = await getDocs(activitiesRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             items.push({
                 id: doc.id,

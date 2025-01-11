@@ -1,8 +1,8 @@
 <script setup>
 import {useBrandStore} from "@/store/brand.store.js";
-import {onBeforeMount, onMounted, ref} from "vue";
+import {onBeforeMount} from "vue";
 import Container from "@/components/Container.vue";
-import {Carousel, Navigation, Slide} from "vue3-carousel";
+import {Carousel, Slide} from "vue3-carousel";
 
 const brandStore = useBrandStore()
 onBeforeMount(() => {

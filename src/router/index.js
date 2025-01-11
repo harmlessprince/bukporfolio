@@ -47,8 +47,6 @@ const routes = [
 let previousRoute = null;
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    // linkActiveClass: 'text-primaryColor border-b-4 border-primaryColor',
-    // linkExactActiveClass: 'text-primary border-b-4 border-primary',
     routes,
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {

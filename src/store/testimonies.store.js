@@ -12,7 +12,6 @@ export const useTestimoniesStore = defineStore("testimoniesStore", () => {
         const querySnapshot = await getDocs(testimoniesRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             items.push({
                 id: doc.id,

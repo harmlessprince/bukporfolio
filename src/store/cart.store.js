@@ -5,9 +5,6 @@ import {useBookstore} from "@/store/books.store.js";
 const CART_STORAGE_KEY = 'cart_items';
 export const useCartStore = defineStore("cartStores", () => {
     const items = ref([]) // state
-    // const bookStore = useBookstore();
-
-    // const doubleCount = computed(() => count.value * 2)  // getters
     const cartItemCount = computed(() => items.value.reduce((count, item) => count + item.quantity, 0.00))
     const totalAmount = computed(() => items.value.reduce((total, item) => total + item.price * item.quantity, 0.00))
 
@@ -65,7 +62,6 @@ export const useCartStore = defineStore("cartStores", () => {
 
     function loadCart() {
         const storedCart = localStorage.getItem(CART_STORAGE_KEY);
-        console.log(storedCart);
         if (storedCart) {
             items.value = JSON.parse(storedCart);
         }

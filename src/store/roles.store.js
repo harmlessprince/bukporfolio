@@ -12,7 +12,6 @@ export const useRoleStore = defineStore("roleStore", () => {
         const querySnapshot = await getDocs(rolesRef);
         let items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             if (doc.id !== 'coach'){
                 items.push({

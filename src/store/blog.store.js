@@ -41,8 +41,6 @@ export const useBlogStore = defineStore("blogsStore", () => {
         }
         loaderStore.done()
         loadBlogLabelsFromLocalStorage()
-        // await retrievePostsLabels()
-
     }
 
     function generateCategoryUrl(category) {

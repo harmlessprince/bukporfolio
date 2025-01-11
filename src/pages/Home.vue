@@ -149,21 +149,6 @@ onMounted(() => {
     <section class="mb-[4.4rem]">
       <Books/>
     </section>
-    <!-- personal development section -->
-
-    <!-- gallery -->
-    <!-- <section class="bg-basic text-center pt-[3rem]">
-      <h3 class="font-lg text-basic text-primary font-primary">Gallery</h3>
-      <h2 class="font-header text-header max-sm:text-[3.0rem] text-secondary">
-        Bright UK Activities
-      </h2>
-      <div class="max-w-full bg-secondary">
-        <Container>
-          <Activities/>
-        </Container>
-      </div>
-    </section> -->
-    <!-- end of gallery -->
 
     <section class=" w-full bg-basic max-sm:mt-[2rem] mb-[4.4rem]" v-if="whatPeopleAreSayingEnabled === 'no'">
       <Container>

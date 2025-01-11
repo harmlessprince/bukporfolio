@@ -12,7 +12,6 @@ export const useFeaturesStore = defineStore("featuresStore", () => {
         const querySnapshot = await getDocs(featuresRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             items.push({
                 id: doc.id,
@@ -22,7 +21,6 @@ export const useFeaturesStore = defineStore("featuresStore", () => {
             });
         });
         items.sort((a, b) => a?.position - b?.position);
-        console.log(items);
         features.value = items;
     }
 

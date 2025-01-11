@@ -212,9 +212,6 @@ function formatCountries(countries) {
 
 
       <ul class="text-gray-800 mt-6 space-y-3">
-        <!--      <li class="flex flex-wrap gap-4 text-sm">Subtotal <span class="ml-auto font-bold">#200.00</span></li>-->
-        <!--      <li class="flex flex-wrap gap-4 text-sm">Shipping <span class="ml-auto font-bold">0.00</span></li>-->
-        <!--      <li class="flex flex-wrap gap-4 text-sm">Tax <span class="ml-auto font-bold">0.00</span></li>-->
         <hr class="border-gray-300"/>
         <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span class="ml-auto">#{{ props.totalAmount }}</span>
         </li>

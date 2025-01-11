@@ -1,7 +1,7 @@
 <script setup>
 import {useVideoStore} from "@/store/videos.store.js";
-import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
-import {onBeforeMount, ref, watch} from "vue";
+import {Carousel, Slide} from "vue3-carousel";
+import {onBeforeMount, ref} from "vue";
 import {VideoPlayer} from "@videojs-player/vue";
 const store = useVideoStore()
 const settings = ref({

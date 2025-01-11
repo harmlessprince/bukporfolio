@@ -53,24 +53,6 @@ function updatePage(page) {
                        class="rounded-lg max-w-full h-full object-top object-cover" preview/>
       </div>
     </div>
-
-<!--    <div class="card flex justify-center">-->
-<!--      <PrimeVueGallery v-model:activeIndex="activeIndex" v-model:visible="displayCustom" :value="pictureStore.galleryPictures" :responsiveOptions="responsiveOptions" :numVisible="7"-->
-<!--                containerStyle="max-width: 850px" :circular="true" :fullScreen="true" :showItemNavigators="true" :showThumbnails="false">-->
-<!--        <template #item="slotProps">-->
-<!--          <img :src="slotProps.item.url" :alt="slotProps.item.title" style="width: 100%; display: block" />-->
-<!--        </template>-->
-<!--        <template #thumbnail="slotProps">-->
-<!--          <img :src="slotProps.item.thumbnail" :alt="slotProps.item.title" style="display: block" />-->
-<!--        </template>-->
-<!--      </PrimeVueGallery>-->
-
-<!--      <div v-if="pictureStore.galleryPictures" class="grid grid-cols-12 gap-4" style="max-width: 400px">-->
-<!--        <div v-for="(image, index) of pictureStore.galleryPictures" :key="index" class="col-span-4">-->
-<!--          <img :src="image.thumbnail" :alt="image.title" style="cursor: pointer" @click="imageClick(index)" />-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
     <!-- Pagination Controls -->
     <Pagination
         :currentPage="currentPage"

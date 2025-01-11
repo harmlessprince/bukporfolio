@@ -4,7 +4,6 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
 import Heading from '@/components/Heading.vue';
-import InspirationCard from '@/components/InspirationCard.vue';
 import {useQuoteStore} from "@/store/quotes.store.js";
 import {onBeforeMount} from "vue";
 import HeroSection from "@/components/HeroSection.vue";

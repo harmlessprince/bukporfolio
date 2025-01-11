@@ -4,7 +4,6 @@ import {database} from "@/services/firebase.js";
 import {ref} from "vue";
 
 export const usePictureStore = defineStore("pictureGalleryStore", () => {
-    // const db = useFirestore()
     const pictures = ref([]);
     const galleryPictures = ref([]);
 

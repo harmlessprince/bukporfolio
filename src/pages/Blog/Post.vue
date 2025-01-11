@@ -82,18 +82,7 @@ function decodeUnicode(str) {
                 {{ getBlogDate(blogStore.singlePost.published) }}
                </span>
           </div>
-
-          <!--          <div class="text-[1.4rem] font-[400] text-[#7a7a7a] flex items-center">-->
-          <!--            <span class="material-icons">person</span>-->
-          <!--            <span>{{ blogStore.singlePost.author.displayName }}</span>-->
-          <!--          </div>-->
         </div>
-        <!--        <div class="flex flex-row items-center space-x-[1rem] mt-2 flex-wrap">-->
-        <!--            <span class="bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-1.5 py-1 rounded-full" v-for="(category, index) in blogStore.singlePost.labels ?? []"-->
-        <!--                  :key="index">-->
-        <!--            {{ category }}-->
-        <!--            </span>-->
-        <!--        </div>-->
         <div class="mt-[1.7rem] font-[400] leading-[1.69rem] text-[1.4rem] text-[#7a7a7a]">
           <h1 class="mb-[1rem] font-[700] text-[2.8rem] leading-[3.38rem] text-secondaryColor">
             {{ blogStore.singlePost.title }}

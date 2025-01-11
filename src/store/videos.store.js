@@ -4,7 +4,6 @@ import { database} from "@/services/firebase.js";
 import {ref} from "vue";
 
 export const useVideoStore = defineStore("videoStore", () => {
-    // const db = useFirestore()
     const videos = ref([]);
 
     async function getVideos() {
@@ -12,7 +11,6 @@ export const useVideoStore = defineStore("videoStore", () => {
         const querySnapshot = await getDocs(videosRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             if (!data.url.includes('https://youtu')) {
                 items.push({

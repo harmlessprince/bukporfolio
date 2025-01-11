@@ -12,7 +12,6 @@ export const useEntrepreneurStore = defineStore("entrepreneurStore", () => {
         const querySnapshot = await getDocs(entrepreneursRef);
         const items = [];
         querySnapshot.forEach((doc) => {
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
 
             items.push({

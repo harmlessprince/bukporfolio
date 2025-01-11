@@ -9,43 +9,6 @@ import HeroSection from "@/components/HeroSection.vue";
 const store = useEntrepreneurStore()
 gsap.registerPlugin(ScrollTrigger);
 
-// const swipeInAnimation = (classname) => {
-//   console.log(classname)
-//   gsap.fromTo(classname,
-//       {x: 100},
-//       {
-//         x: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: classname,
-//           start: 'top 85%'
-//         },
-//       });
-// }
-
-onMounted(() => {
-  // gsap.fromTo(".0",
-  //     {x: 100},
-  //     {
-  //       x: 0,
-  //       duration: 1,
-  //       scrollTrigger: {
-  //         trigger: ".0",
-  //         start: 'top 85%'
-  //       },
-  //     });
-
-      // gsap.fromTo(".slideText",
-      // {x: 100},
-      // {
-      //   x: 0,
-      //   duration: 1,
-      //   scrollTrigger: {
-      //     trigger: ".slideText",
-      //     start: 'top 85%'
-      //   },
-      // });
-})
 onBeforeMount(() => {
   store.getEntrepreneurs();
 });

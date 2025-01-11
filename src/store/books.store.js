@@ -19,7 +19,6 @@ export const useBookstore = defineStore("booksStore", () => {
         const items = [];
         querySnapshot.forEach((doc) => {
 
-            // console.log(doc.id, " => ", doc.data());
             const data = doc.data();
             if (!data.status){
                 return;
@@ -49,7 +48,6 @@ export const useBookstore = defineStore("booksStore", () => {
         });
 
         items.sort((a, b) => a?.position - b?.position)
-        console.log(items);
         books.value = items;
         loaderStore.done()
     }
@@ -58,7 +56,6 @@ export const useBookstore = defineStore("booksStore", () => {
         loaderStore.start()
         const bookRef = doc(database, "books", bookId);
         const docSnapshot = await getDoc(bookRef);
-        // const router = useRouter();
         if (!docSnapshot.exists()) {
             router.push({
                 name: 'NotFound',

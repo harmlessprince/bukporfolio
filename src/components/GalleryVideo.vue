@@ -56,21 +56,6 @@ function updatePage(page) {
         :perPage="perPage"
         @updatePage="updatePage"
     />
-    <!--    <div class="flex flex-row items-center justify-center text-center space-x-2 text-secondary mt-[2.4rem]">-->
-    <!--      <button @click="previousPage()" :disabled="currentPage === 1" class="pagination_button"><<</button>-->
-
-    <!--      <button-->
-    <!--          v-for="page in totalPages"-->
-    <!--          :key="page"-->
-    <!--          @click="setPage(page)"-->
-    <!--          :class="currentPage === page ? 'active' : ''"-->
-    <!--          class="pagination_button"-->
-    <!--      >-->
-    <!--        {{ page }}-->
-    <!--      </button>-->
-
-    <!--      <button @click="nextPage()" :disabled="currentPage === totalPages" class="pagination_button">>></button>-->
-    <!--    </div>-->
   </div>
 </template>
 

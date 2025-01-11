@@ -1,37 +1,8 @@
 <script setup>
-import {onMounted} from 'vue'
-import {gsap} from "gsap";
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Container from "@/components/Container.vue";
 import Books from "@/components/Books.vue";
 import HeroSection from "@/components/HeroSection.vue";
 
-gsap.registerPlugin(ScrollTrigger);
-
-onMounted(() => {
-  // InspirationCards animation
-  gsap.fromTo(".authorImageBox",
-      {y: 150},
-      {
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".authorImageBox",
-          start: 'top 85%'
-        },
-      });
-
-  gsap.fromTo(".authorTextBox",
-      {y: 150},
-      {
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".authorTextBox",
-          start: 'top 85%'
-        },
-      });
-})
 
 </script>
 

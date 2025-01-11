@@ -22,10 +22,6 @@ const props = defineProps(['title', 'year', 'day', 'month', 'author', "categorie
             <span class="font-header">{{ props.month }}</span>
           </div>
           <div class="flex flex-col items-start">
-            <!--            <div class="font-xsm text-xsm text-[#7A7A7A] flex flex-row items-center">-->
-            <!--              <img :src="Person" class="mr-1">-->
-            <!--              <span>{{ props.author }}</span>-->
-            <!--            </div>-->
             <div class="flex flex-row items-center space-x-[1rem] mt-1">
              <span class="font-bold" v-for="(category, index) in props.categories" :key="index">
             {{ category }}
