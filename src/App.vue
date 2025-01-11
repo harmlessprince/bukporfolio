@@ -18,11 +18,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="page-container w-full mx-auto">
+  <div class="page-container w-full mx-auto overflow-x-hidden">
     <Navigation/>
-    <!-- having issues with integrating side bar. 
-     check togglesidebar.store.js
-    the ui is ready -->
     <Sidebar />
     <main class="text-primary mb-[5rem]">
       <loader v-show="loaderStore.loading"></loader>
