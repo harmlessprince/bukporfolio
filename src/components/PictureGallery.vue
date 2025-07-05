@@ -3,7 +3,6 @@
 import {computed, onBeforeMount, ref} from "vue";
 import PrimeVueImage from 'PrimeVueImage';
 import Pagination from "@/components/Pagination.vue";
-import PrimeVueGallery from 'PrimeVueGallery';
 import {usePictureStore} from "@/store/pictures.store.js";
 
 const pictureStore = usePictureStore()
