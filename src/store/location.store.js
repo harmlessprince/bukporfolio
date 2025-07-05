@@ -1,6 +1,4 @@
 import {defineStore} from "pinia";
-import {collection, getDocs} from 'firebase/firestore'
-import {database} from "@/services/firebase.js";
 import {ref} from "vue";
 
 const BASE_URL = "https://countriesnow.space/api/v0.1/countries/positions";

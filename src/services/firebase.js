@@ -10,7 +10,7 @@ const firebaseConfig = {
     messagingSenderId: "167885372154",
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
     measurementId: "G-WEERN1F3QT",
-    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+    // databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
 
